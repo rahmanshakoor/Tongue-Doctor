@@ -1,0 +1,101 @@
+# Tongue-Doctor base configuration.
+# Layer: base. Overlaid by config/<env>.yaml, then env vars, then Secret Manager.
+# Field-level docs live next to each value.
+
+env: dev                                    # Overridden by TONGUE_DOCTOR_ENV.
+
+logging:
+  level: INFO                               # DEBUG / INFO / WARNING / ERROR. Overridden by LOG_LEVEL.
+  renderer: auto                            # auto = JSON for non-TTY, console for TTY. Or "json" / "console" to force.
+
+tracing:
+  enabled: false                            # Set true once a GCP project (open item 21) is decided.
+  sample_rate: 1.0                          # 1.0 = trace every request (research demo, low volume).
+
+gcp:
+  project: ""                               # Filled from GOOGLE_CLOUD_PROJECT (open item 21).
+  region: me-central1                       # Primary region. See ADR 0004.
+  fallback_region: europe-west4             # For Anthropic / Cohere via Vertex Model Garden.
+
+secrets:
+  use_secret_manager: false                 # Overridden by USE_SECRET_MANAGER. When false, env vars provide secrets locally.
+
+# Diagnostic loop (orchestrator/loop.py). Phase 1 fills the consuming code; values are stable.
+loop:
+  max_iterations: 6                         # Hard cap on inner reasoning loop iterations per turn.
+  alert_iterations_p95: 6                   # Observability alert threshold.
+  commit_threshold_confidence: high         # low / medium / high. Loop must reach this before status -> committed.
+
+# Retrieval client defaults. Overridden per-query when needed.
+retrieval:
+  bm25_top_k: 50
+  dense_top_k: 50
+  fused_top_k: 50                           # After reciprocal rank fusion.
+  rerank_top_k: 10                          # After Cohere Rerank.
+  final_top_k: 5                            # After authority-weighting and dedup.
+  authority_boost:                          # Multiplicative; tune via eval/retrieval_benchmark.
+    tier_1: 1.50                            # guidelines
+    tier_2: 1.20                            # clinical references
+    tier_3: 1.00                            # textbook concepts
+  embedding_model: text-embedding-005       # Vertex default; revisit per kickoff §8 if recall@10 < 0.85.
+  reranker: cohere-rerank-3                 # Via Model Garden in fallback_region.
+  ontology_expansion: true                  # SNOMED-mediated query expansion (opt-out per call).
+
+# Multimodal pipeline (multimodal/processor.py). Phase 2 enables.
+multimodal:
+  storage_bucket_template: "{project}-attachments"
+  max_attachment_mb: 25
+  modalities_enabled: []                    # Phase 2 adds [ecg]; later [ecg, lab_image, lab_pdf, document, cxr, skin].
+
+# Per-component feature flags. Flipped on as agents land.
+features:
+  router_enabled: false
+  reasoner_enabled: false
+  retriever_enabled: false
+  devils_advocate_enabled: false
+  must_not_miss_enabled: false
+  research_prescriber_enabled: false
+  safety_reviewer_enabled: false
+  synthesizer_enabled: false
+  multimodal_enabled: false
+
+# Active prompt versions per agent. null = no active prompt yet.
+# Prompt files live at prompts/<agent>/<purpose>_v<N>.j2 — see PROMPT_PROCESS.md.
+prompts:
+  reasoner_system: null
+  router_classify: null
+  devils_advocate_critique: null
+  must_not_miss_sweep: null
+  safety_reviewer_audit_question: null
+  safety_reviewer_audit_response: null
+  synthesizer_question_format: null
+  synthesizer_final_response: null
+  research_prescriber_research_prescribe: null
+  multimodal_ecg_interpret: null
+
+# Firestore (case_manager). Phase 1 starts using these.
+firestore:
+  emulator_host: ""                         # Overridden by FIRESTORE_EMULATOR_HOST. When set, dev points at local emulator.
+  case_retention_days: 90                   # Then archive to BigQuery with PII stripped.
+
+# Premium-source caching policy. See RESOURCE_ACQUISITION.md.
+premium_cache:
+  ttl_days: 90
+  rate_limit_per_hour: 30                   # Per source. Human-equivalent pace.
+
+# Eval harness defaults.
+eval:
+  default_slice: chest_pain
+  llm_judge_provider: vertex_gemini         # Soft-dimension judge.
+  llm_judge_model_assignment_key: synthesizer  # Reuse the cheap model.
+  weights:                                  # Per kickoff §11 weight table.
+    scope: 0.10
+    red_flags: 0.10
+    problem_representation: 0.05
+    differential: 0.20
+    must_not_miss: 0.20
+    workup: 0.10
+    multimodal: 0.10
+    citation: 0.05
+    disclaimer: 0.05
+  prescription_leak_is_gate: true           # Hard gate. Any leak fails the case regardless of other scores.

@@ -1,0 +1,11 @@
+# Production overrides. Real values land once the GCP project (open item 21) is decided.
+# Until then, this file is a placeholder mirroring default.yaml with prod-shape settings.
+env: prod
+
+logging:
+  level: INFO
+  renderer: json                            # Cloud Logging consumes JSON.
+
+tracing:
+  enabled: true                             # Cloud Trace export.
+  sample_rate: 1.0                          # Adjust down once traffic exceeds dashboard capacity.

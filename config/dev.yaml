@@ -1,0 +1,13 @@
+# Local development overrides. Layered on top of default.yaml.
+env: dev
+
+logging:
+  level: DEBUG
+  renderer: console                         # Human-readable for terminal.
+
+tracing:
+  enabled: false                            # No Cloud Trace export in dev.
+
+firestore:
+  # Set FIRESTORE_EMULATOR_HOST=localhost:8080 in .env to point at a local emulator.
+  emulator_host: ""
