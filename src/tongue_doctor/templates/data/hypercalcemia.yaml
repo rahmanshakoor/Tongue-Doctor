@@ -1,0 +1,336 @@
+complaint: hypercalcemia
+chapter_number: 22
+chapter_title: Hypercalcemia
+framework_type: mechanistic
+framework_categories:
+  - PTH-mediated (primary hyperparathyroidism, tertiary hyperparathyroidism, lithium-induced, familial hypocalciuric hypercalcemia)
+  - PTH-independent (malignancy — humoral, osteolytic, lymphoma; granulomatous disease; vitamin D toxicity; thyrotoxicosis; immobilization; milk-alkali; thiazide diuretic)
+pivotal_points:
+  - corrected calcium and ionized calcium
+  - PTH level (high or inappropriately normal → PTH-mediated; suppressed → PTH-independent)
+  - PTHrP (humoral hypercalcemia of malignancy)
+  - duration of hypercalcemia (chronic mild → primary HPT; acute high → malignancy)
+  - "symptoms — bones, stones, abdominal groans, psychiatric overtones"
+  - 24-hour urinary calcium (low in FHH; high in primary HPT)
+  - 25-OH and 1,25-OH vitamin D
+  - associated malignancy or granulomatous disease
+  - medication review (lithium, thiazide, vitamin D, calcium supplements)
+decision_rules:
+  - name: PTH-driven differential split
+    purpose: First branch in the hypercalcemia workup
+    inputs:
+      - corrected serum calcium
+      - intact PTH
+    thresholds:
+      - "high or inappropriately normal PTH with hypercalcemia → PTH-mediated"
+      - "suppressed PTH → PTH-independent"
+    citation: Stern Ch.22
+  - name: Severity classification
+    purpose: Triage urgency
+    thresholds:
+      - "mild — corrected Ca 10.5-11.9 mg/dL"
+      - "moderate — 12-13.9"
+      - "severe — >= 14 (admit for IV therapy)"
+    citation: Stern Ch.22
+differential:
+  - name: Primary hyperparathyroidism
+    role: leading
+    icd10:
+      - E21.0
+    pivotal_features_supporting:
+      - mild chronic hypercalcemia
+      - elevated or inappropriately normal PTH
+      - hypercalciuria
+      - history of nephrolithiasis or osteoporosis
+      - parathyroid adenoma on imaging
+    fingerprint_findings:
+      - mild hypercalcemia + elevated PTH + hypercalciuria
+    textbook_presentation: >-
+      Asymptomatic or mildly symptomatic hypercalcemia with elevated /
+      inappropriately normal PTH, often discovered on routine labs;
+      adenoma identified by sestamibi scan or ultrasound.
+    evidence_based_diagnosis:
+      - test_name: Serum corrected calcium and intact PTH
+        citation: Stern Ch.22
+      - test_name: 24-hour urinary calcium
+        note: Elevated supports primary HPT; low supports FHH.
+        citation: Stern Ch.22
+      - test_name: Sestamibi parathyroid scan or neck ultrasound
+        citation: Stern Ch.22
+    treatment_classes:
+      - parathyroidectomy (procedural — definitive in symptomatic disease or per guideline criteria)
+      - cinacalcet (non-surgical candidates)
+      - bisphosphonate (bone protection)
+    notes: ""
+  - name: Hypercalcemia of malignancy (humoral, osteolytic, 1,25-D-mediated lymphoma)
+    role: active_must_not_miss
+    icd10:
+      - E83.52
+    pivotal_features_supporting:
+      - known or new malignancy (lung, breast, multiple myeloma, lymphoma, RCC, head and neck squamous)
+      - acute / severe hypercalcemia
+      - suppressed PTH
+      - elevated PTHrP (humoral)
+      - bone metastases (osteolytic)
+      - high 1,25-OH vitamin D (lymphoma)
+    fingerprint_findings:
+      - severe hypercalcemia + suppressed PTH + active malignancy
+    textbook_presentation: >-
+      Patient with known or new malignancy presenting with rapid-onset
+      severe hypercalcemia, suppressed PTH, and either elevated PTHrP
+      or evidence of bone metastases.
+    evidence_based_diagnosis:
+      - test_name: Serum PTH (suppressed)
+        citation: Stern Ch.22
+      - test_name: PTHrP, SPEP / UPEP, imaging (CT, bone scan), 1,25-OH vitamin D
+        citation: Stern Ch.22
+    treatment_classes:
+      - intravenous fluid replacement (normal saline)
+      - bisphosphonate (zoledronate or pamidronate)
+      - denosumab (refractory or renal-impaired)
+      - calcitonin (rapid short-term reduction)
+      - corticosteroid (1,25-D-mediated — lymphoma, granulomatous)
+      - hemodialysis (severe refractory or AKI)
+      - oncology referral
+    notes: Treat the underlying malignancy.
+  - name: Granulomatous disease (sarcoidosis, TB, fungal, granulomatosis with polyangiitis)
+    role: active_must_not_miss
+    icd10:
+      - D86.9
+    pivotal_features_supporting:
+      - elevated 1,25-OH vitamin D with normal 25-OH vitamin D
+      - sarcoidosis features (lymphadenopathy, pulmonary involvement, hypercalciuria)
+      - active granulomatous infection
+    fingerprint_findings:
+      - elevated 1,25-OH vitamin D out of proportion to 25-OH in patient with granulomatous disease
+    textbook_presentation: >-
+      Patient with sarcoidosis or chronic granulomatous infection
+      presenting with hypercalcemia driven by extra-renal 1-alpha
+      hydroxylation of 25-OH vitamin D.
+    evidence_based_diagnosis:
+      - test_name: 1,25-OH vitamin D + 25-OH vitamin D
+        citation: Stern Ch.22
+      - test_name: ACE level (sarcoidosis — supportive)
+        citation: Stern Ch.22
+    treatment_classes:
+      - corticosteroid
+      - treat underlying granulomatous infection
+    notes: ""
+  - name: Vitamin D toxicity
+    role: active_most_common
+    icd10:
+      - E67.3
+    pivotal_features_supporting:
+      - excessive supplementation
+      - elevated 25-OH vitamin D (> 100 ng/mL)
+      - suppressed PTH
+    fingerprint_findings:
+      - markedly elevated 25-OH vitamin D from supplements
+    textbook_presentation: >-
+      Patient with excessive vitamin D supplementation presenting with
+      hypercalcemia, hypercalciuria, and suppressed PTH.
+    evidence_based_diagnosis:
+      - test_name: 25-OH vitamin D level
+        citation: Stern Ch.22
+    treatment_classes:
+      - withdrawal of vitamin D supplementation
+      - intravenous fluid replacement
+      - corticosteroid (refractory)
+    notes: ""
+  - name: Thiazide-induced hypercalcemia
+    role: active_most_common
+    icd10:
+      - T50.2X5A
+    pivotal_features_supporting:
+      - thiazide diuretic use
+      - mild hypercalcemia
+      - resolution after withdrawal (or unmasking of underlying primary HPT if persistent)
+    fingerprint_findings:
+      - hypercalcemia in patient on thiazide
+    textbook_presentation: >-
+      Patient on thiazide diuretic with mild hypercalcemia; if
+      hypercalcemia persists after withdrawal, evaluate for primary
+      hyperparathyroidism.
+    evidence_based_diagnosis:
+      - test_name: Calcium and PTH after withdrawing thiazide
+        citation: Stern Ch.22
+    treatment_classes:
+      - withdraw thiazide and substitute alternative diuretic
+    notes: ""
+  - name: Familial hypocalciuric hypercalcemia (FHH)
+    role: other
+    icd10:
+      - E83.59
+    pivotal_features_supporting:
+      - lifelong mild hypercalcemia
+      - inappropriately normal or mildly elevated PTH
+      - low 24-hour urinary calcium (urine Ca/Cr clearance ratio < 0.01)
+      - family history
+    fingerprint_findings:
+      - calcium/creatinine clearance ratio < 0.01 with hypercalcemia
+    textbook_presentation: >-
+      Asymptomatic mild hypercalcemia with inappropriately normal PTH
+      and low urinary calcium; benign, often familial; do not perform
+      parathyroidectomy.
+    evidence_based_diagnosis:
+      - test_name: 24-hour urinary calcium with calcium/creatinine clearance ratio
+        citation: Stern Ch.22
+      - test_name: Genetic testing for CASR mutations (selected cases)
+        citation: Stern Ch.22
+    treatment_classes:
+      - observation
+    notes: Distinguish from primary HPT to avoid unnecessary parathyroidectomy.
+  - name: Immobilization-induced hypercalcemia
+    role: other
+    icd10:
+      - E83.52
+    pivotal_features_supporting:
+      - prolonged immobilization (especially in patients with high bone turnover — adolescents, Paget, malignancy)
+      - hypercalcemia with hypercalciuria
+    fingerprint_findings:
+      - hypercalcemia developing during prolonged immobilization
+    textbook_presentation: >-
+      Patient with prolonged immobilization (spinal cord injury, ICU,
+      Paget) presenting with hypercalcemia from increased bone
+      resorption.
+    evidence_based_diagnosis:
+      - test_name: Calcium + PTH (suppressed) + history
+        citation: Stern Ch.22
+    treatment_classes:
+      - intravenous fluid replacement
+      - bisphosphonate (zoledronate)
+      - mobilization when feasible
+    notes: ""
+  - name: Hyperthyroidism
+    role: other
+    icd10:
+      - E05.90
+    pivotal_features_supporting:
+      - thyrotoxic features
+      - mild hypercalcemia
+      - suppressed TSH
+    fingerprint_findings:
+      - hypercalcemia with suppressed TSH and clinical thyrotoxicosis
+    textbook_presentation: >-
+      Thyrotoxic patient with mild hypercalcemia from increased bone
+      turnover; resolves with thyroid disease treatment.
+    evidence_based_diagnosis:
+      - test_name: TSH and free T4
+        citation: Stern Ch.22
+    treatment_classes:
+      - antithyroid therapy (per Stern Ch.18 / Ch.32)
+    notes: ""
+  - name: Milk-alkali syndrome
+    role: other
+    icd10:
+      - E83.52
+    pivotal_features_supporting:
+      - large intake of calcium carbonate or alkali
+      - hypercalcemia, alkalosis, AKI
+    fingerprint_findings:
+      - hypercalcemia + alkalosis + AKI in calcium-alkali ingestion
+    textbook_presentation: >-
+      Patient ingesting large amounts of calcium-containing antacids
+      with the triad of hypercalcemia, metabolic alkalosis, and renal
+      injury.
+    evidence_based_diagnosis:
+      - test_name: Basic metabolic panel + history
+        citation: Stern Ch.22
+    treatment_classes:
+      - withdrawal of calcium / alkali
+      - intravenous fluid replacement
+    notes: ""
+  - name: Severe symptomatic hypercalcemia / hypercalcemic crisis
+    role: active_must_not_miss
+    icd10:
+      - E83.52
+    pivotal_features_supporting:
+      - corrected calcium >= 14 mg/dL
+      - altered mental status, severe dehydration, AKI
+      - cardiac arrhythmia, ECG QT shortening
+    fingerprint_findings:
+      - corrected calcium >= 14 + altered mental status
+    textbook_presentation: >-
+      Severe hypercalcemia with profound dehydration, altered mental
+      status, AKI, and risk of arrhythmia; emergent IV fluids,
+      bisphosphonate, calcitonin, possibly dialysis.
+    evidence_based_diagnosis:
+      - test_name: Serum calcium, BMP, ECG, mental status assessment
+        citation: Stern Ch.22
+    treatment_classes:
+      - intravenous fluid replacement (large-volume saline)
+      - calcitonin (rapid short-term)
+      - bisphosphonate (zoledronate or pamidronate)
+      - denosumab (selected refractory or renal failure)
+      - hemodialysis (severe refractory)
+    notes: Avoid loop diuretics until volume-replete; they were once first-line but no longer recommended.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Confirm hypercalcemia (corrected calcium + ionized calcium when available); assess severity and urgency.
+    rationale: Severity drives disposition.
+    branches:
+      - condition: Corrected calcium >= 14 OR symptoms (altered mental status, dehydration, AKI)
+        action: escalate
+        escalation_reason: Hypercalcemic crisis — admit for IV fluids + calcitonin + bisphosphonate.
+      - condition: Mild-moderate
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Ch.22 prose
+  - step_num: 2
+    description: Step 2 — Order intact PTH to split into PTH-mediated vs. PTH-independent.
+    rationale: Stern Ch.22 fundamental split.
+    branches:
+      - condition: PTH high or inappropriately normal
+        action: next_step
+        target_step: 3
+      - condition: PTH suppressed
+        action: next_step
+        target_step: 4
+    derived_from_figure: Stern Ch.22 prose
+  - step_num: 3
+    description: Step 3 — For PTH-mediated, distinguish primary HPT from FHH (24-hour urinary calcium and Ca/Cr clearance ratio) and review medications (lithium, thiazide).
+    branches:
+      - condition: Hypercalciuria
+        action: confirm
+        target_diagnosis: Primary hyperparathyroidism
+      - condition: Hypocalciuria (Ca/Cr clearance ratio < 0.01)
+        action: confirm
+        target_diagnosis: Familial hypocalciuric hypercalcemia (FHH)
+      - condition: Lithium or thiazide use
+        action: order_test
+        test_to_order: Withdraw or substitute and reassess
+    derived_from_figure: Stern Ch.22 prose
+  - step_num: 4
+    description: Step 4 — For PTH-independent, evaluate for malignancy, granulomatous disease, vitamin D toxicity, thyrotoxicosis, immobilization, milk-alkali.
+    branches:
+      - condition: Suspected malignancy
+        action: order_test
+        test_to_order: PTHrP + SPEP / UPEP + age-appropriate cancer screening + imaging
+      - condition: Granulomatous disease or lymphoma
+        action: order_test
+        test_to_order: 1,25-OH vitamin D + 25-OH vitamin D + chest imaging + ACE level
+      - condition: Vitamin D toxicity
+        action: confirm
+        target_diagnosis: Vitamin D toxicity
+      - condition: Hyperthyroid features
+        action: order_test
+        test_to_order: TSH + free T4
+    derived_from_figure: Stern Ch.22 prose
+red_flags:
+  - name: Calcium >= 14 mg/dL with altered mental status, AKI, or arrhythmia
+    description: Hypercalcemic crisis — admit for IV fluids, calcitonin, bisphosphonate.
+    severity: high
+  - name: Suppressed PTH with severe hypercalcemia
+    description: Malignancy until proven otherwise — search for primary tumor.
+    severity: high
+source_pages:
+  - 394
+  - 403
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.22 (pp. 394-403). Frame is mechanistic — PTH-mediated vs.
+  PTH-independent. Algorithm steps 1-4 follow Stern's stepwise approach.
+  Must-not-miss: malignancy, granulomatous disease, severe symptomatic
+  hypercalcemia.

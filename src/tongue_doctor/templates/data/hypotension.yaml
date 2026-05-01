@@ -1,0 +1,386 @@
+complaint: hypotension
+chapter_number: 25
+chapter_title: Hypotension
+framework_type: physiologic
+framework_categories:
+  - Hypovolemic shock (hemorrhage, GI / GU / third-space loss, dehydration)
+  - Cardiogenic shock (MI, HF, arrhythmia, valvular, myocarditis, cardiomyopathy)
+  - Distributive shock (sepsis, anaphylaxis, neurogenic, adrenal crisis)
+  - Obstructive shock (PE, tension pneumothorax, cardiac tamponade)
+  - Mixed shock
+  - Non-shock hypotension (orthostatic, drug-induced, vasovagal)
+pivotal_points:
+  - mental status, urine output, lactate, capillary refill (perfusion)
+  - JVP (low → hypovolemic / distributive; high → cardiogenic / obstructive)
+  - skin findings (warm + flushed → distributive; cool + clammy → hypovolemic / cardiogenic)
+  - bedside echocardiography (LV / RV function, IVC, effusion)
+  - source identification (bleeding, infection, medication, allergic exposure)
+  - response to fluid challenge (improves → hypovolemic / distributive; worsens → cardiogenic / obstructive)
+  - serum lactate (> 2 = tissue hypoperfusion; > 4 = severe)
+  - vital-sign trends (shock index = HR/SBP > 1 suggests shock)
+decision_rules:
+  - name: SOFA score
+    purpose: Quantify organ dysfunction in suspected sepsis
+    citation: Stern Ch.25
+  - name: qSOFA
+    purpose: Rapid bedside sepsis screen
+    inputs:
+      - altered mental status, RR >= 22, SBP <= 100
+    thresholds:
+      - "score >= 2 in suspected infection → high risk for poor outcome"
+    citation: Stern Ch.25
+  - name: Sepsis-3 definition
+    purpose: Define sepsis and septic shock
+    thresholds:
+      - "sepsis = infection + acute SOFA increase >= 2"
+      - "septic shock = sepsis + vasopressor requirement and lactate > 2 despite fluid resuscitation"
+    citation: Stern Ch.25
+differential:
+  - name: Septic shock
+    role: leading
+    icd10:
+      - A41.9
+    pivotal_features_supporting:
+      - infection source
+      - hypotension despite fluid resuscitation requiring vasopressor
+      - elevated lactate (> 2)
+      - fever or hypothermia
+      - tachycardia
+      - altered mental status
+    fingerprint_findings:
+      - hypotension + lactate > 2 + identifiable infection requiring vasopressor
+    textbook_presentation: >-
+      Patient with infection, hypotension, elevated lactate, and
+      organ dysfunction; typical sources include pneumonia, UTI,
+      intra-abdominal, soft-tissue, line.
+    evidence_based_diagnosis:
+      - test_name: Serum lactate, blood cultures (x2), CBC, BMP, urinalysis + culture, source-specific imaging
+        citation: Stern Ch.25
+    treatment_classes:
+      - intravenous fluid resuscitation (30 mL/kg crystalloid first hour)
+      - empiric broad-spectrum antibiotic (within 1 hour)
+      - vasopressor (norepinephrine first-line)
+      - source control (surgical / IR drainage when applicable)
+      - corticosteroid (selected refractory shock)
+    notes: Surviving Sepsis Campaign bundles drive care.
+  - name: Hemorrhagic / hypovolemic shock
+    role: active_must_not_miss
+    icd10:
+      - R57.1
+    pivotal_features_supporting:
+      - active bleeding (GI, trauma, AAA, ectopic, retroperitoneal)
+      - dehydration (GI losses, burns, third-spacing)
+      - flat IVC on bedside ultrasound
+      - low JVP, cool extremities
+      - elevated lactate
+    fingerprint_findings:
+      - hypotension + flat IVC + active bleeding source
+    textbook_presentation: >-
+      Patient with hemorrhage or severe volume depletion presenting
+      with hypotension, tachycardia, elevated lactate, and signs of
+      poor perfusion.
+    evidence_based_diagnosis:
+      - test_name: CBC + lactate + type and crossmatch + coagulation panel
+        citation: Stern Ch.25
+      - test_name: Bedside ultrasound (FAST, IVC, lung)
+        citation: Stern Ch.25
+    treatment_classes:
+      - intravenous fluid replacement
+      - blood product transfusion (PRBC, FFP, platelets per indication)
+      - tranexamic acid (massive bleeding protocol)
+      - source control (procedural — endoscopy, IR, surgery)
+    notes: ""
+  - name: Cardiogenic shock (MI, decompensated HF, valvular failure, arrhythmia, myocarditis)
+    role: active_must_not_miss
+    icd10:
+      - R57.0
+    pivotal_features_supporting:
+      - elevated JVP, S3, pulmonary congestion
+      - cool extremities
+      - reduced LV / RV function on echo
+      - elevated lactate
+      - troponin elevation (MI)
+      - oliguria
+    fingerprint_findings:
+      - hypotension + elevated JVP + pulmonary edema + cool extremities
+    textbook_presentation: >-
+      Patient with hypotension and pulmonary congestion despite
+      adequate volume; MI, severe LV dysfunction, valvular failure,
+      arrhythmia, or myocarditis the typical cause.
+    evidence_based_diagnosis:
+      - test_name: ECG + troponin + bedside echo
+        citation: Stern Ch.25
+      - test_name: BNP + lactate
+        citation: Stern Ch.25
+    treatment_classes:
+      - vasopressor (norepinephrine)
+      - inotrope (dobutamine or milrinone)
+      - revascularization (when MI — PCI / CABG procedural)
+      - mechanical circulatory support (IABP, Impella, ECMO)
+    notes: Treat the underlying cardiac event.
+  - name: Anaphylactic shock
+    role: active_must_not_miss
+    icd10:
+      - T78.2XXA
+    pivotal_features_supporting:
+      - acute exposure to allergen
+      - urticaria, angioedema, bronchospasm
+      - hypotension
+      - distributive pattern (warm vasodilated)
+    fingerprint_findings:
+      - hypotension + urticaria + bronchospasm after allergen exposure
+    textbook_presentation: >-
+      Acute IgE-mediated reaction with hypotension, urticaria,
+      angioedema, bronchospasm after exposure to food, drug, insect
+      sting, or contrast.
+    evidence_based_diagnosis:
+      - test_name: Clinical recognition (treat first)
+        citation: Stern Ch.25
+    treatment_classes:
+      - intramuscular epinephrine (first-line)
+      - intravenous fluid replacement
+      - antihistamine (H1 + H2)
+      - corticosteroid
+      - bronchodilator
+    notes: ""
+  - name: Pulmonary embolism with shock
+    role: active_must_not_miss
+    icd10:
+      - I26.99
+    pivotal_features_supporting:
+      - dyspnea, pleuritic chest pain
+      - tachycardia, hypoxemia
+      - elevated JVP, RV dysfunction on echo
+      - elevated D-dimer
+      - VTE risk factors
+    fingerprint_findings:
+      - hypotension + RV strain + elevated D-dimer + VTE risk
+    textbook_presentation: >-
+      Patient with acute dyspnea, hypotension, and RV dysfunction;
+      CT-PA confirms; massive PE may require thrombolysis.
+    evidence_based_diagnosis:
+      - test_name: Bedside echo (RV strain, McConnell sign)
+        citation: Stern Ch.15 / Ch.25
+      - test_name: CT pulmonary angiography
+        citation: Stern Ch.15
+    treatment_classes:
+      - anticoagulant
+      - thrombolytic (massive PE — when no contraindications)
+      - mechanical circulatory support / catheter-directed thrombolysis (selected)
+    notes: ""
+  - name: Cardiac tamponade
+    role: active_must_not_miss
+    icd10:
+      - I31.4
+    pivotal_features_supporting:
+      - elevated JVP, distant heart sounds, pulsus paradoxus (Beck triad)
+      - large pericardial effusion on echo
+      - electrical alternans
+      - obstructive physiology
+    fingerprint_findings:
+      - Beck triad + pulsus paradoxus + tamponade physiology on echo
+    textbook_presentation: >-
+      Hypotension with elevated JVP, distant heart sounds, and pulsus
+      paradoxus; bedside echo confirms.
+    evidence_based_diagnosis:
+      - test_name: Bedside echo
+        citation: Stern Ch.15 / Ch.25
+    treatment_classes:
+      - intravenous fluid replacement (cautious bridge)
+    notes: Pericardiocentesis is procedural and time-critical.
+  - name: Tension pneumothorax
+    role: active_must_not_miss
+    icd10:
+      - J93.0
+    pivotal_features_supporting:
+      - hypotension + hypoxia
+      - tracheal deviation
+      - absent breath sounds + hyperresonance unilaterally
+      - elevated JVP
+      - history of trauma / mechanical ventilation / underlying lung disease
+    fingerprint_findings:
+      - tracheal deviation + absent breath sounds + hypotension
+    textbook_presentation: >-
+      Acute hypoxemia and hypotension with absent breath sounds and
+      tracheal deviation; bedside ultrasound (absent lung sliding)
+      supports.
+    evidence_based_diagnosis:
+      - test_name: Clinical diagnosis (do NOT delay for imaging)
+        citation: Stern Ch.25
+    treatment_classes: []
+    notes: Needle decompression / chest tube — procedural and immediate.
+  - name: Adrenal crisis
+    role: active_must_not_miss
+    icd10:
+      - E27.2
+    pivotal_features_supporting:
+      - known adrenal insufficiency or chronic steroid use with sudden withdrawal / stress
+      - hypotension refractory to fluids
+      - hyponatremia + hyperkalemia
+      - hypoglycemia
+      - hyperpigmentation (primary)
+    fingerprint_findings:
+      - hypotension refractory to fluids in patient with known adrenal disease or steroid taper
+    textbook_presentation: >-
+      Patient with adrenal insufficiency or recent steroid taper
+      presenting with hypotension, hyponatremia, hyperkalemia,
+      hypoglycemia, and abdominal pain; empiric hydrocortisone.
+    evidence_based_diagnosis:
+      - test_name: Cortisol + ACTH (do NOT delay therapy)
+        citation: Stern Ch.18 / Ch.25
+    treatment_classes:
+      - intravenous hydrocortisone (high-dose stress dosing)
+      - intravenous fluid replacement
+      - dextrose (hypoglycemia)
+    notes: Treat empirically when suspected; do not wait for cortisol result.
+  - name: Neurogenic shock
+    role: active_most_common
+    icd10:
+      - R57.8
+    pivotal_features_supporting:
+      - acute spinal cord injury (typically above T6)
+      - hypotension with bradycardia (loss of sympathetic tone)
+      - warm dry extremities
+    fingerprint_findings:
+      - hypotension + bradycardia after high spinal cord injury
+    textbook_presentation: >-
+      Acute spinal cord injury with hypotension, bradycardia, and
+      warm extremities from loss of sympathetic outflow.
+    evidence_based_diagnosis:
+      - test_name: Trauma evaluation including spinal imaging
+        citation: Stern Ch.25
+    treatment_classes:
+      - intravenous fluid replacement
+      - vasopressor (norepinephrine or phenylephrine)
+      - chronotropic support (atropine, glycopyrrolate for bradycardia)
+    notes: ""
+  - name: Drug-induced or vasovagal hypotension
+    role: active_most_common
+    icd10:
+      - I95.9
+    pivotal_features_supporting:
+      - antihypertensive overdose, beta-blocker / calcium channel blocker / nitrate
+      - opioid overdose
+      - vasovagal stimulus (phlebotomy, micturition, fear)
+      - drug history
+      - resolution after withdrawal / antidote
+    fingerprint_findings:
+      - hypotension after medication ingestion or known vasovagal trigger
+    textbook_presentation: >-
+      Hypotension from medication ingestion, illicit drug overdose,
+      or vasovagal episode; reversible with appropriate antidote or
+      withdrawal.
+    evidence_based_diagnosis:
+      - test_name: Medication / substance review
+        citation: Stern Ch.25
+    treatment_classes:
+      - intravenous fluid replacement
+      - antidote (glucagon, calcium, lipid emulsion, naloxone) per overdose
+      - withdraw offending agent
+    notes: ""
+  - name: Orthostatic hypotension
+    role: active_most_common
+    icd10:
+      - I95.1
+    pivotal_features_supporting:
+      - drop in SBP >= 20 or DBP >= 10 within 3 minutes of standing
+      - older age, dehydration, diabetes (autonomic neuropathy), Parkinson, antihypertensives
+      - reproducible orthostatic decline
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Patient with reproducible orthostatic BP drop and symptoms;
+      cross-reference Stern Ch.31 (Syncope) and Ch.14 (Dizziness).
+    evidence_based_diagnosis:
+      - test_name: Orthostatic BP measurements
+        citation: Stern Ch.25 / Ch.31
+    treatment_classes:
+      - increased salt and water intake
+      - compression stockings
+      - midodrine
+      - fludrocortisone
+      - medication review
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Confirm shock (perfusion failure beyond BP alone) — assess mental status, urine output, lactate, capillary refill, mottling.
+    rationale: BP alone is insensitive; perfusion features identify shock earlier.
+    branches:
+      - condition: Shock features present
+        action: next_step
+        target_step: 2
+      - condition: Asymptomatic low BP without perfusion failure (orthostatic, vasovagal, drug-induced)
+        action: order_test
+        test_to_order: Orthostatic BP, medication review, recovery monitoring
+    derived_from_figure: Stern Ch.25 prose
+  - step_num: 2
+    description: Step 2 — Classify shock physiology (hypovolemic / cardiogenic / distributive / obstructive) using JVP, lung exam, skin, and bedside echo.
+    rationale: Stern Ch.25 framework — different physiologies require different therapy.
+    branches:
+      - condition: Low JVP + flat IVC + hemorrhage / volume loss
+        action: confirm
+        target_diagnosis: Hemorrhagic / hypovolemic shock
+      - condition: Elevated JVP + pulmonary edema + reduced LV function
+        action: confirm
+        target_diagnosis: Cardiogenic shock (MI, decompensated HF, valvular failure, arrhythmia, myocarditis)
+      - condition: Warm extremities + suspected infection
+        action: confirm
+        target_diagnosis: Septic shock
+      - condition: Anaphylaxis features
+        action: confirm
+        target_diagnosis: Anaphylactic shock
+      - condition: Tension pneumothorax / tamponade / massive PE features
+        action: escalate
+        escalation_reason: Obstructive shock — emergent intervention (needle decompression, pericardiocentesis, thrombolysis).
+    derived_from_figure: Stern Ch.25 prose
+  - step_num: 3
+    description: Step 3 — Initiate physiology-specific resuscitation — IV access, fluid challenge if appropriate, source control, vasoactive therapy.
+    rationale: Tailor therapy.
+    branches:
+      - condition: Sepsis suspected
+        action: treat_empiric
+        notes: Lactate + cultures + 30 mL/kg crystalloid + broad-spectrum antibiotics within 1 hour + source control.
+      - condition: Cardiogenic shock
+        action: treat_empiric
+        notes: Vasopressor + inotrope + treat underlying MI / arrhythmia / valvular failure.
+      - condition: Hemorrhagic shock
+        action: treat_empiric
+        notes: Resuscitation with blood products (massive transfusion protocol if needed) + source control.
+      - condition: Anaphylaxis
+        action: treat_empiric
+        notes: IM epinephrine + airway + IV fluids + antihistamines / corticosteroids.
+    derived_from_figure: Stern Ch.25 prose
+  - step_num: 4
+    description: Step 4 — Reassess perfusion targets (lactate clearance, mental status, urine output) and adjust therapy.
+    rationale: Iterative reassessment.
+    branches:
+      - condition: Persistent shock despite resuscitation
+        action: escalate
+        escalation_reason: Refractory shock — consider mechanical support (ECMO, IABP, Impella), additional source control, or alternative diagnosis.
+      - condition: Improving
+        action: reassess
+        target_step: 1
+    derived_from_figure: Stern Ch.25 prose
+red_flags:
+  - name: Hypotension + lactate > 4
+    description: Severe shock — emergent resuscitation; identify cause within first hour.
+    severity: high
+  - name: Hypotension refractory to fluids in patient with adrenal disease or steroid taper
+    description: Adrenal crisis — empiric hydrocortisone immediately.
+    severity: high
+  - name: Hypotension + tracheal deviation + absent breath sounds
+    description: Tension pneumothorax — needle decompression.
+    severity: high
+  - name: Hypotension + Beck triad (JVP, distant sounds, pulsus paradoxus)
+    description: Cardiac tamponade — pericardiocentesis.
+    severity: high
+source_pages:
+  - 442
+  - 455
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.25 (pp. 442-455). Frame is physiologic — shock category drives
+  therapy. Algorithm steps mirror Stern's stepwise approach. Must-not-miss
+  bucket: septic shock, hemorrhagic shock, cardiogenic shock, obstructive
+  shock (PE / tamponade / tension PTX), anaphylaxis, adrenal crisis.

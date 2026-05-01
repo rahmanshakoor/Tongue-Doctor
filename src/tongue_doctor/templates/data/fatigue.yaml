@@ -1,0 +1,409 @@
+complaint: fatigue
+chapter_number: 18
+chapter_title: Fatigue
+framework_type: categorical
+framework_categories:
+  - Common medical (anemia, hypothyroidism, sleep disorder, OSA)
+  - Psychiatric (depression, anxiety)
+  - Medication / substance
+  - Chronic disease (HF, COPD, CKD, malignancy, autoimmune)
+  - Endocrine (adrenal insufficiency, diabetes, hypogonadism)
+  - Infectious (mononucleosis, chronic infection, post-viral)
+  - Functional (chronic fatigue syndrome / ME-CFS)
+pivotal_points:
+  - duration (acute < 1 month, prolonged 1-6 months, chronic >= 6 months)
+  - tiredness vs. true fatigue (decreased performance) vs. somnolence (sleep tendency)
+  - associated red-flag symptoms (weight loss, fever, night sweats, lymphadenopathy, dyspnea, focal deficits)
+  - sleep quality (snoring, witnessed apnea, daytime somnolence → OSA)
+  - medication / substance review
+  - mood / anxiety / stressors
+  - menstrual / GI bleeding (anemia)
+  - chronic disease progression
+decision_rules:
+  - name: PHQ-9
+    purpose: Screen for depression in fatigued patients
+    thresholds:
+      - "0-4 minimal; 5-9 mild; 10-14 moderate; 15-19 moderately severe; >= 20 severe"
+    citation: Stern Ch.18
+  - name: STOP-BANG (OSA screen)
+    purpose: Screen for obstructive sleep apnea
+    inputs:
+      - Snoring, Tired, Observed apnea, Pressure (BP), BMI > 35, Age > 50, Neck > 40 cm, Gender male
+    thresholds:
+      - ">= 3 = intermediate risk; >= 5 = high risk; refer for sleep study"
+    citation: Stern Ch.18
+differential:
+  - name: Depression
+    role: leading
+    icd10:
+      - F32.9
+    pivotal_features_supporting:
+      - depressed mood, anhedonia
+      - sleep disturbance (insomnia or hypersomnia)
+      - appetite change
+      - psychomotor change
+      - low energy
+      - poor concentration
+      - guilt / worthlessness
+      - suicidal ideation
+    fingerprint_findings:
+      - PHQ-9 >= 10 with anhedonia and depressed mood
+    textbook_presentation: >-
+      Patient with fatigue plus core depression features (depressed
+      mood, anhedonia, sleep / appetite disturbance, guilt, decreased
+      concentration); PHQ-9 quantifies severity.
+    evidence_based_diagnosis:
+      - test_name: PHQ-9 score
+        sensitivity: 0.88
+        specificity: 0.85
+        citation: Stern Ch.18
+    treatment_classes:
+      - SSRI / SNRI
+      - cognitive behavioral therapy
+      - psychotherapy (other modalities)
+      - bupropion (when sexual side effects undesired)
+    notes: Always assess suicidality.
+  - name: Anemia (iron-deficiency, B12, anemia of inflammation, hemolytic, marrow failure)
+    role: active_must_not_miss
+    icd10:
+      - D64.9
+    pivotal_features_supporting:
+      - pallor, conjunctival pallor
+      - exertional dyspnea, palpitations
+      - source of bleeding
+      - microcytic / normocytic / macrocytic pattern
+    fingerprint_findings:
+      - low hemoglobin with smear and reticulocyte clarifying mechanism
+    textbook_presentation: >-
+      Fatigue with pallor and exercise intolerance; CBC and smear
+      identify; cross-reference Stern Ch.6.
+    evidence_based_diagnosis:
+      - test_name: CBC + reticulocyte index + peripheral smear
+        citation: Stern Ch.6
+      - test_name: Iron studies, B12, folate, MMA / homocysteine
+        citation: Stern Ch.6
+    treatment_classes:
+      - iron replacement
+      - B12 / folate replacement
+      - source identification (GI / GU / menstrual)
+      - transfusion (severe symptomatic anemia)
+    notes: Cross-reference Stern Ch.6.
+  - name: Hypothyroidism
+    role: active_most_common
+    icd10:
+      - E03.9
+    pivotal_features_supporting:
+      - fatigue, cold intolerance, weight gain
+      - constipation, dry skin, hair thinning
+      - slow reflexes, bradycardia
+      - elevated TSH with low free T4
+    fingerprint_findings:
+      - elevated TSH with classic features (cold intolerance, dry skin, slow reflexes)
+    textbook_presentation: >-
+      Fatigue with cold intolerance, weight gain, constipation, dry
+      skin, and slowed reflexes; TSH elevated, free T4 low.
+    evidence_based_diagnosis:
+      - test_name: Serum TSH (with reflex free T4)
+        sensitivity: 0.95
+        specificity: 0.95
+        citation: Stern Ch.18
+    treatment_classes:
+      - levothyroxine
+    notes: Subclinical (elevated TSH, normal T4) treated selectively.
+  - name: Obstructive sleep apnea
+    role: active_most_common
+    icd10:
+      - G47.33
+    pivotal_features_supporting:
+      - snoring, witnessed apneas
+      - daytime somnolence
+      - obesity, large neck, hypertension
+      - elevated STOP-BANG score
+    fingerprint_findings:
+      - snoring + witnessed apnea + daytime somnolence in obese hypertensive patient
+    textbook_presentation: >-
+      Fatigue and daytime somnolence with snoring, witnessed apnea, and
+      hypertension; polysomnography or home sleep apnea testing
+      diagnostic.
+    evidence_based_diagnosis:
+      - test_name: STOP-BANG screen
+        citation: Stern Ch.18
+      - test_name: Polysomnography or home sleep apnea testing
+        citation: Stern Ch.18
+    treatment_classes:
+      - continuous positive airway pressure (CPAP)
+      - bilevel positive airway pressure
+      - weight reduction
+      - oral appliance (mild cases)
+    notes: ""
+  - name: Medication- or substance-induced fatigue
+    role: active_most_common
+    icd10:
+      - T50.995A
+    pivotal_features_supporting:
+      - antihistamines, opioids, benzodiazepines, antidepressants, beta-blockers, antiepileptics
+      - alcohol, marijuana, opioids, CNS depressants
+      - resolution after withdrawal
+    fingerprint_findings:
+      - new fatigue after starting suspect medication
+    textbook_presentation: >-
+      Fatigue temporally related to a sedating medication or substance;
+      improves on dose reduction or substitution.
+    evidence_based_diagnosis:
+      - test_name: Medication / substance review
+        citation: Stern Ch.18
+    treatment_classes:
+      - withdraw or substitute
+    notes: ""
+  - name: Adrenal insufficiency
+    role: active_must_not_miss
+    icd10:
+      - E27.40
+    pivotal_features_supporting:
+      - fatigue, weakness, weight loss
+      - hypotension / orthostasis
+      - hyperpigmentation (primary)
+      - hyponatremia, hyperkalemia (primary)
+      - hypoglycemia
+      - corticosteroid use history (secondary)
+    fingerprint_findings:
+      - hyperpigmentation + hyponatremia + hyperkalemia + low cortisol
+    textbook_presentation: >-
+      Fatigue, weakness, weight loss, hyponatremia, and orthostasis;
+      primary disease shows hyperpigmentation and hyperkalemia;
+      ACTH stimulation test confirms.
+    evidence_based_diagnosis:
+      - test_name: 8 AM cortisol + ACTH
+        citation: Stern Ch.18
+      - test_name: ACTH (cosyntropin) stimulation test
+        sensitivity: 0.95
+        specificity: 0.95
+        citation: Stern Ch.18
+    treatment_classes:
+      - glucocorticoid replacement
+      - mineralocorticoid replacement (primary disease)
+    notes: Adrenal crisis is a medical emergency.
+  - name: Diabetes (especially uncontrolled or new-onset Type 1)
+    role: active_must_not_miss
+    icd10:
+      - E11.9
+      - E10.9
+    pivotal_features_supporting:
+      - polyuria, polydipsia, weight loss
+      - glucose abnormalities
+      - ketosis (Type 1 / DKA)
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Fatigue with hyperglycemia features; cross-reference Stern Ch.12.
+    evidence_based_diagnosis:
+      - test_name: Random or fasting plasma glucose, HbA1c
+        citation: Stern Ch.12
+    treatment_classes:
+      - lifestyle modification
+      - oral hypoglycemic agent
+      - insulin therapy
+    notes: Cross-reference Stern Ch.12.
+  - name: Heart failure / chronic cardiac disease
+    role: active_must_not_miss
+    icd10:
+      - I50.9
+    pivotal_features_supporting:
+      - exertional dyspnea
+      - elevated JVP, S3, edema, orthopnea
+      - elevated BNP
+      - reduced or preserved EF
+    fingerprint_findings:
+      - exertional fatigue with elevated BNP and HF features
+    textbook_presentation: >-
+      Fatigue limiting daily activities with HF features; cross-reference
+      Stern Ch.15.
+    evidence_based_diagnosis:
+      - test_name: BNP / NT-proBNP
+        citation: Stern Ch.15
+      - test_name: Echocardiogram
+        citation: Stern Ch.15
+    treatment_classes:
+      - guideline-directed HF therapy
+    notes: Cross-reference Stern Ch.15.
+  - name: Malignancy (occult or known)
+    role: active_must_not_miss
+    icd10:
+      - C80.1
+    pivotal_features_supporting:
+      - unexplained weight loss
+      - night sweats
+      - lymphadenopathy
+      - new pain
+      - anemia of inflammation
+      - elevated alkaline phosphatase, calcium, or LDH
+    fingerprint_findings:
+      - unexplained fatigue + weight loss + night sweats + lymphadenopathy
+    textbook_presentation: >-
+      Constitutional symptoms (fatigue + weight loss + night sweats),
+      lymphadenopathy, anemia, or organ-specific symptoms; targeted
+      workup per leading clue; cross-reference Stern Ch.32 (Weight
+      Loss).
+    evidence_based_diagnosis:
+      - test_name: Targeted history + exam + age-appropriate cancer screening
+        citation: Stern Ch.18 / Ch.32
+      - test_name: Imaging (CT chest / abdomen / pelvis when localized symptoms or constitutional symptoms unexplained)
+        citation: Stern Ch.32
+    treatment_classes:
+      - oncology referral (treatment per cancer type)
+    notes: Cross-reference Stern Ch.32.
+  - name: Chronic infection (HIV, hepatitis B/C, TB, infective endocarditis, chronic sinusitis, dental infection)
+    role: active_must_not_miss
+    icd10:
+      - B20
+      - B19.9
+    pivotal_features_supporting:
+      - chronic constitutional symptoms
+      - HIV risk factors
+      - cardiac murmur (endocarditis)
+      - night sweats / weight loss / fevers
+    fingerprint_findings:
+      - chronic fatigue with HIV risk factors
+    textbook_presentation: >-
+      Fatigue with constitutional symptoms suggestive of chronic
+      infection; HIV testing, hepatitis screening, tuberculin testing,
+      blood cultures (when endocarditis suspected) identify.
+    evidence_based_diagnosis:
+      - test_name: HIV antigen/antibody combination
+        citation: Stern Ch.5
+      - test_name: Hepatitis B and C screening
+        citation: Stern Ch.18
+      - test_name: TB testing (IGRA or TST)
+        citation: Stern Ch.10
+      - test_name: Blood cultures (when endocarditis suspected)
+        citation: Stern Ch.18
+    treatment_classes:
+      - pathogen-specific therapy
+    notes: ""
+  - name: Mononucleosis (acute) / post-viral fatigue
+    role: active_most_common
+    icd10:
+      - B27.90
+    pivotal_features_supporting:
+      - sore throat, lymphadenopathy, fatigue
+      - fever
+      - hepatosplenomegaly
+      - atypical lymphocytosis
+      - positive heterophile or EBV antibodies
+    fingerprint_findings:
+      - sore throat + lymphadenopathy + atypical lymphocytes + heterophile-positive
+    textbook_presentation: >-
+      Adolescent or young adult with sore throat, lymphadenopathy,
+      fatigue, fevers, and splenomegaly; heterophile antibody test
+      diagnostic; avoid contact sports for 4-6 weeks (splenic rupture
+      risk).
+    evidence_based_diagnosis:
+      - test_name: Heterophile antibody (Monospot)
+        sensitivity: 0.85
+        specificity: 0.95
+        citation: Stern Ch.30
+      - test_name: EBV serology (when heterophile negative early)
+        citation: Stern Ch.30
+    treatment_classes:
+      - supportive care
+      - corticosteroid (selected severe airway compromise)
+    notes: Cross-reference Stern Ch.30 (Sore Throat).
+  - name: Chronic kidney disease, chronic liver disease, COPD, autoimmune disease
+    role: active_most_common
+    icd10:
+      - N18.9
+      - K72.90
+      - J44.9
+    pivotal_features_supporting:
+      - chronic systemic disease causing fatigue independent of acute illness
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Fatigue as a feature of established chronic systemic disease; treat
+      the underlying disease and screen for reversible contributors
+      (anemia, depression, sleep disorder, deconditioning).
+    evidence_based_diagnosis:
+      - test_name: BMP, eGFR, LFTs, spirometry, autoimmune screening as indicated
+        citation: Stern Ch.18
+    treatment_classes:
+      - guideline-directed therapy of underlying disease
+      - rehabilitation
+    notes: ""
+  - name: Chronic fatigue syndrome / ME-CFS
+    role: other
+    icd10:
+      - G93.32
+    pivotal_features_supporting:
+      - profound fatigue lasting >= 6 months
+      - post-exertional malaise
+      - unrefreshing sleep
+      - cognitive impairment or orthostatic intolerance
+      - exclusion of other causes
+    fingerprint_findings:
+      - post-exertional malaise lasting > 24 hours after minimal activity
+    textbook_presentation: >-
+      Persistent disabling fatigue >= 6 months with post-exertional
+      malaise, unrefreshing sleep, and cognitive or orthostatic
+      symptoms; diagnosis of exclusion per IOM criteria.
+    evidence_based_diagnosis:
+      - test_name: IOM 2015 criteria (Systemic Exertion Intolerance Disease)
+        citation: Stern Ch.18
+    treatment_classes:
+      - graded activity / pacing
+      - cognitive behavioral therapy
+      - sleep hygiene
+      - symptom-targeted pharmacotherapy
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Triage by duration and red flags (acute < 1 month, prolonged 1-6 months, chronic >= 6 months; alarm features = unintentional weight loss, fever, night sweats, dyspnea, focal deficit).
+    rationale: Stern Ch.18 prose.
+    branches:
+      - condition: Alarm features present (weight loss, fever, night sweats, lymphadenopathy, focal deficit)
+        action: order_test
+        test_to_order: Targeted workup including imaging, infectious / oncologic screen
+      - condition: No alarm features
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Ch.18
+  - step_num: 2
+    description: Step 2 — Screen for common medical causes — anemia, hypothyroidism, OSA, depression, medications, diabetes, kidney / liver disease.
+    rationale: Highest-yield common causes with treatable interventions.
+    branches:
+      - condition: Initial screen positive for one cause
+        action: confirm
+        target_diagnosis: Targeted diagnosis (per workup result)
+      - condition: All initial screens negative
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Ch.18
+  - step_num: 3
+    description: Step 3 — Expand to less common causes — adrenal insufficiency, chronic infection, autoimmune, occult malignancy.
+    rationale: When common causes excluded, expand workup.
+    branches:
+      - condition: Endocrine / autoimmune / infectious / oncologic concern
+        action: order_test
+        test_to_order: ACTH stim, HIV, hepatitis B/C, ANA, ESR/CRP, age-appropriate cancer screening, CT imaging when localized
+      - condition: All workup unremarkable + criteria met
+        action: confirm
+        target_diagnosis: Chronic fatigue syndrome / ME-CFS
+    derived_from_figure: Stern Ch.18
+red_flags:
+  - name: Fatigue + unexplained weight loss + night sweats / lymphadenopathy
+    description: Occult malignancy or chronic infection — targeted imaging and screening.
+    severity: high
+  - name: Fatigue + hyponatremia + hyperkalemia + hypotension
+    description: Adrenal insufficiency — emergent cortisol and ACTH stim; treat empirically with hydrocortisone in crisis.
+    severity: high
+  - name: Fatigue + chest pain or focal neurologic deficit
+    description: Underlying cardiac or stroke event presenting as fatigue.
+    severity: high
+source_pages:
+  - 342
+  - 351
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.18 (pp. 342-351). Frame is categorical with broad differential.
+  Step 1-3 algorithm screens common causes first, then less common, then
+  diagnosis of exclusion (ME-CFS). Cross-references Stern Ch.5, Ch.6,
+  Ch.10, Ch.12, Ch.15, Ch.30, Ch.32.

@@ -1,0 +1,473 @@
+complaint: diabetes
+chapter_number: 12
+chapter_title: Diabetes
+framework_type: categorical
+framework_categories:
+  - Diabetes type (Type 1, Type 2, gestational, secondary)
+  - Acute hyperglycemic emergency (DKA vs. HHS)
+  - Hypoglycemia
+  - Microvascular and macrovascular complications
+pivotal_points:
+  - polyuria, polydipsia, polyphagia, and unexplained weight loss
+  - fasting plasma glucose, 2-hour OGTT, HbA1c, random glucose with symptoms
+  - presence of ketonuria / ketonemia (suggests Type 1 or DKA)
+  - patient age, body habitus, family history, and ethnicity
+  - presence of acute hyperglycemic emergency (DKA, HHS) — anion-gap acidosis with ketones vs. profound hyperglycemia + hyperosmolality without significant ketosis
+  - presence of microvascular complications (retinopathy, nephropathy, neuropathy)
+  - presence of macrovascular complications (CHD, stroke, peripheral artery disease)
+  - secondary causes (pancreatic disease, endocrinopathies, medications including corticosteroids and antiretrovirals)
+decision_rules:
+  - name: ADA diagnostic criteria for diabetes
+    purpose: Diagnose diabetes from any one of the following on two separate occasions (or single test plus classic symptoms)
+    inputs:
+      - HbA1c
+      - fasting plasma glucose
+      - 2-hour plasma glucose during 75-g OGTT
+      - random plasma glucose with classic symptoms
+    thresholds:
+      - "HbA1c >= 6.5%"
+      - "fasting plasma glucose >= 126 mg/dL (after 8-hour fast)"
+      - "2-hour 75-g OGTT plasma glucose >= 200 mg/dL"
+      - "random plasma glucose >= 200 mg/dL with classic hyperglycemia symptoms"
+      - "Prediabetes: HbA1c 5.7-6.4%; FPG 100-125; 2-hour OGTT 140-199"
+    citation: Stern Ch.12 (ADA criteria)
+  - name: USPSTF / ADA diabetes screening
+    purpose: Identify adults to screen
+    inputs:
+      - adults 35-70 with overweight / obesity
+      - earlier onset for high-risk ethnicity, family history, hypertension, dyslipidemia, prior gestational diabetes, or PCOS
+    citation: Stern Ch.12
+  - name: DKA criteria
+    purpose: Define diabetic ketoacidosis
+    thresholds:
+      - "plasma glucose > 250 mg/dL"
+      - "anion-gap metabolic acidosis (anion gap > 12, HCO3 < 18)"
+      - "ketonemia (beta-hydroxybutyrate elevated) or ketonuria"
+      - "pH < 7.30"
+    citation: Stern Ch.12
+  - name: HHS criteria
+    purpose: Define hyperosmolar hyperglycemic state
+    thresholds:
+      - "plasma glucose > 600 mg/dL"
+      - "serum osmolality > 320 mOsm/kg"
+      - "minimal ketosis"
+      - "altered mental status"
+    citation: Stern Ch.12
+differential:
+  - name: Type 2 diabetes mellitus
+    role: leading
+    icd10:
+      - E11.9
+    pivotal_features_supporting:
+      - adult onset (often, though increasing in youth)
+      - obesity / metabolic syndrome
+      - family history
+      - high-risk ethnicity (African American, Hispanic, Asian, Native American, Pacific Islander)
+      - acanthosis nigricans
+      - relative insulin deficiency with insulin resistance
+    fingerprint_findings:
+      - acanthosis nigricans + obesity + family history of T2DM
+    textbook_presentation: >-
+      Adult with overweight / obesity presenting with polyuria,
+      polydipsia, fatigue, and elevated fasting or HbA1c values; often
+      detected during routine screening before symptoms develop.
+    evidence_based_diagnosis:
+      - test_name: HbA1c
+        sensitivity: 0.85
+        specificity: 0.92
+        note: ">= 6.5% diagnostic; reflects 2-3 month average glycemia."
+        citation: Stern Ch.12 (ADA)
+      - test_name: Fasting plasma glucose
+        note: ">= 126 mg/dL on two separate occasions diagnostic."
+        citation: Stern Ch.12
+      - test_name: 2-hour 75-g OGTT
+        note: ">= 200 mg/dL diagnostic."
+        citation: Stern Ch.12
+    treatment_classes:
+      - lifestyle modification (medical nutrition therapy + exercise + weight loss)
+      - biguanide (metformin)
+      - GLP-1 receptor agonist
+      - SGLT2 inhibitor
+      - DPP-4 inhibitor
+      - sulfonylurea
+      - thiazolidinedione
+      - insulin therapy (when targets not met or contraindications to oral agents)
+    notes: Choice of agent considers ASCVD, HF, CKD, weight goals, hypoglycemia risk; current guidelines favor SGLT2i / GLP-1 in patients with cardiovascular or renal disease.
+  - name: Type 1 diabetes mellitus
+    role: active_must_not_miss
+    icd10:
+      - E10.9
+    pivotal_features_supporting:
+      - younger age (often pediatric, but 7.5-10% of "Type 2" adults are actually Type 1)
+      - acute or subacute presentation with weight loss, polyuria, polydipsia
+      - lean body habitus
+      - positive autoantibodies (anti-GAD, anti-IA-2, anti-insulin, ICA)
+      - low or undetectable C-peptide
+      - presentation with DKA
+      - associated autoimmune conditions
+    fingerprint_findings:
+      - new-onset diabetes presenting with DKA in a lean patient
+    textbook_presentation: >-
+      Acute or subacute polyuria, polydipsia, weight loss in a typically
+      lean patient, often presenting with diabetic ketoacidosis; positive
+      autoantibodies and low C-peptide confirm.
+    evidence_based_diagnosis:
+      - test_name: Diabetes autoantibody panel (anti-GAD, anti-IA-2, anti-insulin, islet-cell antibodies)
+        sensitivity: 0.85
+        specificity: 0.95
+        note: Positive in 85-90% of new Type 1 patients.
+        citation: Stern Ch.12
+      - test_name: Fasting C-peptide
+        note: Low or undetectable supports Type 1.
+        citation: Stern Ch.12
+    treatment_classes:
+      - insulin therapy (multiple daily injections or continuous subcutaneous insulin)
+      - continuous glucose monitoring
+      - medical nutrition therapy
+    notes: Insulin is always required in Type 1 diabetes; never withhold even in stable outpatients.
+  - name: Diabetic ketoacidosis (DKA)
+    role: active_must_not_miss
+    icd10:
+      - E10.10
+      - E11.10
+    pivotal_features_supporting:
+      - polyuria, polydipsia, vomiting, abdominal pain
+      - Kussmaul respirations
+      - dehydration
+      - plasma glucose typically > 250 mg/dL
+      - anion-gap metabolic acidosis with elevated beta-hydroxybutyrate
+    fingerprint_findings:
+      - anion-gap metabolic acidosis + ketonemia + hyperglycemia in diabetic patient
+    textbook_presentation: >-
+      Patient with Type 1 (or new-onset) diabetes presenting with vomiting,
+      abdominal pain, Kussmaul respirations, hyperglycemia, ketonemia, and
+      anion-gap metabolic acidosis — often triggered by infection, missed
+      insulin, or new diagnosis.
+    evidence_based_diagnosis:
+      - test_name: Plasma glucose, basic metabolic panel, beta-hydroxybutyrate, anion gap, venous or arterial pH
+        citation: Stern Ch.12
+      - test_name: Search for trigger (infection, MI, missed insulin, new T1DM, drug effect)
+        citation: Stern Ch.12
+    treatment_classes:
+      - intravenous fluid replacement (isotonic saline, then half-normal saline as sodium permits)
+      - intravenous insulin therapy (regular insulin infusion)
+      - electrolyte repletion (potassium especially; phosphate selectively)
+      - bicarbonate replacement (only severe acidemia, controversial)
+    notes: Continue insulin until anion gap closes, even when glucose normalizes. SGLT2 inhibitors can produce euglycemic DKA — keep on differential despite normal glucose.
+  - name: Hyperosmolar hyperglycemic state (HHS)
+    role: active_must_not_miss
+    icd10:
+      - E11.00
+    pivotal_features_supporting:
+      - older Type 2 diabetic patient
+      - profound hyperglycemia (often > 600 mg/dL)
+      - elevated serum osmolality (> 320 mOsm/kg)
+      - severe dehydration
+      - altered mental status
+      - minimal ketosis or acidosis
+    fingerprint_findings:
+      - extreme hyperglycemia + hyperosmolality + altered mental status without significant ketosis
+    textbook_presentation: >-
+      Older patient with Type 2 diabetes presenting with profound
+      hyperglycemia, dehydration, hyperosmolality, and altered mental
+      status; often precipitated by infection or medication non-adherence.
+    evidence_based_diagnosis:
+      - test_name: Plasma glucose + serum osmolality + basic metabolic panel + venous pH + ketones
+        note: Glucose > 600, osmolality > 320, minimal ketosis.
+        citation: Stern Ch.12
+    treatment_classes:
+      - intravenous fluid replacement (large volume — typical fluid deficit 8-10 L)
+      - intravenous insulin therapy
+      - electrolyte repletion (especially potassium)
+    notes: Mortality higher than DKA; correct fluid deficit slowly to avoid cerebral edema.
+  - name: Hypoglycemia (insulin- or sulfonylurea-induced; insulinoma)
+    role: active_must_not_miss
+    icd10:
+      - E16.2
+      - E16.1
+    pivotal_features_supporting:
+      - autonomic symptoms (sweating, tremor, palpitations, anxiety)
+      - neuroglycopenic symptoms (confusion, behavior change, seizure, coma)
+      - low fingerstick or serum glucose
+      - resolution with glucose
+      - insulin or sulfonylurea use
+      - fasting hypoglycemia (consider insulinoma, factitious, post-bariatric)
+    fingerprint_findings:
+      - Whipple triad — symptoms + low documented glucose + symptom relief with glucose
+    textbook_presentation: >-
+      Diabetic patient on insulin / sulfonylurea with sweating, tremor,
+      confusion, or seizure that resolves with glucose; or non-diabetic
+      with fasting hypoglycemia (insulinoma) or postprandial hypoglycemia
+      (post-bariatric).
+    evidence_based_diagnosis:
+      - test_name: Bedside or serum glucose
+        note: Whipple triad establishes diagnosis.
+        citation: Stern Ch.12
+      - test_name: Insulin / C-peptide / pro-insulin / sulfonylurea screen during hypoglycemia
+        note: Differentiates exogenous insulin (low C-peptide), insulinoma (high C-peptide), or sulfonylurea use (sulfonylurea screen positive).
+        citation: Stern Ch.12
+    treatment_classes:
+      - dextrose replacement (oral or IV)
+      - glucagon (when IV access unavailable)
+      - octreotide (sulfonylurea-induced refractory hypoglycemia)
+    notes: Sulfonylurea-induced hypoglycemia requires admission for monitoring (long half-life).
+  - name: Gestational diabetes
+    role: active_most_common
+    icd10:
+      - O24.410
+    pivotal_features_supporting:
+      - pregnancy (typically diagnosed at 24-28 weeks gestation)
+      - prior history of GDM
+      - obesity, advanced maternal age, family history
+    fingerprint_findings:
+      - elevated glucose on routine 24-28 week screen in previously euglycemic woman
+    textbook_presentation: >-
+      Previously euglycemic woman in second / third trimester with
+      elevated glucose on screening 50-g challenge or diagnostic 75-g / 100-g
+      OGTT.
+    evidence_based_diagnosis:
+      - test_name: 50-g 1-hour glucose challenge (screen)
+        note: ">= 130-140 mg/dL → proceed to diagnostic OGTT."
+        citation: Stern Ch.12
+      - test_name: 100-g 3-hour OGTT (Carpenter-Coustan)
+        note: Diagnostic when >= 2 thresholds exceeded.
+        citation: Stern Ch.12
+      - test_name: 75-g 2-hour OGTT (one-step approach)
+        note: Diagnostic with any single elevation per IADPSG criteria.
+        citation: Stern Ch.12
+    treatment_classes:
+      - medical nutrition therapy
+      - insulin therapy (first-line pharmacotherapy in pregnancy)
+      - metformin or glyburide (selected cases)
+    notes: Reassess after delivery — 6-12 weeks postpartum 75-g OGTT to identify women with persistent diabetes.
+  - name: Secondary diabetes (pancreatic, endocrine, drug-induced)
+    role: other
+    icd10:
+      - E13.9
+    pivotal_features_supporting:
+      - chronic pancreatitis, pancreatectomy, cystic fibrosis, hemochromatosis (pancreatic exocrine disease)
+      - Cushing syndrome, acromegaly, pheochromocytoma, glucagonoma (endocrinopathies)
+      - corticosteroid therapy, antipsychotics, antiretrovirals, calcineurin inhibitors (drug-induced)
+    fingerprint_findings:
+      - new diabetes shortly after corticosteroid initiation or after pancreatectomy
+    textbook_presentation: >-
+      New-onset diabetes attributable to specific underlying cause —
+      pancreatic disease, endocrinopathy, or medication; treatment
+      addresses the underlying driver alongside glycemic management.
+    evidence_based_diagnosis:
+      - test_name: Targeted workup per suspected cause (cortisol axis, IGF-1, plasma metanephrines, ferritin, lipase, abdominal imaging, medication review)
+        citation: Stern Ch.12
+    treatment_classes:
+      - treat the underlying cause (e.g., taper corticosteroids, treat endocrinopathy)
+      - insulin therapy (often required when pancreatic disease)
+    notes: ""
+  - name: Diabetic retinopathy
+    role: active_most_common
+    icd10:
+      - E11.319
+    pivotal_features_supporting:
+      - duration of diabetes
+      - chronic hyperglycemia
+      - asymptomatic until advanced
+      - microaneurysms, hemorrhages, neovascularization on fundus exam
+    fingerprint_findings:
+      - dot-and-blot hemorrhages and microaneurysms on dilated fundus exam
+    textbook_presentation: >-
+      Diabetic patient with often asymptomatic retinal microaneurysms,
+      hemorrhages, exudates, or neovascularization; visual loss in advanced
+      proliferative or diabetic macular edema disease.
+    evidence_based_diagnosis:
+      - test_name: Annual dilated fundus exam (or qualified retinal photography)
+        citation: Stern Ch.12
+    treatment_classes:
+      - tight glycemic and BP control
+      - laser photocoagulation (proliferative retinopathy or macular edema)
+      - intravitreal anti-VEGF therapy (proliferative retinopathy or macular edema)
+    notes: ""
+  - name: Diabetic nephropathy
+    role: active_most_common
+    icd10:
+      - E11.21
+    pivotal_features_supporting:
+      - duration of diabetes
+      - persistent albuminuria (urine albumin-to-creatinine ratio >= 30 mg/g)
+      - declining eGFR
+      - hypertension
+      - retinopathy (often coexists)
+    fingerprint_findings:
+      - microalbuminuria with declining eGFR in long-standing diabetes
+    textbook_presentation: >-
+      Diabetic patient with persistent albuminuria progressing to overt
+      proteinuria and declining eGFR; usually accompanied by retinopathy
+      and hypertension.
+    evidence_based_diagnosis:
+      - test_name: Annual urine albumin-to-creatinine ratio
+        citation: Stern Ch.12
+      - test_name: eGFR (creatinine-based)
+        citation: Stern Ch.12
+    treatment_classes:
+      - ACE inhibitor or ARB (renoprotection)
+      - SGLT2 inhibitor (CKD progression reduction)
+      - tight glycemic and BP control
+      - dietary protein moderation (selected advanced disease)
+    notes: ""
+  - name: Diabetic peripheral neuropathy
+    role: active_most_common
+    icd10:
+      - E11.42
+    pivotal_features_supporting:
+      - duration of diabetes
+      - distal symmetric numbness, paresthesias, burning pain
+      - reduced monofilament sensation, reduced ankle reflexes
+      - autonomic features (orthostasis, gastroparesis, sexual dysfunction)
+    fingerprint_findings:
+      - stocking-glove distribution of sensory loss with reduced monofilament sensation
+    textbook_presentation: >-
+      Diabetic patient with distal symmetric polyneuropathy presenting
+      with numbness, paresthesias, or neuropathic pain; reduced
+      monofilament and vibration sense on exam.
+    evidence_based_diagnosis:
+      - test_name: Bedside monofilament + vibration + pinprick + reflex exam
+        citation: Stern Ch.12
+      - test_name: Rule out other causes (B12 deficiency, hypothyroidism, alcohol, paraprotein-associated, HIV)
+        citation: Stern Ch.12
+    treatment_classes:
+      - tight glycemic control
+      - tricyclic antidepressant
+      - SNRI
+      - gabapentinoid (gabapentin or pregabalin)
+      - topical analgesic (capsaicin, lidocaine)
+      - foot care and protective footwear
+    notes: ""
+  - name: Macrovascular complications (CHD, stroke, peripheral artery disease)
+    role: active_must_not_miss
+    icd10:
+      - I25.9
+      - I63.9
+      - I70.219
+    pivotal_features_supporting:
+      - long-standing diabetes (T1 or T2)
+      - additional cardiovascular risk factors
+      - typical or atypical cardiovascular symptoms
+    fingerprint_findings:
+      - silent or atypical MI presentations more common in diabetes
+    textbook_presentation: >-
+      Diabetic patient with cardiovascular event — atypical or silent MI,
+      stroke, peripheral arterial disease, or aortic disease; aggressive
+      multifactorial risk-factor reduction is the standard.
+    evidence_based_diagnosis:
+      - test_name: ECG, lipid panel, ankle-brachial index, age-appropriate cardiovascular screening
+        citation: Stern Ch.12
+    treatment_classes:
+      - antiplatelet (when indicated for ASCVD)
+      - statin (high-intensity for established ASCVD or high estimated risk)
+      - ACE inhibitor or ARB
+      - SGLT2 inhibitor or GLP-1 receptor agonist (when ASCVD or HF)
+      - blood-pressure control to guideline targets
+    notes: Cross-reference Stern Ch.9 (Chest Pain), Ch.23 (Hypertension), Ch.7 (Back Pain) for related workups.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Screen at-risk adults using HbA1c, fasting plasma glucose, or 2-hour 75-g OGTT.
+    rationale: Identifies prediabetes and diabetes.
+    branches:
+      - condition: Prediabetes range (HbA1c 5.7-6.4%, FPG 100-125, OGTT 140-199)
+        action: order_test
+        test_to_order: Lifestyle counseling + repeat screening annually; consider metformin in highest-risk patients
+      - condition: Diabetes diagnostic (any one criterion above thresholds, repeated or with classic symptoms)
+        action: next_step
+        target_step: 2
+      - condition: Normal screen
+        action: confirm
+        target_diagnosis: No diabetes
+    derived_from_figure: Stern Ch.12 (ADA criteria)
+  - step_num: 2
+    description: Step 2 — Classify diabetes type (Type 1 vs. Type 2 vs. gestational vs. secondary) using clinical features and selective autoantibody / C-peptide testing.
+    rationale: Drives treatment selection (insulin always for Type 1; glycemic-management algorithm for Type 2; pregnancy-specific protocol for gestational).
+    branches:
+      - condition: Lean, acute presentation, ketones present, family history of T1DM, age < 30
+        action: order_test
+        test_to_order: Diabetes autoantibody panel + C-peptide; classify as Type 1
+      - condition: Pregnancy at 24-28 weeks
+        action: confirm
+        target_diagnosis: Gestational diabetes
+      - condition: Identifiable secondary cause (pancreatic disease, endocrinopathy, medication)
+        action: confirm
+        target_diagnosis: Secondary diabetes (pancreatic, endocrine, drug-induced)
+      - condition: Otherwise
+        action: confirm
+        target_diagnosis: Type 2 diabetes mellitus
+    derived_from_figure: Stern Ch.12
+  - step_num: 3
+    description: Step 3 — Assess for acute hyperglycemic emergency (DKA or HHS) at presentation.
+    rationale: Either is an immediate ICU-level emergency.
+    branches:
+      - condition: Anion-gap metabolic acidosis + ketonemia + glucose > 250
+        action: confirm
+        target_diagnosis: Diabetic ketoacidosis (DKA)
+      - condition: Glucose > 600 + osmolality > 320 + altered mental status without significant ketosis
+        action: confirm
+        target_diagnosis: Hyperosmolar hyperglycemic state (HHS)
+      - condition: Stable on presentation
+        action: next_step
+        target_step: 4
+    derived_from_figure: Stern Ch.12
+  - step_num: 4
+    description: Step 4 — In stable patients, initiate or adjust glycemic management based on type, comorbidities, and patient-centered targets.
+    rationale: Initial therapy decisions for new diagnosis or follow-up.
+    branches:
+      - condition: Type 1 — start basal-bolus insulin and education
+        action: treat_empiric
+      - condition: "Type 2 — start metformin + lifestyle modification; add SGLT2i or GLP-1RA when ASCVD / HF / CKD; add others per glycemic targets"
+        action: treat_empiric
+      - condition: Gestational — medical nutrition therapy first; insulin if targets unmet
+        action: treat_empiric
+    derived_from_figure: Stern Ch.12
+  - step_num: 5
+    description: Step 5 — Screen for and manage diabetic complications at diagnosis (Type 2) or after 5 years (Type 1).
+    rationale: Microvascular and macrovascular complications drive morbidity.
+    branches:
+      - condition: Annual fundus exam + urine ACR + foot exam + lipid panel + BP
+        action: order_test
+        test_to_order: Comprehensive complication screening per ADA guidelines
+      - condition: Cardiovascular symptoms or peripheral artery features
+        action: order_test
+        test_to_order: ECG + lipid panel + ankle-brachial index; cross-reference Stern Ch.9 (Chest Pain)
+    derived_from_figure: Stern Ch.12
+  - step_num: 6
+    description: Step 6 — When hypoglycemia occurs, identify driver (insulin / sulfonylurea dosing, missed meal, exercise, alcohol, AKI, or insulinoma).
+    rationale: Recurrent hypoglycemia worsens outcomes and produces hypoglycemia unawareness.
+    branches:
+      - condition: Drug-induced hypoglycemia
+        action: order_test
+        test_to_order: Adjust insulin / sulfonylurea regimen; admit for sulfonylurea-induced (long half-life)
+      - condition: Hypoglycemia in non-diabetic patient (fasting or postprandial)
+        action: order_test
+        test_to_order: Insulin / C-peptide / pro-insulin / sulfonylurea screen during documented hypoglycemia
+    derived_from_figure: Stern Ch.12
+red_flags:
+  - name: Anion-gap metabolic acidosis + glucose > 250 + ketonemia
+    description: DKA — emergent IV fluids + insulin + electrolytes.
+    severity: high
+  - name: Glucose > 600 + altered mental status + dehydration
+    description: HHS — emergent IV fluids + insulin + electrolyte management.
+    severity: high
+  - name: New-onset diabetes presenting with DKA in lean adult
+    description: Type 1 DM (including LADA) — initiate insulin and antibody / C-peptide workup.
+    severity: high
+  - name: Sulfonylurea-induced hypoglycemia
+    description: Admit for monitoring (long-acting agents); octreotide may be required.
+    severity: high
+source_pages:
+  - 228
+  - 245
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.12 (pp. 228-245). Frame is categorical — diabetes type +
+  emergency state + complications. Algorithm covers screening, type
+  classification, emergency triage, glycemic management, and complication
+  screening. Must-not-miss bucket: DKA, HHS, hypoglycemia (especially
+  sulfonylurea-induced), Type 1 DM presenting acutely, and macrovascular
+  events. Complication management cross-references Stern Ch.7 (Back Pain),
+  Ch.9 (Chest Pain), Ch.23 (Hypertension), and Ch.28 (AKI).

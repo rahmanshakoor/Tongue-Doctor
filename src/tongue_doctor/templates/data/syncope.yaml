@@ -1,0 +1,421 @@
+complaint: syncope
+chapter_number: 31
+chapter_title: Syncope
+framework_type: physiologic
+framework_categories:
+  - Reflex / neurally mediated (vasovagal, situational, carotid sinus hypersensitivity)
+  - Orthostatic (volume depletion, autonomic failure, drug-induced)
+  - Cardiac — arrhythmic (brady- or tachy-arrhythmia, channelopathy, pacemaker malfunction)
+  - Cardiac — structural (aortic stenosis, hypertrophic cardiomyopathy, PE, tamponade, dissection, MI)
+  - Non-syncope mimics (seizure, metabolic, hypoglycemia, drop attack, psychogenic)
+pivotal_points:
+  - prodrome (vasovagal — warmth, nausea, diaphoresis; cardiac — none, exertional)
+  - trigger (postural — orthostatic; vasovagal trigger; exertional — cardiac)
+  - associated chest pain, palpitations, dyspnea
+  - cardiac risk factors and family history (SCD < 50, HCM, channelopathy)
+  - witnessed signs (seizure activity, post-event confusion → seizure)
+  - duration of recovery (rapid → vasovagal / cardiac; prolonged → seizure)
+  - ECG abnormalities (Brugada, long / short QT, WPW, AV block, ischemia)
+decision_rules:
+  - name: San Francisco syncope rule (CHESS)
+    purpose: Identify ED syncope patients at risk for serious 7-day outcome
+    inputs:
+      - "C — Congestive heart failure"
+      - "H — Hematocrit < 30%"
+      - "E — abnormal ECG"
+      - "S — Shortness of breath"
+      - "S — SBP < 90"
+    thresholds:
+      - "any one positive → admit / further workup"
+    citation: Stern Ch.31
+  - name: Canadian Syncope Risk Score
+    purpose: Predict 30-day serious adverse events
+    citation: Stern Ch.31
+differential:
+  - name: Vasovagal (neurally mediated) syncope
+    role: leading
+    icd10:
+      - R55
+    pivotal_features_supporting:
+      - prodrome (warmth, nausea, diaphoresis, visual greying)
+      - identifiable trigger (phlebotomy, micturition, fear, prolonged standing, pain)
+      - rapid recovery
+      - normal ECG and exam
+    fingerprint_findings:
+      - prodrome + identifiable trigger + rapid recovery
+    textbook_presentation: >-
+      Adolescent or adult with classic prodrome (warmth, nausea,
+      lightheadedness) followed by transient loss of consciousness
+      and rapid recovery; benign.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment with focused history
+        citation: Stern Ch.31
+      - test_name: ECG (rule out cardiac mimics)
+        citation: Stern Ch.31
+      - test_name: Tilt-table testing (selected refractory)
+        citation: Stern Ch.31
+    treatment_classes:
+      - reassurance and trigger avoidance
+      - physical counter-pressure maneuvers
+      - increased salt and water intake
+      - midodrine or fludrocortisone (selected severe)
+    notes: ""
+  - name: Orthostatic syncope
+    role: active_most_common
+    icd10:
+      - I95.1
+    pivotal_features_supporting:
+      - drop in SBP >= 20 or DBP >= 10 within 3 minutes of standing
+      - autonomic dysfunction (Parkinson, diabetes, multiple system atrophy, amyloidosis)
+      - volume depletion (vomiting, diarrhea, hemorrhage, sepsis, dialysis)
+      - antihypertensives, diuretics, alpha-blockers, antidepressants
+    fingerprint_findings:
+      - reproducible orthostatic BP drop on standing
+    textbook_presentation: >-
+      Patient with syncope on standing and reproducible orthostatic
+      BP drop; volume depletion or autonomic dysfunction.
+    evidence_based_diagnosis:
+      - test_name: Orthostatic BP measurements
+        citation: Stern Ch.31
+    treatment_classes:
+      - increased salt and water intake
+      - compression stockings
+      - midodrine
+      - fludrocortisone
+      - medication review
+    notes: ""
+  - name: Cardiac arrhythmic syncope (brady- or tachy-arrhythmia, channelopathy, AV block)
+    role: active_must_not_miss
+    icd10:
+      - I49.9
+    pivotal_features_supporting:
+      - syncope without prodrome (especially during exertion or supine)
+      - palpitations
+      - structural heart disease history
+      - abnormal ECG (long / short QT, WPW, Brugada, bifascicular block, AV block)
+      - family history of sudden cardiac death
+    fingerprint_findings:
+      - syncope at rest or supine without prodrome
+    textbook_presentation: >-
+      Patient with sudden loss of consciousness, often without
+      prodrome, possibly during exertion; ECG and ambulatory
+      monitoring identify arrhythmia.
+    evidence_based_diagnosis:
+      - test_name: 12-lead ECG
+        citation: Stern Ch.31
+      - test_name: Continuous cardiac monitoring (Holter, event recorder, loop, implantable)
+        citation: Stern Ch.31
+      - test_name: Echocardiogram (rule out structural)
+        citation: Stern Ch.31
+      - test_name: Electrophysiology study (selected)
+        citation: Stern Ch.31
+    treatment_classes:
+      - antiarrhythmic (per arrhythmia)
+      - beta-blocker (long QT type 1, sympathetic-driven)
+      - pacemaker (bradyarrhythmia / AV block — procedural)
+      - implantable cardioverter-defibrillator (high-risk arrhythmia — procedural)
+    notes: ""
+  - name: Aortic stenosis (and other obstructive valvular)
+    role: active_must_not_miss
+    icd10:
+      - I35.0
+    pivotal_features_supporting:
+      - exertional syncope
+      - exertional chest pain or dyspnea
+      - systolic ejection murmur radiating to carotids
+      - reduced and delayed carotid pulse
+      - reduced aortic valve area on echo
+    fingerprint_findings:
+      - exertional syncope + harsh systolic ejection murmur + delayed carotid upstroke
+    textbook_presentation: >-
+      Older adult with exertional syncope, chest pain, and systolic
+      ejection murmur radiating to carotids; echo confirms severe AS.
+    evidence_based_diagnosis:
+      - test_name: Transthoracic echocardiogram
+        citation: Stern Ch.31
+    treatment_classes: []
+    notes: Aortic valve replacement (procedural) is definitive for symptomatic severe AS.
+  - name: Hypertrophic cardiomyopathy
+    role: active_must_not_miss
+    icd10:
+      - I42.1
+    pivotal_features_supporting:
+      - young adult with exertional syncope
+      - family history of sudden cardiac death
+      - LVOT obstruction with characteristic murmur (increases with Valsalva, decreases with squatting)
+      - characteristic echo findings
+    fingerprint_findings:
+      - young athlete with exertional syncope and LVOT-pattern murmur
+    textbook_presentation: >-
+      Young patient or athlete with exertional syncope; physical exam
+      shows murmur changing with maneuvers; echo confirms.
+    evidence_based_diagnosis:
+      - test_name: Echocardiogram
+        citation: Stern Ch.31
+      - test_name: Cardiac MRI + genetic testing (selected)
+        citation: Stern Ch.31
+    treatment_classes:
+      - beta-blocker
+      - non-dihydropyridine calcium channel blocker
+      - disopyramide (selected refractory)
+      - septal myectomy / alcohol septal ablation (refractory — procedural)
+      - ICD (high-risk patients — procedural)
+    notes: ""
+  - name: Pulmonary embolism with syncope
+    role: active_must_not_miss
+    icd10:
+      - I26.99
+    pivotal_features_supporting:
+      - sudden dyspnea
+      - hypoxemia
+      - tachycardia
+      - leg swelling, VTE risk factors
+      - RV strain on ECG / echo
+      - elevated D-dimer
+    fingerprint_findings:
+      - syncope + hypoxemia + RV strain in patient with VTE risk
+    textbook_presentation: >-
+      Syncope (often associated with massive or sub-massive PE)
+      preceded by dyspnea, chest pain, and tachycardia; cross-reference
+      Stern Ch.15.
+    evidence_based_diagnosis:
+      - test_name: D-dimer + Wells / PERC
+        citation: Stern Ch.15
+      - test_name: CT pulmonary angiography
+        citation: Stern Ch.15
+    treatment_classes:
+      - anticoagulant
+      - thrombolytic (massive PE)
+    notes: Cross-reference Stern Ch.15.
+  - name: Aortic dissection with syncope
+    role: active_must_not_miss
+    icd10:
+      - I71.00
+    pivotal_features_supporting:
+      - hypertension history
+      - tearing chest or back pain
+      - pulse / BP differential
+      - widened mediastinum
+    fingerprint_findings:
+      - syncope + tearing pain + pulse differential
+    textbook_presentation: >-
+      Acute aortic dissection presenting with syncope from cardiac
+      tamponade or coronary occlusion; cross-reference Stern Ch.9.
+    evidence_based_diagnosis:
+      - test_name: CT angiography of chest / aorta or TEE
+        citation: Stern Ch.9
+    treatment_classes:
+      - beta-blocker
+      - vasodilator
+    notes: Cross-reference Stern Ch.9. Surgical / endovascular procedural.
+  - name: Acute coronary syndrome with syncope
+    role: active_must_not_miss
+    icd10:
+      - I21.9
+    pivotal_features_supporting:
+      - cardiac risk factors
+      - chest pain / atypical features
+      - ECG ischemic changes
+      - troponin elevation
+    fingerprint_findings:
+      - syncope + ECG ischemia + elevated troponin
+    textbook_presentation: >-
+      Syncope from arrhythmia or pump failure complicating ACS;
+      cross-reference Stern Ch.9.
+    evidence_based_diagnosis:
+      - test_name: ECG + serial troponin
+        citation: Stern Ch.9
+    treatment_classes:
+      - antiplatelet
+      - anticoagulant
+      - beta-blocker
+      - statin
+    notes: Cross-reference Stern Ch.9.
+  - name: Hypoglycemia (mimicking syncope)
+    role: active_most_common
+    icd10:
+      - E16.2
+    pivotal_features_supporting:
+      - diabetes with insulin / sulfonylurea
+      - prolonged or atypical recovery
+      - documented low glucose at event
+    fingerprint_findings:
+      - low fingerstick at event with rapid response to dextrose
+    textbook_presentation: >-
+      Diabetic patient with sudden loss of consciousness preceded by
+      tremor, sweating, or altered mental status; documented hypoglycemia
+      and resolution with glucose.
+    evidence_based_diagnosis:
+      - test_name: Bedside / serum glucose at event
+        citation: Stern Ch.31
+    treatment_classes:
+      - dextrose replacement
+      - glucagon (when no IV access)
+    notes: Cross-reference Stern Ch.12.
+  - name: Seizure (mimicking syncope)
+    role: active_must_not_miss
+    icd10:
+      - G40.909
+    pivotal_features_supporting:
+      - prolonged loss of consciousness
+      - tonic-clonic activity
+      - tongue biting
+      - urinary incontinence
+      - post-ictal confusion
+      - aura
+      - prior seizure history
+    fingerprint_findings:
+      - lateral tongue bite + post-ictal confusion + urinary incontinence
+    textbook_presentation: >-
+      Patient with witnessed tonic-clonic activity, lateral tongue
+      bite, urinary incontinence, and post-ictal confusion;
+      distinguishes from syncope.
+    evidence_based_diagnosis:
+      - test_name: EEG (selected)
+        citation: Stern Ch.31
+      - test_name: MRI brain (new-onset adult-onset seizure)
+        citation: Stern Ch.31
+    treatment_classes:
+      - antiseizure medication (per seizure type)
+    notes: ""
+  - name: Carotid sinus hypersensitivity / situational syncope
+    role: other
+    icd10:
+      - G90.01
+      - R55
+    pivotal_features_supporting:
+      - syncope precipitated by neck movement, tight collar (carotid sinus)
+      - syncope after micturition, defecation, cough, swallow (situational)
+    fingerprint_findings:
+      - syncope reproducible on carotid sinus massage
+    textbook_presentation: >-
+      Older adult with syncope on neck movement or after micturition,
+      defecation, cough, or swallowing; carotid sinus massage may
+      reproduce.
+    evidence_based_diagnosis:
+      - test_name: Carotid sinus massage (with cardiac monitoring; contraindicated in carotid bruit / recent stroke)
+        citation: Stern Ch.31
+    treatment_classes:
+      - avoidance of triggers
+      - dual-chamber pacemaker (selected severe — procedural)
+    notes: ""
+  - name: Pulmonary hypertension / right heart failure
+    role: other
+    icd10:
+      - I27.20
+    pivotal_features_supporting:
+      - exertional dyspnea
+      - exertional syncope
+      - elevated RV pressures on echo
+      - underlying pulmonary or connective-tissue disease
+    fingerprint_findings:
+      - exertional syncope + RV strain + elevated pulmonary pressures
+    textbook_presentation: >-
+      Chronic exertional dyspnea and exertional syncope with elevated
+      RV pressures on echo; right heart cath confirms.
+    evidence_based_diagnosis:
+      - test_name: Echocardiogram + right heart catheterization
+        citation: Stern Ch.31
+    treatment_classes:
+      - PAH-specific therapy (per Stern Ch.15)
+    notes: ""
+  - name: Subclavian steal
+    role: other
+    icd10:
+      - I65.8
+    pivotal_features_supporting:
+      - syncope or near-syncope with arm exercise
+      - blood-pressure differential between arms
+      - subclavian artery stenosis
+    fingerprint_findings:
+      - exercise-induced syncope with arm BP differential
+    textbook_presentation: >-
+      Older patient with arm-exercise-induced presyncope and
+      ipsilateral arm BP lower than contralateral; subclavian
+      stenosis on imaging.
+    evidence_based_diagnosis:
+      - test_name: Bilateral arm BP measurements
+        citation: Stern Ch.31
+      - test_name: Duplex ultrasound or CT / MR angiography
+        citation: Stern Ch.31
+    treatment_classes:
+      - antiplatelet
+      - statin
+      - revascularization (procedural — selected)
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — History + ECG + orthostatic vitals to triage cardiac vs. non-cardiac syncope.
+    rationale: Stern Ch.31 — most evaluation revolves around ECG + history.
+    branches:
+      - condition: Exertional onset, no prodrome, structural heart disease, family history SCD, abnormal ECG
+        action: escalate
+        escalation_reason: Suspected cardiac syncope — admit; cardiac monitoring; echo; cardiology consultation.
+      - condition: Classic vasovagal pattern with normal ECG and exam
+        action: confirm
+        target_diagnosis: Vasovagal (neurally mediated) syncope
+      - condition: Reproducible orthostatic BP drop
+        action: confirm
+        target_diagnosis: Orthostatic syncope
+      - condition: Features unclear
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Ch.31 prose
+  - step_num: 2
+    description: Step 2 — Apply San Francisco syncope rule / Canadian risk score.
+    rationale: Identifies high-risk patients needing admission.
+    branches:
+      - condition: Any high-risk feature (CHF, hematocrit < 30, abnormal ECG, dyspnea, SBP < 90)
+        action: order_test
+        test_to_order: Admit; cardiac monitoring; echo; consider PE / dissection / MI workup
+      - condition: Low-risk
+        action: order_test
+        test_to_order: Outpatient ambulatory monitoring
+    derived_from_figure: Stern Ch.31 prose
+  - step_num: 3
+    description: Step 3 — For cardiac suspicion, perform echo + ambulatory monitoring + selected EP study.
+    rationale: Identifies structural / arrhythmic etiology.
+    branches:
+      - condition: Aortic stenosis or HCM features
+        action: order_test
+        test_to_order: Echo + cardiology consultation
+      - condition: PE or dissection features
+        action: order_test
+        test_to_order: D-dimer + CT-PA / CT-A as appropriate
+      - condition: ECG arrhythmia features
+        action: order_test
+        test_to_order: Continuous monitoring; consider ICD / pacemaker per findings
+    derived_from_figure: Stern Ch.31 prose
+  - step_num: 4
+    description: Step 4 — Distinguish syncope from seizure (post-ictal state, lateral tongue bite, urinary incontinence, prolonged confusion).
+    rationale: Misdiagnosis common.
+    branches:
+      - condition: Seizure features
+        action: order_test
+        test_to_order: Neurology evaluation, EEG, MRI brain
+    derived_from_figure: Stern Ch.31 prose
+red_flags:
+  - name: Syncope at rest, supine, or during exertion without prodrome
+    description: Cardiac arrhythmic or structural cause — admission and cardiac workup.
+    severity: high
+  - name: Syncope + chest pain or back pain + pulse differential
+    description: Aortic dissection — emergent CT angiography.
+    severity: high
+  - name: Syncope + dyspnea + hypoxemia
+    description: Pulmonary embolism — emergent workup.
+    severity: high
+  - name: Syncope + family history of sudden cardiac death
+    description: Channelopathy or structural cardiomyopathy — cardiology workup.
+    severity: high
+source_pages:
+  - 544
+  - 573
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.31 (pp. 544-573). Frame is physiologic — reflex, orthostatic,
+  cardiac (arrhythmic / structural), and mimics. Algorithm prioritizes
+  ECG + history + orthostatic vitals at the bedside, then risk-stratifies
+  with SFSR / CSRS. Must-not-miss: cardiac arrhythmic / structural
+  causes, PE, dissection, ACS, seizure mimic.

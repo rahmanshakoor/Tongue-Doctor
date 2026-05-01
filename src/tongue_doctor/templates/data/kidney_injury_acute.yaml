@@ -1,0 +1,381 @@
+complaint: kidney_injury_acute
+chapter_number: 28
+chapter_title: Kidney Injury, Acute
+framework_type: anatomical
+framework_categories:
+  - Pre-renal (volume depletion, decreased effective circulating volume, hepatorenal, renal artery occlusion)
+  - Intrinsic — glomerular (glomerulonephritis)
+  - Intrinsic — tubular (ATN — ischemic / nephrotoxic)
+  - Intrinsic — interstitial (acute interstitial nephritis — drug, infection, autoimmune)
+  - Intrinsic — vascular (TMA, atheroembolic, vasculitis)
+  - Post-renal (obstruction — bladder neck, ureteral, urethral)
+pivotal_points:
+  - rapid rise in creatinine or fall in urine output (KDIGO criteria)
+  - urinalysis with microscopy (bland — pre-renal / post-renal; muddy brown casts — ATN; RBC / RBC casts — GN; WBC / WBC casts / eosinophils — AIN)
+  - urine sodium / FENa (low → pre-renal; high → ATN)
+  - imaging (renal ultrasound for obstruction)
+  - exposure history (NSAIDs, contrast, antibiotics — aminoglycosides, vancomycin, beta-lactams)
+  - hemodynamics (sepsis, hypotension, hemorrhage)
+  - associated systemic features (rash, fever, eosinophilia, autoimmune features)
+decision_rules:
+  - name: KDIGO AKI staging
+    purpose: Stage AKI severity
+    inputs:
+      - creatinine increase
+      - urine output
+    thresholds:
+      - "Stage 1: creatinine 1.5-1.9x baseline OR >= 0.3 mg/dL increase OR UOP < 0.5 mL/kg/h for 6-12h"
+      - "Stage 2: creatinine 2.0-2.9x baseline OR UOP < 0.5 mL/kg/h >= 12h"
+      - "Stage 3: creatinine >= 3x baseline OR creatinine >= 4 OR initiation of RRT OR UOP < 0.3 mL/kg/h >= 24h"
+    citation: Stern Ch.28
+  - name: FENa interpretation
+    purpose: Distinguish pre-renal from intrinsic AKI
+    inputs:
+      - urine sodium and creatinine
+      - serum sodium and creatinine
+    thresholds:
+      - "FENa < 1% → pre-renal (or contrast / pigment / GN)"
+      - "FENa > 2% → ATN"
+      - "FEUrea < 35% useful when patient is on diuretic"
+    citation: Stern Ch.28
+  - name: Indications for emergent dialysis (AEIOU)
+    purpose: Identify life-threatening AKI complications
+    inputs:
+      - "Acidosis (severe refractory)"
+      - "Electrolyte (refractory hyperkalemia)"
+      - "Ingestion (dialyzable toxin — methanol, ethylene glycol, salicylate, lithium)"
+      - "Overload (refractory volume overload)"
+      - "Uremia (encephalopathy, pericarditis, coagulopathy)"
+    citation: Stern Ch.28
+differential:
+  - name: Pre-renal AKI (hypovolemia, sepsis, HF, cirrhosis)
+    role: leading
+    icd10:
+      - N17.9
+    pivotal_features_supporting:
+      - volume depletion (vomiting, diarrhea, hemorrhage)
+      - decreased effective volume (sepsis, HF, cirrhosis)
+      - hypotension
+      - low FENa (< 1%) and low urine sodium (< 20)
+      - bland urinalysis
+      - rapid improvement after volume resuscitation
+    fingerprint_findings:
+      - rising creatinine + low FENa + hypovolemia
+    textbook_presentation: >-
+      Patient with reduced renal perfusion from hypovolemia, sepsis,
+      cardiac dysfunction, or cirrhosis presenting with rising
+      creatinine and low FENa; reverses with volume / perfusion
+      restoration.
+    evidence_based_diagnosis:
+      - test_name: FENa or FEUrea
+        citation: Stern Ch.28
+      - test_name: Urine osmolality (concentrated > 500 in pre-renal)
+        citation: Stern Ch.28
+      - test_name: Volume-status assessment + bedside echo / ultrasound IVC
+        citation: Stern Ch.28
+    treatment_classes:
+      - intravenous fluid replacement
+      - withdraw NSAIDs, ACE / ARB temporarily
+      - treat underlying cause (sepsis, HF, cirrhosis)
+    notes: ""
+  - name: Acute tubular necrosis (ischemic or nephrotoxic)
+    role: active_most_common
+    icd10:
+      - N17.0
+    pivotal_features_supporting:
+      - prolonged ischemic insult (severe sepsis, hypotension)
+      - nephrotoxin exposure (aminoglycosides, vancomycin, contrast, cisplatin, NSAIDs, pigment — myoglobin / hemoglobin)
+      - muddy brown granular casts on urinalysis
+      - elevated FENa (> 2%)
+      - poor urine concentration (urine osmolality < 350)
+    fingerprint_findings:
+      - muddy brown casts + elevated FENa
+    textbook_presentation: >-
+      Patient with sustained ischemic or nephrotoxic insult
+      progressing through oligoanuric phase to recovery; muddy brown
+      granular casts on urinalysis.
+    evidence_based_diagnosis:
+      - test_name: Urinalysis with microscopy
+        citation: Stern Ch.28
+      - test_name: FENa (> 2%) and urine osmolality
+        citation: Stern Ch.28
+    treatment_classes:
+      - withdraw nephrotoxin
+      - support volume status
+      - dialysis when indicated (AEIOU)
+    notes: Recovery may take days to weeks.
+  - name: Acute interstitial nephritis (drug, infection, autoimmune)
+    role: active_most_common
+    icd10:
+      - N10
+    pivotal_features_supporting:
+      - new medication (penicillin, cephalosporin, sulfa, NSAID, PPI, allopurinol, rifampin)
+      - rash, fever, eosinophilia (classic but uncommon triad)
+      - urinalysis with WBCs / WBC casts / eosinophils
+      - resolution after withdrawal
+    fingerprint_findings:
+      - rising creatinine + WBC casts + eosinophils on urinalysis after new drug
+    textbook_presentation: >-
+      Rising creatinine after new medication, often with eosinophilia,
+      rash, and WBC casts; biopsy when uncertain.
+    evidence_based_diagnosis:
+      - test_name: Urinalysis with microscopy + urine eosinophils
+        citation: Stern Ch.28
+      - test_name: Kidney biopsy (selected refractory cases)
+        citation: Stern Ch.28
+    treatment_classes:
+      - withdraw offending agent
+      - corticosteroid (selected refractory cases)
+    notes: ""
+  - name: Glomerulonephritis (post-infectious, IgA, lupus, ANCA, anti-GBM, MPGN)
+    role: active_must_not_miss
+    icd10:
+      - N05.9
+    pivotal_features_supporting:
+      - dysmorphic RBCs + RBC casts
+      - proteinuria
+      - hypertension, edema
+      - rapidly rising creatinine
+      - autoimmune / serologic markers
+    fingerprint_findings:
+      - hematuria + RBC casts + AKI
+    textbook_presentation: >-
+      Patient with hematuria, RBC casts, proteinuria, hypertension,
+      and rapidly rising creatinine; biopsy and serology identify;
+      cross-reference Stern Ch.21.
+    evidence_based_diagnosis:
+      - test_name: Urinalysis with microscopy + spot UPCR
+        citation: Stern Ch.21
+      - test_name: Glomerular serology panel + complement
+        citation: Stern Ch.21 / Ch.28
+      - test_name: Kidney biopsy
+        citation: Stern Ch.28
+    treatment_classes:
+      - immunosuppressant (per etiology)
+      - corticosteroid
+      - plasma exchange (anti-GBM, ANCA-associated severe)
+    notes: Cross-reference Stern Ch.21.
+  - name: Post-renal AKI (urinary tract obstruction)
+    role: active_must_not_miss
+    icd10:
+      - N13.30
+    pivotal_features_supporting:
+      - hydronephrosis on ultrasound
+      - elevated PVR (bladder outlet obstruction)
+      - prostate enlargement, malignancy, stone, neurogenic bladder
+    fingerprint_findings:
+      - bilateral hydronephrosis on ultrasound
+    textbook_presentation: >-
+      Patient with anuria or rising creatinine and bilateral
+      hydronephrosis or significant post-void residual; relieve
+      obstruction (catheter, ureteric stent, percutaneous
+      nephrostomy).
+    evidence_based_diagnosis:
+      - test_name: Renal ultrasound
+        sensitivity: 0.95
+        citation: Stern Ch.28
+      - test_name: Bladder scan / post-void residual
+        citation: Stern Ch.28
+    treatment_classes:
+      - bladder catheterization (when bladder outlet obstruction)
+      - alpha-blocker (BPH-related obstruction)
+    notes: Procedural decompression for ureteric obstruction (stent / nephrostomy).
+  - name: Hepatorenal syndrome
+    role: active_must_not_miss
+    icd10:
+      - K76.7
+    pivotal_features_supporting:
+      - decompensated cirrhosis
+      - rising creatinine without alternative cause
+      - lack of response to volume challenge
+      - low urine sodium
+      - bland urinalysis
+    fingerprint_findings:
+      - rising creatinine in cirrhotic patient unresponsive to fluids
+    textbook_presentation: >-
+      Patient with decompensated cirrhosis and rising creatinine
+      despite fluid challenge; vasoconstrictor + albumin therapy;
+      bridge to liver transplant.
+    evidence_based_diagnosis:
+      - test_name: Serum creatinine trend + urine studies
+        citation: Stern Ch.28 / Ch.26
+      - test_name: Exclusion of other causes (urinalysis, ultrasound, withdraw nephrotoxin)
+        citation: Stern Ch.28
+    treatment_classes:
+      - terlipressin or midodrine + octreotide
+      - albumin
+      - liver transplant evaluation
+    notes: ""
+  - name: Contrast-induced nephropathy (CIN / CA-AKI)
+    role: active_most_common
+    icd10:
+      - N14.1
+    pivotal_features_supporting:
+      - recent iodinated contrast exposure
+      - rising creatinine 24-72h after exposure
+      - underlying CKD, diabetes, volume depletion
+      - low FENa (often, despite intrinsic injury)
+    fingerprint_findings:
+      - rising creatinine 24-72h after IV contrast
+    textbook_presentation: >-
+      Patient receiving iodinated contrast with creatinine rise within
+      72 hours; usually self-limited; risk reduction with hydration
+      and minimization of contrast volume.
+    evidence_based_diagnosis:
+      - test_name: Creatinine trend after contrast
+        citation: Stern Ch.28
+    treatment_classes:
+      - intravenous fluid replacement (pre and post-contrast prophylaxis)
+      - withdraw concurrent nephrotoxin
+    notes: Modern recognition has reduced prior estimates of incidence.
+  - name: Rhabdomyolysis-associated AKI
+    role: active_must_not_miss
+    icd10:
+      - M62.82
+    pivotal_features_supporting:
+      - severe muscle injury (trauma, exertion, immobilization, statin, drug overdose)
+      - elevated CK (often > 10000 U/L)
+      - dipstick positive for blood without RBCs (myoglobin)
+      - hyperkalemia, hyperphosphatemia, hypocalcemia
+    fingerprint_findings:
+      - elevated CK + dipstick blood without RBCs
+    textbook_presentation: >-
+      Patient with severe muscle injury presenting with elevated CK,
+      myoglobinuria, AKI, and electrolyte derangements.
+    evidence_based_diagnosis:
+      - test_name: Serum CK + urinalysis
+        citation: Stern Ch.28
+    treatment_classes:
+      - large-volume intravenous fluid replacement
+      - urinary alkalinization (controversial)
+      - electrolyte management
+      - dialysis when indicated
+    notes: ""
+  - name: Atheroembolic / cholesterol embolic disease
+    role: other
+    icd10:
+      - I75.81
+    pivotal_features_supporting:
+      - recent vascular procedure or anticoagulation
+      - subacute creatinine rise
+      - livedo reticularis
+      - blue toes
+      - eosinophilia / hypocomplementemia
+    fingerprint_findings:
+      - blue toes + livedo + eosinophilia after vascular procedure
+    textbook_presentation: >-
+      Patient with subacute AKI after vascular procedure with skin
+      findings (livedo, blue toes), eosinophilia, and hypocomplementemia.
+    evidence_based_diagnosis:
+      - test_name: Clinical pattern + skin or kidney biopsy when uncertain
+        citation: Stern Ch.28
+    treatment_classes:
+      - statin
+      - supportive renal care
+    notes: ""
+  - name: Thrombotic microangiopathy (TTP, HUS, atypical HUS, TMA)
+    role: active_must_not_miss
+    icd10:
+      - M31.1
+      - D59.3
+    pivotal_features_supporting:
+      - microangiopathic hemolytic anemia
+      - thrombocytopenia
+      - AKI
+      - schistocytes
+      - low ADAMTS13 (TTP)
+      - Shiga toxin (HUS)
+    fingerprint_findings:
+      - schistocytes + thrombocytopenia + AKI
+    textbook_presentation: >-
+      Patient with MAHA, thrombocytopenia, and AKI; specific etiology
+      drives therapy; cross-reference Stern Ch.6 / Ch.13.
+    evidence_based_diagnosis:
+      - test_name: CBC + smear + LDH + haptoglobin + ADAMTS13 + Shiga toxin
+        citation: Stern Ch.28
+    treatment_classes:
+      - therapeutic plasma exchange (TTP)
+      - eculizumab (atypical HUS)
+      - supportive care (typical HUS)
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Confirm AKI per KDIGO and stage severity.
+    rationale: Baseline assessment.
+    branches:
+      - condition: Severe (Stage 3) with AEIOU indication
+        action: escalate
+        escalation_reason: Emergent dialysis evaluation.
+      - condition: Stage 1-2
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Ch.28 prose
+  - step_num: 2
+    description: Step 2 — Differentiate pre-renal vs. intrinsic vs. post-renal.
+    rationale: Different physiologies require different interventions.
+    branches:
+      - condition: Volume depletion / hypotension / drug-related hemodynamic
+        action: confirm
+        target_diagnosis: Pre-renal AKI (hypovolemia, sepsis, HF, cirrhosis)
+      - condition: Hydronephrosis on ultrasound or elevated PVR
+        action: confirm
+        target_diagnosis: Post-renal AKI (urinary tract obstruction)
+      - condition: Urinalysis with active sediment (RBC / WBC / muddy casts) or persistent rise
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Ch.28 prose
+  - step_num: 3
+    description: Step 3 — For intrinsic AKI, classify by urinalysis and exposures.
+    rationale: ATN vs. AIN vs. GN vs. vascular.
+    branches:
+      - condition: Muddy brown casts
+        action: confirm
+        target_diagnosis: Acute tubular necrosis (ischemic or nephrotoxic)
+      - condition: WBC casts + eosinophils + new drug
+        action: confirm
+        target_diagnosis: Acute interstitial nephritis (drug, infection, autoimmune)
+      - condition: RBC casts + proteinuria
+        action: confirm
+        target_diagnosis: Glomerulonephritis (post-infectious, IgA, lupus, ANCA, anti-GBM, MPGN)
+      - condition: Schistocytes + thrombocytopenia + AKI
+        action: confirm
+        target_diagnosis: Thrombotic microangiopathy (TTP, HUS, atypical HUS, TMA)
+      - condition: Specific exposures or settings
+        action: order_test
+        test_to_order: Targeted workup (CK for rhabdomyolysis, contrast history, decompensated liver, vascular procedure)
+    derived_from_figure: Stern Ch.28 prose
+  - step_num: 4
+    description: Step 4 — Manage complications (hyperkalemia, acidosis, volume, uremia) and decide on dialysis.
+    rationale: AEIOU mnemonic.
+    branches:
+      - condition: Refractory hyperkalemia / acidosis / overload / uremia / dialyzable ingestion
+        action: escalate
+        escalation_reason: Renal replacement therapy.
+      - condition: Improving with conservative measures
+        action: reassess
+        target_step: 1
+    derived_from_figure: Stern Ch.28 prose
+red_flags:
+  - name: AKI + refractory hyperkalemia / acidosis / overload / uremia
+    description: AEIOU criteria — emergent dialysis.
+    severity: high
+  - name: AKI + RBC casts + hypertension
+    description: Rapidly progressive glomerulonephritis — emergent biopsy and immunosuppression.
+    severity: high
+  - name: AKI in cirrhotic patient unresponsive to fluids
+    description: Hepatorenal syndrome — terlipressin / midodrine + octreotide + albumin; transplant evaluation.
+    severity: high
+  - name: AKI + schistocytes + thrombocytopenia
+    description: TMA — plasma exchange; ADAMTS13 testing.
+    severity: high
+source_pages:
+  - 498
+  - 513
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.28 (pp. 498-513). Frame is anatomic — pre-renal vs. intrinsic
+  vs. post-renal. Algorithm steps mirror Stern's stepwise approach.
+  Must-not-miss: severe AKI requiring dialysis, RPGN, hepatorenal,
+  obstruction, TMA.

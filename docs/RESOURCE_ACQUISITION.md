@@ -72,13 +72,102 @@ Every retrieved chunk carries a `citation` string and an `authority_tier` (1 = g
 
 ## Phase 0 status
 
-The scaffold ships:
+GCP is deferred (Decision 2026-04-30). All current work runs in **direct-API / local-disk
+mode**: ingesters write `chunks.jsonl` under `knowledge/_local/<source>/` keyed by a
+deterministic chunk id, and the runtime reads them locally. The same files become
+the input to Vertex Vector Search later.
 
-- No corpus downloads yet.
-- `scripts/ingest_statpearls.py` (placeholder; runs once GCP project is decided — open item 21).
-- No premium-sub clients (placeholders deferred until item 22 confirms which subs are in hand).
+Each chunk carries a `source_location` field that points back to the exact part of
+the source artefact (page range for PDFs, NBK + section anchor for StatPearls,
+SetID + LOINC code for DailyMed, ICD code for ICD-10-CM, PMC + section for PMC OA,
+canonical URL + anchor for HTML scrapes). Citations remain reproducible without
+re-fetching.
 
-Tier A ingestion is the first concrete Phase 0 work after this scaffold lands.
+### Implemented ingesters
+
+| Source | Status | CLI | Chunks (current) |
+|---|---|---|---|
+| ICD-10-CM | full corpus | `make ingest-icd10cm` | 97,584 (97,584 codes) |
+| USPSTF | all current recommendations | `make ingest-uspstf` | 1,763 (74 topics) |
+| OpenStax Anatomy & Physiology 2e | full book | `make ingest-openstax` | 2,195 (30 chapters) |
+| DailyMed (FDA SPL) | smoke (200 labels) | `make ingest-dailymed` | 4,026 (192 labels) |
+| StatPearls (NCBI Bookshelf) | smoke (30 articles) | `make ingest-statpearls` | 702 (30 articles) |
+| PMC Open Access | query-driven; smoke | `make ingest-pmc-oa QUERY=…` | 1,138 (30 case reports) |
+
+`make acquire-corpus-status` reads `knowledge/_local/MANIFEST.json` for live counts.
+`make acquire-quick` runs a small smoke of every ingester end-to-end.
+
+### Not yet implemented (next session)
+
+- WHO IRIS — DSpace OAI-PMH harvester. Curated by collection (Guidelines, Technical
+  Reports) rather than full-corpus to control disk + crawl.
+- Specialty society guidelines (AHA/ACC, ESC, ATS, GOLD, GINA, IDSA, ADA, ACG, AGA,
+  AASLD, KDIGO, ACR, EULAR, ASH) — per-society downloaders; URLs need cataloguing.
+- NICE guidelines — UK; no public bulk download. Per-topic fetch.
+- LITFL ECG library — CC-BY-NC for many entries; conservative scrape pending.
+- BMJ Case Reports OA — covered indirectly by `pmc_oa` (BMJ Case Reports is in PMC OA).
+
+### Long-running full-corpus ingest
+
+The smoke runs above prove the pipeline. To pull full corpora:
+
+- DailyMed full (~80K labels, multi-GB, many hours): `make ingest-dailymed`
+- StatPearls full (~9.6K articles, hours): `make ingest-statpearls`
+- PMC OA: incremental by query. Each query writes to the same store; chunk ids
+  deduplicate. Example queries in `scripts/ingest_pmc_oa.py` docstring.
+
+Each ingester is **resumable**: cached raw artefacts skip re-download on the next
+run, so an interrupted long ingest just resumes.
+
+### License-required free corpora — user actions needed
+
+These need a one-time application from you; once the credentials/data files are in
+hand, ingester scaffolding will pick them up under `knowledge/_local/<source>/raw/`.
+
+| Source | What to do | Approx. turnaround | Why we need it |
+|---|---|---|---|
+| **UMLS Metathesaurus** | Apply for a UTS account and accept the Metathesaurus licence at https://uts.nlm.nih.gov/uts/signup-login. After approval, download the latest Metathesaurus full release. | 1–3 business days | Ontology query expansion (SNOMED ↔ ICD ↔ LOINC ↔ RxNorm crosswalks) feeding the retriever. |
+| **LOINC** | Register at https://loinc.org/downloads/ (free, immediate) and download the latest LOINC table CSV. | immediate | Lab / observation code resolution in the diagnostic_tests index. |
+| **DrugBank Academic** | Apply at https://go.drugbank.com/releases/academic for the academic / non-commercial tier. | 1–2 weeks | Structured drug data (mechanisms, interactions, targets) for the prescriber tools without hitting commercial API ToS. |
+| **SNOMED CT** | Confirm Qatar IHTSDO member status at https://www.snomed.org/our-members; if not a member, apply for a research-tier affiliate licence directly with SNOMED International. Until cleared, retrieval falls back to ICD-10-CM + LOINC + RxNorm + UMLS-derived mappings. | weeks | Canonical clinical terminology for the ontology layer. |
+| **MKSAP** (optional) | Confirm whether you already have an ACP membership/MKSAP licence; if so, drop the digital release into `knowledge/_local/mksap/raw/`. Skip otherwise — the demo runs without it. | n/a | Adversarial eval cases sourced with citation. |
+
+### User-provided digital copies — Tier B textbooks
+
+Drop digital copies into the matching directory under `knowledge/_local/`. The
+ingester for each book reads the file in place (no upload, no re-encoding). All
+gitignored.
+
+| Book | Drop at | Format preference | Status |
+|---|---|---|---|
+| Stern, *Symptoms to Diagnosis* (4th ed., 2020) | `knowledge/_local/stern/raw/` | PDF or EPUB | **ingested** (33 chapters, 1,837 chunks; per-page `source_location`) |
+| Robbins & Cotran, *Pathologic Basis of Disease* | `knowledge/_local/robbins/raw/` | PDF | pending user upload |
+| Harrison's *Principles of Internal Medicine* | `knowledge/_local/harrisons/raw/` | PDF | pending user upload |
+| Goodman & Gilman, *Pharmacological Basis of Therapeutics* | `knowledge/_local/goodman_gilman/raw/` | PDF | pending user upload |
+| Wagner, *Marriott's Practical Electrocardiography* | `knowledge/_local/wagner/raw/` | PDF | pending user upload |
+| Felson's *Principles of Chest Roentgenology* | `knowledge/_local/felson/raw/` | PDF | pending user upload |
+| Fitzpatrick's *Color Atlas of Clinical Dermatology* | `knowledge/_local/fitzpatrick/raw/` | PDF | pending user upload |
+
+Phase 1 (chest pain end-to-end) only strictly needs Stern + Wagner + a pharmacology
+source; the rest can land per-complaint as the breadth expands. **Stern is the
+cognitive backbone**: Ch. 1 became the Reasoner system prompt
+(`prompts/reasoner/system_v1.j2`); the 31 complaint chapters (3-33) feed
+per-complaint templates at `src/tongue_doctor/templates/data/<slug>.yaml`. See
+`docs/STERN_REASONING_BACKBONE.md` for the mapping.
+
+Per-chapter template extraction status: `chest_pain.yaml` landed (16 diagnoses
+across all 4 buckets, 10-step algorithm distilled from Figure 9-1 + Figure 9-2).
+Remaining 30 chapters extract on demand via the Read-tool path (see backbone
+report) or via `scripts/extract_stern_to_templates.py` if Anthropic API access
+is configured.
+
+### Tier C premium subscriptions — deferred per user direction
+
+Per the 2026-04-30 decision, premium subscriptions (UpToDate, DynaMed, BMJ Best
+Practice, Lexicomp, VisualDx, Micromedex, DrugBank commercial) are **not in scope
+for this acquisition pass**. Clients are stubs; the demo runs on the Tier A free
+corpus + license-required free corpus + user-provided textbooks until that
+posture changes.
 
 ## Substitution path
 

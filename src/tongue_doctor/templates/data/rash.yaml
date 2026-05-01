@@ -1,0 +1,455 @@
+complaint: rash
+chapter_number: 29
+chapter_title: Rash
+framework_type: categorical
+framework_categories:
+  - Macular / papular (drug eruption, viral exanthem, secondary syphilis, pityriasis rosea)
+  - Vesicular / bullous (herpes simplex / zoster, varicella, pemphigus / pemphigoid, bullous impetigo, contact dermatitis)
+  - Pustular (acne, folliculitis, AGEP)
+  - Erythematous / scaling (psoriasis, eczema, seborrheic dermatitis, tinea, lichen planus)
+  - Urticarial / wheal (urticaria, angioedema)
+  - Petechial / purpuric (vasculitis, ITP, meningococcemia, RMSF, DIC)
+  - Necrotic / ulcerative (necrotizing fasciitis, calciphylaxis, vasculitis)
+  - Severe drug reactions (SJS / TEN, DRESS, AGEP)
+pivotal_points:
+  - acuity (acute vs. chronic)
+  - distribution (localized vs. widespread; symmetric vs. asymmetric; sun-exposed vs. covered)
+  - morphology (macule, papule, vesicle, bulla, pustule, plaque, nodule, ulcer, petechia, purpura)
+  - associated symptoms (fever, mucosal involvement, lymphadenopathy, joint pain)
+  - exposures (medications, foods, plants, infections, travel)
+  - severity / red flags (SJS / TEN features, mucosal involvement, blistering, hemodynamic compromise)
+decision_rules:
+  - name: SJS / TEN red-flag screen
+    purpose: Identify life-threatening drug reactions
+    inputs:
+      - "painful, often atypical target lesions or sheet erythema"
+      - "mucosal involvement (oral, ocular, genital)"
+      - "skin sloughing / Nikolsky sign"
+      - "recent (within 1-3 weeks) new medication"
+      - "fever and systemic toxicity"
+    citation: Stern Ch.29
+  - name: DRESS criteria (RegiSCAR)
+    purpose: Identify drug reaction with eosinophilia and systemic symptoms
+    inputs:
+      - "fever > 38.5"
+      - "lymphadenopathy"
+      - "internal organ involvement"
+      - "atypical lymphocytes / eosinophilia"
+      - "rash > 50% body surface"
+    citation: Stern Ch.29
+differential:
+  - name: Drug exanthem (morbilliform / maculopapular drug eruption)
+    role: leading
+    icd10:
+      - L27.0
+    pivotal_features_supporting:
+      - new medication 5-14 days prior
+      - symmetric morbilliform rash starting on trunk
+      - mild pruritus
+      - no mucosal involvement / blisters
+      - resolution after withdrawal
+    fingerprint_findings:
+      - symmetric morbilliform rash starting on trunk after new medication
+    textbook_presentation: >-
+      Symmetric morbilliform / maculopapular eruption appearing 5-14
+      days after starting a new medication (especially antibiotics,
+      anticonvulsants, allopurinol); resolves after withdrawal.
+    evidence_based_diagnosis:
+      - test_name: Medication review with timing
+        citation: Stern Ch.29
+    treatment_classes:
+      - withdraw offending agent
+      - antihistamine
+      - topical corticosteroid
+    notes: ""
+  - name: Stevens-Johnson syndrome / Toxic epidermal necrolysis (SJS / TEN)
+    role: active_must_not_miss
+    icd10:
+      - L51.1
+      - L51.2
+    pivotal_features_supporting:
+      - new medication 1-3 weeks prior (sulfa, anticonvulsant, allopurinol, NSAID, beta-lactam)
+      - painful skin
+      - atypical target lesions or sheet-like erythema
+      - mucosal involvement (oral, ocular, genital)
+      - skin sloughing / positive Nikolsky sign
+      - fever and systemic toxicity
+    fingerprint_findings:
+      - mucosal erosions + skin sloughing after new drug
+    textbook_presentation: >-
+      Acute febrile illness with painful skin, mucosal erosions, and
+      sloughing 1-3 weeks after a new medication; SJS < 10% BSA, TEN > 30%.
+    evidence_based_diagnosis:
+      - test_name: Clinical recognition + medication review
+        citation: Stern Ch.29
+      - test_name: Skin biopsy (selected confirmatory)
+        citation: Stern Ch.29
+    treatment_classes:
+      - withdraw offending agent
+      - supportive care (burn unit / ICU)
+      - intravenous immunoglobulin (selected — controversial)
+      - cyclosporine (selected severe)
+      - ophthalmology and wound care
+    notes: SCORTEN scoring guides prognosis.
+  - name: DRESS (drug reaction with eosinophilia and systemic symptoms)
+    role: active_must_not_miss
+    icd10:
+      - L27.0
+    pivotal_features_supporting:
+      - new medication 2-8 weeks prior (anticonvulsant, allopurinol, sulfa, vancomycin, dapsone)
+      - fever
+      - lymphadenopathy
+      - eosinophilia or atypical lymphocytes
+      - facial edema
+      - hepatic / renal / cardiac involvement
+    fingerprint_findings:
+      - rash + fever + eosinophilia + transaminase elevation 2-8 weeks after new drug
+    textbook_presentation: >-
+      Severe systemic drug reaction with rash, fever, lymphadenopathy,
+      eosinophilia, and internal-organ involvement 2-8 weeks after
+      starting a culprit drug.
+    evidence_based_diagnosis:
+      - test_name: CBC with differential (eosinophilia)
+        citation: Stern Ch.29
+      - test_name: LFTs + creatinine + ECG (multi-organ involvement)
+        citation: Stern Ch.29
+    treatment_classes:
+      - withdraw offending agent
+      - systemic corticosteroid
+      - supportive care
+    notes: ""
+  - name: Urticaria / angioedema
+    role: active_most_common
+    icd10:
+      - L50.9
+      - T78.3XXA
+    pivotal_features_supporting:
+      - well-circumscribed pruritic wheals
+      - individual lesions resolve within 24 hours
+      - dermographism
+      - associated angioedema (lips, tongue, pharynx, larynx)
+      - allergen exposure or chronic spontaneous
+    fingerprint_findings:
+      - migratory wheals lasting < 24h with intense pruritus
+    textbook_presentation: >-
+      Acute pruritic wheals migrating across the skin; chronic if > 6
+      weeks; angioedema involves deeper tissues including airway in
+      severe cases.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment with allergen / trigger history
+        citation: Stern Ch.29
+    treatment_classes:
+      - antihistamine (H1 first-line)
+      - leukotriene receptor antagonist (selected refractory)
+      - omalizumab (chronic refractory)
+      - intramuscular epinephrine (anaphylaxis)
+    notes: ""
+  - name: Anaphylaxis (with cutaneous component)
+    role: active_must_not_miss
+    icd10:
+      - T78.2XXA
+    pivotal_features_supporting:
+      - acute exposure
+      - urticaria / angioedema + airway / cardiovascular / GI involvement
+      - hypotension
+    fingerprint_findings:
+      - urticaria + bronchospasm + hypotension after exposure
+    textbook_presentation: >-
+      Acute multisystem IgE-mediated reaction; cross-reference Stern
+      Ch.15 (Dyspnea) and Ch.25 (Hypotension).
+    evidence_based_diagnosis:
+      - test_name: Clinical recognition (treat first)
+        citation: Stern Ch.29
+    treatment_classes:
+      - intramuscular epinephrine (first-line)
+      - intravenous fluid replacement
+      - antihistamine + corticosteroid
+      - bronchodilator
+    notes: ""
+  - name: Cellulitis / erysipelas
+    role: active_most_common
+    icd10:
+      - L03.119
+      - A46
+    pivotal_features_supporting:
+      - acute unilateral erythema, warmth, tenderness
+      - portal of entry (skin breakdown, athlete's foot, IV access, eczema)
+      - fever
+      - elevated WBC / CRP
+    fingerprint_findings:
+      - acute unilateral erythema with warmth and pain
+    textbook_presentation: >-
+      Acute red, warm, tender area of skin with portal of entry;
+      systemic features (fever, leukocytosis) when severe.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment
+        citation: Stern Ch.29 / Ch.17
+      - test_name: Blood cultures (severe / immunocompromised)
+        citation: Stern Ch.29
+    treatment_classes:
+      - antibiotic (per likely organism — strep / MRSA risk)
+    notes: Cross-reference Stern Ch.17 (Edema).
+  - name: Necrotizing fasciitis
+    role: active_must_not_miss
+    icd10:
+      - M72.6
+    pivotal_features_supporting:
+      - severe pain out of proportion to exam
+      - rapid progression
+      - bullae / skin necrosis
+      - crepitus
+      - systemic toxicity / sepsis
+      - elevated CRP and lactate
+    fingerprint_findings:
+      - pain out of proportion to exam + rapidly progressing erythema + systemic toxicity
+    textbook_presentation: >-
+      Rapidly progressive deep soft-tissue infection with severe pain,
+      systemic toxicity, and fascial necrosis; emergent surgical
+      debridement.
+    evidence_based_diagnosis:
+      - test_name: Clinical diagnosis (do NOT delay for imaging)
+        citation: Stern Ch.29
+      - test_name: LRINEC score (supportive)
+        citation: Stern Ch.29
+    treatment_classes:
+      - broad-spectrum antibiotic (cover MRSA, gram-negatives, anaerobes including Clostridium)
+      - emergent surgical debridement (procedural — definitive)
+    notes: Mortality without surgery > 70%.
+  - name: Herpes zoster (shingles)
+    role: active_most_common
+    icd10:
+      - B02.9
+    pivotal_features_supporting:
+      - dermatomal vesicular eruption
+      - prodromal pain in dermatome
+      - elderly or immunocompromised
+      - reactivation of latent VZV
+    fingerprint_findings:
+      - grouped vesicles in single dermatome
+    textbook_presentation: >-
+      Painful unilateral dermatomal vesicular eruption preceded by
+      prodromal pain; ophthalmic involvement (V1) requires emergent
+      ophthalmology.
+    evidence_based_diagnosis:
+      - test_name: Clinical recognition; PCR of vesicle fluid when uncertain
+        citation: Stern Ch.29
+    treatment_classes:
+      - antiviral (initiate within 72 hours of rash onset for greatest benefit)
+      - analgesic
+      - postherpetic neuralgia management (gabapentinoid, tricyclic, topical lidocaine, capsaicin)
+    notes: Vaccination prevents in most cases.
+  - name: Atopic dermatitis (eczema), contact dermatitis, seborrheic dermatitis
+    role: active_most_common
+    icd10:
+      - L20.9
+      - L23.9
+      - L21.9
+    pivotal_features_supporting:
+      - chronic / recurrent pruritic eczematous patches
+      - flexural distribution (atopic)
+      - allergen / irritant contact (contact)
+      - greasy scaly patches in seborrheic areas (seborrheic)
+    fingerprint_findings:
+      - flexural eczematous patches with personal / family history of atopy
+    textbook_presentation: >-
+      Chronic relapsing pruritic eczematous skin disease; pattern
+      identifies subtype (atopic, contact, seborrheic).
+    evidence_based_diagnosis:
+      - test_name: Clinical recognition; patch testing (chronic contact)
+        citation: Stern Ch.29
+    treatment_classes:
+      - emollient
+      - topical corticosteroid
+      - topical calcineurin inhibitor
+      - antihistamine
+      - dupilumab (severe atopic — selected)
+    notes: ""
+  - name: Psoriasis
+    role: active_most_common
+    icd10:
+      - L40.9
+    pivotal_features_supporting:
+      - well-demarcated erythematous plaques with silvery scale
+      - extensor surfaces (elbows, knees, scalp)
+      - nail pitting / onycholysis
+      - associated psoriatic arthritis
+    fingerprint_findings:
+      - well-demarcated plaques with silvery scale on extensors
+    textbook_presentation: >-
+      Chronic relapsing inflammatory skin disease with characteristic
+      plaques; psoriatic arthritis in 20-30%.
+    evidence_based_diagnosis:
+      - test_name: Clinical recognition; biopsy when uncertain
+        citation: Stern Ch.29
+    treatment_classes:
+      - topical corticosteroid
+      - topical vitamin D analog
+      - phototherapy (UVB)
+      - systemic immunosuppressant (methotrexate, cyclosporine)
+      - biologic agent (anti-TNF, IL-17, IL-23)
+    notes: ""
+  - name: Tinea / cutaneous fungal infection
+    role: active_most_common
+    icd10:
+      - B35.9
+    pivotal_features_supporting:
+      - annular scaly plaques with central clearing
+      - pruritus
+      - athlete's foot, jock itch, ringworm distribution
+      - KOH preparation positive
+    fingerprint_findings:
+      - annular plaque with central clearing and active scaling border
+    textbook_presentation: >-
+      Annular scaly pruritic plaque with central clearing; KOH
+      preparation shows hyphae.
+    evidence_based_diagnosis:
+      - test_name: KOH preparation
+        citation: Stern Ch.29
+    treatment_classes:
+      - topical antifungal
+      - oral antifungal (extensive disease, scalp / nail)
+    notes: ""
+  - name: Vasculitic / petechial / purpuric eruptions (small-vessel vasculitis, ANCA vasculitis, IgA vasculitis, meningococcemia, RMSF, ITP, DIC)
+    role: active_must_not_miss
+    icd10:
+      - D69.0
+      - I77.6
+    pivotal_features_supporting:
+      - palpable purpura (small-vessel vasculitis)
+      - nonblanching petechiae
+      - fever + hypotension (meningococcemia)
+      - tick exposure + wrist / ankle erythema spreading centrally (RMSF)
+      - thrombocytopenia (ITP, DIC)
+      - systemic features (renal, pulmonary, GI)
+    fingerprint_findings:
+      - palpable purpura + systemic features
+    textbook_presentation: >-
+      Patient with non-blanching skin findings — petechiae or
+      palpable purpura — with possible systemic features; etiology
+      ranges from benign (IgA vasculitis) to life-threatening
+      (meningococcemia, RMSF, DIC).
+    evidence_based_diagnosis:
+      - test_name: CBC + smear + coagulation + creatinine + urinalysis + skin biopsy when uncertain
+        citation: Stern Ch.29
+      - test_name: Blood cultures when meningococcemia suspected
+        citation: Stern Ch.29
+      - test_name: ANCA + complement + autoimmune workup
+        citation: Stern Ch.29
+    treatment_classes:
+      - empiric antibiotic (suspected meningococcemia / RMSF — early treatment saves lives)
+      - corticosteroid (vasculitis — severe organ involvement)
+      - supportive care for ITP / DIC; treat underlying cause
+    notes: Empiric ceftriaxone for suspected meningococcemia; doxycycline for suspected RMSF — even before lab confirmation.
+  - name: Erythema multiforme
+    role: other
+    icd10:
+      - L51.9
+    pivotal_features_supporting:
+      - target lesions (acral)
+      - HSV / mycoplasma / drug trigger
+      - mild mucosal involvement (EM major)
+      - self-limited
+    fingerprint_findings:
+      - target lesions on acral surfaces after HSV outbreak
+    textbook_presentation: >-
+      Self-limited target-lesion eruption typically after HSV or
+      mycoplasma infection; EM major includes mucosal involvement.
+    evidence_based_diagnosis:
+      - test_name: Clinical recognition
+        citation: Stern Ch.29
+    treatment_classes:
+      - supportive care
+      - antiviral (HSV — recurrent)
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Screen for life-threatening dermatologic emergencies (SJS / TEN, DRESS, AGEP, anaphylaxis with hypotension, necrotizing fasciitis, meningococcemia, RMSF).
+    rationale: Time-critical recognition.
+    branches:
+      - condition: Mucosal involvement + sloughing + recent drug
+        action: escalate
+        escalation_reason: SJS / TEN — withdraw drug, ICU / burn unit, supportive care.
+      - condition: Hypotension + urticaria / angioedema
+        action: escalate
+        escalation_reason: Anaphylaxis — IM epinephrine.
+      - condition: Pain out of proportion + rapidly progressing erythema + sepsis
+        action: escalate
+        escalation_reason: Necrotizing fasciitis — emergent surgical debridement + broad-spectrum antibiotics.
+      - condition: Petechiae / purpura + fever + hypotension
+        action: escalate
+        escalation_reason: Meningococcemia / RMSF — empiric ceftriaxone or doxycycline.
+      - condition: No emergent features
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Ch.29 prose
+  - step_num: 2
+    description: Step 2 — Categorize by morphology (macular / papular / vesicular / pustular / scaling / urticarial / petechial).
+    rationale: Stern Ch.29 framework.
+    branches:
+      - condition: Morbilliform with new medication 5-14 d
+        action: confirm
+        target_diagnosis: Drug exanthem (morbilliform / maculopapular drug eruption)
+      - condition: Vesicular dermatomal
+        action: confirm
+        target_diagnosis: Herpes zoster (shingles)
+      - condition: Wheals migrating
+        action: confirm
+        target_diagnosis: Urticaria / angioedema
+      - condition: Annular scaly with central clearing
+        action: confirm
+        target_diagnosis: Tinea / cutaneous fungal infection
+      - condition: Plaques with silvery scale on extensors
+        action: confirm
+        target_diagnosis: Psoriasis
+      - condition: Eczematous flexural
+        action: confirm
+        target_diagnosis: Atopic dermatitis (eczema), contact dermatitis, seborrheic dermatitis
+    derived_from_figure: Stern Ch.29 prose
+  - step_num: 3
+    description: Step 3 — Severe drug-reaction screening (DRESS criteria, AGEP, fixed drug eruption).
+    rationale: Identify systemic features.
+    branches:
+      - condition: Rash + fever + eosinophilia + organ dysfunction 2-8 weeks after drug
+        action: confirm
+        target_diagnosis: DRESS (drug reaction with eosinophilia and systemic symptoms)
+      - condition: Pustular eruption + fever
+        action: order_test
+        test_to_order: Workup for AGEP; consider biopsy
+    derived_from_figure: Stern Ch.29 prose
+  - step_num: 4
+    description: Step 4 — Petechial / purpuric — distinguish vasculitic, infectious, hematologic causes.
+    branches:
+      - condition: Palpable purpura
+        action: order_test
+        test_to_order: ANCA + complement + biopsy
+      - condition: Petechiae + thrombocytopenia
+        action: order_test
+        test_to_order: CBC + smear + DIC panel
+      - condition: Petechiae + fever + travel / tick exposure
+        action: escalate
+        escalation_reason: Empiric doxycycline for RMSF; ceftriaxone for meningococcemia.
+    derived_from_figure: Stern Ch.29 prose
+red_flags:
+  - name: Mucosal sloughing / Nikolsky sign + new drug
+    description: SJS / TEN — withdraw drug; ICU / burn unit care.
+    severity: high
+  - name: Pain out of proportion to exam + rapid progression + systemic toxicity
+    description: Necrotizing fasciitis — emergent surgical debridement.
+    severity: high
+  - name: Petechiae + fever + hypotension
+    description: Meningococcemia / DIC — empiric ceftriaxone + sepsis bundle.
+    severity: high
+  - name: Tick-borne exposure + petechial rash spreading from wrists / ankles
+    description: RMSF — empiric doxycycline; do not wait for serology.
+    severity: high
+source_pages:
+  - 514
+  - 533
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.29 (pp. 514-533). Frame is morphologic with explicit
+  emergent screen at the top. Algorithm steps prioritize life-threatening
+  dermatologic emergencies. Must-not-miss: SJS / TEN, DRESS, anaphylaxis,
+  necrotizing fasciitis, meningococcemia, RMSF.

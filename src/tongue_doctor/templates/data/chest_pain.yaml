@@ -1,0 +1,853 @@
+complaint: chest_pain
+chapter_number: 9
+chapter_title: Chest Pain
+framework_type: anatomical
+framework_categories:
+  - Skin
+  - Breast
+  - Musculoskeletal
+  - Esophageal
+  - Gastrointestinal
+  - Pulmonary
+  - Cardiac
+  - Vascular
+  - Mediastinal
+  - Psychiatric
+pivotal_points:
+  - duration of symptoms (acute < 7 days vs. chronic ≥ 7 days)
+  - vital signs (normal vs. abnormal)
+  - presence of coronary heart disease (CHD) risk factors
+  - ECG abnormalities (especially ST elevation meeting STEMI criteria)
+  - chest film abnormalities (widened mediastinum, infiltrate, pneumothorax)
+  - symptoms consistent with aortic dissection (tearing/ripping pain, radiation to back, BP differential between arms)
+  - pulmonary embolism (PE) risk factors (immobilization, malignancy, prior VTE, unilateral leg swelling)
+  - character of pain (substernal pressure with exertion vs. pleuritic vs. positional vs. tearing)
+decision_rules:
+  - name: Pooled Cohort Risk Assessment Equations
+    purpose: Estimate 10-year cardiovascular risk to guide pretest probability of CHD
+    inputs:
+      - age
+      - sex
+      - total cholesterol
+      - HDL cholesterol
+      - systolic blood pressure
+      - hypertension treatment
+      - diabetes
+      - smoking status
+    citation: Stern p.168
+  - name: Diamond-Forrester pretest probability table
+    purpose: Stratify CHD pretest probability by age, sex, and angina type
+    inputs:
+      - age
+      - sex
+      - chest pain typicality (typical / atypical / nonanginal / asymptomatic)
+    thresholds:
+      - low risk (pretest probability < 15%)
+      - intermediate risk (15-85%)
+      - high risk (> 85%)
+    citation: Stern p.168 (Table 9-2)
+  - name: HEART Score
+    purpose: Estimate 6-week risk of major cardiac event in ED chest pain
+    inputs:
+      - History (highly/moderately/slightly suspicious)
+      - ECG (significant ST depression / nonspecific repolarization / normal)
+      - Age (<= 45 / 45-65 / >= 65)
+      - Risk factors (none / 1-2 / >= 3 or atherosclerotic disease)
+      - Troponin (normal / 1-3x ULN / >= 3x ULN)
+    thresholds:
+      - 0-3 = 2.5% MACE risk; discharge with follow-up
+      - 4-6 = 20.3% MACE risk; admit for trending and provocative testing
+      - 7+ = 72.7% MACE risk; early invasive measures with cardiology
+    citation: Stern p.176 (Table 9-9)
+  - name: TIMI Risk Score
+    purpose: Risk-stratify established UA/nSTEMI patients (not undifferentiated chest pain)
+    inputs:
+      - "age >= 65"
+      - ">= 3 cardiac risk factors"
+      - "prior coronary stenosis >= 50%"
+      - ST-segment deviation on admission ECG
+      - ">= 2 anginal events in preceding 24 hours"
+      - aspirin use in previous 7 days
+      - elevated cardiac biomarkers
+    thresholds:
+      - 0-1 = 4.7% mortality / MI / urgent revasc at 14 days
+      - 2 = 8.3%
+      - 3 = 13.2%
+      - 4 = 19.9%
+      - 5 = 26.2%
+      - 6-7 = 40.9%
+    citation: Stern p.176 (Table 9-8)
+  - name: Aortic dissection clinical risk triad
+    purpose: Stratify aortic dissection risk by aortic-type pain + mediastinal widening + pulse/BP differentials
+    inputs:
+      - aortic-type pain (acute, tearing, ripping)
+      - aortic or mediastinal widening on chest radiograph
+      - pulse or BP differentials between arms
+    thresholds:
+      - low risk = none of the three (sens 96%, spec 48%, LR+ 1.85, LR- 0.08; ~7% had dissection)
+      - intermediate = aortic pain or widened mediastinum alone (~30-40% had dissection)
+      - high = pulse differential or both aortic pain + widened mediastinum (sens 76%, spec 91%, LR+ 8.4, LR- 0.26; > 84% had dissection)
+    citation: Stern p.178
+differential:
+  - name: Stable angina
+    role: leading
+    icd10:
+      - I20.9
+    pivotal_features_supporting:
+      - substernal chest pressure precipitated by exertion
+      - prompt resolution with rest or nitroglycerin
+      - symptoms unchanged over weeks
+      - cardiac risk factors present
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Substernal chest discomfort precipitated by exertion that resolves promptly with
+      rest or nitroglycerin and does not change over the course of weeks; affected
+      patients usually have risk factors for CHD.
+    disease_highlights:
+      - Mismatch between myocardial oxygen supply and demand, usually from coronary artery stenosis
+      - Common first presentation for CHD
+      - May occur with normal coronaries in setting of anemia, tachycardia, aortic stenosis, hypertrophic cardiomyopathy, or HF
+      - "Atypical presentations include eliciting factors other than exercise (cold, anger, large meals) and symptoms other than chest pain (dyspnea, nausea, jaw/neck/back/abdominal pain, palpitations, weakness, syncope)"
+      - "Risk factors: male sex, age > 55 (men) or > 65 (women), tobacco, diabetes, hypertension, dyslipidemia, peripheral/cerebral vascular disease, CKD, elevated CRP, lifestyle (poor diet, sedentary, obesity), cocaine use"
+      - Stable angina presents differently in women (older age, more atypical descriptors like burning or tender)
+    evidence_based_diagnosis:
+      - test_name: Exercise ECG (>= 1 mm ST depression)
+        sensitivity: 0.68
+        specificity: 0.72
+        lr_positive: 2.5
+        lr_negative: 0.45
+        note: Requires a normal resting ECG; sensitivity drops if patient does not reach adequate workload.
+        citation: Stern p.169 (Table 9-3)
+      - test_name: Exercise echocardiography
+        sensitivity: 0.82
+        specificity: 0.82
+        lr_positive: 4.8
+        lr_negative: 0.21
+        citation: Stern p.169 (Table 9-3)
+      - test_name: Dobutamine echocardiography
+        sensitivity: 0.82
+        specificity: 0.87
+        lr_positive: 6.7
+        lr_negative: 0.23
+        citation: Stern p.169 (Table 9-3)
+      - test_name: Exercise myocardial perfusion SPECT
+        sensitivity: 0.87
+        specificity: 0.87
+        lr_positive: 6.9
+        lr_negative: 0.15
+        citation: Stern p.169 (Table 9-3)
+      - test_name: Pharmacologic myocardial perfusion SPECT
+        sensitivity: 0.85
+        specificity: 0.85
+        lr_positive: 7.0
+        lr_negative: 0.18
+        citation: Stern p.169 (Table 9-3)
+      - test_name: Coronary angiography
+        note: Gold standard for diagnosing CHD; preferred when ischemia is substantial, when symptoms are disabling, or when HF complicates the picture.
+        citation: Stern p.169
+    treatment_classes:
+      - antiplatelet
+      - statin
+      - beta-blocker
+      - calcium channel blocker
+      - nitrate
+      - ranolazine
+      - ACE inhibitor or ARB
+    notes: >-
+      Lifestyle: smoking cessation, exercise, weight loss, low-fat diet. Procedural
+      options (PCI, CABG) reserved for moderate-to-high-risk anatomy; not recommended
+      as routine education.
+  - name: Acute MI (STEMI / nSTEMI)
+    role: active_must_not_miss
+    icd10:
+      - I21.0
+      - I21.4
+      - I21.9
+    pivotal_features_supporting:
+      - acute onset of chest pain
+      - cardiac risk factors
+      - ECG ischemic changes (ST elevation, ST depression, new Q waves, new LBBB)
+      - elevated cardiac biomarkers (troponin, CK-MB)
+    fingerprint_findings:
+      - new ST elevation >= 1 mm in 2 contiguous leads (or >= 2 mm V2-V3 in men < 40 / >= 1.5 mm V2-V3 in women)
+      - new pathologic Q waves
+      - new or presumed-new left bundle branch block
+      - reciprocal ST depression on ECG
+      - radiation to both arms
+      - third heart sound
+    textbook_presentation: >-
+      Crushing substernal chest pressure with diaphoresis, nausea, shortness of breath,
+      and a feeling of impending doom in a patient with CHD risk factors. Atypical
+      presentations are common — especially in women, the elderly, and those with
+      diabetes — and include dyspnea, weakness, fatigue, syncope, indigestion, or
+      pain in atypical locations.
+    disease_highlights:
+      - Prolonged failure to perfuse myocardium causing cell necrosis
+      - "Most often plaque rupture with thrombosis; 5 universal-definition subtypes (spontaneous, demand mismatch, sudden cardiac death, PCI/stent, CABG)"
+      - "STEMI = transmural / complete occlusion; nSTEMI = subendocardial / incomplete occlusion (higher subsequent STEMI risk)"
+      - About 15% of ED chest-pain patients are having an MI
+      - Up to 2% of acute MIs are missed and discharged from the ED — most often women < 55, non-white, with chief complaint of dyspnea, with a non-diagnostic ECG
+      - Pleuritic, sharp/stabbing, or positional pain decreases the likelihood of MI
+    evidence_based_diagnosis:
+      - test_name: Troponin (any elevation above 99th percentile URL)
+        sensitivity: 0.95
+        specificity: 0.98
+        lr_positive: 48.0
+        lr_negative: 0.05
+        note: CKD baseline elevation can cause false positives, but a diagnostic rise/fall still identifies acute MI.
+        citation: Stern p.174
+      - test_name: Serial CK-MB over 24 hours
+        sensitivity: 0.99
+        specificity: 0.98
+        lr_positive: 50.0
+        lr_negative: 0.01
+        citation: Stern p.174
+      - test_name: ECG — new ST elevation > 1 mm
+        lr_positive: 11.0
+        note: Range LR+ 5.7-53 across studies; 80% of patients with new ST elevation of 1 mm have MI.
+        citation: Stern p.174
+      - test_name: ECG — any ST elevation
+        lr_positive: 11.2
+        citation: Stern p.174
+      - test_name: ECG — new Q wave
+        lr_positive: 11.0
+        note: Range LR+ 5.3-24.8.
+        citation: Stern p.174
+      - test_name: ECG — any abnormality
+        lr_negative: 0.04
+        citation: Stern p.174
+      - test_name: History — radiation to both arms
+        lr_positive: 9.7
+        note: Posttest probability 63% at 15% pretest.
+        citation: Stern p.174 (Table 9-7)
+      - test_name: History — third heart sound
+        lr_positive: 3.2
+        citation: Stern p.174 (Table 9-7)
+      - test_name: History — hypotension
+        lr_positive: 3.1
+        citation: Stern p.174 (Table 9-7)
+      - test_name: History — diaphoresis
+        lr_positive: 2.0
+        citation: Stern p.174 (Table 9-7)
+    treatment_classes:
+      - antiplatelet
+      - anticoagulant
+      - beta-blocker
+      - nitrate
+      - statin
+      - ACE inhibitor or ARB
+      - oxygen therapy (when hypoxic)
+    notes: >-
+      STEMI protocol — primary PCI within 90 minutes (or systemic thrombolysis if PCI
+      unavailable within 2 hours). Time-to-reperfusion is mortality-determining, so
+      ECG must be performed and interpreted within 10 minutes of ED arrival.
+  - name: Unstable angina (UA / nSTEMI)
+    role: active_must_not_miss
+    icd10:
+      - I20.0
+      - I21.4
+    pivotal_features_supporting:
+      - cardiac risk factors
+      - ischemic-character chest pain that is new, increasing in severity or frequency, or occurs at rest
+      - ECG ischemic changes (typically ST depression, T-wave inversion)
+    fingerprint_findings:
+      - rest angina (especially > 20 minutes)
+      - new-onset (< 2 months) angina at low workload
+      - accelerating pattern of prior stable angina
+      - chest or left-arm pain reproducing prior angina (especially with transient mitral regurgitation, hypotension, diaphoresis, pulmonary edema, or crackles)
+    textbook_presentation: >-
+      New, worsening, or rest angina without enzyme elevation (UA) or with enzyme
+      elevation that does not meet STEMI criteria (nSTEMI). The clinician must
+      recognize ACS, initiate care, risk-stratify, and treat accordingly.
+    disease_highlights:
+      - Defined as angina that is new, worsening in severity/frequency, or occurs at rest
+      - "Pathophysiology: acute plaque rupture with platelet aggregation; 67% of episodes occur in arteries with < 50% stenosis, 97% with < 75% stenosis"
+      - "Vasospastic (Prinzmetal) angina mimics UA — episodic chest pain with transient ST elevation; treated with calcium channel blockers and nitrates"
+    evidence_based_diagnosis:
+      - test_name: Troponin
+        sensitivity: 0.95
+        specificity: 0.98
+        lr_positive: 48.0
+        lr_negative: 0.05
+        note: Distinguishes UA (negative) from nSTEMI (positive); both managed as ACS.
+        citation: Stern p.174
+      - test_name: HEART Score
+        note: 0-3 → 2.5% 6-week MACE; 4-6 → 20.3%; 7+ → 72.7%.
+        citation: Stern p.176 (Table 9-9)
+      - test_name: TIMI Score
+        note: Risk-stratifies established UA/nSTEMI to conservative vs. invasive strategy.
+        citation: Stern p.176 (Table 9-8)
+      - test_name: Stress testing (after stabilization)
+        note: Determines if angiography indicated when patient is clinically stable.
+        citation: Stern p.177
+      - test_name: Coronary angiography
+        note: Urgent for unstable patients; selective for stable patients with high-risk stress findings.
+        citation: Stern p.177
+    treatment_classes:
+      - antiplatelet
+      - anticoagulant
+      - beta-blocker
+      - nitrate
+      - statin
+      - calcium channel blocker
+      - oxygen therapy (when hypoxic)
+    notes: >-
+      TIMI / HEART risk stratification drives conservative vs. early-invasive strategy.
+      Procedural options (PCI, CABG) for high-risk anatomy are not user-facing
+      education content.
+  - name: Aortic dissection (acute aortic syndrome)
+    role: active_must_not_miss
+    icd10:
+      - I71.00
+      - I71.01
+      - I71.03
+    pivotal_features_supporting:
+      - hypertension (present in 72-75%)
+      - acute, severe, or "tearing/ripping" chest pain
+      - radiation of pain to the back
+      - BP or pulse differential between arms
+      - widened mediastinum on chest radiograph
+    fingerprint_findings:
+      - tearing or ripping pain quality
+      - pulse deficit (only 15% of cases — insensitive but specific)
+      - BP differential between arms
+      - Marfan syndrome / family history of aortic disease
+      - acute aortic regurgitation murmur
+      - cocaine use in younger patients
+    textbook_presentation: >-
+      Older man with hypertension and atherosclerotic disease who complains of
+      "tearing" chest or back pain, possibly with vascular complications (syncope,
+      stroke, cardiac ischemia, HF from acute aortic regurgitation). Exam shows BP
+      asymmetry between arms; chest radiograph shows widened mediastinum.
+    disease_highlights:
+      - Tear in the aortic intima allowing blood to dissect between intima and media
+      - "Type A involves the ascending aorta (~60% of cases, mortality ~35%); Type B involves only the descending aorta (mortality ~15%)"
+      - "Risk factors: HTN (72%), atherosclerosis (31%), known aortic aneurysm (16%), prior dissection (6%), diabetes (5%), Marfan (5%), cocaine (younger patients)"
+      - 3-5% of aortic dissections have a concomitant MI — presence of MI does NOT exclude dissection
+      - Chest radiograph and ECG are insensitive — aorta normal on chest film in ~40% of dissections
+    evidence_based_diagnosis:
+      - test_name: Aortic dissection clinical risk triad — low risk (none of acute/tearing pain, mediastinal widening, pulse/BP differential)
+        sensitivity: 0.96
+        specificity: 0.48
+        lr_positive: 1.85
+        lr_negative: 0.08
+        note: Approximately 7% of "low-risk" patients still had a dissection in the cited cohort.
+        citation: Stern p.178
+      - test_name: Aortic dissection clinical risk triad — high risk (pulse differential or both aortic pain and widened mediastinum)
+        sensitivity: 0.76
+        specificity: 0.91
+        lr_positive: 8.4
+        lr_negative: 0.26
+        note: "> 84% of high-risk patients had a dissection."
+        citation: Stern p.178
+      - test_name: D-dimer (combined with low clinical risk)
+        note: Low D-dimer (< 500 ng/mL) plus low clinical risk essentially rules out dissection.
+        citation: Stern p.178
+      - test_name: CT angiography of the chest
+        sensitivity: 0.95
+        specificity: 0.95
+        note: Both CT and TEE have sensitivity and specificity > 95%.
+        citation: Stern p.178
+      - test_name: Transesophageal echocardiography
+        sensitivity: 0.95
+        specificity: 0.95
+        citation: Stern p.178
+      - test_name: Chest radiograph — widened mediastinum
+        note: Present in 63% of type A dissections; normal mediastinum in 17%, normal chest film in 11%.
+        citation: Stern p.177 (Table 9-10)
+    treatment_classes:
+      - beta-blocker
+      - vasodilator
+    notes: >-
+      Type A dissections require emergent surgical repair; Type B managed medically
+      with tight BP control. Surgical / endovascular procedures are not user-facing
+      education content.
+  - name: Pulmonary embolism (PE)
+    role: active_must_not_miss
+    icd10:
+      - I26.99
+      - I26.09
+    pivotal_features_supporting:
+      - PE risk factors (immobilization, malignancy, prior VTE, recent surgery, OCP / pregnancy / postpartum)
+      - dyspnea
+      - pleuritic chest pain
+      - tachycardia
+      - unilateral leg swelling
+    fingerprint_findings:
+      - acute pleuritic chest pain with unilateral leg swelling
+      - sudden dyspnea + tachycardia in a postoperative or immobilized patient
+    textbook_presentation: >-
+      Acute pleuritic chest pain with dyspnea and tachycardia in a patient with
+      VTE risk factors; unilateral leg swelling supports the diagnosis. Presentations
+      can be subtle, especially with smaller emboli.
+    disease_highlights:
+      - "Cited as one of the three life-threatening, time-critical, must-not-miss diagnoses in chest pain (alongside ACS and AAS)"
+      - Highly specific clinical 'fingerprint' findings on history, physical, or ECG can prompt direct further evaluation per Figure 9-2
+    evidence_based_diagnosis:
+      - test_name: CT pulmonary angiography
+        note: First-line definitive imaging for suspected PE in stable patients.
+        citation: Stern p.179 (Table 9-11)
+      - test_name: Ventilation-perfusion (V/Q) scan
+        note: Alternative when CT is contraindicated (e.g., contrast allergy, pregnancy).
+        citation: Stern p.179 (Table 9-11)
+      - test_name: D-dimer
+        note: Excludes PE in low-risk patients (high sensitivity, low specificity); positive D-dimer alone is not diagnostic.
+        citation: Stern p.179 (Table 9-11)
+      - test_name: Pulmonary angiography
+        note: Historical gold standard; rarely used now given CT availability.
+        citation: Stern p.179 (Table 9-11)
+    treatment_classes:
+      - anticoagulant
+      - thrombolytic (massive PE only, in appropriate clinical settings)
+      - oxygen therapy (when hypoxic)
+    notes: >-
+      Risk stratification (e.g., Wells, PERC, Geneva — referenced more thoroughly in
+      Stern Ch. 15 Dyspnea) drives the testing pathway. Procedural options
+      (catheter-directed thrombolysis, embolectomy, IVC filter) are not user-facing.
+  - name: GERD
+    role: active_most_common
+    icd10:
+      - K21.9
+    pivotal_features_supporting:
+      - heartburn (burning substernal discomfort)
+      - regurgitation
+      - symptoms worse at night and after large meals
+      - relief with antacids
+      - exacerbation with recumbency or stooping
+    fingerprint_findings:
+      - burning retrosternal pain after meals
+      - waking from sleep with chest discomfort
+    textbook_presentation: >-
+      Burning, substernal chest discomfort (heartburn) — usually the presenting
+      symptom — sometimes with regurgitation or dysphagia; chest pain is a common
+      alternative presentation. Symptoms are typically worst at night and after
+      large meals.
+    disease_highlights:
+      - Common cause of chest pain
+      - "Classified as erosive or non-erosive based on endoscopic findings"
+      - "GI complications: esophagitis, stricture, Barrett esophagus, esophageal adenocarcinoma"
+      - "Non-GI complications: chronic cough, hoarseness, asthma worsening"
+      - "Other esophageal disorders that mimic GERD: esophagitis (often pill-induced — bisphosphonates, tetracyclines, NSAIDs, potassium), esophageal cancer, esophageal rupture (Boerhaave syndrome — acute pain after retching), esophageal spasm"
+      - History alone cannot reliably differentiate cardiac from esophageal chest pain — radiation to left arm and exacerbation with exercise occur in both
+      - Response to nitroglycerin should NOT be used to differentiate cardiac from esophageal pain
+    evidence_based_diagnosis:
+      - test_name: Suspicious history + consistent endoscopic findings
+        specificity: 0.97
+        note: Combination has 97% specificity for GERD.
+        citation: Stern p.171
+      - test_name: Empiric trial of acid suppression therapy
+        note: Suggestive symptoms plus response to therapy is generally considered diagnostic.
+        citation: Stern p.171
+      - test_name: Esophagogastroduodenoscopy (EGD)
+        note: "Indicated for alarm symptoms (dysphagia, odynophagia, weight loss, GI bleeding, iron-deficiency anemia), signs of complicated disease, chest pain of unclear etiology, long-standing reflux (Barrett risk), need for long-term therapy, or poor response."
+        citation: Stern p.171
+      - test_name: Ambulatory esophageal pH monitoring
+        note: Gold standard for GERD; reserved for patients with GERD symptoms and a normal endoscopy or refractory cases.
+        citation: Stern p.171
+    treatment_classes:
+      - proton pump inhibitor
+      - H2-receptor blocker
+      - prokinetic / motility agent (e.g., metoclopramide; reserved for endoscopy-proven disease)
+    notes: >-
+      Empiric PPI course (8 weeks once-daily) is first-line after life-threatening
+      causes excluded. Lifestyle: weight loss if obese, head-of-bed elevation, avoid
+      reclining 2-3 hours after eating. Antireflux surgery has a very small role.
+  - name: Musculoskeletal chest pain (costochondritis, chest-wall syndromes)
+    role: active_most_common
+    icd10:
+      - M94.0
+      - M79.1
+    pivotal_features_supporting:
+      - history of injury or specific MSK syndrome
+      - reproducible chest-wall tenderness on physical exam
+      - response to NSAIDs
+    fingerprint_findings:
+      - reproducible tenderness on palpation of the chest wall
+    textbook_presentation: >-
+      Localized, often reproducible chest-wall pain after injury or with specific
+      MSK syndromes (costochondritis, precordial catch syndrome, Tietze syndrome,
+      pectoral muscle strain, rib fracture, cervical/thoracic spondylosis, myositis).
+    disease_highlights:
+      - Common benign cause of chest pain
+      - "Stern caution: do not diagnose costochondritis without reproducible chest tenderness — atypical presentations should prompt reconsideration of must-not-miss diagnoses"
+    evidence_based_diagnosis:
+      - test_name: Physical examination (reproducible tenderness)
+        note: Primary diagnostic finding; absence challenges the diagnosis.
+        citation: Stern p.167
+      - test_name: Response to NSAID therapy
+        note: Supportive but not diagnostic.
+        citation: Stern p.167
+    treatment_classes:
+      - NSAID
+      - acetaminophen
+    notes: >-
+      Per Stern Figure 9-2 caveat — "If the patient's presentation doesn't perfectly
+      fit the classic presentation for these entities, you should question the
+      diagnosis (eg, costochondritis without reproducible chest tenderness)."
+  - name: Pneumonia (with or without pleural effusion)
+    role: active_most_common
+    icd10:
+      - J18.9
+      - J90
+    pivotal_features_supporting:
+      - cough
+      - fever
+      - dyspnea
+      - pleuritic chest pain
+      - physical exam findings of consolidation or pleural effusion
+    fingerprint_findings:
+      - infiltrate on chest film
+      - dullness to percussion with decreased breath sounds (effusion)
+    textbook_presentation: >-
+      Pleuritic chest pain accompanying cough, fever, and dyspnea, with chest exam
+      findings (rales, dullness, decreased breath sounds) and an abnormal chest
+      radiograph.
+    disease_highlights:
+      - Featured as the leading hypothesis in Stern's third chest-pain case (Mr. H — subacute pleuritic pain with cough and fever)
+      - Pleural effusion may dominate the presentation when complicating pneumonia
+    evidence_based_diagnosis:
+      - test_name: Chest radiograph
+        note: First-line; identifies infiltrate and effusion.
+        citation: Stern p.179 (Table 9-11)
+      - test_name: Thoracentesis
+        note: When effusion is present and clinically concerning; characterizes the fluid.
+        citation: Stern p.179 (Table 9-11)
+    treatment_classes:
+      - antibiotic
+      - antipyretic / analgesic
+    notes: Detailed pneumonia evaluation is the focus of Stern Ch. 10 (Cough, Fever, and Respiratory Infections).
+  - name: Pericarditis
+    role: other
+    icd10:
+      - I30.9
+    pivotal_features_supporting:
+      - pain relieved by leaning forward
+      - friction rub on auscultation
+      - diffuse ST elevation on ECG (concave-up) with PR depression
+    fingerprint_findings:
+      - pericardial friction rub
+      - diffuse concave-up ST elevation
+    textbook_presentation: >-
+      Pleuritic chest pain that is relieved by leaning forward and worsened by
+      lying supine, with a pericardial friction rub on exam and diffuse
+      concave-up ST elevations on ECG.
+    disease_highlights:
+      - Listed as an active alternative in Stern's pleural-effusion case (Mr. H)
+      - Highlighted in the acute-chest-pain flowchart as a less common but specific 'fingerprint' diagnosis
+    evidence_based_diagnosis:
+      - test_name: ECG
+        note: Diffuse concave-up ST elevation with PR depression supports the diagnosis.
+        citation: Stern p.179 (Table 9-11)
+      - test_name: Echocardiogram
+        note: Identifies effusion, supports diagnosis when ECG is equivocal.
+        citation: Stern p.179 (Table 9-11)
+    treatment_classes:
+      - NSAID
+      - colchicine
+      - corticosteroid (refractory or autoimmune cases)
+    notes: ""
+  - name: Esophageal rupture (Boerhaave syndrome)
+    role: active_must_not_miss
+    icd10:
+      - K22.3
+    pivotal_features_supporting:
+      - acute chest pain following retching or vomiting
+      - subcutaneous emphysema
+      - mediastinal air on imaging
+    fingerprint_findings:
+      - acute, severe chest pain immediately after vomiting
+      - Hamman crunch (mediastinal crepitus)
+    textbook_presentation: >-
+      Sudden severe chest pain after retching or vomiting, often with subcutaneous
+      emphysema, sepsis, and mediastinal air on chest radiograph or CT.
+    disease_highlights:
+      - Listed in Stern Figure 9-2 as a less-common but life-threatening 'fingerprint' diagnosis to consider after AAS / ACS / PE are addressed
+    evidence_based_diagnosis:
+      - test_name: Contrast esophagram (water-soluble)
+        note: Demonstrates contrast extravasation.
+        citation: Stern p.166 (Figure 9-2)
+      - test_name: CT chest
+        note: Identifies mediastinal air, fluid, and the rupture site.
+        citation: Stern p.166 (Figure 9-2)
+    treatment_classes:
+      - antibiotic
+      - antiemetic
+    notes: >-
+      Surgical / endoscopic repair is the definitive treatment but not user-facing
+      education content.
+  - name: Pneumothorax
+    role: active_must_not_miss
+    icd10:
+      - J93.0
+      - J93.9
+    pivotal_features_supporting:
+      - acute pleuritic chest pain
+      - dyspnea
+      - decreased breath sounds on the affected side
+      - hyperresonance on percussion
+      - tall thin habitus or known lung disease
+    fingerprint_findings:
+      - sudden pleuritic chest pain with absent breath sounds unilaterally
+      - tracheal deviation away from affected side (tension pneumothorax)
+    textbook_presentation: >-
+      Sudden pleuritic chest pain with dyspnea and unilateral decreased breath
+      sounds; tension physiology causes hemodynamic compromise and tracheal
+      deviation.
+    disease_highlights:
+      - Listed in Stern Figure 9-2's chest-film findings to consider for acute chest pain
+      - Tension pneumothorax is a true emergency requiring immediate decompression
+    evidence_based_diagnosis:
+      - test_name: Chest radiograph
+        note: Visceral pleural line with absent lung markings; tension features include mediastinal shift.
+        citation: Stern p.166 (Figure 9-2)
+      - test_name: Bedside lung ultrasound
+        note: Absent lung sliding supports the diagnosis at the point of care.
+        citation: Stern p.166 (Figure 9-2)
+    treatment_classes:
+      - oxygen therapy
+    notes: >-
+      Procedural treatment (needle decompression, chest tube) is not user-facing
+      education content.
+  - name: Esophageal spasm
+    role: other
+    icd10:
+      - K22.4
+    pivotal_features_supporting:
+      - recurrent chest pain often radiating to the back
+      - dysphagia
+      - symptoms not provoked by exertion
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Recurrent intermittent chest pain often with dysphagia and radiation to the
+      back; presentation can mimic angina but lacks an exertional trigger.
+    evidence_based_diagnosis:
+      - test_name: Esophageal manometry
+        note: Diagnostic; performed after exclusion of other causes.
+        citation: Stern p.172 (Table 9-5)
+    treatment_classes:
+      - calcium channel blocker
+      - nitrate
+      - proton pump inhibitor (when reflux coexists)
+    notes: ""
+  - name: Herpes zoster (chest wall)
+    role: other
+    icd10:
+      - B02.9
+    pivotal_features_supporting:
+      - dermatomal vesicular rash
+      - prodromal pain in a single dermatome before rash appears
+    fingerprint_findings:
+      - dermatomal vesicular eruption
+    textbook_presentation: >-
+      Burning or sharp dermatomal chest pain that may precede the appearance of
+      grouped vesicles in the same dermatome.
+    evidence_based_diagnosis:
+      - test_name: Clinical exam — dermatomal vesicular rash
+        note: Sufficient when classic; PCR of vesicular fluid confirms when uncertain.
+        citation: Stern p.166 (Figure 9-2)
+    treatment_classes:
+      - antiviral
+      - analgesic
+    notes: ""
+  - name: Sickle cell disease — acute chest syndrome
+    role: other
+    icd10:
+      - D57.00
+      - D57.01
+    pivotal_features_supporting:
+      - sickle cell disease (known)
+      - chest pain
+      - fever
+      - hypoxemia
+      - new pulmonary infiltrate
+    fingerprint_findings:
+      - new pulmonary infiltrate plus chest pain or fever in a patient with sickle cell disease
+    textbook_presentation: >-
+      Patient with known sickle cell disease presenting with chest pain, fever,
+      cough or dyspnea, and a new pulmonary infiltrate.
+    evidence_based_diagnosis:
+      - test_name: Chest radiograph
+        note: New infiltrate is required for the diagnosis.
+        citation: Stern p.166 (Figure 9-2)
+      - test_name: Pulse oximetry / arterial blood gas
+        note: Documents hypoxemia.
+        citation: Stern p.166 (Figure 9-2)
+    treatment_classes:
+      - antibiotic
+      - bronchodilator
+      - analgesic
+      - blood transfusion (severe disease)
+    notes: ""
+  - name: Panic / anxiety
+    role: other
+    icd10:
+      - F41.0
+      - F41.1
+    pivotal_features_supporting:
+      - acute episodic chest tightness with dyspnea, palpitations, and fear
+      - normal vital signs (or sinus tachycardia only)
+      - normal ECG
+      - no risk factors for must-not-miss diagnoses
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Acute episodes of chest tightness or pressure with dyspnea, palpitations,
+      diaphoresis, and a sense of impending doom in a patient without cardiac risk
+      factors and with a normal ECG; episodes often peak within minutes and resolve
+      spontaneously.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment after exclusion of must-not-miss diagnoses
+        note: Diagnosis of exclusion in undifferentiated chest pain.
+        citation: Stern p.166 (Figure 9-2)
+    treatment_classes:
+      - SSRI
+      - SNRI
+      - cognitive behavioral therapy (referral)
+    notes: >-
+      Stern caveat — never assign panic/anxiety as the diagnosis until life-threatening
+      causes have been excluded.
+  - name: Subdiaphragmatic / intra-abdominal abscess
+    role: other
+    icd10:
+      - K65.1
+    pivotal_features_supporting:
+      - intra-abdominal process or recent abdominal surgery
+      - fevers
+      - referred chest or shoulder pain
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Subacute fever and chest or shoulder pain referred from a subdiaphragmatic
+      collection in a patient with a recent intra-abdominal process or surgery.
+    evidence_based_diagnosis:
+      - test_name: Abdominal ultrasound
+        citation: Stern p.179 (Table 9-11)
+      - test_name: CT abdomen / pelvis
+        citation: Stern p.179 (Table 9-11)
+    treatment_classes:
+      - antibiotic
+    notes: Procedural drainage is the definitive treatment but is not user-facing education content.
+algorithm:
+  - step_num: 1
+    description: Has chest pain been present for > 7 days?
+    rationale: Stern's first pivotal split — chronicity selects the chronic vs. acute pathway (Figure 9-1 vs. 9-2).
+    branches:
+      - condition: "Yes (chronic, > 7 days)"
+        action: next_step
+        target_step: 2
+      - condition: "No (acute, <= 7 days)"
+        action: next_step
+        target_step: 5
+    derived_from_figure: Stern Fig 9-1
+  - step_num: 2
+    description: Is the patient's presentation consistent with chronic stable angina (demographics, presentation, past medical history, ECG, clinical decision rules)?
+    rationale: Chronic-pathway leading-hypothesis check.
+    branches:
+      - condition: "Yes — typical for stable angina"
+        action: order_test
+        test_to_order: Functional or anatomic cardiac testing (stress imaging or CT coronary angiogram); begin empiric anti-ischemic therapy
+      - condition: "No"
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Fig 9-1
+  - step_num: 3
+    description: Is the presentation consistent with a common chronic cause (musculoskeletal, esophageal/GERD, referred from abdominal process, panic / anxiety)?
+    rationale: Chronic-pathway common-cause sweep.
+    branches:
+      - condition: "Yes — fits a common benign syndrome"
+        action: treat_empiric
+        notes: Diagnose and treat the cause; explicitly reconsider must-not-miss (ACS, PE, AAS) before committing, to avoid premature closure.
+      - condition: "No"
+        action: next_step
+        target_step: 4
+    derived_from_figure: Stern Fig 9-1
+  - step_num: 4
+    description: Evaluate for less common subacute or chronic causes (pneumonia, PE, pleural effusion, lung mass, mediastinal abnormalities, pericardial disease).
+    rationale: Chronic-pathway final sweep when stable angina and common benign causes are unlikely.
+    branches:
+      - condition: "default"
+        action: order_test
+        test_to_order: Targeted imaging (chest film, CT chest, echocardiogram) and labs guided by clinical suspicion
+    derived_from_figure: Stern Fig 9-1
+  - step_num: 5
+    description: Does the ECG meet STEMI criteria (new ST elevation >= 1 mm in 2 contiguous leads, V2-V3 thresholds adjusted by sex/age, or new LBBB)?
+    rationale: Acute-pathway top of tree — STEMI activation is time-critical (door-to-ECG <= 10 minutes; door-to-PCI <= 90 minutes).
+    branches:
+      - condition: "Yes"
+        action: escalate
+        escalation_reason: STEMI activation — arrange immediate primary PCI; consider possibility of concomitant aortic dissection (3-5% co-occurrence).
+      - condition: "No"
+        action: next_step
+        target_step: 6
+    derived_from_figure: Stern Fig 9-2
+  - step_num: 6
+    description: Are there highly specific clinical "fingerprints" of the must-not-miss diagnoses (AAS, ACS, PE) in the history, physical exam, or ECG?
+    rationale: Acute-pathway must-not-miss fingerprint check.
+    branches:
+      - condition: "Yes"
+        action: order_test
+        test_to_order: Targeted imaging and biomarkers (troponin, CT angiography of chest/aorta or pulmonary arteries, TEE) and management for the specific must-not-miss diagnosis
+      - condition: "No"
+        action: next_step
+        target_step: 7
+    derived_from_figure: Stern Fig 9-2
+  - step_num: 7
+    description: Are there highly specific "fingerprints" of less common diagnoses (herpes zoster, mastitis, sickle cell crisis / acute chest syndrome, pericarditis / myocarditis, pneumonia, esophageal rupture)?
+    rationale: Acute-pathway less-common-but-specific sweep.
+    branches:
+      - condition: "Yes"
+        action: order_test
+        test_to_order: Targeted evaluation per fingerprint (e.g., chest film, esophagram or CT chest for rupture, dermatologic exam for zoster)
+      - condition: "No"
+        action: next_step
+        target_step: 8
+    derived_from_figure: Stern Fig 9-2
+  - step_num: 8
+    description: Risk-stratify the patient for ACS (HEART Score) and for PE (Wells / PERC / Geneva — see Stern Ch. 15). Is there a likely diagnosis?
+    rationale: Acute-pathway risk stratification when no fingerprint fired.
+    branches:
+      - condition: "Likely ACS or PE"
+        action: order_test
+        test_to_order: Pursue further evaluation (serial troponin and stress testing or angiography for ACS; CT pulmonary angiography for PE)
+      - condition: "No likely diagnosis"
+        action: next_step
+        target_step: 9
+    derived_from_figure: Stern Fig 9-2
+  - step_num: 9
+    description: Are there findings on chest film suggesting other potential etiologies (pneumonia, pleural effusion, lung mass, pericardial effusion, rib fracture, AAS, PE, esophageal rupture)?
+    rationale: Acute-pathway chest-film sweep.
+    branches:
+      - condition: "Yes — abnormal film"
+        action: order_test
+        test_to_order: Targeted follow-up imaging or biomarkers per finding
+      - condition: "No — chest film unrevealing"
+        action: next_step
+        target_step: 10
+    derived_from_figure: Stern Fig 9-2
+  - step_num: 10
+    description: Consider common nonemergent causes of acute chest pain — chest-wall syndromes, esophageal reflux, other GI causes, psychiatric (panic, anxiety).
+    rationale: Acute-pathway 'waste-basket' diagnoses — Stern explicitly warns against assigning these without confirming the diagnosis fits the classic presentation.
+    branches:
+      - condition: "Diagnosis fits classic presentation"
+        action: treat_empiric
+        notes: Treat empirically while remaining alert for atypical features.
+      - condition: "Diagnosis does NOT cleanly fit"
+        action: reassess
+        target_step: 6
+        notes: Reconsider must-not-miss diagnoses rather than accepting a poor-fit waste-basket diagnosis.
+    derived_from_figure: Stern Fig 9-2
+red_flags: []
+source_pages:
+  - 164
+  - 185
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Distilled from Stern, Cifu & Altkorn — Symptoms to Diagnosis (4th ed., 2020),
+  Ch. 9 (pp. 164-185). The differential unions Stern's three patient cases
+  (chronic stable angina — Mr. W; acute MI / nSTEMI / dissection — Mrs. G;
+  subacute pleural effusion / pneumonia / PE — Mr. H), promoting any diagnosis
+  that is "Active Alternative — Must Not Miss" in any case to that bucket in the
+  union. Algorithm steps 1-4 follow Figure 9-1 (chronic) and steps 5-10 follow
+  Figure 9-2 (acute), reconciled against the chapter prose. Treatment classes
+  are educational; specific drugs / doses / regimens are deliberately omitted
+  per safety invariant I-3 (prescription leak guard).

@@ -1,0 +1,490 @@
+complaint: acid_base_abnormalities
+chapter_number: 4
+chapter_title: Acid-Base Abnormalities
+framework_type: physiologic
+framework_categories:
+  - Metabolic acidosis (HCO3 < 24, pH < 7.4)
+  - Metabolic alkalosis (HCO3 > 24, pH > 7.4)
+  - Respiratory acidosis (PaCO2 > 40, pH < 7.4)
+  - Respiratory alkalosis (PaCO2 < 40, pH > 7.4)
+pivotal_points:
+  - pH (< 7.4 = acidosis, > 7.4 = alkalosis)
+  - HCO3 (< 24 mEq/L = metabolic acidosis when pH low; > 24 = metabolic alkalosis when pH high)
+  - PaCO2 (> 40 mm Hg = respiratory acidosis when pH low; < 40 = respiratory alkalosis when pH high)
+  - anion gap (Na - HCO3 - Cl; normal 12 +/- 4 corrected for albumin)
+  - delta-delta ratio (delta-AG / delta-HCO3; ratio < 1 suggests concurrent non-anion-gap metabolic acidosis; ratio > 2 suggests concurrent metabolic alkalosis)
+  - expected compensation (Winter's formula and analogous rules — deviation indicates concurrent disorder)
+  - osmolar gap (when methanol or ethylene glycol toxicity is suspected)
+decision_rules:
+  - name: Anion gap calculation
+    purpose: Differentiate anion-gap from non-anion-gap metabolic acidosis
+    inputs:
+      - serum sodium
+      - serum bicarbonate
+      - serum chloride
+      - serum albumin (for albumin correction)
+    thresholds:
+      - normal anion gap = 12 +/- 4 mEq/L (institution-dependent, may be 7-9)
+      - "albumin correction: add 2.5 to anion gap for every 1.0 g/dL drop in albumin below 4.0"
+    citation: Stern p.69
+  - name: Winter's formula (expected respiratory compensation in metabolic acidosis)
+    purpose: Detect concurrent respiratory acid-base disorder
+    inputs:
+      - measured HCO3
+    thresholds:
+      - "expected PaCO2 = 1.5 x HCO3 + 8 (+/- 2)"
+      - "actual > expected indicates concurrent respiratory acidosis; actual < expected indicates concurrent respiratory alkalosis"
+    citation: Stern Ch.4 (Table 4-2)
+  - name: Delta-delta ratio
+    purpose: Detect mixed acid-base disorders within an anion-gap acidosis
+    inputs:
+      - delta anion gap (measured AG - 12)
+      - delta HCO3 (24 - measured HCO3)
+    thresholds:
+      - "ratio < 1 = concurrent non-anion-gap metabolic acidosis (e.g., diarrhea + DKA)"
+      - "ratio 1-2 = pure anion-gap metabolic acidosis"
+      - "ratio > 2 = concurrent metabolic alkalosis"
+    citation: Stern Ch.4
+  - name: Osmolar gap
+    purpose: Screen for ingestion of methanol, ethylene glycol, isopropyl alcohol
+    inputs:
+      - measured serum osmolality
+      - "calculated osmolality = 2 x Na + glucose/18 + BUN/2.8 + ethanol/3.7"
+    thresholds:
+      - "elevated osmolar gap (> 10 mOsm/kg) raises suspicion for toxic alcohol"
+    citation: Stern Ch.4 (toxic-alcohol section)
+differential:
+  - name: Diabetic ketoacidosis (DKA)
+    role: active_must_not_miss
+    icd10:
+      - E10.10
+      - E11.10
+    pivotal_features_supporting:
+      - known or new diabetes
+      - hyperglycemia
+      - elevated beta-hydroxybutyrate / urine ketones
+      - anion-gap metabolic acidosis
+      - polyuria, polydipsia, vomiting
+    fingerprint_findings:
+      - elevated beta-hydroxybutyrate with anion-gap metabolic acidosis in a diabetic patient
+    textbook_presentation: >-
+      Diabetic patient with vomiting, abdominal pain, Kussmaul respirations,
+      hyperglycemia, ketonemia, and anion-gap metabolic acidosis.
+    evidence_based_diagnosis:
+      - test_name: Serum beta-hydroxybutyrate
+        sensitivity: 0.98
+        specificity: 0.85
+        note: More sensitive than urine ketones for early DKA.
+        citation: Stern Ch.12
+      - test_name: Anion gap calculation
+        note: Elevated anion gap with beta-hydroxybutyrate confirms DKA over other anion-gap acidoses.
+        citation: Stern Ch.4
+    treatment_classes:
+      - intravenous fluid replacement
+      - insulin therapy
+      - electrolyte repletion (potassium, phosphate)
+    notes: Detailed management lives in Stern Ch.12 (Diabetes).
+  - name: Lactic acidosis (Type A — hypoperfusion)
+    role: active_must_not_miss
+    icd10:
+      - E87.2
+    pivotal_features_supporting:
+      - shock (septic, cardiogenic, hypovolemic, anaphylactic)
+      - hypoxia
+      - regional ischemia (e.g., mesenteric ischemia, limb ischemia)
+      - seizures
+      - carbon monoxide or cyanide poisoning
+    fingerprint_findings:
+      - elevated serum lactate (> 4 mmol/L) with anion-gap metabolic acidosis and hypoperfusion
+    textbook_presentation: >-
+      Hypotensive or critically ill patient with anion-gap metabolic acidosis
+      and elevated serum lactate; the lactate elevation reflects tissue hypoxia
+      until proven otherwise.
+    evidence_based_diagnosis:
+      - test_name: Serum lactate
+        sensitivity: 0.99
+        note: Levels > 4 mmol/L are clinically significant; trends correlate with mortality in sepsis.
+        citation: Stern Ch.4
+    treatment_classes:
+      - intravenous fluid replacement
+      - vasopressor (when shock present)
+      - oxygen therapy
+      - source-control antibiotic (sepsis)
+    notes: Type B lactic acidosis (e.g., metformin, HIV drugs, malignancy) lacks the hypoperfusion driver but presents similarly.
+  - name: Toxic alcohol ingestion (methanol or ethylene glycol)
+    role: active_must_not_miss
+    icd10:
+      - T51.1X1A
+      - T52.8X1A
+    pivotal_features_supporting:
+      - ingestion of antifreeze, de-icing fluid, windshield washer fluid, or moonshine
+      - anion-gap metabolic acidosis with elevated osmolar gap
+      - oxalate crystals in urine (ethylene glycol)
+      - ocular symptoms (methanol)
+    fingerprint_findings:
+      - anion-gap metabolic acidosis with elevated osmolar gap
+      - calcium oxalate crystalluria in ethylene glycol toxicity
+      - blindness with retinal pallor in methanol toxicity
+    textbook_presentation: >-
+      Acutely intoxicated patient with anion-gap metabolic acidosis, elevated
+      osmolar gap, and a history (witnessed or suspected) of toxic alcohol
+      ingestion.
+    evidence_based_diagnosis:
+      - test_name: Osmolar gap
+        note: Elevated > 10 mOsm/kg raises suspicion; serum levels of methanol / ethylene glycol confirm.
+        citation: Stern Ch.4
+      - test_name: Serum methanol or ethylene glycol concentration
+        note: Definitive when available.
+        citation: Stern Ch.4
+    treatment_classes:
+      - alcohol-dehydrogenase inhibitor (fomepizole)
+      - hemodialysis
+      - thiamine and pyridoxine supplementation
+    notes: Time-critical — antidote and dialysis decisions are made rapidly to prevent ocular and renal damage.
+  - name: Salicylate toxicity
+    role: active_must_not_miss
+    icd10:
+      - T39.011A
+    pivotal_features_supporting:
+      - ingestion of aspirin or oil of wintergreen
+      - tinnitus
+      - tachypnea
+      - mixed primary respiratory alkalosis with anion-gap metabolic acidosis
+    fingerprint_findings:
+      - mixed respiratory alkalosis + anion-gap metabolic acidosis with tinnitus
+    textbook_presentation: >-
+      Adult or older child with tinnitus, tachypnea, hyperthermia, and a
+      characteristic mixed respiratory alkalosis (CNS-driven hyperventilation)
+      with anion-gap metabolic acidosis.
+    evidence_based_diagnosis:
+      - test_name: Serum salicylate level
+        note: Quantifies severity and guides hemodialysis indication.
+        citation: Stern Ch.4
+    treatment_classes:
+      - urinary alkalinization (sodium bicarbonate infusion)
+      - hemodialysis (severe toxicity)
+      - intravenous fluid replacement
+    notes: Acetazolamide is contraindicated; it reduces urinary alkalinization.
+  - name: Severe respiratory acidosis from neuromuscular respiratory failure
+    role: active_must_not_miss
+    icd10:
+      - J96.10
+    pivotal_features_supporting:
+      - Guillain-Barré syndrome
+      - myasthenic crisis
+      - high cervical spinal cord injury
+      - opioid or sedative overdose
+      - severe COPD exacerbation
+    fingerprint_findings:
+      - inability to maintain ventilation with rising PaCO2 and decreasing pH
+    textbook_presentation: >-
+      Neuromuscular or CNS process producing alveolar hypoventilation with
+      acute respiratory acidosis and inability to clear CO2; clinical signs are
+      somnolence, accessory muscle use, and progressive obtundation.
+    evidence_based_diagnosis:
+      - test_name: Arterial blood gas
+        note: Acute rise in PaCO2 with low pH; chronic compensation has near-normal pH.
+        citation: Stern Ch.4
+      - test_name: Negative inspiratory force / vital capacity bedside testing
+        note: Trends downward herald respiratory failure in neuromuscular disease.
+        citation: Stern Ch.4
+    treatment_classes:
+      - oxygen therapy (titrated)
+      - non-invasive positive pressure ventilation
+    notes: Endotracheal intubation may be required; that decision is procedural.
+  - name: Anion-gap metabolic acidosis (other causes — uremia, rhabdomyolysis, D-lactic, propofol)
+    role: active_most_common
+    icd10:
+      - E87.2
+    pivotal_features_supporting:
+      - end-stage kidney disease (uremia)
+      - muscle injury (rhabdomyolysis)
+      - small-bowel bacterial overgrowth (D-lactic acidosis)
+      - prolonged sedation with propofol
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Anion-gap metabolic acidosis without ketonemia, lactate elevation, or
+      toxic alcohols; consider uremia, rhabdomyolysis, D-lactic acidosis, or
+      propofol infusion syndrome.
+    evidence_based_diagnosis:
+      - test_name: Serum creatinine and BUN
+        note: Identifies uremia.
+        citation: Stern Ch.4
+      - test_name: Serum CK and urinalysis (for myoglobin)
+        note: Identifies rhabdomyolysis.
+        citation: Stern Ch.4
+    treatment_classes:
+      - hemodialysis (when indicated for uremia or refractory acidosis)
+      - intravenous fluid replacement
+    notes: ""
+  - name: Non-anion-gap metabolic acidosis (diarrhea, RTA, carbonic anhydrase inhibitors, dilutional)
+    role: active_most_common
+    icd10:
+      - E87.2
+    pivotal_features_supporting:
+      - high-volume diarrhea
+      - urinary anion gap (Na + K - Cl) negative in diarrhea, positive in RTA
+      - acetazolamide use
+      - aggressive saline resuscitation (dilutional)
+    fingerprint_findings:
+      - persistent acidosis after high-volume diarrhea with normal anion gap
+    textbook_presentation: >-
+      Hyperchloremic metabolic acidosis with normal anion gap, most often from
+      diarrheal HCO3 loss; renal tubular acidosis is the alternative when
+      diarrhea is absent.
+    evidence_based_diagnosis:
+      - test_name: Urinary anion gap
+        note: Negative urinary AG (Na + K < Cl) suggests GI bicarbonate loss; positive suggests RTA.
+        citation: Stern Ch.4
+      - test_name: Urine pH
+        note: Inappropriately high urine pH (> 5.5) supports distal (Type 1) RTA.
+        citation: Stern Ch.4
+    treatment_classes:
+      - oral or intravenous bicarbonate replacement
+      - electrolyte repletion (potassium in some RTA subtypes)
+    notes: ""
+  - name: Metabolic alkalosis (vomiting, NG drainage, diuretics, mineralocorticoid excess)
+    role: active_most_common
+    icd10:
+      - E87.3
+    pivotal_features_supporting:
+      - prolonged vomiting or NG suction
+      - thiazide or loop diuretic use
+      - hypokalemia
+      - hypertension with hypokalemic alkalosis (mineralocorticoid excess)
+      - urine chloride low (saline-responsive) vs. high (saline-unresponsive)
+    fingerprint_findings:
+      - "elevated HCO3 with low urine chloride (< 20 mEq/L) after vomiting"
+    textbook_presentation: >-
+      Persistent metabolic alkalosis driven by GI loss (vomiting, NG drainage),
+      diuretics, or mineralocorticoid excess; the urine chloride differentiates
+      saline-responsive from saline-unresponsive etiologies.
+    evidence_based_diagnosis:
+      - test_name: Urine chloride
+        note: < 20 mEq/L = saline-responsive (vomiting, diuretic withdrawal); > 20 = saline-unresponsive (mineralocorticoid excess).
+        citation: Stern Ch.4
+      - test_name: Plasma renin and aldosterone
+        note: Identifies primary hyperaldosteronism in saline-unresponsive cases.
+        citation: Stern Ch.4
+    treatment_classes:
+      - intravenous fluid replacement (saline-responsive)
+      - potassium replacement
+      - mineralocorticoid receptor antagonist (mineralocorticoid excess)
+    notes: ""
+  - name: Respiratory acidosis (chronic — COPD, OSA, neuromuscular)
+    role: active_most_common
+    icd10:
+      - J96.21
+      - J44.9
+    pivotal_features_supporting:
+      - chronic obstructive pulmonary disease
+      - obesity hypoventilation syndrome
+      - sleep apnea
+      - chronic neuromuscular disease
+      - elevated HCO3 representing renal compensation
+    fingerprint_findings:
+      - chronic elevation of PaCO2 with compensated pH and elevated HCO3 in a patient with COPD
+    textbook_presentation: >-
+      Chronic CO2 retention in patients with COPD or hypoventilation syndromes;
+      pH near-normal due to renal compensation, with elevated HCO3.
+    evidence_based_diagnosis:
+      - test_name: Arterial blood gas
+        note: Distinguishes acute from chronic respiratory acidosis by degree of pH compensation.
+        citation: Stern Ch.4
+    treatment_classes:
+      - bronchodilator
+      - inhaled corticosteroid
+      - oxygen therapy (titrated to avoid CO2 retention)
+      - non-invasive positive pressure ventilation
+    notes: Detailed COPD management is in Stern Ch.15 (Dyspnea) and Ch.33 (Wheezing).
+  - name: Respiratory alkalosis (anxiety, pain, fever, pregnancy, sepsis, salicylate, hypoxia)
+    role: active_most_common
+    icd10:
+      - E87.3
+    pivotal_features_supporting:
+      - anxiety / panic
+      - pain
+      - fever
+      - pregnancy
+      - early sepsis
+      - hypoxia
+      - salicylate intoxication
+      - CNS lesion
+    fingerprint_findings:
+      - tachypnea with elevated pH and reduced PaCO2 with no other obvious cause (anxiety)
+    textbook_presentation: >-
+      Tachypnea-driven decrease in PaCO2 with elevated pH; etiologies span
+      benign (anxiety, pain) through life-threatening (early sepsis, PE,
+      salicylate toxicity).
+    evidence_based_diagnosis:
+      - test_name: Arterial blood gas
+        note: Confirms primary respiratory alkalosis.
+        citation: Stern Ch.4
+      - test_name: Serum lactate, salicylate level, pregnancy test, and chest imaging
+        note: Search for the underlying driver before attributing to anxiety.
+        citation: Stern Ch.4
+    treatment_classes:
+      - treatment is etiology-specific (e.g., antiemetic, analgesic, anxiolytic, sepsis bundle)
+    notes: Anxiety / hyperventilation is the diagnosis of exclusion; rule out hypoxia, PE, salicylate toxicity, and sepsis first.
+  - name: Mixed acid-base disorders
+    role: other
+    icd10:
+      - E87.4
+    pivotal_features_supporting:
+      - delta-delta ratio outside 1-2 range
+      - PaCO2 outside Winter's-formula expected range
+      - clinical scenario consistent with two concurrent processes (e.g., DKA + vomiting; salicylate toxicity)
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Two or more primary acid-base disorders coexist; identification requires
+      systematic application of compensation rules and the delta-delta ratio.
+    evidence_based_diagnosis:
+      - test_name: Compensation-rule comparison (Winter's, expected metabolic compensation)
+        note: Deviation > 2 mm Hg from expected indicates a second primary disorder.
+        citation: Stern Ch.4
+    treatment_classes:
+      - treatment addresses each component separately
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Determine whether the primary disorder is acidosis or alkalosis by reviewing pH (< 7.4 = acidosis; > 7.4 = alkalosis).
+    rationale: Stern's Step 1 (p.68).
+    branches:
+      - condition: pH < 7.4 (acidosis)
+        action: next_step
+        target_step: 2
+      - condition: pH > 7.4 (alkalosis)
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Fig 4-1
+  - step_num: 2
+    description: Step 2 — Determine whether the primary disorder is metabolic or respiratory by reviewing HCO3 and PaCO2 against expected.
+    rationale: Stern's Step 2 (p.68).
+    branches:
+      - condition: pH < 7.4 with HCO3 < 24 mEq/L
+        action: next_step
+        target_step: 3
+        notes: Primary metabolic acidosis.
+      - condition: pH < 7.4 with PaCO2 > 40 mm Hg
+        action: next_step
+        target_step: 5
+        notes: Primary respiratory acidosis.
+      - condition: pH > 7.4 with HCO3 > 24 mEq/L
+        action: next_step
+        target_step: 6
+        notes: Primary metabolic alkalosis.
+      - condition: pH > 7.4 with PaCO2 < 40 mm Hg
+        action: next_step
+        target_step: 5
+        notes: Primary respiratory alkalosis.
+    derived_from_figure: Stern Fig 4-1
+  - step_num: 3
+    description: Step 3 — For metabolic acidosis, calculate the anion gap (Na - HCO3 - Cl) and adjust for albumin (12 +/- 4 normal).
+    rationale: Stern's Step 3 (p.69).
+    branches:
+      - condition: Anion gap elevated
+        action: next_step
+        target_step: 4
+        notes: Anion-gap metabolic acidosis.
+      - condition: Anion gap normal
+        action: next_step
+        target_step: 7
+        notes: Non-anion-gap metabolic acidosis.
+    derived_from_figure: Stern Fig 4-1
+  - step_num: 4
+    description: Step 4 — Identify the cause of the anion-gap metabolic acidosis (MUDPILES / GOLDMARK — DKA, lactic acidosis, uremia, methanol/ethylene glycol, salicylate, rhabdomyolysis, D-lactic).
+    rationale: Stern's Step 4.
+    branches:
+      - condition: Glucose elevated + ketones
+        action: confirm
+        target_diagnosis: Diabetic ketoacidosis (DKA)
+      - condition: Lactate elevated with hypoperfusion
+        action: confirm
+        target_diagnosis: Lactic acidosis (Type A — hypoperfusion)
+      - condition: Osmolar gap elevated with toxic-alcohol exposure
+        action: confirm
+        target_diagnosis: Toxic alcohol ingestion (methanol or ethylene glycol)
+      - condition: Salicylate level positive
+        action: confirm
+        target_diagnosis: Salicylate toxicity
+      - condition: Cause unclear
+        action: next_step
+        target_step: 8
+        notes: Check for compensation and concurrent disorders.
+    derived_from_figure: Stern Fig 4-1
+  - step_num: 5
+    description: Step 5 — For respiratory acidosis or alkalosis, identify the underlying pulmonary, neuromuscular, or extrapulmonary cause.
+    rationale: Stern's respiratory branch.
+    branches:
+      - condition: Acute respiratory failure with neuromuscular cause
+        action: escalate
+        escalation_reason: Imminent respiratory failure — consider non-invasive ventilation or intubation.
+      - condition: Chronic compensated respiratory acidosis (COPD, OSA)
+        action: order_test
+        test_to_order: Spirometry, sleep study, treat underlying disease
+      - condition: Respiratory alkalosis from underlying medical illness (sepsis, PE, salicylate, hypoxia)
+        action: order_test
+        test_to_order: Lactate, D-dimer or CT-PA, salicylate level, pregnancy test
+      - condition: Anxiety / hyperventilation (diagnosis of exclusion)
+        action: confirm
+        target_diagnosis: Respiratory alkalosis (anxiety, pain, fever, pregnancy, sepsis, salicylate, hypoxia)
+    derived_from_figure: Stern Fig 4-1
+  - step_num: 6
+    description: Step 6 — For metabolic alkalosis, check urine chloride to distinguish saline-responsive (< 20 mEq/L — vomiting, diuretics) from saline-unresponsive (> 20 — mineralocorticoid excess).
+    rationale: Stern's metabolic-alkalosis branch.
+    branches:
+      - condition: Urine chloride < 20 mEq/L
+        action: confirm
+        target_diagnosis: Metabolic alkalosis (vomiting, NG drainage, diuretics, mineralocorticoid excess)
+      - condition: Urine chloride > 20 mEq/L with hypertension and hypokalemia
+        action: order_test
+        test_to_order: Plasma renin and aldosterone for primary hyperaldosteronism
+    derived_from_figure: Stern Fig 4-1
+  - step_num: 7
+    description: Step 7 — For non-anion-gap metabolic acidosis, calculate urinary anion gap to distinguish GI loss (negative) from RTA (positive).
+    rationale: Stern's non-anion-gap branch.
+    branches:
+      - condition: Urinary AG negative (Na + K < Cl)
+        action: confirm
+        target_diagnosis: Non-anion-gap metabolic acidosis (diarrhea, RTA, carbonic anhydrase inhibitors, dilutional)
+        notes: Likely diarrheal HCO3 loss.
+      - condition: Urinary AG positive
+        action: order_test
+        test_to_order: Urine pH, serum K, evaluation for distal vs. proximal RTA
+    derived_from_figure: Stern Fig 4-1
+  - step_num: 8
+    description: Step 8 — Check for additional acid-base disorders using compensation rules (Winter's formula) and the delta-delta ratio.
+    rationale: Stern's mixed-disorder check.
+    branches:
+      - condition: Actual PaCO2 deviates from Winter's-expected by > 2 mm Hg, OR delta-delta < 1 or > 2
+        action: confirm
+        target_diagnosis: Mixed acid-base disorders
+      - condition: Compensation appropriate and delta-delta in range
+        action: reassess
+        target_step: 1
+        notes: Single primary disorder; reach the final diagnosis.
+    derived_from_figure: Stern Fig 4-1
+red_flags:
+  - name: Anion-gap metabolic acidosis with elevated osmolar gap
+    description: Suggests methanol or ethylene glycol toxicity — initiate antidote and dialysis evaluation immediately.
+    severity: high
+  - name: Mixed respiratory alkalosis with anion-gap metabolic acidosis
+    description: Classic for salicylate toxicity — get a salicylate level even when ingestion is not reported.
+    severity: high
+  - name: Acute respiratory acidosis with declining mental status or accessory muscle use
+    description: Imminent respiratory failure — escalate to ICU and consider non-invasive or invasive ventilation.
+    severity: high
+source_pages:
+  - 68
+  - 85
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.4 (pp. 68-85). The chapter is process-driven (a stepwise diagnostic
+  algorithm — Figure 4-1) rather than complaint-driven; the differential
+  enumerates the primary acid-base disturbance categories with their underlying
+  causes. Must-not-miss bucket includes DKA, lactic acidosis (Type A), toxic
+  alcohol ingestion, salicylate toxicity, and severe neuromuscular respiratory
+  failure. Algorithm steps 1-8 mirror Stern's stepwise approach. Detailed
+  cause-specific management (DKA, COPD, sepsis) lives in their own chapters.

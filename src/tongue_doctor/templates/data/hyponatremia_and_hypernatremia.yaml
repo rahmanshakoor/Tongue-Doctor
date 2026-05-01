@@ -1,0 +1,372 @@
+complaint: hyponatremia_and_hypernatremia
+chapter_number: 24
+chapter_title: Hyponatremia and Hypernatremia
+framework_type: physiologic
+framework_categories:
+  - Hyponatremia — hypotonic with hypovolemia
+  - Hyponatremia — hypotonic with euvolemia (SIADH, hypothyroidism, adrenal insufficiency, primary polydipsia, low solute)
+  - Hyponatremia — hypotonic with hypervolemia (HF, cirrhosis, nephrotic, advanced CKD)
+  - Hyponatremia — non-hypotonic (pseudohyponatremia, hyperglycemia, mannitol)
+  - Hypernatremia — hypovolemic (free water loss > sodium loss)
+  - Hypernatremia — euvolemic (diabetes insipidus — central or nephrogenic, insensible losses)
+  - Hypernatremia — hypervolemic (sodium overload — iatrogenic, mineralocorticoid excess)
+pivotal_points:
+  - serum sodium severity
+  - serum osmolality (true hypotonic vs. pseudo)
+  - urine osmolality (concentrated > 100 = SIADH or hypovolemic; dilute < 100 = primary polydipsia, low-solute, beer drinker)
+  - urine sodium (low < 20 = effective volume depletion or low salt intake; high > 40 = SIADH, diuretic, salt-wasting, adrenal insufficiency)
+  - volume status assessment (orthostatic vitals, JVP, edema, mucous membranes, urine output)
+  - acuity (acute < 48h vs. chronic; acute hyponatremia tolerates faster correction; chronic has high osmotic-demyelination risk)
+  - associated symptoms (nausea, headache, seizures, coma)
+  - medications (thiazides, SSRIs, NSAIDs, opioids, antiepileptics, MDMA)
+  - underlying disease (HF, cirrhosis, malignancy, lung / CNS disease, kidney disease)
+decision_rules:
+  - name: Hyponatremia algorithm — osmolality + volume status + urine indices
+    purpose: Classify hyponatremia
+    inputs:
+      - serum osmolality
+      - volume status
+      - urine sodium and urine osmolality
+    citation: Stern Ch.24
+  - name: Hyponatremia correction limits
+    purpose: Avoid osmotic demyelination syndrome
+    thresholds:
+      - "chronic hyponatremia: max 8 mEq/L in 24 h, 10-12 mEq/L in 24 h with caveats"
+      - "severe symptomatic (seizures, coma): rapid 4-6 mEq/L rise with 100 mL 3% saline boluses, then strict cap"
+    citation: Stern Ch.24
+  - name: Free water deficit calculation
+    purpose: Estimate water needed to correct hypernatremia
+    thresholds:
+      - "free water deficit (L) = TBW * ([Na measured / Na desired] - 1)"
+      - "TBW = 0.6 (men) or 0.5 (women) x body weight"
+      - "correct gradually — < 10-12 mEq/L per 24 h to avoid cerebral edema"
+    citation: Stern Ch.24
+differential:
+  - name: SIADH (syndrome of inappropriate antidiuretic hormone)
+    role: leading
+    icd10:
+      - E22.2
+    pivotal_features_supporting:
+      - euvolemic hypotonic hyponatremia
+      - urine osmolality > 100
+      - urine sodium > 40
+      - normal thyroid and adrenal function
+      - underlying cause (CNS lesion, lung disease, malignancy especially small-cell, medications)
+    fingerprint_findings:
+      - euvolemia + concentrated urine + high urine sodium with hypotonic hyponatremia
+    textbook_presentation: >-
+      Euvolemic hypotonic hyponatremia with concentrated urine and
+      elevated urine sodium without thyroid / adrenal disease; identify
+      underlying trigger.
+    evidence_based_diagnosis:
+      - test_name: Serum osmolality + urine osmolality + urine sodium + TSH + cortisol
+        citation: Stern Ch.24
+      - test_name: Imaging or workup for underlying cause (CT chest / brain, malignancy screen, medication review)
+        citation: Stern Ch.24
+    treatment_classes:
+      - free water restriction (first-line)
+      - oral salt tablet
+      - loop diuretic (selected severe)
+      - vasopressin receptor antagonist (selected refractory — tolvaptan)
+      - hypertonic saline (severe symptomatic)
+    notes: ""
+  - name: Hypovolemic hyponatremia (vomiting, diarrhea, diuretic, third-spacing, salt-wasting)
+    role: active_most_common
+    icd10:
+      - E87.1
+    pivotal_features_supporting:
+      - signs of volume depletion
+      - urine sodium < 20 (extra-renal loss)
+      - urine sodium > 40 (renal loss — diuretics, salt-wasting nephropathy, adrenal insufficiency, cerebral salt-wasting)
+    fingerprint_findings:
+      - hyponatremia + orthostasis + urine sodium < 20 with extra-renal loss
+    textbook_presentation: >-
+      Volume-depleted patient with hyponatremia from diarrhea, vomiting,
+      or diuretic-induced losses; correction via isotonic fluids
+      addresses both volume and sodium.
+    evidence_based_diagnosis:
+      - test_name: Volume-status assessment + urine sodium + urine osmolality
+        citation: Stern Ch.24
+    treatment_classes:
+      - isotonic saline (volume + slow sodium correction)
+      - withdraw offending diuretic when applicable
+    notes: ""
+  - name: Hypervolemic hyponatremia (HF, cirrhosis, nephrotic, advanced CKD)
+    role: active_most_common
+    icd10:
+      - E87.1
+    pivotal_features_supporting:
+      - peripheral edema, ascites, JVP elevation
+      - low urine sodium (< 20 — effective hypovolemia)
+      - underlying chronic disease (HF, cirrhosis, nephrotic, CKD)
+    fingerprint_findings:
+      - edema + low urine sodium + hyponatremia in HF / cirrhosis
+    textbook_presentation: >-
+      Patient with HF, cirrhosis, nephrotic syndrome, or advanced CKD
+      developing hyponatremia from neurohormonal water retention.
+    evidence_based_diagnosis:
+      - test_name: Volume status + urine sodium + serum / urine osmolality
+        citation: Stern Ch.24
+    treatment_classes:
+      - free water restriction
+      - loop diuretic (treat underlying volume excess)
+      - vasopressin receptor antagonist (tolvaptan in HF / cirrhosis — short-term, monitored)
+    notes: ""
+  - name: Severe symptomatic hyponatremia (seizures, coma)
+    role: active_must_not_miss
+    icd10:
+      - E87.1
+    pivotal_features_supporting:
+      - serum sodium typically < 120 mEq/L
+      - acute decline (within 48h) tolerates rapid correction
+      - obtundation, seizure
+      - osmotic-demyelination risk with overcorrection
+    fingerprint_findings:
+      - sodium < 120 with seizure or coma
+    textbook_presentation: >-
+      Severe acute hyponatremia presenting with seizures or coma;
+      requires bolus 3% hypertonic saline with strict correction
+      limits.
+    evidence_based_diagnosis:
+      - test_name: Serial serum sodium measurements (q2h)
+        citation: Stern Ch.24
+    treatment_classes:
+      - hypertonic saline (3% — bolus protocols)
+      - desmopressin (clamp) when overcorrection threatened
+    notes: Total correction strictly limited to 8-10 mEq/L in 24 hours after initial bolus.
+  - name: Pseudohyponatremia / non-hypotonic hyponatremia (hyperglycemia, hyperlipidemia, hyperproteinemia)
+    role: other
+    icd10:
+      - E87.1
+    pivotal_features_supporting:
+      - hyperglycemia (DKA / HHS)
+      - hyperlipidemia or hyperproteinemia
+      - elevated serum osmolality despite low sodium
+    fingerprint_findings:
+      - low sodium with elevated serum osmolality (hyperglycemia, monoclonal protein)
+    textbook_presentation: >-
+      Non-hypotonic or factitious hyponatremia from hyperglycemia
+      (translocational), hyperlipidemia, or paraproteinemia
+      (laboratory artifact with indirect ISE methods).
+    evidence_based_diagnosis:
+      - test_name: Serum osmolality + glucose + lipid panel + total protein
+        citation: Stern Ch.24
+    treatment_classes:
+      - treat the underlying driver (insulin for hyperglycemia, no specific therapy for laboratory artifact)
+    notes: Correct sodium by 1.6-2.4 mEq/L for every 100 mg/dL glucose above 100.
+  - name: Hypernatremia from inadequate water intake (especially in elderly / institutionalized)
+    role: leading
+    icd10:
+      - E87.0
+    pivotal_features_supporting:
+      - older adult, dementia, institutionalized, intubated, restricted thirst access
+      - urine osmolality high (> 800 — concentrated)
+      - free water deficit
+    fingerprint_findings:
+      - hypernatremia in older adult with restricted water access
+    textbook_presentation: >-
+      Older or cognitively impaired patient presenting with
+      hypernatremia from inadequate free water intake; volume status
+      varies.
+    evidence_based_diagnosis:
+      - test_name: Urine osmolality (high)
+        citation: Stern Ch.24
+      - test_name: Volume status assessment
+        citation: Stern Ch.24
+    treatment_classes:
+      - free water replacement (oral / NG / D5W IV)
+      - address underlying cause of restricted intake
+    notes: ""
+  - name: Diabetes insipidus (central or nephrogenic)
+    role: active_must_not_miss
+    icd10:
+      - E23.2
+      - N25.1
+    pivotal_features_supporting:
+      - polyuria, polydipsia
+      - hypernatremia (when access to water restricted)
+      - dilute urine (urine osmolality < 300; often < 200 in DI)
+      - response to desmopressin (central DI) vs. no response (nephrogenic)
+      - lithium use, hypercalcemia, hypokalemia (nephrogenic causes)
+    fingerprint_findings:
+      - polyuria with dilute urine and hypernatremia
+    textbook_presentation: >-
+      Polyuria with dilute urine and hypernatremia; water-deprivation
+      test with desmopressin challenge distinguishes central from
+      nephrogenic.
+    evidence_based_diagnosis:
+      - test_name: Water deprivation test with desmopressin challenge
+        citation: Stern Ch.24
+      - test_name: Plasma copeptin (when available)
+        citation: Stern Ch.24
+      - test_name: MRI sella (central DI evaluation)
+        citation: Stern Ch.24
+    treatment_classes:
+      - desmopressin (central DI)
+      - thiazide diuretic (paradoxical antidiuretic effect — nephrogenic DI)
+      - low-solute diet
+      - withdraw inciting agent (lithium, demeclocycline)
+    notes: ""
+  - name: Hyperglycemic hyperosmolar state (HHS) producing hypernatremia
+    role: active_must_not_miss
+    icd10:
+      - E11.00
+    pivotal_features_supporting:
+      - profound hyperglycemia (> 600)
+      - hyperosmolality
+      - dehydration
+      - altered mental status
+      - sodium often initially low / normal (translocational), corrected sodium high
+    fingerprint_findings:
+      - glucose > 600 + altered mental status + corrected hypernatremia
+    textbook_presentation: >-
+      Older Type 2 diabetic patient with profound hyperglycemia,
+      severe dehydration, hyperosmolality, and altered mental status;
+      cross-reference Stern Ch.12.
+    evidence_based_diagnosis:
+      - test_name: Plasma glucose + serum osmolality + ketones + BMP
+        citation: Stern Ch.12
+    treatment_classes:
+      - intravenous fluid replacement
+      - insulin therapy
+      - electrolyte repletion
+    notes: Cross-reference Stern Ch.12.
+  - name: Adrenal insufficiency (causing hyponatremia +/- hyperkalemia)
+    role: active_must_not_miss
+    icd10:
+      - E27.40
+    pivotal_features_supporting:
+      - hyponatremia + hyperkalemia
+      - hypotension / orthostasis
+      - hyperpigmentation (primary)
+      - hypoglycemia
+      - corticosteroid taper / withdrawal history (secondary)
+    fingerprint_findings:
+      - hyponatremia + hyperkalemia + hypotension + hypoglycemia
+    textbook_presentation: >-
+      Patient with hyponatremia and hyperkalemia, fatigue,
+      orthostasis, and possibly hyperpigmentation; ACTH stim test
+      confirms; cross-reference Stern Ch.18.
+    evidence_based_diagnosis:
+      - test_name: 8 AM cortisol + ACTH + ACTH stim test
+        citation: Stern Ch.24 / Ch.18
+    treatment_classes:
+      - glucocorticoid replacement
+      - mineralocorticoid replacement (primary)
+    notes: Cross-reference Stern Ch.18.
+  - name: Hypothyroidism-associated hyponatremia
+    role: other
+    icd10:
+      - E03.9
+    pivotal_features_supporting:
+      - severe hypothyroidism
+      - elevated TSH, low free T4
+      - improvement after thyroid hormone replacement
+    fingerprint_findings:
+      - hyponatremia in patient with myxedema features and severe hypothyroidism
+    textbook_presentation: >-
+      Patient with severe hypothyroidism presenting with hyponatremia;
+      rare unless TSH markedly elevated.
+    evidence_based_diagnosis:
+      - test_name: Serum TSH + free T4
+        citation: Stern Ch.24
+    treatment_classes:
+      - levothyroxine replacement
+    notes: ""
+  - name: Primary polydipsia / low solute intake (beer-drinker, tea-and-toast)
+    role: other
+    icd10:
+      - E87.1
+    pivotal_features_supporting:
+      - dilute urine (osmolality < 100)
+      - euvolemia
+      - psychiatric history or excessive water intake
+      - low solute diet
+    fingerprint_findings:
+      - dilute urine with hypotonic hyponatremia
+    textbook_presentation: >-
+      Patient with primary polydipsia (psychiatric) or low-solute
+      diet (beer-drinker, tea-and-toast) with euvolemic hypotonic
+      hyponatremia and dilute urine.
+    evidence_based_diagnosis:
+      - test_name: Urine osmolality (low)
+        citation: Stern Ch.24
+    treatment_classes:
+      - water restriction
+      - solute supplementation
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Confirm true (hypotonic) hyponatremia by checking serum osmolality and ruling out hyperglycemia / lab artifact.
+    rationale: Stern Ch.24 first split.
+    branches:
+      - condition: Hypotonic (serum osmolality < 280)
+        action: next_step
+        target_step: 2
+      - condition: Iso-/hyperosmolar (hyperglycemia, mannitol, paraproteins)
+        action: confirm
+        target_diagnosis: Pseudohyponatremia / non-hypotonic hyponatremia (hyperglycemia, hyperlipidemia, hyperproteinemia)
+    derived_from_figure: Stern Ch.24 prose
+  - step_num: 2
+    description: Step 2 — Assess volume status to split into hypovolemic / euvolemic / hypervolemic hyponatremia.
+    rationale: Volume status drives the workup.
+    branches:
+      - condition: Hypovolemic
+        action: confirm
+        target_diagnosis: Hypovolemic hyponatremia (vomiting, diarrhea, diuretic, third-spacing, salt-wasting)
+      - condition: Euvolemic
+        action: order_test
+        test_to_order: Urine osmolality + urine sodium + TSH + cortisol; identify SIADH triggers
+      - condition: Hypervolemic
+        action: confirm
+        target_diagnosis: Hypervolemic hyponatremia (HF, cirrhosis, nephrotic, advanced CKD)
+    derived_from_figure: Stern Ch.24 prose
+  - step_num: 3
+    description: Step 3 — Severe symptomatic hyponatremia → emergent hypertonic saline with strict correction limits.
+    rationale: Avoid osmotic demyelination.
+    branches:
+      - condition: Seizure / coma / Na < 120 acute
+        action: escalate
+        escalation_reason: 3% hypertonic saline boluses + ICU monitoring; cap correction at 8-10 mEq/L per 24h.
+      - condition: Asymptomatic chronic
+        action: order_test
+        test_to_order: Cause-specific therapy (water restriction, salt, treat underlying cause)
+    derived_from_figure: Stern Ch.24 prose
+  - step_num: 4
+    description: Step 4 — For hypernatremia, assess volume status and urine osmolality; calculate free water deficit.
+    rationale: Stern Ch.24 hypernatremia branch.
+    branches:
+      - condition: Hypovolemic hypernatremia (concentrated urine + volume depletion)
+        action: order_test
+        test_to_order: Free water replacement + isotonic fluids; correct < 10-12 mEq/L per 24h
+      - condition: Euvolemic hypernatremia with dilute urine
+        action: order_test
+        test_to_order: Water deprivation / desmopressin challenge for diabetes insipidus
+      - condition: Hypervolemic hypernatremia (sodium overload — iatrogenic, mineralocorticoid excess)
+        action: order_test
+        test_to_order: Withdraw sodium; consider diuretic + free water replacement
+    derived_from_figure: Stern Ch.24 prose
+red_flags:
+  - name: Sodium < 120 with seizure or coma
+    description: Severe symptomatic hyponatremia — 3% hypertonic saline; strict correction cap.
+    severity: high
+  - name: Hyponatremia + hyperkalemia + hypotension
+    description: Adrenal insufficiency / crisis — empiric hydrocortisone.
+    severity: high
+  - name: Polyuria + polydipsia + hypernatremia
+    description: Diabetes insipidus — water deprivation testing and desmopressin challenge.
+    severity: high
+  - name: Hypernatremia in elderly / institutionalized patient with reduced consciousness
+    description: Severe water deficit — gradual replacement to avoid cerebral edema.
+    severity: high
+source_pages:
+  - 418
+  - 441
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.24 (pp. 418-441). Frame is physiologic — tonicity + volume status
+  + urine indices. Algorithm steps mirror Stern's stepwise approach.
+  Must-not-miss: severe symptomatic hyponatremia, adrenal insufficiency,
+  diabetes insipidus, HHS.

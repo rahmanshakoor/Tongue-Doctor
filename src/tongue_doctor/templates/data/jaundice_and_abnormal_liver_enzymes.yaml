@@ -1,0 +1,468 @@
+complaint: jaundice_and_abnormal_liver_enzymes
+chapter_number: 26
+chapter_title: Jaundice and Abnormal Liver Enzymes
+framework_type: mechanistic
+framework_categories:
+  - Hyperbilirubinemia — unconjugated (hemolysis, ineffective erythropoiesis, Gilbert, Crigler-Najjar)
+  - Hyperbilirubinemia — conjugated, hepatocellular pattern (acute hepatitis, ischemic hepatitis, autoimmune, alcohol-related, drug, NAFLD, Wilson)
+  - Hyperbilirubinemia — conjugated, cholestatic pattern, intrahepatic (PBC, PSC, drug, granulomatous, infiltrative)
+  - Hyperbilirubinemia — conjugated, cholestatic pattern, extrahepatic (choledocholithiasis, ascending cholangitis, malignant biliary obstruction)
+  - Cirrhosis with decompensation
+  - Acute liver failure
+pivotal_points:
+  - direct vs. indirect hyperbilirubinemia
+  - hepatocellular pattern (AST / ALT predominant) vs. cholestatic pattern (ALP / GGT / direct bilirubin predominant)
+  - severity (acute liver failure = INR > 1.5, encephalopathy, no preexisting cirrhosis)
+  - presence of fever / RUQ pain (Charcot triad → cholangitis; Reynolds pentad → suppurative cholangitis with shock)
+  - chronic liver disease stigmata
+  - exposures (alcohol, hepatotoxic medications, mushroom, herbs, IV drug use, travel, sexual exposures)
+  - imaging findings (dilated bile ducts → extrahepatic obstruction; cirrhosis features; mass)
+  - autoimmune / metabolic / infectious testing
+decision_rules:
+  - name: R-factor for liver enzyme pattern
+    purpose: Distinguish hepatocellular from cholestatic injury
+    inputs:
+      - "(ALT / ULN ALT) / (ALP / ULN ALP)"
+    thresholds:
+      - "R > 5 → hepatocellular"
+      - "R 2-5 → mixed"
+      - "R < 2 → cholestatic"
+    citation: Stern Ch.26
+  - name: Charcot triad and Reynolds pentad
+    purpose: Identify ascending cholangitis
+    thresholds:
+      - "Charcot triad — fever + jaundice + RUQ pain → ascending cholangitis"
+      - "Reynolds pentad — Charcot + hypotension + altered mental status → suppurative cholangitis (emergency)"
+    citation: Stern Ch.26
+  - name: King's College criteria
+    purpose: Identify acute liver failure patients needing transplant
+    citation: Stern Ch.26
+differential:
+  - name: Viral hepatitis (A, B, C, D, E, plus EBV / CMV / HSV)
+    role: leading
+    icd10:
+      - B19.9
+    pivotal_features_supporting:
+      - acute or chronic transaminase elevation
+      - exposure history (food, water, sexual, parenteral)
+      - jaundice
+      - positive viral serologies / NAT
+    fingerprint_findings:
+      - acute markedly elevated AST / ALT with positive viral serology
+    textbook_presentation: >-
+      Acute or subacute hepatitis with transaminase elevation (often
+      > 1000 in acute viral), jaundice, and positive serologies; HCV
+      typically chronic and asymptomatic until cirrhosis.
+    evidence_based_diagnosis:
+      - test_name: Hepatitis A IgM (acute)
+        citation: Stern Ch.26
+      - test_name: Hepatitis B surface antigen + core IgM + surface antibody + e antigen + DNA
+        citation: Stern Ch.26
+      - test_name: Hepatitis C antibody + RNA
+        citation: Stern Ch.26
+      - test_name: Hepatitis E IgM (selected)
+        citation: Stern Ch.26
+      - test_name: EBV / CMV / HSV serologies (selected)
+        citation: Stern Ch.26
+    treatment_classes:
+      - supportive care (acute A, E)
+      - direct-acting antivirals (HCV)
+      - nucleoside / nucleotide analog (chronic HBV)
+      - vaccination of contacts (HAV, HBV)
+    notes: ""
+  - name: Alcohol-associated liver disease (steatosis, alcoholic hepatitis, cirrhosis)
+    role: active_most_common
+    icd10:
+      - K70.30
+    pivotal_features_supporting:
+      - chronic alcohol use
+      - AST > ALT (often 2:1)
+      - elevated GGT
+      - macrocytosis
+      - hepatomegaly +/- cirrhosis features
+      - alcoholic hepatitis with rapid jaundice + fever + leukocytosis
+    fingerprint_findings:
+      - jaundice + fever + leukocytosis after heavy drinking
+    textbook_presentation: >-
+      Patient with chronic alcohol use presenting with jaundice, AST > ALT,
+      elevated bilirubin, and possibly leukocytosis (alcoholic hepatitis).
+    evidence_based_diagnosis:
+      - test_name: AST / ALT ratio + GGT + INR + bilirubin + albumin
+        citation: Stern Ch.26
+      - test_name: Maddrey discriminant function (32 = severe alcoholic hepatitis)
+        citation: Stern Ch.26
+    treatment_classes:
+      - alcohol cessation (mainstay)
+      - corticosteroid (severe alcoholic hepatitis)
+      - nutritional support
+    notes: ""
+  - name: Choledocholithiasis / ascending cholangitis
+    role: active_must_not_miss
+    icd10:
+      - K80.20
+      - K83.0
+    pivotal_features_supporting:
+      - RUQ pain + jaundice + fever (Charcot triad)
+      - hypotension + altered mental status (Reynolds pentad — emergency)
+      - elevated alkaline phosphatase + bilirubin
+      - dilated common bile duct on ultrasound / MRCP / EUS
+    fingerprint_findings:
+      - Charcot triad
+    textbook_presentation: >-
+      Patient with RUQ pain, fever, and jaundice from biliary
+      obstruction; suppurative cholangitis presents with sepsis.
+    evidence_based_diagnosis:
+      - test_name: RUQ ultrasound (initial)
+        citation: Stern Ch.26
+      - test_name: MRCP or endoscopic ultrasound
+        citation: Stern Ch.26
+      - test_name: ERCP (diagnostic + therapeutic)
+        citation: Stern Ch.26
+    treatment_classes:
+      - intravenous fluid replacement
+      - broad-spectrum antibiotic
+    notes: ERCP for biliary decompression is procedural and time-sensitive.
+  - name: Malignant biliary obstruction (pancreatic cancer, cholangiocarcinoma, ampullary, gallbladder, lymphoma)
+    role: active_must_not_miss
+    icd10:
+      - C25.9
+      - C24.0
+    pivotal_features_supporting:
+      - painless progressive jaundice
+      - weight loss, anorexia
+      - palpable non-tender gallbladder (Courvoisier sign)
+      - dilated biliary tree on imaging
+    fingerprint_findings:
+      - painless jaundice + weight loss + dilated bile ducts
+    textbook_presentation: >-
+      Older patient with painless progressive jaundice, weight loss,
+      and dilated bile ducts; CT identifies mass; ERCP / EUS biopsy.
+    evidence_based_diagnosis:
+      - test_name: CT / MRI abdomen
+        citation: Stern Ch.26
+      - test_name: ERCP / EUS with biopsy
+        citation: Stern Ch.26
+      - test_name: CA 19-9 (supportive — pancreatic / cholangiocarcinoma)
+        citation: Stern Ch.26
+    treatment_classes:
+      - oncology referral
+      - biliary stenting (palliation)
+      - surgical resection (curative when feasible — procedural)
+    notes: ""
+  - name: Drug-induced liver injury (DILI) — acetaminophen, isoniazid, statins, augmentin, methotrexate, herbal supplements
+    role: active_must_not_miss
+    icd10:
+      - K71.9
+    pivotal_features_supporting:
+      - temporal correlation with hepatotoxic medication or supplement
+      - hepatocellular, cholestatic, or mixed pattern
+      - resolution after withdrawal
+      - acetaminophen overdose has characteristic pattern with massive AST / ALT and INR
+    fingerprint_findings:
+      - acute massive transaminase elevation after acetaminophen overdose
+    textbook_presentation: >-
+      Patient with new transaminase elevation temporally related to a
+      medication or supplement; acetaminophen overdose presents with
+      AST / ALT > 1000 and INR elevation.
+    evidence_based_diagnosis:
+      - test_name: Medication / supplement review with timing
+        citation: Stern Ch.26
+      - test_name: Acetaminophen level (rule out occult ingestion)
+        citation: Stern Ch.26
+      - test_name: Liver biopsy (selected)
+        citation: Stern Ch.26
+    treatment_classes:
+      - withdraw offending agent
+      - N-acetylcysteine (acetaminophen — initiate within 8-10 hours when possible; effective beyond 24h in some)
+      - liver transplantation (acute liver failure — King's College criteria)
+    notes: ""
+  - name: Acute liver failure
+    role: active_must_not_miss
+    icd10:
+      - K72.00
+    pivotal_features_supporting:
+      - INR > 1.5
+      - encephalopathy
+      - rapid onset
+      - no preexisting cirrhosis
+      - common causes — acetaminophen, viral, autoimmune, ischemic, mushroom, idiosyncratic DILI
+    fingerprint_findings:
+      - INR > 1.5 + encephalopathy + no prior cirrhosis
+    textbook_presentation: >-
+      Rapid onset of jaundice, coagulopathy, and encephalopathy
+      without preexisting cirrhosis; transplant evaluation per King's
+      College criteria.
+    evidence_based_diagnosis:
+      - test_name: INR + transaminases + bilirubin + ammonia + acetaminophen level + autoimmune workup
+        citation: Stern Ch.26
+    treatment_classes:
+      - N-acetylcysteine
+      - lactulose (encephalopathy)
+      - ICU monitoring
+      - liver transplant evaluation
+    notes: Time-critical — transfer to transplant center.
+  - name: Cirrhosis with decompensation (variceal bleed, ascites, SBP, hepatic encephalopathy, hepatorenal)
+    role: active_must_not_miss
+    icd10:
+      - K74.60
+    pivotal_features_supporting:
+      - chronic liver disease history
+      - stigmata (spider angiomata, palmar erythema, gynecomastia)
+      - variceal hematemesis
+      - ascites + abdominal pain + fever (SBP)
+      - asterixis, confusion (encephalopathy)
+      - rising creatinine without fluid responsiveness (hepatorenal)
+    fingerprint_findings:
+      - PMN > 250 in ascitic fluid (SBP)
+      - diuretic-resistant rising creatinine in cirrhotic (hepatorenal)
+    textbook_presentation: >-
+      Cirrhotic patient presenting with one or more decompensation
+      events; cross-reference Stern Ch.17 (Edema) and Ch.19 (GI
+      Bleeding).
+    evidence_based_diagnosis:
+      - test_name: Diagnostic paracentesis with cell count, culture, SAAG
+        citation: Stern Ch.26
+      - test_name: Upper endoscopy (variceal bleed)
+        citation: Stern Ch.19 / Ch.26
+      - test_name: Ammonia (encephalopathy — supportive)
+        citation: Stern Ch.26
+    treatment_classes:
+      - antibiotic (SBP — ceftriaxone empiric)
+      - lactulose + rifaximin (encephalopathy)
+      - vasoconstrictor (terlipressin / midodrine + octreotide for hepatorenal)
+      - albumin (large-volume paracentesis or hepatorenal)
+      - non-selective beta-blocker (variceal prophylaxis)
+      - TIPS / liver transplant (refractory)
+    notes: ""
+  - name: Primary biliary cholangitis (PBC)
+    role: active_most_common
+    icd10:
+      - K74.3
+    pivotal_features_supporting:
+      - middle-aged woman
+      - fatigue + pruritus
+      - cholestatic LFT pattern
+      - positive antimitochondrial antibody (AMA)
+      - elevated IgM
+    fingerprint_findings:
+      - cholestatic LFTs + positive AMA
+    textbook_presentation: >-
+      Middle-aged woman with fatigue, pruritus, and cholestatic LFTs;
+      AMA positive in 95%; treat with ursodeoxycholic acid.
+    evidence_based_diagnosis:
+      - test_name: Antimitochondrial antibody (AMA)
+        sensitivity: 0.95
+        specificity: 0.95
+        citation: Stern Ch.26
+      - test_name: Liver biopsy (when AMA negative)
+        citation: Stern Ch.26
+    treatment_classes:
+      - ursodeoxycholic acid
+      - obeticholic acid (selected — non-responders)
+      - antipruritic therapy
+      - liver transplant (advanced disease)
+    notes: ""
+  - name: Primary sclerosing cholangitis (PSC)
+    role: active_most_common
+    icd10:
+      - K83.01
+    pivotal_features_supporting:
+      - middle-aged man
+      - inflammatory bowel disease (especially UC)
+      - cholestatic LFT pattern
+      - 'beaded appearance of bile ducts on MRCP'
+      - cholangiocarcinoma risk
+    fingerprint_findings:
+      - cholestatic LFTs in patient with UC + beaded MRCP
+    textbook_presentation: >-
+      Patient (often male with UC) with cholestatic LFTs and
+      characteristic biliary stricturing on MRCP.
+    evidence_based_diagnosis:
+      - test_name: MRCP
+        citation: Stern Ch.26
+      - test_name: Liver biopsy (selected)
+        citation: Stern Ch.26
+    treatment_classes:
+      - cholangiocarcinoma surveillance
+      - liver transplant (advanced)
+    notes: No proven medical therapy; UDCA controversial.
+  - name: Autoimmune hepatitis
+    role: active_most_common
+    icd10:
+      - K75.4
+    pivotal_features_supporting:
+      - female predominance
+      - elevated transaminases
+      - elevated IgG
+      - positive ANA / SMA / anti-LKM
+      - response to corticosteroid
+    fingerprint_findings:
+      - elevated transaminases + elevated IgG + positive ANA / SMA
+    textbook_presentation: >-
+      Patient (often female) with elevated transaminases, elevated
+      IgG, and positive autoantibodies; responds to corticosteroid +
+      azathioprine.
+    evidence_based_diagnosis:
+      - test_name: ANA, smooth muscle antibody, anti-LKM, IgG level
+        citation: Stern Ch.26
+      - test_name: Liver biopsy
+        citation: Stern Ch.26
+    treatment_classes:
+      - corticosteroid (induction)
+      - azathioprine (maintenance)
+    notes: ""
+  - name: NAFLD / NASH
+    role: active_most_common
+    icd10:
+      - K76.0
+      - K75.81
+    pivotal_features_supporting:
+      - obesity, diabetes, dyslipidemia, metabolic syndrome
+      - mild transaminase elevation (often < 5x ULN)
+      - fatty liver on imaging
+      - fibrosis stage assessment via FibroScan / serum panels / biopsy
+    fingerprint_findings:
+      - mild transaminase elevation + obesity + fatty liver on imaging
+    textbook_presentation: >-
+      Patient with metabolic syndrome and fatty infiltration of the
+      liver, ranging from simple steatosis to NASH with fibrosis;
+      progressive disease may lead to cirrhosis.
+    evidence_based_diagnosis:
+      - test_name: Imaging (US, CT, MRI)
+        citation: Stern Ch.26
+      - test_name: FibroScan / FIB-4 / NAFLD fibrosis score
+        citation: Stern Ch.26
+      - test_name: Liver biopsy (selected — to grade NASH and stage fibrosis)
+        citation: Stern Ch.26
+    treatment_classes:
+      - weight loss
+      - vitamin E (non-diabetic biopsy-proven NASH — selected)
+      - GLP-1 receptor agonist (selected diabetic / obese)
+      - SGLT2 inhibitor (selected diabetic)
+      - tight glycemic / lipid / BP control
+    notes: ""
+  - name: Hemochromatosis (and other iron-overload states)
+    role: other
+    icd10:
+      - E83.110
+    pivotal_features_supporting:
+      - elevated transferrin saturation (> 45%)
+      - elevated ferritin
+      - HFE C282Y / H63D mutation
+      - skin hyperpigmentation, diabetes, arthralgia, cardiomyopathy, hypogonadism
+    fingerprint_findings:
+      - elevated transferrin saturation + ferritin + HFE mutation
+    textbook_presentation: >-
+      Middle-aged patient with mild transaminase elevation,
+      hyperpigmentation, diabetes, and arthralgia; iron studies and
+      HFE genotyping confirm.
+    evidence_based_diagnosis:
+      - test_name: Transferrin saturation + ferritin
+        citation: Stern Ch.26
+      - test_name: HFE genotyping
+        citation: Stern Ch.26
+    treatment_classes:
+      - therapeutic phlebotomy
+      - iron chelation (selected)
+    notes: ""
+  - name: Wilson disease
+    role: other
+    icd10:
+      - E83.01
+    pivotal_features_supporting:
+      - young patient (typically < 40)
+      - low ceruloplasmin
+      - elevated 24-hour urine copper
+      - Kayser-Fleischer rings
+      - liver disease + neuropsychiatric features
+    fingerprint_findings:
+      - liver disease in young patient with Kayser-Fleischer rings
+    textbook_presentation: >-
+      Young patient with hepatic and neuropsychiatric features;
+      Kayser-Fleischer rings, low ceruloplasmin, and elevated urinary
+      copper diagnostic.
+    evidence_based_diagnosis:
+      - test_name: Ceruloplasmin + 24-hour urine copper + slit-lamp exam for KF rings
+        citation: Stern Ch.26
+      - test_name: Liver biopsy with hepatic copper quantification
+        citation: Stern Ch.26
+    treatment_classes:
+      - chelation therapy (penicillamine, trientine)
+      - zinc therapy (maintenance)
+    notes: Acute Wilsonian liver failure with hemolysis and AKI requires emergent transplant.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Distinguish unconjugated (indirect) from conjugated (direct) hyperbilirubinemia.
+    rationale: Different mechanisms.
+    branches:
+      - condition: Indirect-predominant
+        action: order_test
+        test_to_order: Hemolysis workup (CBC, smear, reticulocytes, LDH, haptoglobin, Coombs); consider Gilbert
+      - condition: Direct-predominant
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Ch.26 prose
+  - step_num: 2
+    description: Step 2 — Calculate R-factor (or compare AST/ALT to ALP/GGT) to classify hepatocellular vs. cholestatic vs. mixed pattern.
+    rationale: Drives the rest of the workup.
+    branches:
+      - condition: Hepatocellular (R > 5)
+        action: order_test
+        test_to_order: Viral hepatitis serologies, autoimmune panel, ceruloplasmin / iron studies / alpha-1 antitrypsin (younger), acetaminophen level, alcohol history
+      - condition: Cholestatic (R < 2)
+        action: next_step
+        target_step: 3
+      - condition: Mixed (R 2-5)
+        action: order_test
+        test_to_order: Combine hepatocellular + cholestatic workups
+    derived_from_figure: Stern Ch.26 prose
+  - step_num: 3
+    description: Step 3 — For cholestatic pattern, RUQ ultrasound or MRCP — biliary dilation differentiates extrahepatic from intrahepatic.
+    rationale: Imaging-driven triage.
+    branches:
+      - condition: Dilated bile ducts (extrahepatic)
+        action: order_test
+        test_to_order: MRCP / ERCP for choledocholithiasis or malignancy
+      - condition: No dilation (intrahepatic)
+        action: order_test
+        test_to_order: AMA / ANA / IgM / IgG; consider liver biopsy; PSC workup if appropriate (UC)
+    derived_from_figure: Stern Ch.26 prose
+  - step_num: 4
+    description: Step 4 — Look for acute liver failure features (INR > 1.5 + encephalopathy + no preexisting cirrhosis) and decompensation events.
+    rationale: Time-critical recognition.
+    branches:
+      - condition: Acute liver failure features
+        action: escalate
+        escalation_reason: Transfer to transplant center; N-acetylcysteine; ICU monitoring.
+      - condition: Cirrhosis with new ascites / encephalopathy / GI bleed
+        action: escalate
+        escalation_reason: Decompensated cirrhosis — admit; treat per decompensation event (SBP empiric antibiotic, lactulose, banding).
+      - condition: Charcot triad
+        action: escalate
+        escalation_reason: Cholangitis — IV fluids + antibiotics + ERCP for biliary decompression.
+    derived_from_figure: Stern Ch.26 prose
+red_flags:
+  - name: Charcot triad (RUQ pain + jaundice + fever)
+    description: Ascending cholangitis — sepsis bundle and ERCP urgently.
+    severity: high
+  - name: INR > 1.5 + encephalopathy + no preexisting cirrhosis
+    description: Acute liver failure — transplant center transfer + N-acetylcysteine.
+    severity: high
+  - name: Painless progressive jaundice + weight loss
+    description: Malignant biliary obstruction — imaging and oncologic referral.
+    severity: high
+  - name: Acetaminophen ingestion >= 7.5 g (or chronic >= 4 g/day in at-risk)
+    description: Acetaminophen toxicity — NAC therapy.
+    severity: high
+source_pages:
+  - 456
+  - 475
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.26 (pp. 456-475). Frame is mechanistic — direct vs. indirect,
+  hepatocellular vs. cholestatic, intrahepatic vs. extrahepatic. Algorithm
+  steps mirror Stern's stepwise approach. Must-not-miss: acute liver
+  failure, ascending cholangitis, malignant obstruction, decompensated
+  cirrhosis.

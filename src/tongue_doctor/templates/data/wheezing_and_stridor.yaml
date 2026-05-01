@@ -1,0 +1,461 @@
+complaint: wheezing_and_stridor
+chapter_number: 33
+chapter_title: Wheezing and Stridor
+framework_type: anatomical
+framework_categories:
+  - Upper airway / extrathoracic (laryngospasm, vocal cord dysfunction, anaphylaxis with airway angioedema, croup, foreign body, tracheal stenosis, epiglottitis)
+  - Lower airway intrathoracic — large (tracheomalacia, foreign body, mass)
+  - Lower airway intrathoracic — small (asthma, COPD, bronchiolitis, RSV, eosinophilic bronchitis)
+  - Cardiac (cardiac asthma in HF)
+  - Other (allergic bronchopulmonary aspergillosis, parasitic — Loeffler, eosinophilic granulomatosis with polyangiitis)
+pivotal_points:
+  - stridor (inspiratory → upper airway above vocal cords; biphasic → glottic / subglottic; expiratory → lower airway)
+  - wheezing (expiratory → small-airway obstruction; inspiratory wheeze is typically stridor)
+  - acuity (acute onset suggests foreign body, anaphylaxis, severe asthma exacerbation)
+  - association with eating / supine position (foreign body, GERD-related)
+  - severity features (accessory muscle use, silent chest, drowsiness, cyanosis)
+  - reversibility (response to bronchodilator → asthma)
+  - smoking history, environmental exposures
+  - associated systemic symptoms (fever, urticaria, eosinophilia)
+decision_rules:
+  - name: Severe asthma exacerbation criteria
+    purpose: Identify life-threatening asthma
+    inputs:
+      - peak flow < 33% predicted / personal best
+      - SpO2 < 92%
+      - silent chest / cyanosis
+      - exhaustion, accessory muscle use
+      - drowsiness / confusion
+      - PaCO2 normalizing or rising
+    citation: Stern Ch.33
+  - name: Anthonisen criteria (COPD exacerbation)
+    purpose: Identify COPD exacerbation likely to benefit from antibiotics
+    inputs:
+      - increased dyspnea
+      - increased sputum volume
+      - increased sputum purulence
+    thresholds:
+      - "all three present (Type I) → antibiotics indicated"
+      - "two of three → antibiotics if one is sputum purulence"
+    citation: Stern Ch.33
+differential:
+  - name: Asthma exacerbation
+    role: leading
+    icd10:
+      - J45.901
+    pivotal_features_supporting:
+      - episodic wheezing, dyspnea, cough, chest tightness
+      - allergen / exercise / infection / cold-air triggers
+      - reversible airflow limitation (FEV1 +12% post-bronchodilator)
+      - history of atopy, eczema, allergic rhinitis
+      - nocturnal symptoms
+    fingerprint_findings:
+      - reversible airflow limitation with peak flow improvement after bronchodilator
+    textbook_presentation: >-
+      Episodic wheezing, dyspnea, cough, and chest tightness with
+      identifiable triggers; severity ranges from mild outpatient to
+      life-threatening with silent chest and respiratory failure.
+    evidence_based_diagnosis:
+      - test_name: Spirometry with bronchodilator response
+        citation: Stern Ch.33
+      - test_name: Peak expiratory flow rate trend
+        citation: Stern Ch.33
+      - test_name: ABG (severe — concerning if PaCO2 normalizing or rising)
+        citation: Stern Ch.33
+    treatment_classes:
+      - inhaled SABA
+      - inhaled anticholinergic (severe acute)
+      - systemic corticosteroid (acute exacerbation)
+      - inhaled corticosteroid (controller)
+      - LABA (combination with ICS)
+      - LAMA (selected severe disease)
+      - magnesium sulfate (severe refractory)
+      - biologic agent (anti-IgE, anti-IL-5, anti-IL-4Ra — severe phenotypes)
+      - non-invasive ventilation (severe — bridge to ICU)
+    notes: ""
+  - name: COPD exacerbation
+    role: leading
+    icd10:
+      - J44.1
+    pivotal_features_supporting:
+      - smoking history
+      - chronic baseline wheeze and cough with sputum
+      - progressive dyspnea
+      - hyperinflation, prolonged expiration
+      - FEV1/FVC < 0.7 post-bronchodilator
+    fingerprint_findings:
+      - smoking history + chronic cough / sputum + reduced FEV1
+    textbook_presentation: >-
+      Patient with smoking history and chronic respiratory symptoms
+      presenting with worsening dyspnea, increased sputum, and
+      wheezing; cross-reference Stern Ch.15.
+    evidence_based_diagnosis:
+      - test_name: Spirometry (post-bronchodilator FEV1/FVC < 0.7)
+        citation: Stern Ch.33 / Ch.15
+      - test_name: ABG (severe — assess for hypercarbia)
+        citation: Stern Ch.33
+      - test_name: Chest radiograph (rule out pneumonia, pneumothorax, pulmonary edema)
+        citation: Stern Ch.33
+    treatment_classes:
+      - inhaled bronchodilator (SABA + ipratropium acute; LABA + LAMA chronic)
+      - systemic corticosteroid (acute exacerbation)
+      - antibiotic (Anthonisen Type I or II with purulence)
+      - oxygen therapy (titrated to SpO2 88-92%)
+      - non-invasive positive pressure ventilation
+    notes: Smoking cessation is the most impactful intervention.
+  - name: Heart failure / pulmonary edema (cardiac asthma)
+    role: active_must_not_miss
+    icd10:
+      - I50.9
+    pivotal_features_supporting:
+      - elevated JVP, S3 gallop, peripheral edema
+      - orthopnea, paroxysmal nocturnal dyspnea
+      - elevated BNP
+      - pulmonary congestion on imaging
+      - cardiac history
+    fingerprint_findings:
+      - bilateral lower lung crackles + elevated JVP + bilateral pleural effusions
+    textbook_presentation: >-
+      Patient with HF presenting with wheezing from interstitial /
+      pulmonary edema; classically termed "cardiac asthma";
+      cross-reference Stern Ch.15 and Ch.17.
+    evidence_based_diagnosis:
+      - test_name: BNP / NT-proBNP
+        citation: Stern Ch.15
+      - test_name: Chest radiograph
+        citation: Stern Ch.15
+      - test_name: Echocardiogram
+        citation: Stern Ch.15
+    treatment_classes:
+      - loop diuretic
+      - vasodilator
+      - guideline-directed HF therapy
+    notes: ""
+  - name: Anaphylaxis with airway involvement
+    role: active_must_not_miss
+    icd10:
+      - T78.2XXA
+    pivotal_features_supporting:
+      - acute exposure to allergen
+      - urticaria, angioedema
+      - bronchospasm / wheezing
+      - stridor (laryngeal angioedema)
+      - hypotension
+    fingerprint_findings:
+      - urticaria + bronchospasm + hypotension after allergen exposure
+    textbook_presentation: >-
+      Acute IgE-mediated reaction with airway and cardiovascular
+      involvement; cross-reference Stern Ch.15 / Ch.25.
+    evidence_based_diagnosis:
+      - test_name: Clinical recognition (treat first)
+        citation: Stern Ch.33 / Ch.15
+    treatment_classes:
+      - intramuscular epinephrine (first-line)
+      - bronchodilator
+      - antihistamine + corticosteroid
+      - intravenous fluid replacement
+      - airway management
+    notes: ""
+  - name: Foreign-body aspiration
+    role: active_must_not_miss
+    icd10:
+      - T17.300A
+    pivotal_features_supporting:
+      - acute onset wheezing or stridor
+      - choking event (witnessed or suspected)
+      - young child or older adult with neuromuscular disease
+      - unilateral findings on exam / imaging
+      - hyperinflation on expiratory chest film
+    fingerprint_findings:
+      - sudden onset unilateral wheeze after choking event
+    textbook_presentation: >-
+      Patient with acute respiratory symptoms after a witnessed or
+      suspected aspiration event; bronchoscopy diagnostic and
+      therapeutic.
+    evidence_based_diagnosis:
+      - test_name: Chest radiograph (inspiratory + expiratory)
+        citation: Stern Ch.33
+      - test_name: Bronchoscopy (diagnostic + therapeutic)
+        citation: Stern Ch.33
+    treatment_classes:
+      - basic life support choking maneuver (if witnessed acute)
+    notes: Bronchoscopic removal is procedural.
+  - name: Vocal cord dysfunction (paradoxical vocal fold motion)
+    role: other
+    icd10:
+      - J38.5
+    pivotal_features_supporting:
+      - inspiratory wheeze / stridor
+      - episodic, often during stress or exercise
+      - throat tightness
+      - normal between episodes
+      - paradoxical vocal cord adduction on laryngoscopy
+    fingerprint_findings:
+      - inspiratory stridor with throat tightness during stress that resolves spontaneously
+    textbook_presentation: >-
+      Adolescent or young adult with episodic inspiratory wheeze /
+      stridor mimicking asthma; flow-volume loop shows truncation of
+      inspiratory limb.
+    evidence_based_diagnosis:
+      - test_name: Direct laryngoscopy during episode
+        citation: Stern Ch.33
+      - test_name: Pulmonary function with flow-volume loop
+        citation: Stern Ch.33
+    treatment_classes:
+      - speech / breathing therapy
+      - relaxation / cognitive techniques
+      - treat underlying anxiety / GERD
+    notes: ""
+  - name: Croup (acute laryngotracheitis)
+    role: active_most_common
+    icd10:
+      - J05.0
+    pivotal_features_supporting:
+      - young child (6 months to 6 years)
+      - barking cough, hoarseness
+      - inspiratory stridor
+      - parainfluenza virus typical
+      - 'steeple sign on neck radiograph'
+    fingerprint_findings:
+      - barking cough + inspiratory stridor in young child
+    textbook_presentation: >-
+      Young child with barking cough, hoarseness, and inspiratory
+      stridor following URI; severity ranges from mild to airway
+      compromise.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment (Westley croup score)
+        citation: Stern Ch.33
+    treatment_classes:
+      - nebulized epinephrine (severe)
+      - dexamethasone (single-dose)
+      - cool mist (supportive)
+      - oxygen therapy
+    notes: ""
+  - name: Epiglottitis / supraglottitis
+    role: active_must_not_miss
+    icd10:
+      - J05.10
+    pivotal_features_supporting:
+      - rapid-onset severe sore throat with stridor and drooling
+      - tripod position
+      - 'thumb sign on lateral neck radiograph'
+      - fever, toxic appearance
+    fingerprint_findings:
+      - drooling + tripod position + stridor with severe sore throat
+    textbook_presentation: >-
+      Rapid-onset airway emergency; cross-reference Stern Ch.30.
+    evidence_based_diagnosis:
+      - test_name: Lateral soft-tissue neck radiograph (thumb sign)
+        citation: Stern Ch.33 / Ch.30
+      - test_name: Direct laryngoscopy in controlled setting
+        citation: Stern Ch.30
+    treatment_classes:
+      - intravenous antibiotic
+      - corticosteroid (selected adjunct)
+    notes: Airway management is procedural and immediate.
+  - name: Tension pneumothorax
+    role: active_must_not_miss
+    icd10:
+      - J93.0
+    pivotal_features_supporting:
+      - sudden severe dyspnea + chest pain
+      - hypotension
+      - tracheal deviation
+      - absent breath sounds + hyperresonance
+      - elevated JVP
+    fingerprint_findings:
+      - tracheal deviation + absent breath sounds + hypotension
+    textbook_presentation: >-
+      Acute hypoxemic respiratory failure with absent breath sounds
+      and tracheal deviation; bedside diagnosis; cross-reference
+      Stern Ch.15.
+    evidence_based_diagnosis:
+      - test_name: Clinical diagnosis (do NOT delay for imaging)
+        citation: Stern Ch.15
+    treatment_classes:
+      - oxygen therapy
+    notes: Needle decompression and chest tube — procedural.
+  - name: Pulmonary embolism (rare cause of wheeze, but consider in atypical bronchospasm)
+    role: active_must_not_miss
+    icd10:
+      - I26.99
+    pivotal_features_supporting:
+      - VTE risk factors
+      - sudden dyspnea, pleuritic chest pain
+      - hypoxemia
+      - elevated D-dimer
+      - tachycardia
+    fingerprint_findings:
+      - sudden dyspnea + hypoxemia + leg swelling
+    textbook_presentation: >-
+      Patient with VTE risk presenting with dyspnea and possibly
+      audible bronchospasm; cross-reference Stern Ch.15.
+    evidence_based_diagnosis:
+      - test_name: D-dimer + Wells / PERC
+        citation: Stern Ch.15
+      - test_name: CT pulmonary angiography
+        citation: Stern Ch.15
+    treatment_classes:
+      - anticoagulant
+      - thrombolytic (massive PE)
+    notes: Cross-reference Stern Ch.15.
+  - name: Bronchiectasis
+    role: other
+    icd10:
+      - J47.9
+    pivotal_features_supporting:
+      - chronic productive cough with copious purulent sputum
+      - recurrent lower respiratory tract infections
+      - hemoptysis
+      - HRCT shows airway dilation, "tram lines"
+      - underlying causes (cystic fibrosis, NTM, ABPA, immune deficiency, post-infectious)
+    fingerprint_findings:
+      - chronic copious purulent sputum + airway dilation on HRCT
+    textbook_presentation: >-
+      Chronic recurrent respiratory infections with daily productive
+      cough and characteristic HRCT findings; identify underlying
+      cause.
+    evidence_based_diagnosis:
+      - test_name: HRCT chest
+        citation: Stern Ch.33
+      - test_name: Etiology workup (sweat chloride, immunoglobulins, NTM cultures, ABPA serology)
+        citation: Stern Ch.33
+    treatment_classes:
+      - airway clearance (nebulized hypertonic saline, chest physiotherapy)
+      - antibiotic (acute exacerbations and chronic suppressive in selected)
+      - bronchodilator
+      - inhaled corticosteroid (selected)
+    notes: ""
+  - name: Allergic bronchopulmonary aspergillosis (ABPA)
+    role: other
+    icd10:
+      - B44.81
+    pivotal_features_supporting:
+      - asthma or cystic fibrosis
+      - peripheral eosinophilia
+      - elevated total IgE
+      - positive Aspergillus-specific IgE
+      - central bronchiectasis
+      - mucoid impactions
+    fingerprint_findings:
+      - elevated total IgE + Aspergillus-specific IgE in asthmatic
+    textbook_presentation: >-
+      Asthmatic / CF patient with worsening control, peripheral
+      eosinophilia, elevated total IgE, and central bronchiectasis;
+      complicated by mucoid impactions.
+    evidence_based_diagnosis:
+      - test_name: Total IgE + Aspergillus-specific IgE / IgG
+        citation: Stern Ch.33
+      - test_name: HRCT chest (central bronchiectasis)
+        citation: Stern Ch.33
+    treatment_classes:
+      - systemic corticosteroid
+      - antifungal (itraconazole, voriconazole)
+      - omalizumab (selected)
+    notes: ""
+  - name: Tracheal / large-airway tumor or stenosis
+    role: active_must_not_miss
+    icd10:
+      - J39.8
+    pivotal_features_supporting:
+      - persistent wheeze / stridor not responding to bronchodilator
+      - smoking history
+      - hemoptysis
+      - flattening of inspiratory or expiratory limb of flow-volume loop
+      - mass on imaging or bronchoscopy
+    fingerprint_findings:
+      - persistent stridor unresponsive to bronchodilators in older smoker
+    textbook_presentation: >-
+      Older patient with persistent stridor or wheeze unresponsive to
+      typical asthma / COPD therapy; bronchoscopy and CT identify
+      tumor or stenosis.
+    evidence_based_diagnosis:
+      - test_name: Pulmonary function with flow-volume loop
+        citation: Stern Ch.33
+      - test_name: CT chest (with airway protocol)
+        citation: Stern Ch.33
+      - test_name: Bronchoscopy
+        citation: Stern Ch.33
+    treatment_classes:
+      - oncology / interventional pulmonology referral
+      - airway stenting (procedural — selected)
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Determine character (stridor vs. wheeze) and acuity; assess airway emergencies.
+    rationale: Stridor = upper airway; expiratory wheeze = lower airway; acute onset suggests foreign body / anaphylaxis / severe exacerbation.
+    branches:
+      - condition: Stridor + drooling / tripod position / acute distress
+        action: escalate
+        escalation_reason: Possible epiglottitis / severe upper-airway obstruction — secure airway emergently.
+      - condition: Wheeze + hypotension + urticaria
+        action: escalate
+        escalation_reason: Anaphylaxis — IM epinephrine.
+      - condition: Sudden unilateral wheeze after choking
+        action: escalate
+        escalation_reason: Foreign-body aspiration — bronchoscopy.
+      - condition: Severe asthma features (silent chest, accessory muscle use, drowsiness, normalizing PaCO2)
+        action: escalate
+        escalation_reason: Life-threatening exacerbation — ICU + bronchodilators + corticosteroid + magnesium + NIPPV / intubation.
+      - condition: Stable presentation
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Ch.33 prose
+  - step_num: 2
+    description: Step 2 — For chronic / recurrent wheeze, evaluate for asthma vs. COPD vs. cardiac asthma vs. other.
+    rationale: Diagnosis-specific therapy.
+    branches:
+      - condition: Episodic, reversible airflow limitation, atopy, nocturnal symptoms
+        action: confirm
+        target_diagnosis: Asthma exacerbation
+      - condition: Smoking history, chronic productive cough, fixed obstruction
+        action: confirm
+        target_diagnosis: COPD exacerbation
+      - condition: HF features (orthopnea, JVP, edema, BNP elevated)
+        action: confirm
+        target_diagnosis: Heart failure / pulmonary edema (cardiac asthma)
+    derived_from_figure: Stern Ch.33 prose
+  - step_num: 3
+    description: Step 3 — For atypical / unexplained wheeze or stridor, expand differential (bronchiectasis, ABPA, vocal cord dysfunction, tumor / stenosis, eosinophilic disease).
+    rationale: Persistent symptoms despite typical therapy warrant expanded workup.
+    branches:
+      - condition: Inspiratory stridor with throat tightness, episodic
+        action: confirm
+        target_diagnosis: Vocal cord dysfunction (paradoxical vocal fold motion)
+      - condition: Persistent wheeze / stridor unresponsive to bronchodilator
+        action: order_test
+        test_to_order: Pulmonary function with flow-volume loop + CT chest + bronchoscopy
+      - condition: Asthma with eosinophilia / elevated IgE
+        action: order_test
+        test_to_order: Aspergillus-specific IgE / IgG; HRCT for central bronchiectasis
+      - condition: Chronic productive cough with hemoptysis
+        action: order_test
+        test_to_order: HRCT chest + sputum cultures (NTM, fungal)
+    derived_from_figure: Stern Ch.33 prose
+red_flags:
+  - name: Stridor + drooling + tripod position
+    description: Epiglottitis or severe upper-airway obstruction — secure airway.
+    severity: high
+  - name: Sudden unilateral wheeze after choking
+    description: Foreign-body aspiration — bronchoscopy.
+    severity: high
+  - name: Severe asthma with silent chest + normalizing PaCO2
+    description: Imminent respiratory failure — ICU + intubation considerations.
+    severity: high
+  - name: Acute wheeze + urticaria + hypotension
+    description: Anaphylaxis — IM epinephrine.
+    severity: high
+source_pages:
+  - 600
+  - 617
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.33 (pp. 600-617). Frame is anatomic — upper airway
+  (stridor) vs. lower airway (wheeze) vs. cardiac asthma vs. other.
+  Algorithm prioritizes airway emergencies, then triages chronic /
+  recurrent disease. Must-not-miss: epiglottitis, foreign-body
+  aspiration, severe asthma / anaphylaxis, tension pneumothorax, PE,
+  airway tumor / stenosis. Cross-references Stern Ch.10 / Ch.15 /
+  Ch.30.

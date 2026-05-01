@@ -1,0 +1,607 @@
+complaint: abdominal_pain
+chapter_number: 3
+chapter_title: Abdominal Pain
+framework_type: anatomical
+framework_categories:
+  - Right upper quadrant
+  - Left upper quadrant
+  - Epigastrium
+  - Diffuse / periumbilical
+  - Right lower quadrant
+  - Left lower quadrant
+  - Flank
+pivotal_points:
+  - location of pain (which quadrant — drives the per-quadrant differential per Fig 3-1)
+  - time course (acute first episode vs. recurrent vs. chronic/subacute — Table 3-1)
+  - peritoneal findings (rebound, rigidity, guarding) suggest intra-abdominal catastrophe
+  - unexplained hypotension (sepsis vs. retroperitoneal hemorrhage — Table 3-3)
+  - abdominal distention (excess air vs. excess fluid — Table 3-4)
+  - presence of prior abdominal surgery (raises SBO risk)
+decision_rules:
+  - name: Quadrant-driven differential mapping
+    purpose: Narrow differential based on pain location
+    citation: Stern p.41 (Figure 3-1)
+  - name: Time-course classification (first episode acute / recurrent acute / subacute-chronic)
+    purpose: Acute first-episode focuses on must-not-miss; recurrent excludes one-shot diagnoses (AAA, splenic rupture, etc.)
+    citation: Stern p.42 (Table 3-1)
+differential:
+  - name: Appendicitis
+    role: leading
+    icd10:
+      - K35.80
+    pivotal_features_supporting:
+      - migration of pain from periumbilical to right lower quadrant
+      - anorexia
+      - low-grade fever
+    fingerprint_findings:
+      - migration of pain to McBurney point
+    textbook_presentation: >-
+      Diffuse periumbilical pain that intensifies and migrates to the right lower
+      quadrant, often with anorexia, nausea, and a low-grade fever; classic
+      presentation present in only 50-65% of patients.
+    evidence_based_diagnosis:
+      - test_name: Right-lower-quadrant pain on exam
+        lr_positive: 7.9
+        lr_negative: 0.15
+        note: Range LR+ 7.3-8.5; LR- 0.0-0.3 across studies. Most useful single finding.
+        citation: Stern p.43
+      - test_name: CT abdomen / pelvis with contrast
+        sensitivity: 0.94
+        specificity: 0.95
+        note: Imaging gold standard; preferred when diagnosis is uncertain.
+        citation: Stern p.43
+      - test_name: Abdominal ultrasound (compression)
+        sensitivity: 0.86
+        specificity: 0.81
+        note: First-line in pregnancy and pediatrics to avoid radiation.
+        citation: Stern p.43
+    treatment_classes:
+      - antibiotic
+      - analgesic
+    notes: Surgical appendectomy is definitive but is procedural, not user-facing education content.
+  - name: Abdominal aortic aneurysm rupture
+    role: active_must_not_miss
+    icd10:
+      - I71.3
+    pivotal_features_supporting:
+      - male sex
+      - smoking history
+      - age > 60
+      - hypotension or syncope
+      - pulsatile abdominal mass
+      - acute severe back or flank pain
+    fingerprint_findings:
+      - pulsatile abdominal mass with hypotension
+      - acute tearing pain radiating to back in older smoker
+    textbook_presentation: >-
+      Older smoker with acute severe abdominal or back pain, hypotension or
+      syncope, and a pulsatile abdominal mass; rupture mortality is high without
+      emergent repair.
+    evidence_based_diagnosis:
+      - test_name: Bedside abdominal ultrasound
+        sensitivity: 0.99
+        specificity: 0.98
+        note: Identifies aneurysm presence rapidly at bedside.
+        citation: Stern Ch.3 (Tables 3-2/3-3)
+      - test_name: CT angiography of abdomen and pelvis
+        note: Definitive imaging once patient is stabilized.
+        citation: Stern Ch.3
+    treatment_classes: []
+    notes: Emergent vascular surgical repair is definitive but is procedural, not user-facing education content.
+  - name: Acute mesenteric ischemia
+    role: active_must_not_miss
+    icd10:
+      - K55.0
+    pivotal_features_supporting:
+      - atrial fibrillation, heart failure, valvular disease (embolic source)
+      - acute severe periumbilical pain
+      - pain out of proportion to exam
+    fingerprint_findings:
+      - pain out of proportion to physical exam findings
+      - atrial fibrillation with new abdominal pain
+    textbook_presentation: >-
+      Sudden severe periumbilical pain markedly out of proportion to a relatively
+      benign exam, in a patient with embolic risk (AF, recent catheterization)
+      or with vascular risk factors.
+    evidence_based_diagnosis:
+      - test_name: CT angiography (mesenteric)
+        note: Imaging modality of choice for suspected acute mesenteric ischemia.
+        citation: Stern Ch.3 (Table 3-2)
+      - test_name: Serum lactate
+        note: Late marker — elevation suggests bowel infarction; normal value does not exclude early ischemia.
+        citation: Stern Ch.3
+    treatment_classes:
+      - anticoagulant
+    notes: Endovascular or surgical revascularization is definitive but is procedural.
+  - name: Ruptured ectopic pregnancy
+    role: active_must_not_miss
+    icd10:
+      - O00.1
+    pivotal_features_supporting:
+      - sexually active premenopausal woman
+      - missed menses
+      - lower-quadrant pain (RLQ or LLQ)
+      - hypotension
+    fingerprint_findings:
+      - positive serum β-hCG with hypotension and pelvic pain
+    textbook_presentation: >-
+      Reproductive-age woman with lower abdominal pain, vaginal bleeding, and
+      hemodynamic compromise; positive pregnancy test confirms the differential
+      direction.
+    evidence_based_diagnosis:
+      - test_name: Serum β-hCG (quantitative)
+        sensitivity: 0.99
+        note: Primary screen — required in every reproductive-age woman with abdominal pain.
+        citation: Stern Ch.3
+      - test_name: Transvaginal ultrasound
+        note: Identifies extra-uterine pregnancy or free fluid.
+        citation: Stern Ch.3
+    treatment_classes: []
+    notes: Surgical management is definitive but is procedural.
+  - name: Bowel perforation (peritonitis)
+    role: active_must_not_miss
+    icd10:
+      - K65.0
+      - K65.1
+    pivotal_features_supporting:
+      - rebound tenderness, rigidity, guarding (peritoneal signs)
+      - history of NSAID use, peptic ulcer, diverticulitis, or appendicitis
+      - free air on imaging
+    fingerprint_findings:
+      - rigid abdomen with diffuse peritoneal signs
+      - free air under the diaphragm on upright chest film
+    textbook_presentation: >-
+      Acute severe abdominal pain with diffuse peritoneal signs, often after a
+      perforated peptic ulcer, ruptured diverticulum, or perforated appendicitis;
+      may rapidly progress to sepsis and shock.
+    evidence_based_diagnosis:
+      - test_name: Upright chest radiograph (or left-lateral decubitus)
+        note: Free air under the diaphragm establishes perforation.
+        citation: Stern Ch.3
+      - test_name: CT abdomen / pelvis with IV contrast
+        note: Identifies perforation site and complications (abscess, free fluid).
+        citation: Stern Ch.3
+    treatment_classes:
+      - antibiotic
+    notes: Emergent surgical repair is definitive.
+  - name: Bowel obstruction (with risk of infarction)
+    role: active_must_not_miss
+    icd10:
+      - K56.6
+      - K56.5
+    pivotal_features_supporting:
+      - prior abdominal surgery (adhesions)
+      - inability to pass stool or flatus
+      - nausea / vomiting
+      - abdominal distention
+      - high-pitched tinkling bowel sounds
+    fingerprint_findings:
+      - obstructive series with air-fluid levels and dilated loops
+    textbook_presentation: >-
+      Crampy abdominal pain with vomiting, abdominal distention, and obstipation
+      — usually in a patient with prior abdominal surgery (adhesions) or known
+      hernia.
+    evidence_based_diagnosis:
+      - test_name: CT abdomen / pelvis with oral and IV contrast
+        sensitivity: 0.95
+        specificity: 0.96
+        note: Identifies transition point, infarction signs (pneumatosis, portal venous gas).
+        citation: Stern Ch.3
+      - test_name: Plain abdominal radiograph (obstructive series)
+        note: First-pass screen; identifies dilated loops + air-fluid levels.
+        citation: Stern Ch.3
+    treatment_classes:
+      - antiemetic
+      - intravenous fluid replacement
+    notes: Surgical exploration is required for closed-loop obstruction or signs of infarction.
+  - name: Ovarian torsion
+    role: active_must_not_miss
+    icd10:
+      - N83.5
+    pivotal_features_supporting:
+      - reproductive-age woman
+      - sudden severe lower-quadrant pain
+      - nausea / vomiting
+      - palpable adnexal mass
+    fingerprint_findings:
+      - sudden severe unilateral pelvic pain in a woman with known ovarian cyst
+    textbook_presentation: >-
+      Reproductive-age woman with sudden severe unilateral lower-quadrant pain,
+      nausea, and an adnexal mass on exam or imaging.
+    evidence_based_diagnosis:
+      - test_name: Pelvic Doppler ultrasound
+        note: Reduced or absent ovarian arterial flow supports torsion.
+        citation: Stern Ch.3
+    treatment_classes: []
+    notes: Surgical detorsion is definitive and time-sensitive.
+  - name: Splenic rupture
+    role: active_must_not_miss
+    icd10:
+      - S36.0
+    pivotal_features_supporting:
+      - blunt trauma to LUQ or back
+      - infectious mononucleosis
+      - referred pain to left shoulder (Kehr sign)
+      - hypotension
+    fingerprint_findings:
+      - left-shoulder referred pain with LUQ tenderness (Kehr sign)
+    textbook_presentation: >-
+      Acute LUQ pain with hypotension after trauma, splenomegaly, or
+      mononucleosis; may radiate to the left shoulder (Kehr sign).
+    evidence_based_diagnosis:
+      - test_name: FAST ultrasound (focused assessment with sonography for trauma)
+        note: Identifies free intraperitoneal fluid at bedside.
+        citation: Stern Ch.3
+      - test_name: CT abdomen / pelvis with IV contrast
+        note: Definitive characterization of splenic injury.
+        citation: Stern Ch.3
+    treatment_classes: []
+    notes: Surgical splenectomy or embolization is definitive in unstable patients.
+  - name: Acute pancreatitis
+    role: active_most_common
+    icd10:
+      - K85.9
+    pivotal_features_supporting:
+      - alcohol use
+      - gallstones
+      - epigastric pain radiating to back
+      - pain worse supine, better leaning forward
+      - nausea / vomiting
+    fingerprint_findings:
+      - lipase >= 3× upper limit of normal
+    textbook_presentation: >-
+      Epigastric pain radiating to the back, worsening over hours, often
+      accompanied by nausea, vomiting, and a history of alcohol use or
+      gallstones.
+    evidence_based_diagnosis:
+      - test_name: Serum lipase (>= 3× ULN)
+        sensitivity: 0.85
+        specificity: 0.96
+        note: More specific than amylase; remains elevated longer.
+        citation: Stern Ch.3 (Table 3-2)
+      - test_name: Right upper quadrant ultrasound
+        note: First-line to identify gallstones as etiology.
+        citation: Stern Ch.3
+      - test_name: CT abdomen with contrast
+        note: Used 48-72 hours in to assess for necrosis when severity warrants.
+        citation: Stern Ch.3
+    treatment_classes:
+      - intravenous fluid replacement
+      - analgesic
+      - antiemetic
+    notes: Cholecystectomy after biliary pancreatitis is procedural treatment for the etiology.
+  - name: Peptic ulcer disease
+    role: active_most_common
+    icd10:
+      - K27.9
+    pivotal_features_supporting:
+      - NSAID use
+      - Helicobacter pylori infection
+      - melena
+      - epigastric pain relieved by eating (duodenal) or worsened by eating (gastric)
+    fingerprint_findings:
+      - melena with NSAID exposure
+    textbook_presentation: >-
+      Burning epigastric pain with relation to meals, often with a history of
+      NSAID use, H. pylori infection, or smoking; may present with GI bleeding
+      (melena, hematemesis) or perforation.
+    evidence_based_diagnosis:
+      - test_name: Upper endoscopy (EGD)
+        note: Direct visualization and biopsy for H. pylori; gold standard.
+        citation: Stern Ch.3 (Table 3-5)
+      - test_name: H. pylori stool antigen
+        sensitivity: 0.94
+        specificity: 0.97
+        citation: Stern Ch.3 (Table 3-5)
+      - test_name: H. pylori urea breath test
+        sensitivity: 0.95
+        specificity: 0.95
+        citation: Stern Ch.3
+    treatment_classes:
+      - proton pump inhibitor
+      - H. pylori eradication antibiotics (when infection confirmed)
+    notes: Avoid NSAIDs; address H. pylori with appropriate eradication therapy when present.
+  - name: Biliary disease (cholelithiasis / cholecystitis / cholangitis)
+    role: active_most_common
+    icd10:
+      - K80.20
+      - K81.0
+      - K83.0
+    pivotal_features_supporting:
+      - postprandial RUQ or epigastric pain
+      - female, fertile, forty, fat (classic risk factors)
+      - dark urine, jaundice (cholangitis)
+      - Murphy sign on exam (cholecystitis)
+    fingerprint_findings:
+      - Charcot triad (fever + jaundice + RUQ pain) for ascending cholangitis
+      - Murphy sign for acute cholecystitis
+    textbook_presentation: >-
+      Postprandial or nocturnal RUQ pain — episodic in cholelithiasis,
+      continuous with fever and Murphy sign in cholecystitis, with jaundice and
+      sepsis in ascending cholangitis.
+    evidence_based_diagnosis:
+      - test_name: Right upper quadrant ultrasound
+        sensitivity: 0.84
+        specificity: 0.99
+        note: First-line; identifies gallstones, wall thickening, pericholecystic fluid.
+        citation: Stern Ch.3
+      - test_name: HIDA scan (cholescintigraphy)
+        sensitivity: 0.97
+        specificity: 0.90
+        note: Confirms acute cholecystitis when ultrasound is equivocal.
+        citation: Stern Ch.3
+      - test_name: Liver function tests
+        note: Elevated alkaline phosphatase and bilirubin in choledocholithiasis / cholangitis.
+        citation: Stern Ch.3
+    treatment_classes:
+      - antibiotic
+      - analgesic
+    notes: Cholecystectomy and ERCP are procedural treatments.
+  - name: Diverticulitis
+    role: active_most_common
+    icd10:
+      - K57.32
+    pivotal_features_supporting:
+      - left lower quadrant pain
+      - low-grade fever
+      - prior episode of diverticulitis
+      - change in bowel habits
+    fingerprint_findings:
+      - LLQ tenderness with leukocytosis in older adult
+    textbook_presentation: >-
+      Older adult with persistent LLQ pain, low-grade fever, leukocytosis, and
+      sometimes change in bowel habits.
+    evidence_based_diagnosis:
+      - test_name: CT abdomen / pelvis with contrast
+        sensitivity: 0.94
+        specificity: 0.99
+        note: Identifies inflamed diverticula, abscess, perforation.
+        citation: Stern Ch.3
+    treatment_classes:
+      - antibiotic
+    notes: Percutaneous drainage and surgery for complicated cases.
+  - name: Pelvic inflammatory disease
+    role: active_most_common
+    icd10:
+      - N73.9
+    pivotal_features_supporting:
+      - sexually active woman
+      - vaginal discharge
+      - cervical motion tenderness
+      - lower abdominal or pelvic pain
+    fingerprint_findings:
+      - cervical motion tenderness ('chandelier sign') with lower abdominal pain
+    textbook_presentation: >-
+      Sexually active woman with lower abdominal or pelvic pain, vaginal
+      discharge, and cervical motion tenderness on exam.
+    evidence_based_diagnosis:
+      - test_name: Cervical / vaginal NAAT for chlamydia and gonorrhea
+        citation: Stern Ch.3
+      - test_name: Pelvic ultrasound
+        note: Identifies tubo-ovarian abscess.
+        citation: Stern Ch.3
+    treatment_classes:
+      - antibiotic
+    notes: Empiric antibiotic coverage per CDC guidelines.
+  - name: Inflammatory bowel disease (Crohn / ulcerative colitis)
+    role: other
+    icd10:
+      - K50.90
+      - K51.90
+    pivotal_features_supporting:
+      - chronic or recurrent abdominal pain
+      - hematochezia
+      - weight loss
+      - family history
+      - extraintestinal manifestations
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Chronic or recurrent abdominal pain with diarrhea, hematochezia, weight
+      loss, and sometimes extraintestinal manifestations (uveitis, arthritis,
+      erythema nodosum).
+    evidence_based_diagnosis:
+      - test_name: Colonoscopy with biopsy
+        note: Diagnostic gold standard; characterizes pattern (skip lesions vs. continuous).
+        citation: Stern Ch.3
+      - test_name: Fecal calprotectin
+        note: Distinguishes IBD from IBS; elevated in active inflammation.
+        citation: Stern Ch.3
+    treatment_classes:
+      - aminosalicylate
+      - corticosteroid
+      - immunomodulator
+      - biologic agent
+    notes: ""
+  - name: Irritable bowel syndrome
+    role: other
+    icd10:
+      - K58.9
+    pivotal_features_supporting:
+      - chronic recurrent abdominal pain
+      - alteration in bowel habits (diarrhea, constipation, or both)
+      - pain relieved by defecation
+      - absence of alarm features
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Chronic intermittent abdominal pain associated with diarrhea or
+      constipation, relieved by defecation, without weight loss or alarm
+      features.
+    evidence_based_diagnosis:
+      - test_name: Rome IV criteria (clinical)
+        note: Symptom-based diagnosis after exclusion of organic disease.
+        citation: Stern Ch.3
+    treatment_classes:
+      - antispasmodic
+      - laxative or antidiarrheal (per subtype)
+      - low-FODMAP dietary education
+      - SSRI / SNRI (low dose for visceral hypersensitivity)
+    notes: ""
+  - name: Acute gastroenteritis
+    role: other
+    icd10:
+      - K52.9
+    pivotal_features_supporting:
+      - diarrhea
+      - vomiting
+      - travel history
+      - sick contacts
+      - acute self-limited course
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Acute diarrhea and vomiting with crampy abdominal pain, often
+      self-limited; may follow travel, sick contacts, or food exposure.
+    evidence_based_diagnosis:
+      - test_name: Stool culture (selective indications)
+        note: Reserved for severe, prolonged, or bloody diarrhea per Stern Ch.13.
+        citation: Stern Ch.3
+    treatment_classes:
+      - oral rehydration therapy
+      - antiemetic
+    notes: Detailed differential lives in Stern Ch.13 (Diarrhea, Acute).
+  - name: Diabetic ketoacidosis (presenting as abdominal pain)
+    role: other
+    icd10:
+      - E10.10
+      - E11.10
+    pivotal_features_supporting:
+      - known or new diabetes
+      - hyperglycemia + ketosis + anion-gap metabolic acidosis
+      - polyuria, polydipsia
+      - vomiting
+    fingerprint_findings:
+      - anion-gap metabolic acidosis with elevated β-hydroxybutyrate
+    textbook_presentation: >-
+      Diffuse abdominal pain with vomiting and Kussmaul respirations in a
+      patient with diabetes; serum glucose elevated and anion-gap acidosis with
+      ketonemia.
+    evidence_based_diagnosis:
+      - test_name: Serum glucose, β-hydroxybutyrate, basic metabolic panel
+        note: Elevated glucose, anion gap, and ketones establish DKA.
+        citation: Stern Ch.3
+    treatment_classes:
+      - insulin therapy
+      - intravenous fluid replacement
+      - electrolyte repletion (potassium)
+    notes: Detailed management lives in Stern Ch.12 (Diabetes).
+  - name: Myocardial infarction (presenting as abdominal pain)
+    role: other
+    icd10:
+      - I21.9
+    pivotal_features_supporting:
+      - epigastric pain radiating to chest, jaw, or arms
+      - cardiac risk factors
+      - nausea, diaphoresis
+      - elderly, diabetic, or female patient
+    fingerprint_findings:
+      - new ST elevation on ECG with epigastric pain
+    textbook_presentation: >-
+      Inferior MI may present with epigastric pain rather than chest pain,
+      especially in elderly, diabetic, or female patients; ECG and troponin make
+      the diagnosis.
+    evidence_based_diagnosis:
+      - test_name: 12-lead ECG
+        note: Always obtain in older patients with epigastric pain; check inferior leads.
+        citation: Stern Ch.3 / Ch.9
+      - test_name: Serum troponin
+        sensitivity: 0.95
+        specificity: 0.98
+        citation: Stern Ch.9 (Table 9-7)
+    treatment_classes:
+      - antiplatelet
+      - anticoagulant
+    notes: Detailed management is in Stern Ch.9 (Chest Pain).
+algorithm:
+  - step_num: 1
+    description: Assess vital signs and check for unexplained hypotension or peritoneal signs.
+    rationale: Step zero — identify catastrophe early. Hypotension or rigidity short-circuits the workup to emergent imaging and resuscitation.
+    branches:
+      - condition: Unexplained hypotension OR peritoneal signs (rebound, rigidity, guarding)
+        action: escalate
+        escalation_reason: Possible intra-abdominal catastrophe — emergent imaging (FAST, CT) and surgical/IR consultation.
+      - condition: Stable vitals without peritoneal signs
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern p.40 prose (peritoneal-signs / hypotension pivot)
+  - step_num: 2
+    description: Localize the pain to a quadrant (RUQ / LUQ / epigastrium / diffuse-periumbilical / RLQ / LLQ / flank).
+    rationale: Stern's first explicit pivotal step (Figure 3-1); maps to a quadrant-specific differential.
+    branches:
+      - condition: Quadrant identified
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Fig 3-1
+  - step_num: 3
+    description: Determine the time course — first episode of acute pain, recurrent acute episodes, or chronic / subacute (Table 3-1).
+    rationale: First episode focuses on must-not-miss; recurrent excludes one-shot diagnoses (AAA, appendicitis, splenic rupture); chronic shifts toward IBD / IBS / chronic mesenteric ischemia / hepatitis / PUD.
+    branches:
+      - condition: First episode of acute pain
+        action: next_step
+        target_step: 4
+      - condition: Recurrent acute episodes
+        action: next_step
+        target_step: 4
+      - condition: Chronic or subacute
+        action: next_step
+        target_step: 6
+    derived_from_figure: Stern Table 3-1
+  - step_num: 4
+    description: For acute pain, assess for must-not-miss diagnoses by demographics and findings (AAA, ruptured ectopic, mesenteric ischemia, perforation, bowel obstruction with infarction, ovarian torsion, splenic rupture, MI with abdominal presentation, DKA).
+    rationale: Stern's "must-not-miss-first" rule for acute presentations.
+    branches:
+      - condition: Any high-risk feature present (e.g., older smoker with pulsatile mass, AF with disproportionate pain, reproductive-age woman with hypotension, abdominal distention with no flatus)
+        action: order_test
+        test_to_order: Targeted imaging and labs (β-hCG, lactate, CT angiography, abdominal ultrasound, FAST, ECG)
+      - condition: No must-not-miss features
+        action: next_step
+        target_step: 5
+    derived_from_figure: Stern p.40-43 prose + Tables 3-3, 3-4
+  - step_num: 5
+    description: Apply quadrant-specific most-common workup (e.g., RLQ pain → appendicitis; epigastric → PUD / pancreatitis; RUQ → biliary; LLQ → diverticulitis; LRQ/LLQ in women → PID).
+    rationale: After must-not-miss is cleared, target the prevalent diagnosis for the quadrant.
+    branches:
+      - condition: Diagnosis fits classic presentation
+        action: order_test
+        test_to_order: Diagnosis-specific imaging or lab (CT, ultrasound, lipase, β-hCG, NAAT for STI)
+      - condition: Diagnosis does not fit cleanly
+        action: reassess
+        target_step: 4
+        notes: Reconsider must-not-miss before assigning a benign diagnosis.
+    derived_from_figure: Stern Fig 3-1 + per-quadrant prose
+  - step_num: 6
+    description: For chronic / subacute pain, work up IBD vs. IBS vs. chronic mesenteric ischemia vs. PUD vs. hepatitis vs. malignancy.
+    rationale: Chronic pain has a different differential and typically benefits from outpatient endoscopy + targeted imaging.
+    branches:
+      - condition: Alarm features (weight loss, hematochezia, anemia, age > 50)
+        action: order_test
+        test_to_order: Colonoscopy / EGD with biopsy; cross-sectional imaging
+      - condition: No alarm features and symptoms fit IBS
+        action: confirm
+        target_diagnosis: Irritable bowel syndrome
+    derived_from_figure: Stern Table 3-1 + chronic-pain prose
+red_flags:
+  - name: Pulsatile abdominal mass with hypotension
+    description: Classic for ruptured AAA in older smokers — emergent vascular consultation.
+    severity: high
+  - name: Pain out of proportion to physical exam
+    description: Classic for acute mesenteric ischemia, especially with AF or recent catheterization.
+    severity: high
+  - name: Peritoneal signs with free air on imaging
+    description: Bowel perforation; emergent surgical consultation.
+    severity: high
+  - name: Hypotension in a reproductive-age woman with positive β-hCG
+    description: Ruptured ectopic pregnancy until proven otherwise.
+    severity: high
+source_pages:
+  - 40
+  - 67
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.3 (pp. 40-67). Differential is the union across the chapter's three
+  cases (mid-upper acute — Mr. C; ascending cholangitis — Mrs. R; chronic IBD —
+  Ms. K), with any diagnosis that is "Active Alternative — Must Not Miss" in any
+  case promoted to that bucket in the union. Algorithm is reconciled across
+  Figure 3-1 (location-driven differential) and the chapter's per-quadrant
+  flowcharts (Figures 3-2 to 3-6). Treatment classes are educational; specific
+  drugs, doses, and procedural details are deliberately omitted.

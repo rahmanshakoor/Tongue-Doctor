@@ -1,0 +1,477 @@
+complaint: cough_fever_and_respiratory_infections
+chapter_number: 10
+chapter_title: Cough, Fever, and Respiratory Infections
+framework_type: categorical
+framework_categories:
+  - Upper respiratory tract infection (cold, sinusitis)
+  - Lower respiratory tract — non-pneumonic (bronchitis, pertussis, influenza)
+  - Pneumonia — community-acquired
+  - Pneumonia — atypical or special-population (aspiration, TB, PJP, hospital-acquired, ventilator-associated)
+pivotal_points:
+  - vital signs (normal vital signs + normal lung exam → pneumonia very unlikely; sens 95%, LR- 0.09)
+  - lung exam findings (crackles, dullness, decreased breath sounds, bronchophony, egophony — egophony LR+ 8.6)
+  - duration of cough (acute < 3 weeks; chronic > 8 weeks shifts differential to chronic causes)
+  - immunocompromised state (HIV, transplant, granulocytopenia, chronic steroids — broadens differential to opportunistic)
+  - high-risk comorbidities (diabetes, COPD, heart failure, chronic kidney disease, age > 65)
+  - epidemiologic exposures (TB contact, travel, animal exposure, water sources for Legionella)
+  - aspiration risk (altered mental status, dysphagia, alcoholism, seizures)
+decision_rules:
+  - name: Clinical-prediction rule for pneumonia
+    purpose: Decide which acute-cough patients need a chest radiograph
+    inputs:
+      - vital signs (temperature, RR, HR)
+      - lung exam (crackles, dullness, decreased breath sounds, egophony)
+      - high-risk comorbidities
+    thresholds:
+      - "normal vital signs + normal lung exam + no high-risk features → pneumonia unlikely; treat symptomatically"
+      - "any abnormal vital sign or abnormal lung finding → obtain PA/lateral chest film"
+    citation: Stern Fig 10-1 (p.188)
+  - name: CURB-65 (severity score)
+    purpose: Decide outpatient vs. admission vs. ICU disposition for community-acquired pneumonia
+    inputs:
+      - confusion
+      - BUN > 19 mg/dL
+      - respiratory rate >= 30
+      - blood pressure (SBP < 90 or DBP <= 60)
+      - age >= 65
+    thresholds:
+      - "0-1 = low risk, outpatient management"
+      - "2 = consider admission"
+      - "3-5 = severe, admit; consider ICU"
+    citation: Stern Ch.10
+  - name: Pneumonia Severity Index (PSI / PORT score)
+    purpose: Risk-stratify CAP into 5 classes; alternative to CURB-65
+    citation: Stern Ch.10
+differential:
+  - name: Community-acquired pneumonia (CAP)
+    role: leading
+    icd10:
+      - J18.9
+    pivotal_features_supporting:
+      - cough (96%)
+      - fever (81%; 53% in elderly)
+      - dyspnea (46-66%)
+      - pleuritic chest pain (37-50%)
+      - crackles, egophony on exam
+      - infiltrate on chest film
+    fingerprint_findings:
+      - new lobar or patchy infiltrate on chest film with consistent symptoms
+    textbook_presentation: >-
+      Acute cough, fever, dyspnea, and pleuritic chest pain with crackles
+      and a new infiltrate on chest radiograph; common pathogens include
+      Streptococcus pneumoniae, Mycoplasma pneumoniae, Chlamydophila
+      pneumoniae, Legionella, and viral pathogens.
+    evidence_based_diagnosis:
+      - test_name: PA / lateral chest radiograph
+        sensitivity: 0.85
+        specificity: 0.95
+        note: Imaging cornerstone for diagnosis; CT more sensitive but reserved for unclear cases.
+        citation: Stern p.188
+      - test_name: Lung exam — egophony
+        lr_positive: 8.6
+        note: Specific finding when present; sensitivity is low.
+        citation: Stern p.187
+      - test_name: Lung exam — normal
+        lr_negative: 0.6
+        note: Does not rule out pneumonia.
+        citation: Stern p.187
+      - test_name: Vital signs + lung exam combined (normal)
+        sensitivity: 0.95
+        lr_negative: 0.09
+        note: Combination effectively rules out pneumonia in immunocompetent outpatients.
+        citation: Stern p.187
+      - test_name: Sputum Gram stain and culture
+        note: Useful pre-antibiotic; targets for severe / hospitalized patients.
+        citation: Stern Ch.10
+      - test_name: Blood cultures (severe / hospitalized CAP)
+        citation: Stern Ch.10
+      - test_name: Urinary Streptococcus pneumoniae and Legionella antigens
+        citation: Stern Ch.10
+      - test_name: Respiratory viral panel (PCR — including SARS-CoV-2 and influenza)
+        citation: Stern Ch.10
+    treatment_classes:
+      - antibiotic (per local resistance patterns and risk factors)
+      - antitussive (selected cases)
+      - oxygen therapy (when hypoxic)
+    notes: Empiric antibiotic regimen choice depends on severity, comorbidities, and local resistance — guideline-driven, not user-facing prescription content.
+  - name: Influenza
+    role: active_most_common
+    icd10:
+      - J11.1
+    pivotal_features_supporting:
+      - sudden onset
+      - high fever
+      - severe myalgia
+      - headache
+      - cough (non-productive early)
+      - seasonal pattern (fall / winter)
+      - confirmed local circulation
+    fingerprint_findings:
+      - sudden-onset high fever + myalgia + non-productive cough during influenza season
+    textbook_presentation: >-
+      Sudden-onset high fever (38.0-40.0 C), severe myalgias, headache, and
+      non-productive cough during the influenza season; complications include
+      bacterial superinfection, COPD or HF exacerbation.
+    evidence_based_diagnosis:
+      - test_name: PCR (RT-PCR) for influenza
+        sensitivity: 0.95
+        specificity: 0.99
+        note: Most accurate; preferred test.
+        citation: Stern Ch.10
+      - test_name: Rapid influenza diagnostic test (antigen)
+        sensitivity: 0.50
+        specificity: 0.95
+        note: Less sensitive than PCR; positive supports diagnosis but negative does not exclude.
+        citation: Stern Ch.10
+    treatment_classes:
+      - neuraminidase inhibitor (antiviral — when started within 48 hours of symptom onset or severe disease)
+      - supportive therapy (analgesic / antipyretic, rest, hydration)
+    notes: Annual vaccination is the cornerstone preventive measure.
+  - name: Acute bronchitis
+    role: active_most_common
+    icd10:
+      - J20.9
+    pivotal_features_supporting:
+      - cough (productive or non-productive)
+      - absence of high fever
+      - normal lung exam or mild rhonchi clearing with cough
+      - normal vital signs
+      - no abnormal chest film
+    fingerprint_findings:
+      - cough lasting 1-3 weeks without infiltrate or abnormal vitals
+    textbook_presentation: >-
+      Self-limited cough lasting 1-3 weeks (occasionally up to 8 weeks) with
+      or without sputum, no high fever, and a normal lung exam; chest film
+      not required when vitals and exam are normal.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment + ruling out pneumonia per Stern Fig 10-1
+        citation: Stern Fig 10-1
+    treatment_classes:
+      - antitussive (selected cases)
+      - bronchodilator (when wheezing present)
+    notes: Antibiotics are not indicated for routine acute bronchitis (typically viral).
+  - name: Common cold (URI) / acute rhinosinusitis
+    role: active_most_common
+    icd10:
+      - J00
+      - J01.90
+    pivotal_features_supporting:
+      - rhinorrhea, sneezing, nasal congestion
+      - mild sore throat
+      - low-grade fever (uncommon)
+      - cough (usually mild)
+      - duration < 10 days
+    fingerprint_findings:
+      - mild URI symptoms with normal lung exam and resolution within 7-10 days
+    textbook_presentation: >-
+      Mild self-limited illness with rhinorrhea, congestion, sneezing, sore
+      throat, and cough; duration < 10 days. Bacterial sinusitis suspected
+      when symptoms persist > 10 days, worsen after improvement, or are
+      severe (high fever + facial pain + purulent discharge for >= 3 days).
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment with symptom duration and pattern
+        citation: Stern Ch.10
+    treatment_classes:
+      - decongestant
+      - analgesic / antipyretic
+      - intranasal saline irrigation
+      - antibiotic (only when criteria for bacterial sinusitis met)
+    notes: Most rhinosinusitis is viral; antibiotic restraint is recommended.
+  - name: Pertussis (whooping cough)
+    role: active_most_common
+    icd10:
+      - A37.90
+    pivotal_features_supporting:
+      - paroxysmal cough
+      - inspiratory whoop
+      - post-tussive emesis
+      - cough > 2 weeks
+      - exposure to known case
+      - lymphocytosis on CBC
+    fingerprint_findings:
+      - paroxysmal cough with inspiratory whoop or post-tussive vomiting
+    textbook_presentation: >-
+      Catarrhal phase (1-2 weeks of URI symptoms) followed by paroxysmal
+      phase (severe coughing fits with whoop or post-tussive emesis); adults
+      may present with prolonged cough alone.
+    evidence_based_diagnosis:
+      - test_name: PCR of nasopharyngeal swab
+        sensitivity: 0.95
+        specificity: 0.95
+        citation: Stern Ch.10
+      - test_name: Culture of nasopharyngeal swab
+        note: Highly specific but lower sensitivity later in course.
+        citation: Stern Ch.10
+    treatment_classes:
+      - macrolide antibiotic (early in course, mainly to reduce transmission)
+      - supportive care
+    notes: Vaccination (Tdap) is the primary prevention.
+  - name: Tuberculosis (active pulmonary)
+    role: active_must_not_miss
+    icd10:
+      - A15.0
+    pivotal_features_supporting:
+      - chronic cough > 2-3 weeks
+      - weight loss
+      - night sweats
+      - fevers
+      - exposure history (endemic country, prison, shelter, immunosuppression, HIV)
+      - upper-lobe or cavitary infiltrates
+      - hemoptysis
+    fingerprint_findings:
+      - upper-lobe cavitary infiltrate with subacute constitutional symptoms
+    textbook_presentation: >-
+      Subacute / chronic cough, weight loss, fever, night sweats, and
+      cavitary or upper-lobe infiltrate; HIV patients may have atypical
+      patterns (lower-lobe disease, miliary, or subtle imaging).
+    evidence_based_diagnosis:
+      - test_name: Sputum AFB smear
+        sensitivity: 0.65
+        specificity: 0.95
+        note: Multiple sputum samples increase yield.
+        citation: Stern Ch.10
+      - test_name: Sputum nucleic acid amplification (Xpert MTB/RIF)
+        sensitivity: 0.88
+        specificity: 0.99
+        citation: Stern Ch.10
+      - test_name: Mycobacterial culture
+        note: Gold standard but slow (weeks).
+        citation: Stern Ch.10
+      - test_name: Tuberculin skin test or interferon-gamma release assay
+        note: Identifies latent infection; less sensitive in advanced HIV.
+        citation: Stern Ch.10
+    treatment_classes:
+      - antitubercular therapy (RIPE regimen)
+    notes: Public health / DOT engagement is required; respiratory isolation while infectious.
+  - name: Aspiration pneumonia / pneumonitis
+    role: active_must_not_miss
+    icd10:
+      - J69.0
+    pivotal_features_supporting:
+      - altered mental status, seizures, alcoholism
+      - dysphagia, NG tube, post-stroke
+      - witnessed aspiration event
+      - dependent-segment infiltrate (right lower lobe most common)
+      - fetid sputum
+    fingerprint_findings:
+      - dependent-lobe infiltrate after witnessed aspiration in dysphagic patient
+    textbook_presentation: >-
+      Patient with risk factors (altered mentation, dysphagia, alcoholism)
+      presenting with cough, fever, and infiltrate in dependent lung segment.
+    evidence_based_diagnosis:
+      - test_name: Chest radiograph or CT chest
+        note: Identifies dependent-lobe infiltrate; CT more sensitive for cavitation.
+        citation: Stern Ch.10
+      - test_name: Swallow evaluation
+        note: Identifies ongoing aspiration risk.
+        citation: Stern Ch.10
+    treatment_classes:
+      - antibiotic (anaerobic coverage when concerns for abscess)
+      - aspiration precautions
+    notes: ""
+  - name: Pneumocystis jirovecii pneumonia (PJP)
+    role: active_must_not_miss
+    icd10:
+      - B59
+    pivotal_features_supporting:
+      - HIV with CD4 < 200
+      - other immunosuppression (transplant, chronic steroids, biologic agents)
+      - subacute progressive dyspnea
+      - hypoxemia worsening with exertion
+      - bilateral interstitial infiltrates
+      - elevated LDH
+    fingerprint_findings:
+      - bilateral ground-glass infiltrates with severe exertional desaturation in immunocompromised host
+    textbook_presentation: >-
+      Immunocompromised patient with subacute dry cough, dyspnea, profound
+      exertional desaturation, and bilateral interstitial infiltrates;
+      cross-reference Stern Ch.5.
+    evidence_based_diagnosis:
+      - test_name: Bronchoalveolar lavage with PCP staining / PCR
+        sensitivity: 0.95
+        citation: Stern Ch.10
+      - test_name: Induced sputum
+        sensitivity: 0.55
+        citation: Stern Ch.10
+      - test_name: Serum (1->3)-beta-D-glucan
+        sensitivity: 0.95
+        specificity: 0.85
+        note: Useful screen in immunocompromised host with consistent imaging.
+        citation: Stern Ch.10
+    treatment_classes:
+      - antimicrobial (PCP-directed)
+      - corticosteroid (when hypoxemic)
+    notes: Cross-reference Stern Ch.5 (HIV) for PCP prophylaxis.
+  - name: Hospital-acquired or ventilator-associated pneumonia (HAP / VAP)
+    role: active_must_not_miss
+    icd10:
+      - J95.851
+    pivotal_features_supporting:
+      - hospitalization >= 48 hours
+      - mechanical ventilation
+      - new infiltrate plus fever / leukocytosis / purulent secretions
+      - multidrug-resistant pathogens (MRSA, Pseudomonas, ESBL gram-negatives)
+    fingerprint_findings:
+      - new infiltrate after 48 hours of hospitalization or 48 hours after intubation
+    textbook_presentation: >-
+      Inpatient with new infiltrate, fever, leukocytosis, and purulent
+      secretions developing after 48 hours of hospitalization or
+      intubation; broad-spectrum antibiotic coverage required.
+    evidence_based_diagnosis:
+      - test_name: Sputum or BAL Gram stain + culture
+        note: Targets antibiotic narrowing.
+        citation: Stern Ch.10
+      - test_name: Chest imaging (CXR or CT)
+        citation: Stern Ch.10
+    treatment_classes:
+      - broad-spectrum antibiotic with anti-pseudomonal and anti-MRSA coverage (de-escalated to organism-directed)
+    notes: ""
+  - name: COVID-19 / SARS-CoV-2 pneumonia
+    role: active_most_common
+    icd10:
+      - U07.1
+    pivotal_features_supporting:
+      - exposure or community transmission
+      - fever, cough, dyspnea
+      - anosmia / ageusia
+      - bilateral peripheral / lower-lobe ground-glass opacities
+      - lymphopenia
+    fingerprint_findings:
+      - bilateral peripheral ground-glass opacities + anosmia in current epidemic
+    textbook_presentation: >-
+      Acute viral pneumonia presenting with fever, cough, dyspnea, possibly
+      anosmia / ageusia; severe disease produces bilateral peripheral
+      ground-glass opacities, hypoxemia, and elevated inflammatory markers.
+    evidence_based_diagnosis:
+      - test_name: SARS-CoV-2 PCR (nasopharyngeal swab)
+        sensitivity: 0.95
+        specificity: 0.99
+        citation: Stern Ch.10
+      - test_name: SARS-CoV-2 antigen rapid test
+        sensitivity: 0.85
+        specificity: 0.99
+        note: Less sensitive than PCR especially in early or asymptomatic disease.
+        citation: Stern Ch.10
+    treatment_classes:
+      - antiviral therapy (per current guidelines for hospitalized or high-risk outpatients)
+      - corticosteroid (severe disease with hypoxemia)
+      - supportive care + oxygen therapy
+    notes: Treatment guidance evolves with variants; defer to current public-health protocols.
+  - name: Lung abscess
+    role: other
+    icd10:
+      - J85.2
+    pivotal_features_supporting:
+      - aspiration risk
+      - fetid sputum
+      - cavitary lesion with air-fluid level on imaging
+      - subacute course with fever, weight loss, night sweats
+    fingerprint_findings:
+      - cavitary lesion with air-fluid level in dependent lung segment
+    textbook_presentation: >-
+      Subacute fever, productive cough with fetid sputum, weight loss, and
+      cavitary lesion with air-fluid level on chest imaging.
+    evidence_based_diagnosis:
+      - test_name: CT chest with contrast
+        note: Defines cavity, drainage option.
+        citation: Stern Ch.10
+      - test_name: Sputum culture (aerobic + anaerobic)
+        citation: Stern Ch.10
+    treatment_classes:
+      - antibiotic (anaerobic coverage extended duration)
+    notes: Percutaneous or surgical drainage for refractory cases.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Determine if patient is immunocompromised (HIV, transplant, granulocytopenia, chronic steroids).
+    rationale: Immunocompromised patients require broader differential and lower threshold for imaging; cross-reference Stern Ch.5 (HIV) and Ch.33 (Wheezing).
+    branches:
+      - condition: Immunocompromised
+        action: order_test
+        test_to_order: Chest imaging + targeted infectious workup (PJP, TB, fungal pathogens, viral panel)
+      - condition: Immunocompetent
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Fig 10-1
+  - step_num: 2
+    description: Step 2 — Assess vital signs and lung exam for findings suggesting pneumonia (abnormal vitals, crackles, decreased breath sounds, bronchophony, egophony).
+    rationale: Stern Fig 10-1 main filter — combined normal vitals + normal lung exam has LR- 0.09 for pneumonia.
+    branches:
+      - condition: Abnormal vitals OR abnormal lung exam OR adverse comorbidities (DM, COPD, HF, CKD, age > 65)
+        action: order_test
+        test_to_order: PA / lateral chest radiograph
+      - condition: Normal vitals + normal lung exam + no high-risk features
+        action: confirm
+        target_diagnosis: Acute bronchitis
+        notes: Treat symptomatically; pneumonia unlikely.
+    derived_from_figure: Stern Fig 10-1
+  - step_num: 3
+    description: Step 3 — If chest film shows infiltrate, classify as community-acquired vs. other (aspiration, TB, PJP, HAP / VAP, fungal).
+    rationale: Stern Fig 10-2 second-tier triage.
+    branches:
+      - condition: Recent hospitalization >= 5 days, ICU admission, or mechanical ventilation
+        action: order_test
+        test_to_order: Treat as HAP / VAP — broad-spectrum coverage including anti-Pseudomonas and anti-MRSA; sputum / BAL culture
+      - condition: Aspiration risk factors (altered mental status, dysphagia, alcoholism, seizures)
+        action: order_test
+        test_to_order: Treat as aspiration pneumonia; consider anaerobic coverage if abscess concerns; swallow evaluation
+      - condition: Cavitary or upper-lobe infiltrate, prolonged constitutional symptoms, TB risk factors
+        action: order_test
+        test_to_order: Sputum AFB smear, NAAT (Xpert MTB/RIF), culture; respiratory isolation
+      - condition: Bilateral ground-glass / interstitial pattern in immunocompromised host
+        action: order_test
+        test_to_order: BAL with PCP staining and PCR; serum beta-D-glucan
+      - condition: Otherwise typical CAP pattern
+        action: confirm
+        target_diagnosis: Community-acquired pneumonia (CAP)
+    derived_from_figure: Stern Fig 10-2
+  - step_num: 4
+    description: Step 4 — For confirmed CAP, calculate severity (CURB-65 or PSI) to triage outpatient vs. inpatient vs. ICU.
+    rationale: Determines disposition and antibiotic regimen.
+    branches:
+      - condition: CURB-65 0-1 (low risk)
+        action: treat_empiric
+        notes: Outpatient empiric antibiotic therapy.
+      - condition: CURB-65 2-3 (moderate-severe)
+        action: escalate
+        escalation_reason: Admission for IV antibiotics and observation.
+      - condition: CURB-65 >= 4 or septic shock or respiratory failure
+        action: escalate
+        escalation_reason: ICU-level care; consider broader spectrum coverage and rapid pathogen identification.
+    derived_from_figure: Stern Ch.10
+  - step_num: 5
+    description: Step 5 — During influenza season, consider influenza testing in patients with sudden-onset high fever, severe myalgias, and cough.
+    rationale: Influenza requires neuraminidase inhibitor within 48 hours of symptom onset for greatest benefit.
+    branches:
+      - condition: Compatible illness during flu season
+        action: order_test
+        test_to_order: PCR (RT-PCR) for influenza
+      - condition: Negative influenza testing or out of season with persistent symptoms
+        action: reassess
+        target_step: 1
+    derived_from_figure: Stern Ch.10 prose
+red_flags:
+  - name: Hypoxemia, hypotension, or altered mental status with cough / fever
+    description: Severe pneumonia or septic shock — immediate resuscitation and ICU evaluation.
+    severity: high
+  - name: Cavitary infiltrate with subacute constitutional symptoms
+    description: Tuberculosis until proven otherwise — respiratory isolation and AFB / NAAT testing.
+    severity: high
+  - name: Subacute progressive dyspnea + bilateral interstitial infiltrate in immunocompromised host
+    description: PJP — start empiric therapy while diagnostics pending.
+    severity: high
+  - name: New infiltrate >= 48 hours after hospital admission or intubation
+    description: HAP / VAP — broad-spectrum empiric antibiotics covering MDR pathogens.
+    severity: high
+source_pages:
+  - 186
+  - 213
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.10 (pp. 186-213). Frame is categorical (URI vs. non-pneumonic LRTI
+  vs. CAP vs. atypical pneumonia). Algorithm follows Fig 10-1 (need for chest
+  film?) and Fig 10-2 (CAP vs. other-type). Must-not-miss bucket: TB,
+  aspiration pneumonia, PJP, HAP / VAP, severe CAP. Treatment-class lists are
+  educational; specific antibiotic regimens depend on severity, comorbidities,
+  and local resistance patterns and are not user-facing prescription content.

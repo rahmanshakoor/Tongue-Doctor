@@ -41,6 +41,9 @@ dependencies = [
   "pypdf>=5.0.0",
   "pillow>=11.0.0",
   "python-magic>=0.4.27",
+  # Corpus ingestion
+  "lxml>=5.3.0",
+  "beautifulsoup4>=4.12.0",
   # Tooling
   "jinja2>=3.1.0",
   "structlog>=24.4.0",
@@ -69,6 +72,8 @@ dev = [
   "freezegun>=1.5.0",
   "respx>=0.21.0",
   "types-pyyaml>=6.0.0",
+  "lxml-stubs>=0.5.1",
+  "types-beautifulsoup4>=4.12.0",
 ]
 
 [build-system]
@@ -124,8 +129,36 @@ plugins = ["pydantic.mypy"]
 module = [
   "google.cloud.*",
   "opentelemetry.exporter.cloud_trace",
+  "fitz",
 ]
 ignore_missing_imports = true
+
+# lxml xpath returns a union (Element, _ElementUnicodeResult, str, bytes, …).
+# Strict mypy on every xpath call would require pervasive casts that obscure
+# the ingestion logic. We turn off strict-optional / no-untyped-call only for
+# the per-source ingester modules that drive lxml — the chunker, schema, and
+# storage layer remain fully strict.
+[[tool.mypy.overrides]]
+module = [
+  "tongue_doctor.knowledge.ingest.sources.dailymed",
+  "tongue_doctor.knowledge.ingest.sources.statpearls",
+  "tongue_doctor.knowledge.ingest.sources.pmc_oa",
+  "tongue_doctor.knowledge.ingest.sources.uspstf",
+  "tongue_doctor.knowledge.ingest.sources.openstax",
+  "tongue_doctor.knowledge.ingest.sources.stern",
+]
+disable_error_code = [
+  "union-attr",
+  "index",
+  "arg-type",
+  "misc",
+  "list-item",
+  "str-bytes-safe",
+  "unused-ignore",
+  "return-value",
+  "attr-defined",
+  "assignment",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

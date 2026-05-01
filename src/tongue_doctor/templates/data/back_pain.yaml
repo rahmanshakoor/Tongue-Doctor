@@ -1,0 +1,465 @@
+complaint: back_pain
+chapter_number: 7
+chapter_title: Back Pain
+framework_type: mechanistic
+framework_categories:
+  - Musculoskeletal — nonspecific (mechanical) back pain
+  - Musculoskeletal — specific (radiculopathy, spinal stenosis, cauda equina)
+  - Systemic disease affecting the spine (neoplasia, infection, compression fracture, inflammatory arthritis)
+  - Visceral / referred (retroperitoneal, pelvic, renal, GI)
+pivotal_points:
+  - cauda equina symptoms (saddle anesthesia, urinary retention or overflow incontinence, fecal incontinence, bilateral leg weakness)
+  - infection risk factors (IV drug use, immunosuppression, fever, recent procedure, indwelling lines, endocarditis)
+  - cancer red flags (history of cancer, age > 50, unexplained weight loss, night pain, no improvement after 1 month)
+  - compression-fracture risk (older adult, chronic glucocorticoid use, osteoporosis, recent trauma)
+  - spinal stenosis pattern (neurogenic claudication — leg pain worsened by walking, relieved by leaning forward / sitting)
+  - sciatica / radiculopathy pattern (dermatomal leg pain below knee, positive straight-leg raise, dermatomal sensory or motor deficit)
+  - vascular claudication (vascular risk factors + exertional leg pain relieved by standing rest)
+  - referred-pain features (GI, GU, gynecologic symptoms; abdominal bruit; pulsatile mass for AAA)
+decision_rules:
+  - name: Cauda equina screen
+    purpose: Identify true emergency requiring immediate MRI
+    inputs:
+      - bilateral lower-extremity weakness
+      - saddle anesthesia
+      - urinary retention with overflow incontinence
+      - fecal incontinence or decreased rectal tone
+    citation: Stern Fig 7-1 (p.135)
+  - name: Cancer red flags (any one of)
+    purpose: Identify back pain warranting imaging for vertebral metastasis
+    inputs:
+      - history of cancer
+      - age > 50
+      - unexplained weight loss
+      - duration > 1 month with no improvement
+      - night pain that wakes the patient
+    citation: Stern Ch.7
+  - name: Infection risk factors
+    purpose: Identify back pain warranting MRI for epidural abscess or osteomyelitis
+    inputs:
+      - IV drug use
+      - bacteremia source (endocarditis, indwelling line, recent procedure)
+      - immunosuppression
+      - fever
+      - point tenderness over spinous process
+    citation: Stern Ch.7
+differential:
+  - name: Nonspecific (mechanical) back pain
+    role: leading
+    icd10:
+      - M54.5
+    pivotal_features_supporting:
+      - acute or subacute low back pain without red flags
+      - pain related to mechanical activity, no neurologic deficits
+      - no systemic symptoms
+    fingerprint_findings:
+      - localized lumbar tenderness without radicular signs
+    textbook_presentation: >-
+      Acute or subacute low back pain after activity or no specific trigger,
+      without neurologic, systemic, or visceral red flags; resolves
+      conservatively in most patients within 4-6 weeks.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment with red-flag screen
+        note: Imaging not indicated in the absence of red flags.
+        citation: Stern Ch.7
+    treatment_classes:
+      - NSAID
+      - acetaminophen
+      - muscle relaxant (short-term, selected cases)
+      - heat / activity modification
+      - physical therapy
+    notes: Avoid imaging in low-risk patients; routine MRI does not improve outcomes and increases unnecessary intervention.
+  - name: Cauda equina syndrome
+    role: active_must_not_miss
+    icd10:
+      - G83.4
+    pivotal_features_supporting:
+      - bilateral lower-extremity weakness
+      - saddle anesthesia
+      - urinary retention with overflow incontinence
+      - fecal incontinence or decreased rectal tone
+      - acute severe back pain
+    fingerprint_findings:
+      - saddle anesthesia + urinary retention + bilateral leg weakness
+    textbook_presentation: >-
+      Acute or subacute compression of cauda equina nerve roots presenting
+      with saddle anesthesia, bilateral leg weakness or numbness, and
+      bowel / bladder dysfunction.
+    evidence_based_diagnosis:
+      - test_name: Emergent MRI lumbar spine
+        note: Definitive — perform without delay; surgical decompression is time-sensitive.
+        citation: Stern Fig 7-1
+      - test_name: Post-void residual bladder volume
+        note: Elevated PVR (> 200-500 mL) supports diagnosis at bedside.
+        citation: Stern Ch.7
+    treatment_classes:
+      - corticosteroid (when neoplastic or inflammatory cause)
+    notes: Surgical decompression is definitive; outcomes deteriorate rapidly with delay.
+  - name: Spinal epidural abscess / vertebral osteomyelitis / discitis
+    role: active_must_not_miss
+    icd10:
+      - G06.1
+      - M46.20
+      - M46.30
+    pivotal_features_supporting:
+      - IV drug use, bacteremia, immunosuppression
+      - fever, point tenderness, rest pain
+      - elevated CRP / ESR
+      - new neurologic deficit
+    fingerprint_findings:
+      - back pain + fever + IV drug use or bacteremia
+    textbook_presentation: >-
+      IV drug user, bacteremic patient, or immunosuppressed patient with
+      severe back pain, fever, point spinal tenderness, and elevated
+      inflammatory markers; neurologic compromise may develop rapidly.
+    evidence_based_diagnosis:
+      - test_name: Emergent MRI spine with contrast
+        sensitivity: 0.95
+        specificity: 0.95
+        note: Imaging modality of choice.
+        citation: Stern Ch.7
+      - test_name: Blood cultures (multiple sets)
+        note: Identifies causative organism; positive in 60-70%.
+        citation: Stern Ch.7
+      - test_name: ESR and CRP
+        note: Almost always elevated.
+        citation: Stern Ch.7
+    treatment_classes:
+      - antibiotic (organism-directed)
+    notes: Surgical drainage / decompression for neurologic deficit or abscess. Time-critical.
+  - name: Spinal metastasis / spinal cord compression from cancer
+    role: active_must_not_miss
+    icd10:
+      - C79.51
+      - G95.20
+    pivotal_features_supporting:
+      - history of cancer (especially breast, prostate, lung, kidney, multiple myeloma)
+      - age > 50
+      - night pain, weight loss, no relief with conservative therapy
+      - new neurologic deficits
+      - hypercalcemia, anemia
+    fingerprint_findings:
+      - new back pain in a known cancer patient with neurologic findings
+    textbook_presentation: >-
+      Patient with known or suspected cancer with new or worsening back pain,
+      possibly with neurologic deficits or systemic symptoms; cord
+      compression is a true oncologic emergency.
+    evidence_based_diagnosis:
+      - test_name: MRI total spine (or CT myelogram if MRI contraindicated)
+        sensitivity: 0.93
+        specificity: 0.97
+        citation: Stern Ch.7
+      - test_name: Plain spine films
+        note: Less sensitive than MRI but accessible; vertebral lytic or blastic lesions raise suspicion.
+        citation: Stern Ch.7
+    treatment_classes:
+      - corticosteroid (high-dose, when cord compression suspected)
+      - radiation therapy
+      - surgical decompression (selected cases)
+    notes: Empiric high-dose corticosteroid started while awaiting imaging when cord compression suspected.
+  - name: Osteoporotic vertebral compression fracture
+    role: active_most_common
+    icd10:
+      - M80.08XA
+    pivotal_features_supporting:
+      - older adult (especially postmenopausal women)
+      - chronic glucocorticoid use
+      - acute back pain after minor trauma or trivial activity
+      - tenderness over a single vertebral level
+      - kyphosis or height loss
+    fingerprint_findings:
+      - acute back pain in older woman with osteoporosis after minor trauma
+    textbook_presentation: >-
+      Older adult — usually postmenopausal woman or chronic-glucocorticoid
+      user — with acute focal back pain after coughing, lifting, or trivial
+      trauma; midline tenderness over the affected vertebra.
+    evidence_based_diagnosis:
+      - test_name: Plain lumbar spine radiographs
+        sensitivity: 0.85
+        specificity: 0.95
+        note: Visualizes wedge or compression deformity.
+        citation: Stern Fig 7-1
+      - test_name: DEXA scan (bone density)
+        note: Confirms osteoporosis driving the fracture.
+        citation: Stern Ch.7
+    treatment_classes:
+      - analgesic (acetaminophen, opioids short-term)
+      - calcium and vitamin D supplementation
+      - bisphosphonate (osteoporosis disease-modifying therapy)
+      - bracing
+    notes: Vertebroplasty / kyphoplasty are procedural and selectively used.
+  - name: Lumbar radiculopathy (herniated disk, osteophyte, foraminal narrowing)
+    role: active_most_common
+    icd10:
+      - M54.16
+      - M51.16
+    pivotal_features_supporting:
+      - dermatomal leg pain below the knee
+      - positive straight-leg raise (sciatica)
+      - dermatomal sensory loss or weakness
+      - reflex changes
+    fingerprint_findings:
+      - dermatomal leg pain extending below the knee with positive straight-leg raise
+    textbook_presentation: >-
+      Sharp, dermatomal leg pain (sciatica), often with associated paresthesias
+      or weakness; classic L5 (foot dorsiflexion weakness) or S1 (Achilles
+      reflex loss) patterns from L4-L5 or L5-S1 disk herniation.
+    evidence_based_diagnosis:
+      - test_name: Straight-leg raise test
+        sensitivity: 0.91
+        specificity: 0.26
+        lr_positive: 1.2
+        lr_negative: 0.35
+        note: Sensitive but not specific for lumbar disk herniation.
+        citation: Stern Ch.7
+      - test_name: Crossed straight-leg raise test
+        sensitivity: 0.29
+        specificity: 0.88
+        lr_positive: 2.4
+        lr_negative: 0.81
+        note: Specific but less sensitive than ipsilateral SLR.
+        citation: Stern Ch.7
+      - test_name: MRI lumbar spine
+        note: Reserve for refractory symptoms (4-6 weeks of conservative therapy without improvement) or neurologic deficits.
+        citation: Stern Ch.7
+    treatment_classes:
+      - NSAID
+      - acetaminophen
+      - oral corticosteroid (selected cases)
+      - epidural corticosteroid injection (refractory)
+      - physical therapy
+    notes: Surgical decompression for progressive deficits or refractory pain after appropriate conservative trial.
+  - name: Spinal stenosis (lumbar)
+    role: active_most_common
+    icd10:
+      - M48.06
+    pivotal_features_supporting:
+      - older adult
+      - neurogenic claudication (leg pain on walking)
+      - relief with leaning forward or sitting
+      - bilateral pseudoclaudication
+    fingerprint_findings:
+      - bilateral leg pain on walking, relieved by leaning forward
+    textbook_presentation: >-
+      Older adult with bilateral leg pain or numbness while walking, relieved
+      by leaning forward, sitting, or stopping; pain may be relieved by
+      shopping-cart leaning.
+    evidence_based_diagnosis:
+      - test_name: MRI lumbar spine
+        sensitivity: 0.95
+        specificity: 0.85
+        note: Confirms spinal canal narrowing.
+        citation: Stern Ch.7
+      - test_name: Conservative-therapy trial with reassessment
+        note: Stern Fig 7-1 — initial step before MRI in patients with classic symptoms.
+        citation: Stern Fig 7-1
+    treatment_classes:
+      - NSAID
+      - acetaminophen
+      - physical therapy (flexion-based exercises)
+      - epidural corticosteroid injection
+    notes: Surgical laminectomy / fusion for refractory disease.
+  - name: Inflammatory arthritis (axial spondyloarthritis, ankylosing spondylitis)
+    role: active_most_common
+    icd10:
+      - M45.9
+      - M46.99
+    pivotal_features_supporting:
+      - chronic back pain (> 3 months) onset before age 45
+      - inflammatory pattern (better with activity, worse at rest, morning stiffness > 30 min)
+      - alternating buttock pain
+      - sacroiliitis on imaging
+      - HLA-B27 positive
+      - associated psoriasis, IBD, uveitis
+    fingerprint_findings:
+      - chronic young-onset back pain that improves with activity and worsens at rest
+    textbook_presentation: >-
+      Young or middle-aged adult with chronic inflammatory back pain that
+      improves with exercise, worsens with rest, and is associated with
+      morning stiffness; often with psoriasis, IBD, or uveitis.
+    evidence_based_diagnosis:
+      - test_name: Plain pelvic / sacroiliac radiographs
+        note: Identifies sacroiliitis in established disease.
+        citation: Stern Ch.7
+      - test_name: MRI sacroiliac joints
+        note: Detects early sacroiliitis when plain films are normal.
+        citation: Stern Ch.7
+      - test_name: HLA-B27 typing
+        note: Supports diagnosis when imaging is equivocal.
+        citation: Stern Ch.7
+    treatment_classes:
+      - NSAID
+      - TNF-alpha inhibitor (biologic)
+      - IL-17 inhibitor (biologic)
+      - physical therapy
+    notes: Rheumatology referral for biologic therapy when active disease persists despite NSAIDs.
+  - name: Referred pain from visceral disease (AAA, pancreatitis, pyelonephritis, nephrolithiasis, prostatitis, endometriosis, PID)
+    role: active_must_not_miss
+    icd10:
+      - I71.4
+      - K85.9
+      - N10
+      - N20.0
+    pivotal_features_supporting:
+      - GI / GU / gynecologic symptoms
+      - abdominal bruit, pulsatile abdominal mass (AAA)
+      - hematuria, dysuria, costovertebral-angle tenderness
+      - acute severe pain not aligning with mechanical exam
+    fingerprint_findings:
+      - pulsatile abdominal mass with severe back pain (AAA)
+      - costovertebral-angle tenderness with fever and pyuria (pyelonephritis)
+    textbook_presentation: >-
+      Back pain with prominent visceral symptoms — abdominal pain, hematuria,
+      dysuria, fever, dyspareunia — or with abnormal abdominal exam (bruit,
+      pulsatile mass, CVA tenderness).
+    evidence_based_diagnosis:
+      - test_name: Bedside abdominal ultrasound (AAA screen)
+        sensitivity: 0.99
+        specificity: 0.98
+        citation: Stern Ch.7
+      - test_name: Urinalysis and urine culture
+        note: Identifies pyelonephritis or nephrolithiasis.
+        citation: Stern Ch.7
+      - test_name: Serum lipase, transaminases
+        note: Identifies pancreatic / hepatobiliary etiology.
+        citation: Stern Ch.7
+    treatment_classes:
+      - etiology-specific (per source — AAA repair, antibiotic for UTI / pyelonephritis, etc.)
+    notes: Cross-reference Stern Ch.3 (abdominal pain), Ch.16 (dysuria), Ch.21 (hematuria) for definitive workup.
+  - name: Vascular claudication (peripheral arterial disease)
+    role: other
+    icd10:
+      - I70.219
+    pivotal_features_supporting:
+      - vascular risk factors (smoking, diabetes, hypertension, dyslipidemia)
+      - exertional leg pain relieved by standing rest
+      - reduced ankle-brachial index
+      - diminished or absent pedal pulses
+    fingerprint_findings:
+      - exertional calf claudication relieved by stopping (without need to lean forward) plus low ankle-brachial index
+    textbook_presentation: >-
+      Exertional leg pain relieved by standing rest in a patient with
+      vascular risk factors; ABI < 0.9 confirms peripheral arterial disease.
+    evidence_based_diagnosis:
+      - test_name: Ankle-brachial index (ABI)
+        sensitivity: 0.95
+        specificity: 0.99
+        note: ABI < 0.9 diagnostic.
+        citation: Stern Ch.7
+      - test_name: CT or MR angiography
+        note: For surgical / endovascular planning.
+        citation: Stern Ch.7
+    treatment_classes:
+      - antiplatelet
+      - statin
+      - smoking cessation
+      - structured exercise therapy
+      - cilostazol (selected cases)
+    notes: Procedural revascularization for limb-threatening or refractory disease.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Screen for cauda equina syndrome (saddle anesthesia, urinary retention, fecal incontinence, bilateral leg weakness).
+    rationale: Time-critical emergency — MRI immediately if any positive.
+    branches:
+      - condition: Any cauda equina symptom or sign
+        action: escalate
+        escalation_reason: Immediate MRI lumbar spine + neurosurgical consultation.
+      - condition: No cauda equina features
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Fig 7-1
+  - step_num: 2
+    description: Step 2 — Screen for infection risk factors (IV drug use, bacteremia, immunosuppression, fever, point tenderness).
+    rationale: Identifies spinal epidural abscess or osteomyelitis early.
+    branches:
+      - condition: Infection features present
+        action: order_test
+        test_to_order: MRI spine with contrast + blood cultures + ESR / CRP
+      - condition: No infection features
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Fig 7-1
+  - step_num: 3
+    description: Step 3 — Screen for cancer red flags (history of cancer, age > 50, weight loss, night pain, no improvement after 1 month).
+    rationale: Identifies vertebral metastasis or cord compression.
+    branches:
+      - condition: Cancer red flag present
+        action: order_test
+        test_to_order: Spine films or MRI; CBC, CRP / ESR, calcium, alkaline phosphatase
+      - condition: No cancer red flags
+        action: next_step
+        target_step: 4
+    derived_from_figure: Stern Fig 7-1
+  - step_num: 4
+    description: Step 4 — Screen for compression-fracture risk (older adult, chronic glucocorticoid use, recent trauma, kyphosis, focal vertebral tenderness).
+    rationale: Identifies osteoporotic fracture warranting plain films.
+    branches:
+      - condition: Compression-fracture risk present
+        action: order_test
+        test_to_order: Spine films; consider DEXA after acute event
+      - condition: No compression-fracture features
+        action: next_step
+        target_step: 5
+    derived_from_figure: Stern Fig 7-1
+  - step_num: 5
+    description: Step 5 — Screen for spinal stenosis (older adult, neurogenic claudication relieved by leaning forward).
+    rationale: Distinguishes from vascular claudication.
+    branches:
+      - condition: Neurogenic claudication AND vascular risk factors plus leg pain consistent with vascular claudication
+        action: order_test
+        test_to_order: Conservative therapy + ankle-brachial index to evaluate for PAD
+      - condition: Neurogenic claudication only
+        action: order_test
+        test_to_order: Conservative therapy; MRI if no response in 4-6 weeks
+      - condition: No spinal-stenosis pattern
+        action: next_step
+        target_step: 6
+    derived_from_figure: Stern Fig 7-1
+  - step_num: 6
+    description: Step 6 — Screen for sciatica / radiculopathy (dermatomal leg pain, positive SLR, neurologic deficits).
+    rationale: Distinguishes radiculopathy from mechanical pain.
+    branches:
+      - condition: Sciatica or abnormal radicular neuro exam
+        action: order_test
+        test_to_order: Conservative therapy for herniated disk / radiculopathy; MRI if no response in 4-6 weeks or progressive deficits
+      - condition: No radicular features
+        action: next_step
+        target_step: 7
+    derived_from_figure: Stern Fig 7-1
+  - step_num: 7
+    description: Step 7 — Screen for visceral / referred etiology (GI / GU / gynecologic symptoms, abdominal bruit, AAA risk factors).
+    rationale: Identifies referred pain requiring source-specific workup.
+    branches:
+      - condition: Visceral symptoms or AAA risk
+        action: order_test
+        test_to_order: Symptom-related testing per Stern Ch.3 (abdominal pain), Ch.16 (dysuria), Ch.21 (hematuria); abdominal ultrasound for AAA risk
+      - condition: No visceral features
+        action: confirm
+        target_diagnosis: Nonspecific (mechanical) back pain
+    derived_from_figure: Stern Fig 7-1
+red_flags:
+  - name: Cauda equina (saddle anesthesia, urinary retention, bilateral leg weakness)
+    description: Immediate MRI; surgical decompression is time-critical.
+    severity: high
+  - name: IV drug use + back pain + fever
+    description: Spinal epidural abscess or osteomyelitis until proven otherwise.
+    severity: high
+  - name: New back pain in known cancer patient with neurologic findings
+    description: Cord compression — empiric corticosteroid + emergent MRI.
+    severity: high
+  - name: Pulsatile abdominal mass + severe back pain in older smoker
+    description: Ruptured or expanding AAA — emergent vascular evaluation.
+    severity: high
+source_pages:
+  - 134
+  - 151
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.7 (pp. 134-151). The framework is mechanistic — distinguish serious
+  systemic / visceral causes from mechanical back pain by sequential red-flag
+  screening. Algorithm follows Fig 7-1. Must-not-miss bucket: cauda equina,
+  spinal epidural abscess / osteomyelitis, spinal metastasis with cord
+  compression, AAA referred to back. Most patients without red flags have
+  mechanical back pain and benefit from conservative therapy without imaging.

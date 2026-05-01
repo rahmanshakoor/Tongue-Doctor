@@ -1,0 +1,449 @@
+complaint: headache
+chapter_number: 20
+chapter_title: Headache
+framework_type: primary_vs_secondary
+framework_categories:
+  - Primary headache (migraine, tension-type, cluster)
+  - Secondary — vascular (subarachnoid hemorrhage, intracranial hemorrhage, ischemic stroke, dissection, RCVS, cerebral venous thrombosis, hypertensive emergency)
+  - Secondary — infectious (meningitis, encephalitis, brain abscess)
+  - Secondary — increased intracranial pressure (mass, tumor, idiopathic intracranial hypertension)
+  - Secondary — inflammatory (giant cell arteritis, vasculitis)
+  - Secondary — referred / structural (sinusitis, dental, glaucoma, TMJ, cervicogenic)
+  - Secondary — medication (medication-overuse headache, drug-induced)
+pivotal_points:
+  - new vs. old headache (new in adult, especially > 50, raises concern for secondary cause)
+  - severity peaking suddenly (thunderclap → SAH, RCVS, dissection)
+  - associated focal neurologic deficit
+  - associated fever / meningismus / systemic infection
+  - aura, photophobia, phonophobia, nausea
+  - position-related (worse lying down → mass / IIH; worse upright → low-pressure)
+  - response to analgesics (medication overuse)
+  - red flags — SNOOPP10 mnemonic (Systemic, Neoplasm, Onset sudden, Older > 50, Pattern change, Postural, Precipitated by Valsalva, Papilledema, Pulsatile tinnitus, Pregnancy, Pain in jaw / scalp tenderness)
+decision_rules:
+  - name: Ottawa SAH rule
+    purpose: Rule out subarachnoid hemorrhage in alert patients > 15 years with non-traumatic acute headache peaking within 1 hour
+    inputs:
+      - age >= 40
+      - neck pain or stiffness
+      - witnessed loss of consciousness
+      - onset during exertion
+      - thunderclap (peak intensity within 1 second)
+      - limited neck flexion on exam
+    thresholds:
+      - "any one criterion present → proceed to non-contrast CT head; LP if CT negative and high suspicion remains"
+    citation: Stern Ch.20
+  - name: POUNDing mnemonic for migraine
+    purpose: Identify migraine clinically
+    inputs:
+      - "Pulsatile"
+      - "duration 4-72 hOurs"
+      - "Unilateral"
+      - "Nausea"
+      - "Disabling"
+    thresholds:
+      - ">= 4 of 5 features = LR+ ~24 for migraine"
+      - "3 features = LR+ ~3"
+    citation: Stern Ch.20 (POUNDing)
+  - name: ICHD criteria
+    purpose: Diagnostic criteria for primary headache disorders (migraine, tension-type, cluster, etc.)
+    citation: Stern Ch.20
+differential:
+  - name: Migraine
+    role: leading
+    icd10:
+      - G43.909
+    pivotal_features_supporting:
+      - episodic moderate-severe headache
+      - unilateral, pulsatile
+      - associated nausea, photophobia, phonophobia
+      - duration 4-72 hours
+      - aura (visual, sensory, motor) in some
+      - family history
+    fingerprint_findings:
+      - POUNDing >= 4 of 5
+    textbook_presentation: >-
+      Recurrent moderate-to-severe pulsatile unilateral headache lasting
+      hours, with nausea, photophobia, phonophobia; aura may precede
+      attacks.
+    evidence_based_diagnosis:
+      - test_name: ICHD-3 clinical criteria
+        citation: Stern Ch.20
+      - test_name: POUNDing mnemonic
+        lr_positive: 24.0
+        note: When >= 4 features present.
+        citation: Stern Ch.20
+    treatment_classes:
+      - triptan (acute migraine therapy)
+      - NSAID
+      - antiemetic
+      - migraine prophylactic agent (beta-blocker, topiramate, tricyclic, CGRP antagonist) for frequent attacks
+    notes: Avoid triptans in known cardiovascular disease.
+  - name: Tension-type headache
+    role: active_most_common
+    icd10:
+      - G44.209
+    pivotal_features_supporting:
+      - bilateral pressing / tightening pain
+      - mild to moderate intensity
+      - no nausea or photophobia (or only one)
+      - not aggravated by activity
+    fingerprint_findings:
+      - bilateral band-like pressure without migrainous features
+    textbook_presentation: >-
+      Bilateral mild-to-moderate non-pulsating pressure, lasting
+      30 minutes to 7 days, without prominent associated symptoms.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment per ICHD-3
+        citation: Stern Ch.20
+    treatment_classes:
+      - acetaminophen
+      - NSAID
+      - tricyclic antidepressant (chronic prophylaxis)
+      - relaxation / cognitive therapy
+    notes: ""
+  - name: Cluster headache
+    role: active_most_common
+    icd10:
+      - G44.009
+    pivotal_features_supporting:
+      - severe unilateral periorbital pain
+      - lasting 15 minutes to 3 hours
+      - autonomic features (lacrimation, conjunctival injection, ptosis, miosis, rhinorrhea)
+      - circadian pattern, often nocturnal
+      - male predominance
+      - clusters of attacks separated by remissions
+    fingerprint_findings:
+      - severe unilateral periorbital pain with ipsilateral autonomic features
+    textbook_presentation: >-
+      Excruciating unilateral periorbital pain with ipsilateral
+      autonomic features and circadian pattern, often striking
+      nocturnally; episodic clusters separated by remissions.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment per ICHD-3
+        citation: Stern Ch.20
+    treatment_classes:
+      - high-flow oxygen therapy (acute)
+      - subcutaneous triptan (acute)
+      - verapamil (preventive)
+      - corticosteroid bridge (acute cluster period)
+    notes: ""
+  - name: Subarachnoid hemorrhage
+    role: active_must_not_miss
+    icd10:
+      - I60.9
+    pivotal_features_supporting:
+      - thunderclap headache (peaking within 1-60 seconds)
+      - "worst headache of life"
+      - meningismus
+      - photophobia
+      - syncope at onset
+      - focal neurologic deficit
+      - hypertension
+    fingerprint_findings:
+      - thunderclap headache + meningismus
+    textbook_presentation: >-
+      Sudden severe headache reaching peak intensity within seconds,
+      often with vomiting, neck stiffness, photophobia, and
+      sometimes loss of consciousness or focal deficit.
+    evidence_based_diagnosis:
+      - test_name: Non-contrast CT head
+        sensitivity: 0.98
+        specificity: 0.99
+        note: Sensitivity within 6 hours of onset is essentially 100% with modern CT; declines over time.
+        citation: Stern Ch.20
+      - test_name: Lumbar puncture (when CT negative > 6 hours from onset and high clinical suspicion)
+        note: Look for xanthochromia and elevated RBCs.
+        citation: Stern Ch.20
+      - test_name: CT angiography (after positive non-contrast CT) to identify aneurysm
+        citation: Stern Ch.20
+    treatment_classes:
+      - blood-pressure control
+      - calcium channel blocker (nimodipine, vasospasm prophylaxis)
+      - antiseizure prophylaxis (selected)
+    notes: Aneurysm coiling / clipping is procedural and time-sensitive.
+  - name: Bacterial meningitis (and viral encephalitis / brain abscess)
+    role: active_must_not_miss
+    icd10:
+      - G03.9
+      - G04.90
+      - G06.0
+    pivotal_features_supporting:
+      - fever, headache, meningismus, altered mental status
+      - photophobia
+      - seizures
+      - focal deficits (encephalitis or abscess)
+      - immunocompromised host
+    fingerprint_findings:
+      - fever + headache + neck stiffness + altered mental status
+    textbook_presentation: >-
+      Acute headache with fever, meningismus, photophobia, and possible
+      mental status change or seizure; LP and imaging diagnostic;
+      cross-reference Stern Ch.11.
+    evidence_based_diagnosis:
+      - test_name: Lumbar puncture with CSF analysis
+        citation: Stern Ch.11 / Ch.20
+      - test_name: CT or MRI brain (rule out mass before LP if focal deficit)
+        citation: Stern Ch.20
+      - test_name: Blood cultures
+        citation: Stern Ch.20
+    treatment_classes:
+      - empiric antibiotic + corticosteroid (bacterial meningitis)
+      - antiviral (HSV encephalitis)
+    notes: Initiate antibiotics within 1 hour of suspicion; do not delay for imaging.
+  - name: Giant cell (temporal) arteritis
+    role: active_must_not_miss
+    icd10:
+      - M31.6
+    pivotal_features_supporting:
+      - new-onset headache > 50 years
+      - jaw claudication
+      - scalp tenderness
+      - vision changes (transient or permanent)
+      - polymyalgia rheumatica (proximal myalgia, stiffness)
+      - elevated ESR / CRP
+    fingerprint_findings:
+      - new headache + jaw claudication + elevated ESR > 50 in patient over 50
+    textbook_presentation: >-
+      Patient over 50 with new headache, jaw claudication, scalp
+      tenderness, polymyalgia symptoms, and elevated inflammatory
+      markers; visual loss is irreversible — treat empirically while
+      pursuing biopsy.
+    evidence_based_diagnosis:
+      - test_name: ESR and CRP
+        sensitivity: 0.90
+        specificity: 0.30
+        citation: Stern Ch.20
+      - test_name: Temporal artery biopsy (gold standard)
+        sensitivity: 0.85
+        specificity: 1.00
+        note: Skip lesions — adequate length needed.
+        citation: Stern Ch.20
+      - test_name: Temporal artery ultrasound (halo sign — supportive)
+        citation: Stern Ch.20
+    treatment_classes:
+      - high-dose corticosteroid (prednisone)
+      - tocilizumab (steroid-sparing biologic)
+    notes: Begin corticosteroid empirically when GCA suspected — do not delay for biopsy results.
+  - name: Cerebral venous sinus thrombosis
+    role: active_must_not_miss
+    icd10:
+      - I67.6
+    pivotal_features_supporting:
+      - subacute progressive headache
+      - hypercoagulable state, OCP / pregnancy / postpartum, dehydration, malignancy, trauma, infection
+      - focal deficits, seizures
+      - papilledema
+    fingerprint_findings:
+      - new persistent headache in a hypercoagulable young woman
+    textbook_presentation: >-
+      Subacute progressive headache with focal deficits or seizures in
+      a patient with hypercoagulable risk; MR venography or CT
+      venography diagnostic.
+    evidence_based_diagnosis:
+      - test_name: MR venography (or CT venography)
+        citation: Stern Ch.20
+      - test_name: D-dimer (often elevated)
+        citation: Stern Ch.20
+    treatment_classes:
+      - anticoagulant
+    notes: Endovascular thrombectomy in selected severe cases.
+  - name: Reversible cerebral vasoconstriction syndrome (RCVS)
+    role: active_must_not_miss
+    icd10:
+      - I67.81
+    pivotal_features_supporting:
+      - recurrent thunderclap headaches
+      - postpartum
+      - vasoactive substance use (cocaine, SSRIs, triptans)
+      - reversible segmental cerebral artery vasoconstriction on imaging
+    fingerprint_findings:
+      - recurrent thunderclap headaches over days to weeks with reversible vasospasm
+    textbook_presentation: >-
+      Recurrent thunderclap headaches with segmental cerebral artery
+      vasoconstriction on angiography that resolves over weeks; often
+      postpartum or with vasoactive exposure.
+    evidence_based_diagnosis:
+      - test_name: CT or MR angiography
+        citation: Stern Ch.20
+      - test_name: Conventional cerebral angiography (selected)
+        citation: Stern Ch.20
+    treatment_classes:
+      - calcium channel blocker (nimodipine)
+      - withdrawal of triggering agent
+      - blood-pressure control
+    notes: ""
+  - name: Acute angle-closure glaucoma
+    role: active_must_not_miss
+    icd10:
+      - H40.219
+    pivotal_features_supporting:
+      - severe periorbital headache + eye pain
+      - blurred vision, halos around lights
+      - red eye
+      - mid-dilated non-reactive pupil
+      - elevated intraocular pressure
+    fingerprint_findings:
+      - eye pain + halos + mid-dilated pupil + red eye
+    textbook_presentation: >-
+      Acute severe periorbital pain, vision change with halos, red
+      eye, and mid-dilated non-reactive pupil; elevated IOP confirms.
+    evidence_based_diagnosis:
+      - test_name: Tonometry (intraocular pressure measurement)
+        citation: Stern Ch.20
+    treatment_classes:
+      - topical pilocarpine, beta-blocker, alpha-agonist
+      - oral / IV acetazolamide
+      - mannitol (refractory)
+      - laser peripheral iridotomy (procedural — definitive)
+    notes: ""
+  - name: Idiopathic intracranial hypertension (pseudotumor cerebri)
+    role: active_must_not_miss
+    icd10:
+      - G93.2
+    pivotal_features_supporting:
+      - young obese woman
+      - papilledema
+      - visual obscurations
+      - pulsatile tinnitus
+      - elevated CSF opening pressure (> 25 cm H2O)
+    fingerprint_findings:
+      - papilledema + obese reproductive-age woman
+    textbook_presentation: >-
+      Young obese woman with progressive headache, transient visual
+      obscurations, pulsatile tinnitus, and papilledema; LP shows
+      elevated opening pressure.
+    evidence_based_diagnosis:
+      - test_name: MRI brain with MR venography (rule out mass / venous sinus thrombosis)
+        citation: Stern Ch.20
+      - test_name: Lumbar puncture with opening pressure
+        citation: Stern Ch.20
+    treatment_classes:
+      - acetazolamide
+      - weight loss
+      - serial LPs (selected)
+      - optic nerve sheath fenestration or shunt (procedural — vision-threatening)
+    notes: ""
+  - name: Sinusitis (acute bacterial / chronic)
+    role: active_most_common
+    icd10:
+      - J01.90
+    pivotal_features_supporting:
+      - facial pain / pressure, tenderness over sinuses
+      - purulent nasal discharge
+      - duration > 10 days, "double sickening" pattern
+      - fever (selected severe)
+    fingerprint_findings:
+      - facial pain + purulent discharge + duration > 10 days
+    textbook_presentation: >-
+      Frontal / maxillary headache with sinus tenderness and purulent
+      nasal discharge persisting > 10 days, consistent with acute
+      bacterial sinusitis.
+    evidence_based_diagnosis:
+      - test_name: Clinical criteria
+        citation: Stern Ch.20
+    treatment_classes:
+      - intranasal saline / decongestant
+      - intranasal corticosteroid
+      - antibiotic (when criteria for bacterial sinusitis met)
+    notes: ""
+  - name: Medication-overuse headache
+    role: other
+    icd10:
+      - G44.40
+    pivotal_features_supporting:
+      - headache >= 15 days / month
+      - regular use of acute headache medications
+      - improvement after withdrawal
+    fingerprint_findings:
+      - chronic daily headache + frequent triptan / opioid / butalbital use
+    textbook_presentation: >-
+      Patient with chronic daily headache and frequent use of acute
+      analgesics; medication withdrawal followed by reassessment.
+    evidence_based_diagnosis:
+      - test_name: Headache diary + medication review
+        citation: Stern Ch.20
+    treatment_classes:
+      - withdrawal of overused medication
+      - bridge therapy during withdrawal
+      - migraine prophylaxis when underlying primary disorder
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Look for red-flag features (thunderclap, focal deficit, fever / meningismus, papilledema, age > 50 with new headache, immunocompromised, jaw claudication, vision change).
+    rationale: Stern Ch.20 SNOOPP10 mnemonic — secondary-cause screen.
+    branches:
+      - condition: Thunderclap headache
+        action: order_test
+        test_to_order: Non-contrast CT head; LP if CT negative > 6 h from onset; CT angiography
+      - condition: Fever + meningismus
+        action: escalate
+        escalation_reason: Empiric antibiotics + LP within 1 hour
+      - condition: Focal deficit / new seizure / altered consciousness
+        action: order_test
+        test_to_order: Brain imaging (CT then MRI as appropriate)
+      - condition: Age > 50 + jaw claudication / scalp tenderness / vision change
+        action: order_test
+        test_to_order: ESR / CRP + start empiric corticosteroid + temporal artery biopsy
+      - condition: Eye pain + visual halos + red eye
+        action: escalate
+        escalation_reason: Acute angle-closure glaucoma — emergent ophthalmology + tonometry + pressure-lowering therapy
+      - condition: No red flags
+        action: next_step
+        target_step: 2
+    derived_from_figure: "Stern Fig 20-1 (Diagnostic approach: headache)"
+  - step_num: 2
+    description: Step 2 — Classify primary headache phenotype.
+    rationale: ICHD criteria.
+    branches:
+      - condition: Pulsatile + unilateral + nausea + photophobia + duration 4-72 h (POUNDing >= 4)
+        action: confirm
+        target_diagnosis: Migraine
+      - condition: Bilateral pressing pain without migrainous features
+        action: confirm
+        target_diagnosis: Tension-type headache
+      - condition: Severe unilateral periorbital pain with autonomic features
+        action: confirm
+        target_diagnosis: Cluster headache
+      - condition: Phenotype unclear or atypical
+        action: order_test
+        test_to_order: Brain imaging (MRI) and reassessment
+    derived_from_figure: Stern Ch.20
+  - step_num: 3
+    description: Step 3 — Address chronic-daily-headache patterns and medication-overuse contributions.
+    rationale: Withdrawal often improves chronic daily headache.
+    branches:
+      - condition: Headache >= 15 days / month + frequent acute medication use
+        action: confirm
+        target_diagnosis: Medication-overuse headache
+      - condition: Refractory chronic headache despite proper acute therapy
+        action: order_test
+        test_to_order: Specialist headache referral; consider preventive therapy escalation
+    derived_from_figure: Stern Ch.20
+red_flags:
+  - name: Thunderclap headache
+    description: Subarachnoid hemorrhage / RCVS / dissection — non-contrast CT and LP if needed.
+    severity: high
+  - name: Headache + fever + meningismus
+    description: Bacterial meningitis until proven otherwise — antibiotics within 1 hour.
+    severity: high
+  - name: New headache > 50 + jaw claudication / scalp tenderness / vision change
+    description: GCA — empiric corticosteroid + biopsy; vision loss is irreversible.
+    severity: high
+  - name: Headache + papilledema or focal deficit
+    description: Mass / venous sinus thrombosis / IIH — emergent imaging.
+    severity: high
+  - name: Headache + eye pain + halos + red eye
+    description: Acute angle-closure glaucoma — emergent ophthalmology.
+    severity: high
+source_pages:
+  - 364
+  - 383
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.20 (pp. 364-383). Frame is primary-vs-secondary with explicit
+  red-flag screen (SNOOPP10) at the top of the algorithm. Algorithm
+  reconciled across Fig 20-1 (Diagnostic approach to headache) and the
+  prose. Must-not-miss bucket: SAH, meningitis, GCA, CVT, RCVS, glaucoma,
+  IIH, dissection.

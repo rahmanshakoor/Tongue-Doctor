@@ -1,0 +1,472 @@
+complaint: edema
+chapter_number: 17
+chapter_title: Edema
+framework_type: mechanistic
+framework_categories:
+  - Distribution — generalized vs. localized
+  - Generalized — increased hydrostatic pressure (heart failure, pericardial disease)
+  - Generalized — decreased oncotic pressure (cirrhosis, nephrotic syndrome, malnutrition / protein-losing enteropathy)
+  - Generalized — sodium retention (CKD, primary kidney disease, drug-induced)
+  - Localized — venous (DVT, chronic venous insufficiency, post-thrombotic syndrome)
+  - Localized — lymphatic (lymphedema)
+  - Localized — inflammatory / infectious (cellulitis, soft-tissue infection)
+  - Localized — allergic / idiopathic (angioedema)
+pivotal_points:
+  - distribution (unilateral vs. bilateral; central vs. peripheral)
+  - acuity (acute hours-days vs. chronic weeks-months)
+  - associated symptoms (dyspnea — HF; ascites — cirrhosis; proteinuria — nephrotic; pain + erythema — cellulitis or DVT)
+  - pitting vs. non-pitting (lymphedema is non-pitting late)
+  - JVP elevation (suggests cardiac etiology)
+  - serum albumin (low → cirrhosis, nephrotic, malnutrition)
+  - presence of stigmata (cirrhosis, malnutrition)
+  - medications (calcium channel blockers, NSAIDs, thiazolidinediones, gabapentinoids, corticosteroids)
+decision_rules:
+  - name: Wells score for DVT
+    purpose: Pretest probability for deep venous thrombosis
+    inputs:
+      - active malignancy (1)
+      - paralysis / paresis / recent immobilization (1)
+      - bedridden > 3 days or surgery within 4 weeks (1)
+      - localized tenderness along deep venous system (1)
+      - entire leg swelling (1)
+      - calf swelling > 3 cm vs. other side (1)
+      - pitting edema in symptomatic leg only (1)
+      - collateral superficial veins (non-varicose) (1)
+      - alternative diagnosis as likely or more likely (-2)
+    thresholds:
+      - "<= 0 = low (DVT unlikely; D-dimer negative excludes)"
+      - "1-2 = moderate"
+      - ">= 3 = high (proceed directly to ultrasound)"
+    citation: Stern Ch.17
+  - name: Light criteria for transudate vs. exudate (in pleural effusion accompanying edema)
+    purpose: Classify pleural fluid
+    inputs:
+      - pleural protein / serum protein
+      - pleural LDH / serum LDH
+      - pleural LDH absolute
+    citation: Stern Ch.17
+differential:
+  - name: Heart failure (HFrEF or HFpEF)
+    role: leading
+    icd10:
+      - I50.9
+    pivotal_features_supporting:
+      - bilateral lower-extremity edema
+      - dyspnea on exertion / orthopnea / PND
+      - elevated JVP
+      - S3 gallop
+      - elevated BNP
+      - pulmonary congestion on imaging
+    fingerprint_findings:
+      - bilateral leg edema with elevated JVP and orthopnea
+    textbook_presentation: >-
+      Bilateral pitting lower-extremity edema with dyspnea, orthopnea,
+      elevated JVP, and S3 gallop; BNP elevated; cross-reference
+      Stern Ch.15 (Dyspnea).
+    evidence_based_diagnosis:
+      - test_name: Serum BNP / NT-proBNP
+        citation: Stern Ch.15 / Ch.17
+      - test_name: Transthoracic echocardiogram
+        citation: Stern Ch.17
+      - test_name: Chest radiograph
+        citation: Stern Ch.17
+    treatment_classes:
+      - loop diuretic
+      - ACE inhibitor or ARB or ARNI
+      - beta-blocker (HFrEF)
+      - mineralocorticoid receptor antagonist (HFrEF)
+      - SGLT2 inhibitor
+      - dietary sodium restriction
+    notes: Cross-reference Stern Ch.15 (Dyspnea).
+  - name: Cirrhosis with portal hypertension and ascites
+    role: active_must_not_miss
+    icd10:
+      - K74.60
+    pivotal_features_supporting:
+      - chronic liver disease (alcohol, hepatitis B / C, NASH, autoimmune)
+      - ascites
+      - peripheral edema
+      - low albumin
+      - elevated transaminases / bilirubin
+      - thrombocytopenia
+      - stigmata (spider angiomata, palmar erythema, gynecomastia, caput medusae)
+      - decompensation events (variceal bleed, hepatic encephalopathy, SBP, hepatorenal)
+    fingerprint_findings:
+      - ascites + low albumin + cirrhotic stigmata
+    textbook_presentation: >-
+      Patient with chronic liver disease presenting with ascites,
+      peripheral edema, low serum albumin, and stigmata of cirrhosis;
+      MELD score quantifies severity.
+    evidence_based_diagnosis:
+      - test_name: Serum albumin + INR + bilirubin + transaminases
+        citation: Stern Ch.17
+      - test_name: Ultrasound abdomen
+        note: Identifies ascites and chronic liver changes; rules out malignancy.
+        citation: Stern Ch.17
+      - test_name: Diagnostic paracentesis with serum-ascites albumin gradient (SAAG)
+        note: SAAG >= 1.1 g/dL supports portal hypertension etiology.
+        citation: Stern Ch.17
+    treatment_classes:
+      - sodium restriction
+      - diuretic (spironolactone + furosemide)
+      - large-volume paracentesis (when refractory or symptomatic)
+      - antibiotic prophylaxis for SBP (selected patients)
+    notes: Detailed cirrhosis management cross-references Stern Ch.26 (Jaundice and Abnormal Liver Enzymes).
+  - name: Nephrotic syndrome
+    role: active_must_not_miss
+    icd10:
+      - N04.9
+    pivotal_features_supporting:
+      - heavy proteinuria (> 3.5 g / day)
+      - hypoalbuminemia
+      - edema (often periorbital and generalized)
+      - hyperlipidemia
+      - hypercoagulability (renal vein thrombosis risk)
+      - underlying causes (minimal-change disease, FSGS, membranous, diabetic nephropathy, amyloidosis, lupus nephritis)
+    fingerprint_findings:
+      - heavy proteinuria + hypoalbuminemia + edema + hyperlipidemia
+    textbook_presentation: >-
+      Patient with periorbital and lower-extremity edema, foamy urine,
+      hypoalbuminemia, and proteinuria > 3.5 g/day; underlying cause
+      requires kidney biopsy in many adult patients.
+    evidence_based_diagnosis:
+      - test_name: 24-hour urine protein or spot urine protein-to-creatinine ratio
+        citation: Stern Ch.17
+      - test_name: Serum albumin, lipid panel, BUN / creatinine
+        citation: Stern Ch.17
+      - test_name: Kidney biopsy (most adults)
+        citation: Stern Ch.17
+    treatment_classes:
+      - ACE inhibitor or ARB
+      - dietary sodium restriction
+      - loop diuretic
+      - immunosuppressant (per underlying cause)
+      - statin (when hyperlipidemic)
+      - anticoagulant (selected — high VTE risk)
+    notes: ""
+  - name: Acute kidney injury / chronic kidney disease (sodium retention)
+    role: active_most_common
+    icd10:
+      - N17.9
+      - N18.9
+    pivotal_features_supporting:
+      - elevated creatinine and reduced eGFR
+      - oliguria
+      - generalized edema with hypertension
+      - presence of underlying cause (diabetic nephropathy, glomerular disease, obstruction)
+    fingerprint_findings:
+      - generalized edema with rising creatinine and hypertension
+    textbook_presentation: >-
+      Patient with kidney disease of any etiology presenting with sodium
+      retention, generalized edema, and hypertension; diuresis or
+      dialysis manages volume; cross-reference Stern Ch.28 (AKI).
+    evidence_based_diagnosis:
+      - test_name: Serum creatinine + eGFR
+        citation: Stern Ch.28
+      - test_name: Urinalysis with urine protein-to-creatinine ratio
+        citation: Stern Ch.28
+    treatment_classes:
+      - dietary sodium restriction
+      - loop diuretic
+      - blood-pressure control
+      - dialysis (when refractory or uremic)
+    notes: Cross-reference Stern Ch.28 (AKI).
+  - name: Deep venous thrombosis
+    role: active_must_not_miss
+    icd10:
+      - I82.40
+    pivotal_features_supporting:
+      - unilateral leg swelling
+      - calf pain / tenderness
+      - VTE risk factors (immobilization, malignancy, surgery, prior DVT, hormonal therapy, pregnancy)
+      - elevated D-dimer
+      - positive compression ultrasound
+    fingerprint_findings:
+      - unilateral calf or thigh swelling with VTE risk factors
+    textbook_presentation: >-
+      Acute or subacute unilateral leg swelling and pain in a patient
+      with VTE risk factors; ultrasound is diagnostic.
+    evidence_based_diagnosis:
+      - test_name: Wells score (DVT)
+        citation: Stern Ch.17
+      - test_name: D-dimer
+        sensitivity: 0.95
+        specificity: 0.45
+        note: Excludes DVT in low / intermediate Wells when negative.
+        citation: Stern Ch.17
+      - test_name: Compression ultrasound of the affected leg
+        sensitivity: 0.95
+        specificity: 0.95
+        citation: Stern Ch.17
+    treatment_classes:
+      - anticoagulant
+    notes: ""
+  - name: Cellulitis (and other infectious soft-tissue infection)
+    role: active_must_not_miss
+    icd10:
+      - L03.119
+    pivotal_features_supporting:
+      - unilateral erythema, warmth, tenderness, swelling
+      - portal of entry (skin breakdown, athletes foot, IV access)
+      - fever
+      - elevated WBC / CRP
+    fingerprint_findings:
+      - acute unilateral erythema with warmth and pain
+    textbook_presentation: >-
+      Acute unilateral leg / arm swelling with erythema, warmth, and
+      tenderness; portal of entry often visible; rapid progression
+      raises concern for necrotizing infection.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment with attention to systemic features
+        citation: Stern Ch.17
+      - test_name: Blood cultures (when systemic features present)
+        citation: Stern Ch.17
+      - test_name: Imaging when concern for abscess or necrotizing infection
+        citation: Stern Ch.17
+    treatment_classes:
+      - antibiotic (per likely organism — streptococcal vs. MRSA risk)
+    notes: Necrotizing fasciitis warrants emergent surgical consultation.
+  - name: Chronic venous insufficiency / post-thrombotic syndrome
+    role: active_most_common
+    icd10:
+      - I87.2
+    pivotal_features_supporting:
+      - chronic bilateral or unilateral leg swelling
+      - heaviness / aching, worse at end of day
+      - skin changes (hyperpigmentation, lipodermatosclerosis, venous ulcers)
+      - prior DVT
+      - varicose veins
+    fingerprint_findings:
+      - hyperpigmentation in gaiter distribution + lipodermatosclerosis
+    textbook_presentation: >-
+      Chronic leg swelling worse at the end of the day with
+      hyperpigmentation, lipodermatosclerosis, and sometimes venous
+      ulcers; history of varicose veins or prior DVT supports.
+    evidence_based_diagnosis:
+      - test_name: Duplex venous ultrasound with reflux assessment
+        citation: Stern Ch.17
+    treatment_classes:
+      - compression stockings / wraps
+      - leg elevation
+      - skin care
+      - venous ablation (selected — procedural)
+    notes: ""
+  - name: Lymphedema (primary or secondary)
+    role: other
+    icd10:
+      - I89.0
+    pivotal_features_supporting:
+      - chronic non-pitting edema late in disease
+      - history of lymph-node dissection, radiation, infection, malignancy
+      - positive Stemmer sign (inability to pinch dorsum of toe)
+      - asymmetric distribution
+    fingerprint_findings:
+      - positive Stemmer sign with non-pitting edema after node dissection
+    textbook_presentation: >-
+      Chronic non-pitting edema (often after lymph-node surgery,
+      radiation, or filarial infection) with positive Stemmer sign and
+      gradually progressive heaviness.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment
+        citation: Stern Ch.17
+      - test_name: Lymphoscintigraphy (selected refractory or atypical cases)
+        citation: Stern Ch.17
+    treatment_classes:
+      - complete decongestive therapy (manual lymphatic drainage + compression)
+      - skin care
+      - therapeutic exercise
+    notes: ""
+  - name: Drug-induced edema (CCB, NSAIDs, thiazolidinediones, gabapentinoids, corticosteroids, hormones)
+    role: active_most_common
+    icd10:
+      - T50.995A
+    pivotal_features_supporting:
+      - temporal correlation with new medication
+      - bilateral lower-extremity pitting edema
+      - resolution after withdrawal
+    fingerprint_findings:
+      - new edema after starting calcium channel blocker or NSAID
+    textbook_presentation: >-
+      Bilateral pitting lower-extremity edema after starting a known
+      offending agent (amlodipine, NSAIDs, thiazolidinediones,
+      gabapentin, corticosteroids); resolves on withdrawal.
+    evidence_based_diagnosis:
+      - test_name: Medication review
+        citation: Stern Ch.17
+    treatment_classes:
+      - withdraw or substitute the offending agent
+      - elevation, compression
+    notes: ""
+  - name: Angioedema (allergic, ACE inhibitor-induced, hereditary, acquired C1 inhibitor deficiency)
+    role: active_must_not_miss
+    icd10:
+      - T78.3XXA
+    pivotal_features_supporting:
+      - rapid-onset facial / lip / tongue / pharyngeal swelling
+      - urticaria (allergic)
+      - non-pruritic and non-pitting (bradykinin-mediated)
+      - ACE inhibitor exposure
+      - family history (hereditary)
+      - low C4 with low C1 inhibitor (hereditary or acquired)
+    fingerprint_findings:
+      - lip / tongue / pharyngeal swelling without urticaria after ACE inhibitor exposure
+    textbook_presentation: >-
+      Acute non-dependent swelling of lips, tongue, face, or pharynx;
+      bradykinin-mediated forms (ACE inhibitor, hereditary, acquired)
+      lack urticaria and respond poorly to antihistamines /
+      corticosteroids.
+    evidence_based_diagnosis:
+      - test_name: C4 + C1 esterase inhibitor level and function
+        citation: Stern Ch.17
+    treatment_classes:
+      - airway protection (priority)
+      - intramuscular epinephrine (allergic)
+      - antihistamine + corticosteroid (allergic)
+      - C1 esterase inhibitor concentrate or icatibant or ecallantide (bradykinin-mediated)
+    notes: ACE inhibitor angioedema may occur years after starting therapy.
+  - name: Pericardial disease (constrictive pericarditis, large pericardial effusion)
+    role: active_must_not_miss
+    icd10:
+      - I31.1
+      - I31.3
+    pivotal_features_supporting:
+      - elevated JVP with Kussmaul sign (constrictive)
+      - pericardial knock (constrictive)
+      - hepatomegaly + ascites + edema
+      - pericardial calcification on imaging
+      - large effusion on echo
+    fingerprint_findings:
+      - elevated JVP without pulmonary congestion + Kussmaul sign in constrictive pericarditis
+    textbook_presentation: >-
+      Edema with elevated JVP, hepatomegaly, ascites, and Kussmaul sign;
+      echo identifies constrictive vs. effusive disease; cardiac MRI or
+      catheterization may be needed.
+    evidence_based_diagnosis:
+      - test_name: Echocardiogram
+        citation: Stern Ch.17
+      - test_name: Cardiac MRI / CT (constrictive pericarditis)
+        citation: Stern Ch.17
+    treatment_classes:
+      - diuretic (cautious — preload-dependent)
+      - pericardial drainage (effusion — procedural)
+    notes: Pericardiectomy is procedural for refractory constrictive disease.
+  - name: Severe hypoalbuminemia from malnutrition or protein-losing enteropathy
+    role: other
+    icd10:
+      - E43
+      - K90.49
+    pivotal_features_supporting:
+      - severe protein malnutrition or PEM in elderly / cachectic patient
+      - protein-losing enteropathy (IBD, lymphangiectasia, Whipple)
+      - absent cirrhosis / nephrotic causes
+    fingerprint_findings:
+      - low serum albumin without hepatic / renal cause
+    textbook_presentation: >-
+      Severe hypoalbuminemia driving generalized edema in setting of
+      malnutrition or GI protein loss; nutritional support and
+      treatment of underlying GI disease.
+    evidence_based_diagnosis:
+      - test_name: Serum albumin
+        citation: Stern Ch.17
+      - test_name: 24-hour urine protein (rules out nephrotic syndrome)
+        citation: Stern Ch.17
+      - test_name: Stool alpha-1 antitrypsin (protein-losing enteropathy)
+        citation: Stern Ch.17
+    treatment_classes:
+      - nutritional support
+      - treat underlying GI disease (IBD, lymphangiectasia)
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Determine distribution (unilateral vs. bilateral; localized vs. generalized).
+    rationale: Stern Ch.17 first split — unilateral edema is usually localized vascular / lymphatic / inflammatory process; bilateral suggests generalized cause.
+    branches:
+      - condition: Unilateral
+        action: next_step
+        target_step: 2
+      - condition: Bilateral / generalized
+        action: next_step
+        target_step: 3
+      - condition: Periorbital / face involvement
+        action: next_step
+        target_step: 4
+    derived_from_figure: Stern Ch.17 prose
+  - step_num: 2
+    description: Step 2 — For unilateral edema, evaluate for DVT, cellulitis, lymphedema, chronic venous insufficiency.
+    rationale: Acute unilateral swelling is DVT until proven otherwise.
+    branches:
+      - condition: Wells score >= 1 + acute swelling / pain
+        action: order_test
+        test_to_order: Compression ultrasound; D-dimer in low pretest probability
+      - condition: Erythema + warmth + tenderness
+        action: confirm
+        target_diagnosis: Cellulitis (and other infectious soft-tissue infection)
+      - condition: Chronic skin changes + venous distribution
+        action: confirm
+        target_diagnosis: Chronic venous insufficiency / post-thrombotic syndrome
+      - condition: Non-pitting + Stemmer sign + history of node dissection / radiation
+        action: confirm
+        target_diagnosis: Lymphedema (primary or secondary)
+    derived_from_figure: Stern Ch.17 prose
+  - step_num: 3
+    description: Step 3 — For bilateral / generalized edema, evaluate for HF, cirrhosis, nephrotic syndrome, kidney disease, drug-induced, or pericardial disease.
+    rationale: Underlying mechanism — hydrostatic, oncotic, sodium-retention, or pericardial.
+    branches:
+      - condition: Elevated JVP + dyspnea + S3 / orthopnea
+        action: confirm
+        target_diagnosis: Heart failure (HFrEF or HFpEF)
+      - condition: Ascites + cirrhotic stigmata
+        action: confirm
+        target_diagnosis: Cirrhosis with portal hypertension and ascites
+      - condition: Heavy proteinuria (>3.5 g/day) + low albumin
+        action: confirm
+        target_diagnosis: Nephrotic syndrome
+      - condition: Reduced eGFR / oliguria with hypertension
+        action: confirm
+        target_diagnosis: Acute kidney injury / chronic kidney disease (sodium retention)
+      - condition: New medication temporally related to edema
+        action: confirm
+        target_diagnosis: Drug-induced edema (CCB, NSAIDs, thiazolidinediones, gabapentinoids, corticosteroids, hormones)
+      - condition: Elevated JVP without pulmonary congestion + Kussmaul sign or pericardial knock
+        action: order_test
+        test_to_order: Echocardiogram + cardiac MRI / CT for constrictive pericarditis
+      - condition: Severe hypoalbuminemia without hepatic / renal cause
+        action: confirm
+        target_diagnosis: Severe hypoalbuminemia from malnutrition or protein-losing enteropathy
+    derived_from_figure: Stern Ch.17 prose
+  - step_num: 4
+    description: Step 4 — For periorbital / facial / pharyngeal swelling, distinguish nephrotic syndrome from angioedema.
+    rationale: Different urgency — angioedema may threaten airway.
+    branches:
+      - condition: Acute non-pitting non-pruritic facial / lip / tongue swelling, especially with ACE inhibitor use
+        action: escalate
+        escalation_reason: Angioedema — secure airway; treat with epinephrine if allergic, C1 inhibitor or icatibant if bradykinin-mediated.
+      - condition: Subacute periorbital edema with proteinuria
+        action: confirm
+        target_diagnosis: Nephrotic syndrome
+    derived_from_figure: Stern Ch.17 prose
+red_flags:
+  - name: Acute non-pitting non-pruritic facial / pharyngeal swelling
+    description: Angioedema — airway risk; immediate airway management and bradykinin / allergic-pathway therapy.
+    severity: high
+  - name: Acute unilateral leg swelling with VTE risk factors
+    description: DVT — proceed to ultrasound; treat with anticoagulation when confirmed.
+    severity: high
+  - name: Erythema + warmth + rapid progression with systemic toxicity
+    description: Cellulitis with concern for necrotizing infection — emergent surgical consultation.
+    severity: high
+  - name: Edema with elevated JVP and Kussmaul sign without pulmonary congestion
+    description: Constrictive pericarditis or tamponade — echocardiogram and cardiology evaluation.
+    severity: high
+source_pages:
+  - 322
+  - 341
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.17 (pp. 322-341). Frame is mechanistic — distribution drives the
+  initial split; mechanism (hydrostatic, oncotic, sodium-retention,
+  inflammatory, lymphatic) drives the subsequent evaluation. Algorithm
+  steps 1-4 mirror Stern's stepwise approach. Cross-references Stern
+  Ch.15 (Dyspnea), Ch.26 (Jaundice), Ch.28 (AKI).

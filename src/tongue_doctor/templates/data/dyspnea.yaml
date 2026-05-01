@@ -1,0 +1,563 @@
+complaint: dyspnea
+chapter_number: 15
+chapter_title: Dyspnea
+framework_type: anatomical
+framework_categories:
+  - Lung — airways (asthma, COPD, laryngeal edema)
+  - Lung — alveoli (pneumonia, pulmonary edema, ARDS, pulmonary hemorrhage)
+  - Lung — interstitium (interstitial lung disease, pneumonitis, malignancy)
+  - Lung — pleura (pneumothorax, pleural effusion)
+  - Lung — vasculature (PE, pulmonary hypertension)
+  - Heart — endocardium (valvular disease)
+  - Heart — myocardium (HFrEF, HFpEF)
+  - Heart — conduction (brady- or tachy-arrhythmia)
+  - Pericardium (pericardial effusion, tamponade)
+  - Anemia / hypoxia (carbon monoxide, methemoglobinemia)
+  - Acidosis (renal failure, DKA)
+  - Neuromuscular / chest wall (Guillain-Barré, ALS, kyphoscoliosis)
+  - Anxiety / psychogenic
+decision_rules:
+  - name: ACT ASAP mnemonic
+    purpose: Immediate threats to life in the dyspneic patient
+    inputs:
+      - "A — Airway obstruction"
+      - "C — Cardiac tamponade"
+      - "T — Tension pneumothorax"
+      - "A — ACS / acute coronary syndrome"
+      - "S — Severe asthma exacerbation"
+      - "A — Anaphylaxis"
+      - "P — Pulmonary embolism"
+    citation: Stern Table 15-1
+  - name: Wells score for PE
+    purpose: Pretest probability for pulmonary embolism
+    inputs:
+      - clinical signs of DVT (3)
+      - alternative diagnosis less likely (3)
+      - HR > 100 (1.5)
+      - immobilization or surgery in past 4 weeks (1.5)
+      - prior DVT/PE (1.5)
+      - hemoptysis (1)
+      - active malignancy (1)
+    thresholds:
+      - "low (< 2) → D-dimer; if negative, PE excluded"
+      - "intermediate (2-6) → D-dimer; if negative, PE excluded"
+      - "high (> 6) → CT pulmonary angiography directly"
+    citation: Stern Ch.15
+  - name: PERC criteria
+    purpose: Rule out PE in low-risk patients without further testing
+    inputs:
+      - age < 50, HR < 100, SaO2 >= 95%, no hemoptysis, no estrogen use, no surgery / trauma in past 4 weeks, no prior DVT/PE, no unilateral leg swelling
+    thresholds:
+      - "all 8 criteria negative + low Wells → PE excluded without D-dimer"
+    citation: Stern Ch.15
+  - name: BNP / NT-proBNP for HF
+    purpose: Distinguish HF from non-HF dyspnea
+    thresholds:
+      - "BNP < 100 pg/mL effectively excludes HF in acute dyspnea"
+      - "BNP > 400 pg/mL strongly supports HF"
+      - "NT-proBNP age-adjusted thresholds (450 / 900 / 1800 pg/mL)"
+    citation: Stern Ch.15
+differential:
+  - name: Heart failure (HFrEF or HFpEF, decompensated)
+    role: leading
+    icd10:
+      - I50.9
+    pivotal_features_supporting:
+      - orthopnea, paroxysmal nocturnal dyspnea
+      - lower-extremity edema, jugular venous distention, S3 gallop, crackles
+      - elevated BNP / NT-proBNP
+      - cardiomegaly and pulmonary congestion on CXR
+      - reduced or preserved LV ejection fraction on echo
+    fingerprint_findings:
+      - orthopnea + S3 gallop + elevated JVP + elevated BNP
+    textbook_presentation: >-
+      Patient with dyspnea on exertion, orthopnea, and PND with elevated
+      JVP, S3 gallop, peripheral edema, and pulmonary congestion;
+      echocardiogram defines reduced vs. preserved EF.
+    evidence_based_diagnosis:
+      - test_name: Serum BNP / NT-proBNP
+        sensitivity: 0.95
+        specificity: 0.75
+        note: BNP < 100 strongly excludes acute HF.
+        citation: Stern Ch.15
+      - test_name: Chest radiograph
+        note: Cardiomegaly, vascular redistribution, pulmonary edema, Kerley B lines, effusions.
+        citation: Stern Ch.15
+      - test_name: Transthoracic echocardiogram
+        note: Defines EF, valvular disease, diastolic function.
+        citation: Stern Ch.15
+    treatment_classes:
+      - loop diuretic (acute decongestion)
+      - ACE inhibitor or ARB or ARNI
+      - beta-blocker (HFrEF)
+      - mineralocorticoid receptor antagonist (HFrEF)
+      - SGLT2 inhibitor
+      - vasodilator (selected severe acute decompensation)
+      - cardiac resynchronization therapy / ICD (selected HFrEF)
+    notes: Detailed device therapy and advanced HF management is procedural / specialist.
+  - name: Pneumonia
+    role: active_must_not_miss
+    icd10:
+      - J18.9
+    pivotal_features_supporting:
+      - cough + fever + crackles + infiltrate (cross-reference Stern Ch.10)
+    fingerprint_findings:
+      - new lobar infiltrate with cough and fever
+    textbook_presentation: >-
+      Acute febrile illness with cough, dyspnea, pleuritic chest pain,
+      crackles, and infiltrate on chest radiograph; severity assessed
+      with CURB-65 / PSI.
+    evidence_based_diagnosis:
+      - test_name: PA / lateral chest radiograph
+        citation: Stern Ch.10 / Ch.15
+      - test_name: Sputum culture, blood cultures, urinary antigens, viral PCR (per severity)
+        citation: Stern Ch.10
+    treatment_classes:
+      - antibiotic (per severity, comorbidities, local resistance)
+      - oxygen therapy
+      - antiviral (when influenza or COVID confirmed)
+    notes: Cross-reference Stern Ch.10.
+  - name: Chronic obstructive pulmonary disease (COPD) exacerbation
+    role: active_must_not_miss
+    icd10:
+      - J44.1
+    pivotal_features_supporting:
+      - smoking history
+      - chronic cough + sputum + dyspnea on exertion
+      - hyperinflation on imaging
+      - FEV1/FVC < 0.7 with reduced FEV1 (post-bronchodilator)
+      - increased dyspnea + sputum purulence + sputum volume (Anthonisen criteria)
+    fingerprint_findings:
+      - barrel chest + prolonged expiratory phase + smoking history
+    textbook_presentation: >-
+      Patient with smoking history presenting with worsening dyspnea,
+      cough, and sputum production; exam shows wheezing, prolonged
+      expiratory phase, possibly accessory muscle use; ABG may show
+      hypercarbia.
+    evidence_based_diagnosis:
+      - test_name: Spirometry (post-bronchodilator FEV1/FVC < 0.7)
+        sensitivity: 0.90
+        specificity: 0.95
+        citation: Stern Ch.15
+      - test_name: Chest radiograph
+        note: Hyperinflation, flattened diaphragms, increased AP diameter.
+        citation: Stern Ch.15
+      - test_name: Arterial blood gas (severe exacerbation)
+        note: Identifies hypercarbia and respiratory acidosis.
+        citation: Stern Ch.15
+    treatment_classes:
+      - inhaled bronchodilator (SABA + ipratropium during exacerbation)
+      - systemic corticosteroid (acute exacerbation)
+      - antibiotic (when increased sputum purulence)
+      - oxygen therapy (titrated)
+      - non-invasive positive pressure ventilation
+    notes: Long-term management — LAMA/LABA, ICS for selected, smoking cessation.
+  - name: Asthma exacerbation (including severe / life-threatening)
+    role: active_must_not_miss
+    icd10:
+      - J45.901
+    pivotal_features_supporting:
+      - episodic wheezing, chest tightness, dyspnea
+      - reversible airflow limitation (FEV1 improves >= 12% after bronchodilator)
+      - environmental / allergen / exercise triggers
+      - silent chest, accessory muscle use, fatigue, normalizing PaCO2 (severe)
+    fingerprint_findings:
+      - silent chest with PaCO2 normalizing in severe asthma — impending failure
+    textbook_presentation: >-
+      Patient with episodic wheezing, dyspnea, chest tightness, and
+      cough triggered by allergens, exercise, or infection; severe
+      exacerbation features include accessory muscle use, silent chest,
+      and rising or "normalizing" PaCO2.
+    evidence_based_diagnosis:
+      - test_name: Spirometry / peak flow with bronchodilator response
+        citation: Stern Ch.15
+      - test_name: Arterial blood gas (severe exacerbation)
+        note: Normalizing or rising PaCO2 indicates impending respiratory failure.
+        citation: Stern Ch.15
+    treatment_classes:
+      - inhaled SABA
+      - inhaled anticholinergic (selected severe)
+      - systemic corticosteroid
+      - inhaled corticosteroid (controller)
+      - magnesium sulfate (severe refractory)
+      - non-invasive ventilation (severe; bridge to ICU)
+    notes: ""
+  - name: Pulmonary embolism
+    role: active_must_not_miss
+    icd10:
+      - I26.99
+    pivotal_features_supporting:
+      - pleuritic chest pain
+      - hypoxemia
+      - tachycardia
+      - unilateral leg swelling
+      - VTE risk factors
+      - hemoptysis
+    fingerprint_findings:
+      - acute dyspnea + tachycardia + hypoxemia + leg swelling
+    textbook_presentation: >-
+      Acute dyspnea with pleuritic chest pain, tachycardia, and
+      hypoxemia; risk factors include immobilization, malignancy,
+      surgery, contraception / pregnancy.
+    evidence_based_diagnosis:
+      - test_name: D-dimer
+        sensitivity: 0.95
+        specificity: 0.40
+        note: Sensitive for ruling out PE in low / intermediate Wells; positive requires confirmatory imaging.
+        citation: Stern Ch.15
+      - test_name: CT pulmonary angiography
+        sensitivity: 0.90
+        specificity: 0.95
+        citation: Stern Ch.15
+      - test_name: V/Q scan (alternative when CT contraindicated)
+        citation: Stern Ch.15
+    treatment_classes:
+      - anticoagulant
+      - thrombolytic (massive PE in selected scenarios)
+      - oxygen therapy
+    notes: ""
+  - name: Tension pneumothorax
+    role: active_must_not_miss
+    icd10:
+      - J93.0
+    pivotal_features_supporting:
+      - sudden severe dyspnea + chest pain
+      - hypotension
+      - hypoxia
+      - tracheal deviation
+      - jugular venous distention
+      - absent breath sounds + hyperresonance unilaterally
+    fingerprint_findings:
+      - hypotension + tracheal deviation away from absent breath sounds
+    textbook_presentation: >-
+      Acute decompensation with hypoxemia, hypotension, and
+      hemodynamic instability; absent breath sounds and tracheal
+      deviation away from affected side.
+    evidence_based_diagnosis:
+      - test_name: Clinical diagnosis (do NOT delay for imaging)
+        citation: Stern Ch.15
+      - test_name: Bedside ultrasound (absent lung sliding)
+        citation: Stern Ch.15
+    treatment_classes:
+      - oxygen therapy
+    notes: Needle decompression / chest tube — procedural and immediately required.
+  - name: Cardiac tamponade
+    role: active_must_not_miss
+    icd10:
+      - I31.4
+    pivotal_features_supporting:
+      - hypotension
+      - elevated JVP
+      - pulsus paradoxus
+      - distant heart sounds (Beck triad)
+      - large pericardial effusion on echo
+      - electrical alternans on ECG
+    fingerprint_findings:
+      - Beck triad + pulsus paradoxus + tamponade physiology on echo
+    textbook_presentation: >-
+      Hypotension with dyspnea and elevated JVP, distant heart sounds,
+      and pulsus paradoxus; bedside echo confirms large effusion with
+      RV diastolic collapse.
+    evidence_based_diagnosis:
+      - test_name: Bedside echocardiogram
+        sensitivity: 0.95
+        citation: Stern Ch.15
+    treatment_classes: []
+    notes: Pericardiocentesis is procedural and time-critical.
+  - name: ACS (acute coronary syndrome) presenting as dyspnea
+    role: active_must_not_miss
+    icd10:
+      - I20.0
+      - I21.9
+    pivotal_features_supporting:
+      - cardiac risk factors
+      - associated chest discomfort
+      - ECG ischemic changes
+      - elevated troponin
+    fingerprint_findings:
+      - silent or atypical MI in older / female / diabetic patient with dyspnea as cardinal symptom
+    textbook_presentation: >-
+      Atypical or silent ACS presenting with dyspnea instead of chest
+      pain — common in elderly, women, diabetics; ECG and troponin
+      identify.
+    evidence_based_diagnosis:
+      - test_name: 12-lead ECG
+        citation: Stern Ch.9 / Ch.15
+      - test_name: Serum troponin (serial)
+        citation: Stern Ch.9
+    treatment_classes:
+      - antiplatelet
+      - anticoagulant
+      - beta-blocker
+      - nitrate
+      - statin
+    notes: Cross-reference Stern Ch.9.
+  - name: Anaphylaxis
+    role: active_must_not_miss
+    icd10:
+      - T78.2XXA
+    pivotal_features_supporting:
+      - acute onset
+      - exposure to known allergen
+      - urticaria, angioedema, stridor, wheezing
+      - hypotension
+    fingerprint_findings:
+      - urticaria + stridor + hypotension after exposure
+    textbook_presentation: >-
+      Acute systemic IgE-mediated reaction with cutaneous, respiratory,
+      and cardiovascular involvement after antigen exposure.
+    evidence_based_diagnosis:
+      - test_name: Clinical recognition (immediate treatment, no testing required)
+        citation: Stern Ch.15
+    treatment_classes:
+      - intramuscular epinephrine (first-line)
+      - antihistamine (H1 and H2)
+      - corticosteroid
+      - bronchodilator
+      - intravenous fluid replacement
+    notes: ""
+  - name: Pleural effusion (transudative or exudative)
+    role: active_most_common
+    icd10:
+      - J90
+    pivotal_features_supporting:
+      - dullness to percussion + decreased breath sounds + decreased fremitus
+      - chest film / ultrasound shows effusion
+      - meniscus sign
+    fingerprint_findings:
+      - dullness with absent breath sounds + decreased fremitus over effusion
+    textbook_presentation: >-
+      Dyspnea with dullness, decreased breath sounds, and decreased
+      fremitus; chest imaging confirms; thoracentesis with Light criteria
+      classifies as transudate or exudate.
+    evidence_based_diagnosis:
+      - test_name: Chest radiograph (PA and lateral) or bedside ultrasound
+        citation: Stern Ch.15
+      - test_name: Diagnostic thoracentesis with Light criteria
+        note: Pleural protein / serum protein > 0.5 OR pleural LDH / serum LDH > 0.6 OR pleural LDH > 2/3 ULN serum LDH = exudate.
+        citation: Stern Ch.15
+    treatment_classes:
+      - treatment of underlying cause (HF, malignancy, infection, cirrhosis, nephrotic syndrome)
+      - drainage (therapeutic thoracentesis or chest tube as indicated)
+    notes: ""
+  - name: Pulmonary edema (cardiogenic or non-cardiogenic / ARDS)
+    role: active_must_not_miss
+    icd10:
+      - J81.0
+      - J80
+    pivotal_features_supporting:
+      - acute dyspnea with hypoxemia
+      - bilateral infiltrates on chest imaging
+      - cardiogenic — elevated BNP, cardiomegaly, JVP elevation, S3
+      - non-cardiogenic — sepsis / aspiration / trauma trigger, normal cardiac filling pressures
+    fingerprint_findings:
+      - bilateral infiltrates with hypoxemia and inciting event (sepsis, aspiration) without HF features (ARDS)
+    textbook_presentation: >-
+      Acute hypoxemic respiratory failure with bilateral infiltrates;
+      cardiogenic features point to acute decompensated HF; ARDS
+      identified by Berlin criteria with non-cardiogenic etiology.
+    evidence_based_diagnosis:
+      - test_name: Chest radiograph
+        citation: Stern Ch.15
+      - test_name: BNP / NT-proBNP
+        note: Elevated supports cardiogenic; normal supports non-cardiogenic.
+        citation: Stern Ch.15
+      - test_name: Bedside echo
+        citation: Stern Ch.15
+    treatment_classes:
+      - loop diuretic (cardiogenic)
+      - vasodilator (cardiogenic)
+      - non-invasive positive pressure ventilation
+      - low tidal-volume ventilation strategy (ARDS — when intubated)
+      - treat underlying trigger (sepsis, aspiration)
+    notes: ""
+  - name: Pulmonary hypertension
+    role: other
+    icd10:
+      - I27.20
+    pivotal_features_supporting:
+      - progressive dyspnea on exertion
+      - syncope
+      - elevated right ventricular pressure on echo
+      - right ventricular dysfunction
+      - associated systemic conditions (connective tissue disease, HIV, congenital heart disease)
+    fingerprint_findings:
+      - elevated RV systolic pressure on echo with no left heart disease
+    textbook_presentation: >-
+      Progressive exertional dyspnea, fatigue, and exercise-induced
+      syncope; echo shows elevated RV pressure; right heart cath
+      confirms.
+    evidence_based_diagnosis:
+      - test_name: Transthoracic echocardiogram with RV systolic pressure estimation
+        citation: Stern Ch.15
+      - test_name: Right heart catheterization (gold standard)
+        citation: Stern Ch.15
+    treatment_classes:
+      - phosphodiesterase-5 inhibitor (selected pulmonary arterial hypertension)
+      - endothelin receptor antagonist
+      - prostacyclin analog
+      - oxygen therapy
+    notes: ""
+  - name: Interstitial lung disease (idiopathic pulmonary fibrosis, hypersensitivity pneumonitis, occupational, connective-tissue-related)
+    role: other
+    icd10:
+      - J84.9
+    pivotal_features_supporting:
+      - chronic progressive dyspnea on exertion
+      - dry cough
+      - bibasilar fine crackles ("velcro" rales)
+      - clubbing
+      - reticular / honeycombing on HRCT
+      - restrictive pulmonary function pattern
+    fingerprint_findings:
+      - bibasilar velcro crackles + clubbing + UIP pattern on HRCT
+    textbook_presentation: >-
+      Progressive exertional dyspnea, dry cough, fine bibasilar
+      crackles, clubbing, reticular and honeycombing on HRCT,
+      restrictive PFT pattern.
+    evidence_based_diagnosis:
+      - test_name: HRCT chest (UIP pattern is diagnostic for IPF)
+        citation: Stern Ch.15
+      - test_name: Pulmonary function testing (restrictive pattern with reduced DLCO)
+        citation: Stern Ch.15
+      - test_name: Connective tissue disease serologic workup (ANA, RF, anti-CCP, myositis-specific antibodies)
+        citation: Stern Ch.15
+    treatment_classes:
+      - antifibrotic agent (pirfenidone or nintedanib for IPF)
+      - corticosteroid (selected ILD subtypes)
+      - immunosuppressant (selected ILD subtypes)
+      - oxygen therapy (chronic)
+      - lung transplantation (advanced disease)
+    notes: ""
+  - name: Anemia / hypoxia from CO or methemoglobinemia
+    role: other
+    icd10:
+      - D64.9
+      - T58.94XA
+      - D74.9
+    pivotal_features_supporting:
+      - anemia by CBC + reduced oxygen delivery
+      - smoke exposure or fire (CO)
+      - oxidant exposure (dapsone, benzocaine, nitrites — methemoglobinemia)
+      - cherry-red skin (CO)
+      - chocolate-brown blood (methemoglobinemia)
+    fingerprint_findings:
+      - normal SpO2 with low PaO2 in methemoglobinemia (saturation gap)
+    textbook_presentation: >-
+      Dyspnea with anemia or with hypoxia driven by abnormal hemoglobin
+      (CO or methemoglobinemia); pulse oximetry may be misleadingly
+      normal.
+    evidence_based_diagnosis:
+      - test_name: CBC with smear
+        citation: Stern Ch.15
+      - test_name: Co-oximetry (CO and methemoglobin levels)
+        citation: Stern Ch.15
+    treatment_classes:
+      - 100% oxygen therapy (CO)
+      - hyperbaric oxygen therapy (severe CO)
+      - methylene blue (methemoglobinemia)
+    notes: ""
+  - name: Anxiety / hyperventilation
+    role: other
+    icd10:
+      - F41.0
+      - R06.4
+    pivotal_features_supporting:
+      - acute episodes of dyspnea with normal oxygenation
+      - perioral or peripheral paresthesias
+      - history of panic / anxiety
+      - normal exam, ECG, and chest imaging
+    fingerprint_findings:
+      - episodic dyspnea with normal SpO2 and triggers / circumstances of panic
+    textbook_presentation: >-
+      Episodic dyspnea with normal oxygenation, perioral or peripheral
+      paresthesias, and history of anxiety / panic; diagnosis of
+      exclusion.
+    evidence_based_diagnosis:
+      - test_name: Clinical recognition after exclusion of organic causes
+        citation: Stern Ch.15
+    treatment_classes:
+      - SSRI / SNRI
+      - cognitive behavioral therapy
+      - benzodiazepine (short-term, selected cases)
+    notes: Avoid assigning anxiety as the diagnosis until life-threatening causes are excluded.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Assess for immediate threats to life (ACT ASAP — Airway, Cardiac tamponade, Tension pneumothorax, ACS, Severe asthma, Anaphylaxis, PE).
+    rationale: Stern Table 15-1 — these require immediate intervention.
+    branches:
+      - condition: Any ACT ASAP feature
+        action: escalate
+        escalation_reason: Immediate stabilization (airway, oxygen, IM epinephrine for anaphylaxis, needle decompression for tension PTX, pericardiocentesis for tamponade, anticoagulation for PE, ACS protocol).
+      - condition: Stable airway, no immediate threat
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Table 15-1 + Ch.15 prose
+  - step_num: 2
+    description: Step 2 — Always consider the four most common causes — HF, pneumonia, COPD/asthma, PE — by history, exam, and basic tests.
+    rationale: Stern's "always on the differential" rule.
+    branches:
+      - condition: HF features (orthopnea, JVP, S3, edema, BNP elevated)
+        action: confirm
+        target_diagnosis: Heart failure (HFrEF or HFpEF, decompensated)
+      - condition: Pneumonia features (cough, fever, infiltrate)
+        action: confirm
+        target_diagnosis: Pneumonia
+      - condition: Obstructive pattern (wheezing, prolonged expiration, smoking history)
+        action: order_test
+        test_to_order: Spirometry; treat empirically as COPD or asthma exacerbation
+      - condition: PE features (pleuritic pain, hypoxia, leg swelling, VTE risk)
+        action: order_test
+        test_to_order: Wells / PERC + D-dimer or CT pulmonary angiography
+      - condition: None of the above
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Ch.15 prose + Table 15-1
+  - step_num: 3
+    description: Step 3 — Apply the anatomical framework to less common causes — pleural (effusion, pneumothorax), interstitial (ILD), valvular (AS, MR), arrhythmia, anemia, neuromuscular, anxiety.
+    rationale: Stern Ch.15 anatomic enumeration.
+    branches:
+      - condition: Pleural finding on exam / imaging
+        action: order_test
+        test_to_order: Diagnostic thoracentesis with Light criteria when fluid present
+      - condition: Bibasilar fine crackles + chronic course
+        action: order_test
+        test_to_order: HRCT chest + PFT for interstitial lung disease
+      - condition: Murmur or echocardiographic abnormality
+        action: order_test
+        test_to_order: Transthoracic echocardiogram
+      - condition: Palpitations, arrhythmia, syncope
+        action: order_test
+        test_to_order: ECG + ambulatory monitoring
+      - condition: Severe anemia or oxygen-binding issue (CO, methemoglobinemia)
+        action: order_test
+        test_to_order: CBC + co-oximetry
+      - condition: Diagnosis of exclusion with normal evaluation
+        action: confirm
+        target_diagnosis: Anxiety / hyperventilation
+    derived_from_figure: Stern Ch.15 prose
+red_flags:
+  - name: Hypotension with elevated JVP and muffled heart sounds
+    description: Cardiac tamponade — emergent echo and pericardiocentesis.
+    severity: high
+  - name: Tracheal deviation with absent breath sounds and hypotension
+    description: Tension pneumothorax — needle decompression.
+    severity: high
+  - name: Stridor + urticaria + angioedema after exposure
+    description: Anaphylaxis — IM epinephrine immediately.
+    severity: high
+  - name: Severe asthma with silent chest, accessory muscle use, normalizing PaCO2
+    description: Impending respiratory failure — ICU and consider intubation.
+    severity: high
+source_pages:
+  - 286
+  - 311
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.15 (pp. 286-311). Frame is anatomic with explicit always-on
+  differential of HF, pneumonia, COPD/asthma, PE plus the immediate
+  threats captured by the ACT ASAP mnemonic. Algorithm steps 1-3 follow
+  Stern's stepwise approach. Cross-references Ch.9 (Chest Pain), Ch.10
+  (Cough/Respiratory), and Ch.33 (Wheezing).

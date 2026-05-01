@@ -1,0 +1,444 @@
+complaint: anemia
+chapter_number: 6
+chapter_title: Anemia
+framework_type: mechanistic
+framework_categories:
+  - Acute blood loss
+  - Underproduction (microcytic / normocytic / macrocytic by MCV)
+  - Increased destruction (hemolysis)
+pivotal_points:
+  - signs of acute blood loss (hypotension, tachycardia, hematemesis, melena, hematuria, vaginal or rectal bleeding, hemoptysis)
+  - reticulocyte production index (RPI) — RPI < 2 = underproduction; RPI > 2 = hemolysis or appropriate response
+  - mean corpuscular volume (MCV) — < 80 microcytic; 80-100 normocytic; > 100 macrocytic
+  - presence of pancytopenia (raises bone-marrow / pancytopenic differential per Fig 6-1)
+  - red blood cell distribution width (RDW) — elevated in iron deficiency and B12 deficiency
+  - peripheral smear morphology (schistocytes for MAHA, sickling, spherocytes, hypersegmented neutrophils)
+  - direct antiglobulin (Coombs) test for autoimmune hemolysis
+decision_rules:
+  - name: Reticulocyte production index (RPI)
+    purpose: Distinguish underproduction from hemolysis / appropriate response to blood loss
+    inputs:
+      - reticulocyte percentage
+      - patient hematocrit
+      - peripheral blood maturation time (typically 2 days)
+    thresholds:
+      - "RPI < 2 in anemia = underproduction"
+      - "RPI > 2 in anemia = hemolysis OR appropriate response to blood loss / iron / B12 / folate replacement"
+    citation: Stern p.118
+  - name: MCV-based microcytic differential framework
+    purpose: Narrow underproduction anemia by cell size
+    thresholds:
+      - "MCV < 80 microcytic — iron deficiency, thalassemia, anemia of inflammation, sideroblastic anemia, lead toxicity"
+      - "MCV 80-100 normocytic — anemia of chronic disease, early iron deficiency, kidney disease, mixed deficiencies, marrow infiltration"
+      - "MCV > 100 macrocytic — B12 / folate deficiency, alcohol, hypothyroidism, drug-induced, MDS, liver disease"
+    citation: Stern p.119 (Figure 6-1)
+differential:
+  - name: Acute blood loss
+    role: active_must_not_miss
+    icd10:
+      - D62
+    pivotal_features_supporting:
+      - hypotension or tachycardia
+      - hematemesis, melena, hematochezia
+      - frank hemorrhage from any site
+      - rapidly dropping hematocrit
+    fingerprint_findings:
+      - hemodynamic instability with falling hemoglobin
+    textbook_presentation: >-
+      Patient with hemodynamic compromise and overt or covert bleeding —
+      melena, hematemesis, hematochezia, vaginal bleeding, or massive
+      ecchymoses; falling hemoglobin and rising lactate confirm.
+    evidence_based_diagnosis:
+      - test_name: Serial CBC and hemodynamic monitoring
+        note: Acute blood loss is often clinically obvious; hemoglobin lags by hours.
+        citation: Stern p.118
+      - test_name: Type and crossmatch + coagulation studies
+        citation: Stern Ch.6
+    treatment_classes:
+      - intravenous fluid replacement
+      - blood product transfusion (PRBC, FFP, platelets per indication)
+      - hemostatic intervention (procedural — endoscopy, IR, surgery)
+    notes: Source identification (GI bleed work-up in Stern Ch.19) is part of the same urgent workflow.
+  - name: Iron-deficiency anemia
+    role: leading
+    icd10:
+      - D50.9
+    pivotal_features_supporting:
+      - microcytic anemia (MCV < 80) with elevated RDW
+      - low ferritin and low transferrin saturation
+      - pica, restless legs, fatigue
+      - source — GI bleed (occult), heavy menses, malabsorption
+    fingerprint_findings:
+      - low ferritin (< 30 ng/mL) with microcytic hypochromic anemia
+    textbook_presentation: >-
+      Microcytic hypochromic anemia with low ferritin and transferrin
+      saturation; in adults, occult GI bleeding or heavy menses are common
+      etiologies and merit a source workup.
+    evidence_based_diagnosis:
+      - test_name: Serum ferritin (low)
+        sensitivity: 0.92
+        specificity: 0.98
+        note: Most useful single test. Inflammation can elevate ferritin, masking deficiency.
+        citation: Stern Ch.6
+      - test_name: Transferrin saturation (TSAT)
+        note: Low TSAT supports iron deficiency.
+        citation: Stern Ch.6
+      - test_name: Source workup — endoscopy / colonoscopy in adults
+        note: Required when no obvious source (e.g., menstrual) is identified.
+        citation: Stern Ch.6
+    treatment_classes:
+      - oral iron replacement therapy
+      - intravenous iron replacement therapy (when oral not tolerated or absorption impaired)
+    notes: Treat AND determine the source; never assume idiopathic in an adult.
+  - name: Anemia of inflammation / chronic disease
+    role: active_most_common
+    icd10:
+      - D63.8
+    pivotal_features_supporting:
+      - chronic infection, autoimmune disease, malignancy, or chronic kidney disease
+      - normocytic or mildly microcytic
+      - normal or elevated ferritin with low transferrin saturation
+      - elevated hepcidin
+    fingerprint_findings:
+      - normal-to-elevated ferritin with low TSAT in a chronically ill patient
+    textbook_presentation: >-
+      Mild to moderate normocytic (sometimes microcytic) anemia in a patient
+      with chronic inflammation, malignancy, or kidney disease; iron studies
+      show high or normal ferritin with low TSAT.
+    evidence_based_diagnosis:
+      - test_name: Iron studies (ferritin elevated/normal, TSAT low, TIBC normal/low)
+        citation: Stern Ch.6
+      - test_name: CRP / ESR
+        note: Elevated inflammatory markers support the diagnosis.
+        citation: Stern Ch.6
+    treatment_classes:
+      - treat the underlying disease
+      - erythropoiesis-stimulating agent (selected CKD or chemotherapy-induced cases)
+      - iron replacement (when concurrent iron deficiency confirmed)
+    notes: ""
+  - name: Vitamin B12 (cobalamin) deficiency
+    role: active_most_common
+    icd10:
+      - D51.0
+    pivotal_features_supporting:
+      - macrocytic anemia (MCV > 100)
+      - hypersegmented neutrophils on smear
+      - low B12 (or low-normal with elevated methylmalonic acid + homocysteine)
+      - neurologic symptoms (subacute combined degeneration — paresthesias, gait abnormalities, dementia)
+      - pernicious anemia, gastric / ileal surgery, vegan diet
+    fingerprint_findings:
+      - hypersegmented neutrophils with macrocytic anemia and elevated methylmalonic acid
+    textbook_presentation: >-
+      Macrocytic anemia with hypersegmented neutrophils, fatigue, and
+      sometimes neurologic deficits (paresthesias, ataxia, cognitive change);
+      classic in pernicious anemia, post-bariatric surgery, or strict vegan
+      diet.
+    evidence_based_diagnosis:
+      - test_name: Serum vitamin B12
+        note: Low value confirms; borderline values require methylmalonic acid + homocysteine.
+        citation: Stern Ch.6
+      - test_name: Serum methylmalonic acid (MMA)
+        sensitivity: 0.95
+        specificity: 0.95
+        note: Elevated MMA + homocysteine confirm B12 deficiency when B12 is borderline.
+        citation: Stern Ch.6
+      - test_name: Anti-intrinsic-factor antibody
+        note: Specific for pernicious anemia (sens ~50%, spec > 95%).
+        citation: Stern Ch.6
+    treatment_classes:
+      - vitamin B12 replacement therapy (parenteral or high-dose oral)
+    notes: Replace folate concurrently; folate alone in B12 deficiency masks anemia but worsens neurologic disease.
+  - name: Folate deficiency
+    role: active_most_common
+    icd10:
+      - D52.9
+    pivotal_features_supporting:
+      - macrocytic anemia
+      - dietary insufficiency, alcohol use, malabsorption, methotrexate or trimethoprim therapy
+      - elevated homocysteine with normal methylmalonic acid
+    fingerprint_findings:
+      - macrocytic anemia with elevated homocysteine but normal MMA
+    textbook_presentation: >-
+      Macrocytic anemia in a patient with poor diet, alcohol use, or
+      antifolate medications; homocysteine elevated, MMA normal.
+    evidence_based_diagnosis:
+      - test_name: Serum or RBC folate
+        citation: Stern Ch.6
+      - test_name: Homocysteine and methylmalonic acid
+        note: Distinguish folate from B12 deficiency.
+        citation: Stern Ch.6
+    treatment_classes:
+      - folic acid replacement
+    notes: Always rule out coexisting B12 deficiency before folate replacement alone.
+  - name: Thalassemia (alpha or beta)
+    role: active_most_common
+    icd10:
+      - D56.9
+    pivotal_features_supporting:
+      - microcytic anemia with normal-to-high RBC count
+      - normal-to-high ferritin
+      - target cells on smear
+      - ethnic background (Mediterranean, Southeast Asian, African)
+      - family history
+    fingerprint_findings:
+      - profound microcytosis (MCV < 75) with normal Hb level and normal-high RBC count
+    textbook_presentation: >-
+      Microcytic anemia with disproportionately normal hemoglobin and high
+      RBC count; target cells on smear and characteristic hemoglobin
+      electrophoresis pattern.
+    evidence_based_diagnosis:
+      - test_name: Hemoglobin electrophoresis or HPLC
+        note: Identifies hemoglobinopathies; alpha-thalassemia trait may have normal electrophoresis and require genetic testing.
+        citation: Stern Ch.6
+      - test_name: Mentzer index (MCV / RBC count)
+        note: "< 13 favors thalassemia; > 13 favors iron deficiency. Heuristic only — confirm with electrophoresis and iron studies."
+        citation: Stern Ch.6
+    treatment_classes:
+      - genetic counseling (carrier identification)
+      - transfusion therapy (severe disease)
+      - iron-chelation therapy (when transfusion-dependent)
+    notes: Avoid empiric iron in carriers — they are not iron-deficient.
+  - name: Autoimmune hemolytic anemia
+    role: active_must_not_miss
+    icd10:
+      - D59.1
+    pivotal_features_supporting:
+      - elevated reticulocyte count
+      - elevated indirect bilirubin and LDH
+      - low haptoglobin
+      - positive direct antiglobulin (Coombs) test
+      - spherocytes on smear (warm AIHA)
+    fingerprint_findings:
+      - positive Coombs with elevated indirect bilirubin and decreased haptoglobin
+    textbook_presentation: >-
+      Acute or subacute anemia with reticulocytosis, elevated indirect
+      bilirubin and LDH, low haptoglobin, and positive direct antiglobulin
+      test; warm AIHA shows spherocytes, cold agglutinin disease shows RBC
+      clumping on smear.
+    evidence_based_diagnosis:
+      - test_name: Direct antiglobulin (Coombs) test
+        sensitivity: 0.95
+        specificity: 0.95
+        citation: Stern Ch.6
+      - test_name: Haptoglobin, indirect bilirubin, LDH
+        note: Hemolysis lab pattern.
+        citation: Stern Ch.6
+      - test_name: Peripheral smear
+        note: Spherocytes (warm), RBC agglutination (cold), schistocytes (microangiopathic).
+        citation: Stern Ch.6
+    treatment_classes:
+      - corticosteroid (warm AIHA first-line)
+      - immunosuppressant (refractory disease)
+      - transfusion support
+    notes: Search for underlying cause — lymphoproliferative, autoimmune, drug, infection.
+  - name: Microangiopathic hemolytic anemia (TTP, HUS, DIC, HELLP, malignant hypertension, mechanical valves)
+    role: active_must_not_miss
+    icd10:
+      - M31.1
+      - D59.3
+      - D65
+      - O14.20
+    pivotal_features_supporting:
+      - schistocytes on peripheral smear
+      - elevated LDH
+      - thrombocytopenia
+      - negative Coombs
+      - end-organ injury (renal, neurologic, hepatic)
+    fingerprint_findings:
+      - schistocytes + thrombocytopenia + neurologic or renal dysfunction (TTP / HUS)
+    textbook_presentation: >-
+      Acute anemia with schistocytes, thrombocytopenia, and end-organ
+      dysfunction (TTP pentad — fever, neuro changes, renal injury,
+      thrombocytopenia, hemolysis; HUS triad — renal injury,
+      thrombocytopenia, MAHA; DIC — bleeding + thrombosis + low fibrinogen).
+    evidence_based_diagnosis:
+      - test_name: Peripheral smear (schistocytes)
+        sensitivity: 0.90
+        citation: Stern Ch.6
+      - test_name: ADAMTS13 activity (TTP-specific)
+        note: Severely reduced (< 10%) confirms TTP.
+        citation: Stern Ch.6
+      - test_name: Coagulation panel + fibrinogen + D-dimer (DIC)
+        citation: Stern Ch.6
+    treatment_classes:
+      - therapeutic plasma exchange (TTP — emergent)
+      - corticosteroid (TTP, immune-mediated)
+      - supportive care + treat underlying cause (DIC, HUS)
+    notes: TTP is a medical emergency — initiate plasma exchange while ADAMTS13 is pending.
+  - name: Sickle cell disease (hemolytic crisis or vaso-occlusive crisis)
+    role: active_must_not_miss
+    icd10:
+      - D57.00
+      - D57.219
+    pivotal_features_supporting:
+      - known sickle cell disease
+      - acute pain crisis
+      - acute anemia exceeding baseline
+      - acute chest syndrome (chest pain + fever + new infiltrate)
+      - splenic sequestration (children)
+    fingerprint_findings:
+      - sickled cells on peripheral smear
+      - acute chest pain + fever + new infiltrate in known SCD patient
+    textbook_presentation: >-
+      Patient with known sickle cell disease presenting with acute pain,
+      fever, anemia worsening from baseline, and possibly acute chest
+      syndrome or splenic sequestration.
+    evidence_based_diagnosis:
+      - test_name: Hemoglobin electrophoresis (diagnostic at any age)
+        citation: Stern Ch.6
+      - test_name: Peripheral smear
+        note: Sickle cells confirm.
+        citation: Stern Ch.6
+      - test_name: Chest radiograph (for acute chest syndrome)
+        citation: Stern Ch.6
+    treatment_classes:
+      - intravenous fluid replacement
+      - analgesic (opioid for crisis pain)
+      - oxygen therapy (when hypoxic)
+      - antibiotic (suspected acute chest syndrome)
+      - blood transfusion or exchange transfusion (severe disease)
+      - hydroxyurea (chronic disease modification)
+    notes: ""
+  - name: Hereditary spherocytosis / G6PD deficiency / other hereditary hemolytic anemias
+    role: other
+    icd10:
+      - D58.0
+      - D55.0
+    pivotal_features_supporting:
+      - family history of hemolytic anemia or splenectomy
+      - recurrent hemolysis with infection or oxidative stress (G6PD)
+      - jaundice and splenomegaly
+      - spherocytes (HS) or bite cells / Heinz bodies (G6PD)
+    fingerprint_findings:
+      - spherocytes on smear with negative Coombs (HS)
+      - bite cells / Heinz bodies after oxidative stress (G6PD)
+    textbook_presentation: >-
+      Hereditary hemolytic anemia with characteristic smear findings;
+      hereditary spherocytosis presents with chronic hemolysis, splenomegaly,
+      and pigment gallstones; G6PD presents with episodic hemolysis after
+      infections, fava beans, or oxidant drugs.
+    evidence_based_diagnosis:
+      - test_name: Osmotic fragility test or eosin-5-maleimide flow cytometry (HS)
+        citation: Stern Ch.6
+      - test_name: G6PD enzyme activity (assayed at least 3 months after acute hemolysis)
+        citation: Stern Ch.6
+    treatment_classes:
+      - folic acid supplementation
+      - splenectomy (selected hereditary spherocytosis cases)
+      - avoidance of oxidative triggers (G6PD)
+    notes: ""
+  - name: Bone marrow failure / infiltration (aplastic anemia, MDS, leukemia, marrow infiltration)
+    role: active_must_not_miss
+    icd10:
+      - D61.9
+      - D46.9
+      - C95.90
+    pivotal_features_supporting:
+      - pancytopenia (multiple cell-line involvement)
+      - circulating blasts on smear
+      - persistent or progressive cytopenias without obvious cause
+      - hepatosplenomegaly or lymphadenopathy
+      - drug or toxin exposure (aplastic anemia)
+    fingerprint_findings:
+      - blasts on peripheral smear
+      - dry tap on marrow aspirate (myelofibrosis)
+    textbook_presentation: >-
+      Pancytopenia with normocytic or macrocytic anemia and abnormal smear
+      (blasts, dysplastic forms, teardrop cells); requires bone marrow
+      biopsy to characterize.
+    evidence_based_diagnosis:
+      - test_name: Peripheral smear with manual differential
+        note: Blasts, dysplasia, teardrops, leukoerythroblastic picture.
+        citation: Stern Ch.6
+      - test_name: Bone marrow aspirate and biopsy with cytogenetics / flow / molecular testing
+        note: Definitive — required for AML, MDS, infiltration.
+        citation: Stern Ch.6
+    treatment_classes:
+      - hematology referral (chemotherapy, immunosuppression, transplant per diagnosis)
+      - transfusion support
+    notes: Pancytopenia + circulating blasts is an emergency — same-day hematology consultation.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Assess for acute blood loss (hemodynamics, history of bleeding, hemoglobin trend).
+    rationale: Stern's first step (p.118).
+    branches:
+      - condition: Acute hemorrhage
+        action: escalate
+        escalation_reason: Resuscitate, transfuse, and identify bleeding source urgently.
+      - condition: No acute blood loss
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Fig 6-1 + p.118 prose
+  - step_num: 2
+    description: Step 2 — Check WBC, platelets, and smear; isolated anemia vs. pancytopenia (with or without thrombocytopenia).
+    rationale: Stern Fig 6-1 first split.
+    branches:
+      - condition: Isolated anemia
+        action: next_step
+        target_step: 3
+      - condition: Pancytopenia (or anemia + thrombocytopenia / leukopenia)
+        action: order_test
+        test_to_order: Bone marrow biopsy + hematology consultation
+    derived_from_figure: Stern Fig 6-1
+  - step_num: 3
+    description: Step 3 — Calculate reticulocyte production index (RPI).
+    rationale: Distinguishes underproduction (RPI < 2) from increased destruction (RPI > 2).
+    branches:
+      - condition: RPI < 2 (underproduction)
+        action: next_step
+        target_step: 4
+      - condition: RPI > 2 (hemolysis or appropriate response to blood loss)
+        action: next_step
+        target_step: 5
+    derived_from_figure: Stern Fig 6-1
+  - step_num: 4
+    description: Step 4 — Underproduction — frame using MCV.
+    rationale: Stern Fig 6-1 underproduction branch.
+    branches:
+      - condition: MCV < 80 (microcytic) — check ferritin, iron / TIBC
+        action: order_test
+        test_to_order: "Ferritin, iron, TIBC; consider hemoglobin electrophoresis if iron studies normal/elevated and microcytosis severe (suggests thalassemia)"
+      - condition: MCV 80-100 (normocytic) — search for anemia of inflammation, kidney disease, endocrinopathy, mixed deficiency, marrow infiltration
+        action: order_test
+        test_to_order: CRP, creatinine, TSH, iron studies, B12 / folate, peripheral smear; hematology if no cause found
+      - condition: MCV > 100 (macrocytic) — order B12, folate, TSH, alcohol / medication review
+        action: order_test
+        test_to_order: B12, folate, methylmalonic acid, homocysteine; reticulocyte review (high RPI = brisk hemolysis)
+    derived_from_figure: Stern Fig 6-1
+  - step_num: 5
+    description: Step 5 — Increased destruction (hemolysis) — order direct antiglobulin (Coombs), inspect smear for schistocytes.
+    rationale: Stern Fig 6-1 hemolysis branch.
+    branches:
+      - condition: Coombs positive
+        action: confirm
+        target_diagnosis: Autoimmune hemolytic anemia
+      - condition: Coombs negative + schistocytes on smear
+        action: confirm
+        target_diagnosis: Microangiopathic hemolytic anemia (TTP, HUS, DIC, HELLP, malignant hypertension, mechanical valves)
+      - condition: Coombs negative + no schistocytes
+        action: order_test
+        test_to_order: Hemoglobin electrophoresis (sickle, thalassemia), G6PD activity (after acute event), osmotic fragility / flow cytometry (hereditary spherocytosis)
+    derived_from_figure: Stern Fig 6-1
+red_flags:
+  - name: Hemodynamic instability with anemia
+    description: Active bleeding until proven otherwise — resuscitate and search for source.
+    severity: high
+  - name: Pancytopenia with circulating blasts
+    description: Acute leukemia or marrow failure — same-day hematology.
+    severity: high
+  - name: Schistocytes + thrombocytopenia + neurologic / renal dysfunction
+    description: TTP / HUS / DIC — emergent plasma exchange evaluation; obtain ADAMTS13.
+    severity: high
+source_pages:
+  - 118
+  - 133
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.6 (pp. 118-133). Frame is mechanistic (acute blood loss vs.
+  underproduction vs. hemolysis), then MCV-based for underproduction.
+  Algorithm follows Stern Fig 6-1. Must-not-miss bucket: acute blood loss,
+  autoimmune hemolytic anemia, microangiopathic hemolytic anemia (TTP / HUS
+  / DIC), sickle cell crisis, marrow failure / leukemia. Source identification
+  is required for iron-deficiency anemia in adults.

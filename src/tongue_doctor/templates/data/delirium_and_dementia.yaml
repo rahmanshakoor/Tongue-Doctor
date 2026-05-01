@@ -1,0 +1,502 @@
+complaint: delirium_and_dementia
+chapter_number: 11
+chapter_title: Delirium and Dementia
+framework_type: temporal
+framework_categories:
+  - Acute fluctuating mental-status change (delirium)
+  - Acute non-fluctuating mental-status change (other CNS insult — stroke, hemorrhage, infection, hypoglycemia, trauma)
+  - Chronic mental-status change (dementia, neurodegenerative disease, chronic psychiatric illness)
+pivotal_points:
+  - chronicity (acute vs. chronic — Fig 11-1 first split)
+  - fluctuation (waxing and waning attention defines delirium)
+  - level of arousal (delirium with hyperactive vs. hypoactive vs. mixed; coma is distinct)
+  - new focal neurologic deficit (raises stroke, hemorrhage, mass, abscess)
+  - inflammatory or infectious signs (fever, neck stiffness)
+  - medication review (anticholinergics, sedatives, opioids, polypharmacy)
+  - acute medical illness (infection, electrolytes, hypoxia, hypercarbia, hypoglycemia)
+  - alcohol or drug use (intoxication, withdrawal, Wernicke / thiamine deficiency)
+  - functional decline timeline (years for dementia; weeks-months for subacute conditions like NPH or vascular)
+decision_rules:
+  - name: Confusion Assessment Method (CAM)
+    purpose: Bedside diagnosis of delirium
+    inputs:
+      - acute onset and fluctuating course
+      - inattention
+      - disorganized thinking
+      - altered level of consciousness
+    thresholds:
+      - "Both acute onset/fluctuating + inattention required, plus either disorganized thinking OR altered consciousness"
+    citation: Stern Ch.11
+  - name: Mini-Cog
+    purpose: Brief cognitive screen for dementia
+    inputs:
+      - 3-word recall
+      - clock-drawing test
+    thresholds:
+      - "<= 2 of 5 = positive screen, requires further evaluation"
+    citation: Stern Ch.11
+  - name: Montreal Cognitive Assessment (MoCA) / MMSE
+    purpose: Quantify cognitive impairment for diagnosis and monitoring
+    thresholds:
+      - "MoCA < 26 / 30 = abnormal"
+      - "MMSE < 24 / 30 = abnormal (less sensitive for early or executive impairment)"
+    citation: Stern Ch.11
+differential:
+  - name: Delirium (multifactorial)
+    role: leading
+    icd10:
+      - F05
+    pivotal_features_supporting:
+      - acute onset (hours to days)
+      - fluctuating course
+      - inattention
+      - disorganized thinking or altered consciousness
+      - underlying medical / surgical / pharmacologic trigger
+    fingerprint_findings:
+      - acute fluctuating attention deficit in a hospitalized or post-operative older patient
+    textbook_presentation: >-
+      Acute and fluctuating attention deficit, often with disorganized
+      thinking and altered level of consciousness; nearly always has a
+      non-neurologic underlying cause (infection, drugs, electrolytes,
+      hypoxia, urinary retention, post-op pain).
+    evidence_based_diagnosis:
+      - test_name: CAM (Confusion Assessment Method)
+        sensitivity: 0.94
+        specificity: 0.89
+        citation: Stern Ch.11
+      - test_name: Targeted workup for trigger (CBC, BMP, urinalysis + culture, chest film, medication review, oxygen saturation, ECG, drug levels)
+        citation: Stern Ch.11
+    treatment_classes:
+      - non-pharmacologic delirium prevention bundle (orientation cues, sleep hygiene, vision / hearing aids, mobilization, family presence)
+      - antipsychotic (selected severe agitation; lowest effective dose)
+      - benzodiazepine (only when alcohol or sedative-hypnotic withdrawal is the cause)
+    notes: Avoid benzodiazepines as first-line for non-withdrawal delirium — they worsen most causes.
+  - name: Stroke (ischemic or hemorrhagic) presenting as altered mental status
+    role: active_must_not_miss
+    icd10:
+      - I63.9
+      - I61.9
+    pivotal_features_supporting:
+      - acute non-fluctuating onset
+      - new focal neurologic deficit
+      - severe headache (hemorrhage)
+      - focal exam findings (face droop, hemiparesis, aphasia, neglect)
+    fingerprint_findings:
+      - new focal deficit with acute mental-status change
+    textbook_presentation: >-
+      Acute mental-status change with focal neurologic deficits — face
+      droop, hemiparesis, aphasia, visual deficits, ataxia; hemorrhage may
+      present with thunderclap headache and neck stiffness.
+    evidence_based_diagnosis:
+      - test_name: Non-contrast CT head
+        note: First-line; rules out hemorrhage and identifies large infarcts.
+        citation: Stern Ch.11
+      - test_name: MRI brain with diffusion-weighted imaging
+        sensitivity: 0.99
+        specificity: 0.92
+        note: Gold standard for early ischemic infarct.
+        citation: Stern Ch.11
+      - test_name: CT angiography head and neck
+        note: Identifies large-vessel occlusion eligible for thrombectomy.
+        citation: Stern Ch.11
+    treatment_classes:
+      - thrombolytic therapy (eligible ischemic stroke within window)
+      - antiplatelet (acute and secondary prevention)
+      - blood pressure management (etiology-dependent)
+    notes: Mechanical thrombectomy and surgical evacuation are procedural and time-sensitive.
+  - name: CNS infection (meningitis, encephalitis, brain abscess)
+    role: active_must_not_miss
+    icd10:
+      - G03.9
+      - G04.90
+      - G06.0
+    pivotal_features_supporting:
+      - fever
+      - meningismus / neck stiffness
+      - photophobia
+      - new headache
+      - seizures
+      - focal deficits (encephalitis or abscess)
+    fingerprint_findings:
+      - fever + headache + neck stiffness or photophobia in patient with altered mental status
+    textbook_presentation: >-
+      Acute or subacute mental-status change with fever, headache, neck
+      stiffness, photophobia, or seizures; LP and brain imaging are
+      definitive.
+    evidence_based_diagnosis:
+      - test_name: Lumbar puncture with CSF analysis (cell count, glucose, protein, Gram stain, culture, viral PCR)
+        note: Definitive — bacterial pattern (low glucose, neutrophilic, high protein) vs. viral (lymphocytic, normal glucose).
+        citation: Stern Ch.11
+      - test_name: CT or MRI brain (rule out mass before LP if focal deficit, papilledema, or immunocompromise)
+        citation: Stern Ch.11
+      - test_name: Blood cultures
+        citation: Stern Ch.11
+    treatment_classes:
+      - empiric antibiotic + corticosteroid (bacterial meningitis)
+      - antiviral (HSV encephalitis)
+    notes: Initiate empiric antibiotics within 1 hour of suspicion; do not delay for LP if imaging needed first.
+  - name: Hypoglycemia (or severe hyperglycemia / DKA / HHS)
+    role: active_must_not_miss
+    icd10:
+      - E16.2
+      - E11.65
+    pivotal_features_supporting:
+      - diabetes with insulin or sulfonylurea use
+      - missed meal
+      - acute confusion, sweating, tremor
+      - reversible with glucose
+    fingerprint_findings:
+      - acute mental-status change in diabetic patient that resolves with glucose administration
+    textbook_presentation: >-
+      Acute confusion, diaphoresis, tremor, or seizure in a patient with
+      diabetes — often during fasting or after sulfonylurea overdose;
+      rapid correction with dextrose confirms hypoglycemia.
+    evidence_based_diagnosis:
+      - test_name: Bedside fingerstick glucose
+        note: Always check in any patient with altered mental status.
+        citation: Stern Ch.11
+      - test_name: Serum glucose, ketones, basic metabolic panel
+        note: Identifies DKA / HHS patterns.
+        citation: Stern Ch.11
+    treatment_classes:
+      - dextrose replacement (oral or IV)
+      - glucagon (when IV access unavailable)
+      - insulin therapy (DKA / HHS, with concurrent fluid + electrolyte repletion)
+    notes: Long-acting hypoglycemics (sulfonylureas) require admission for monitoring; cross-reference Stern Ch.12.
+  - name: Wernicke encephalopathy (thiamine deficiency)
+    role: active_must_not_miss
+    icd10:
+      - E51.2
+    pivotal_features_supporting:
+      - alcohol use disorder
+      - malnutrition (post-bariatric surgery, hyperemesis, prolonged TPN)
+      - classic triad — encephalopathy + ophthalmoplegia + ataxia (rarely all 3)
+      - unexplained nystagmus or gait ataxia
+    fingerprint_findings:
+      - encephalopathy + ophthalmoplegia + ataxia in alcoholic or malnourished patient
+    textbook_presentation: >-
+      Confusion or apathy with ocular abnormalities (nystagmus,
+      ophthalmoplegia) and gait ataxia in a patient with alcoholism or
+      malnutrition; permanent damage and Korsakoff syndrome occur if
+      thiamine is delayed.
+    evidence_based_diagnosis:
+      - test_name: Clinical suspicion + empiric thiamine
+        note: Treat first, confirm by response — diagnostic delay causes irreversible damage.
+        citation: Stern Ch.11
+      - test_name: MRI brain (subtle bilateral mammillary body / periaqueductal lesions)
+        note: Supportive but not always present.
+        citation: Stern Ch.11
+    treatment_classes:
+      - parenteral thiamine replacement (high-dose IV / IM)
+      - magnesium repletion (thiamine cofactor)
+    notes: Always give thiamine BEFORE glucose in alcoholic / malnourished patients.
+  - name: Drug intoxication or withdrawal (alcohol, opioid, benzodiazepine, anticholinergic, polypharmacy)
+    role: active_must_not_miss
+    icd10:
+      - F19.9
+    pivotal_features_supporting:
+      - history of substance use or polypharmacy
+      - tremor, autonomic hyperactivity, hallucinations (alcohol withdrawal)
+      - pinpoint pupils, hypoventilation (opioid intoxication)
+      - dilated pupils, dry skin, urinary retention, fever (anticholinergic toxicity)
+    fingerprint_findings:
+      - autonomic hyperactivity 24-72 hours after last drink (alcohol withdrawal)
+      - "anticholinergic toxidrome — hot as a hare, dry as a bone, red as a beet, mad as a hatter"
+    textbook_presentation: >-
+      Mental-status change with toxidrome features — autonomic
+      hyperactivity for alcohol withdrawal, miosis with hypoventilation
+      for opioids, dilated pupils with dry mucous membranes for
+      anticholinergics; medication review and toxicology screen identify.
+    evidence_based_diagnosis:
+      - test_name: Medication review and substance-use history
+        citation: Stern Ch.11
+      - test_name: Urine toxicology and serum drug levels
+        citation: Stern Ch.11
+    treatment_classes:
+      - benzodiazepine (alcohol or benzodiazepine withdrawal)
+      - naloxone (opioid intoxication)
+      - flumazenil (selected benzodiazepine intoxication, with caution)
+      - physostigmine (severe anticholinergic toxicity, selected cases)
+      - thiamine + folate + glucose
+    notes: Alcohol withdrawal can be fatal — protocolized benzodiazepine therapy and CIWA-Ar monitoring.
+  - name: Subdural hematoma / chronic subdural / traumatic brain injury
+    role: active_must_not_miss
+    icd10:
+      - I62.00
+      - S06.5X0A
+    pivotal_features_supporting:
+      - older adult, fall history, anticoagulant use
+      - subacute or chronic mental-status change weeks after trauma
+      - new headache, focal deficit, seizure
+    fingerprint_findings:
+      - older adult on anticoagulants with fall history and subacute confusion
+    textbook_presentation: >-
+      Older adult or anticoagulated patient with subacute confusion,
+      headache, focal deficits, or seizures weeks after a fall or trauma;
+      CT shows crescentic subdural collection.
+    evidence_based_diagnosis:
+      - test_name: Non-contrast CT head
+        sensitivity: 0.95
+        citation: Stern Ch.11
+    treatment_classes:
+      - reversal of anticoagulation (when possible)
+      - corticosteroid (selected chronic SDH cases)
+    notes: Surgical evacuation for symptomatic or large hematomas.
+  - name: Alzheimer disease (most common dementia)
+    role: active_most_common
+    icd10:
+      - G30.9
+    pivotal_features_supporting:
+      - gradual progressive cognitive decline over years
+      - prominent short-term memory loss
+      - difficulty with executive function and visuospatial tasks
+      - functional decline (IADLs then ADLs)
+      - intact early personality
+    fingerprint_findings:
+      - insidious memory loss with preserved early personality and progressive functional decline
+    textbook_presentation: >-
+      Insidious progressive cognitive decline with prominent short-term
+      memory loss, language difficulty, and gradual functional impairment;
+      MRI may show medial temporal / hippocampal atrophy.
+    evidence_based_diagnosis:
+      - test_name: Cognitive assessment (MoCA, MMSE, Mini-Cog)
+        citation: Stern Ch.11
+      - test_name: MRI brain
+        note: Excludes alternative causes; supports Alzheimer disease with hippocampal atrophy.
+        citation: Stern Ch.11
+      - test_name: Laboratory workup for reversible causes (CBC, BMP, TSH, B12, syphilis testing as indicated)
+        citation: Stern Ch.11
+    treatment_classes:
+      - cholinesterase inhibitor
+      - NMDA receptor antagonist (moderate-severe disease)
+      - non-pharmacologic supports (caregiver education, environment, advance care planning)
+    notes: Disease-modifying anti-amyloid therapies are emerging; specialist referral guides selection.
+  - name: Vascular dementia
+    role: active_most_common
+    icd10:
+      - F01.50
+    pivotal_features_supporting:
+      - stepwise decline
+      - vascular risk factors
+      - prior strokes or white-matter disease on imaging
+      - executive dysfunction often more prominent than memory loss
+    fingerprint_findings:
+      - stepwise cognitive decline with imaging evidence of small-vessel ischemic disease
+    textbook_presentation: >-
+      Stepwise cognitive decline with executive dysfunction in a patient
+      with vascular risk factors; MRI shows ischemic lesions and
+      white-matter disease.
+    evidence_based_diagnosis:
+      - test_name: MRI brain
+        note: Identifies prior infarcts and white-matter hyperintensities.
+        citation: Stern Ch.11
+    treatment_classes:
+      - antiplatelet (when indicated)
+      - statin
+      - blood-pressure and diabetes management
+    notes: Aggressive risk-factor modification slows progression.
+  - name: Dementia with Lewy bodies / Parkinson disease dementia
+    role: active_most_common
+    icd10:
+      - G31.83
+      - G20
+    pivotal_features_supporting:
+      - parkinsonism (rigidity, bradykinesia, resting tremor)
+      - visual hallucinations
+      - fluctuating cognition
+      - REM sleep behavior disorder
+      - antipsychotic sensitivity
+    fingerprint_findings:
+      - visual hallucinations + parkinsonism + fluctuating cognition
+    textbook_presentation: >-
+      Cognitive impairment with parkinsonism, visual hallucinations,
+      fluctuating cognition, and REM sleep behavior disorder; profound
+      neuroleptic sensitivity.
+    evidence_based_diagnosis:
+      - test_name: Clinical criteria (DLB / PDD diagnostic criteria)
+        citation: Stern Ch.11
+      - test_name: DAT-SPECT imaging (when diagnostic uncertainty)
+        citation: Stern Ch.11
+    treatment_classes:
+      - cholinesterase inhibitor
+      - cautious use of low-dose atypical antipsychotic (only when essential — high sensitivity)
+      - levodopa (motor symptoms; balance with worsening psychosis)
+    notes: Avoid first-generation antipsychotics; avoid anticholinergics.
+  - name: Frontotemporal dementia
+    role: other
+    icd10:
+      - G31.09
+    pivotal_features_supporting:
+      - early personality / behavior change or progressive aphasia
+      - relative sparing of memory early
+      - onset typically before age 65
+      - frontal / temporal atrophy on imaging
+    fingerprint_findings:
+      - early dramatic personality or behavior change with relative sparing of memory
+    textbook_presentation: >-
+      Insidious personality and behavior change (disinhibition, apathy,
+      compulsions) or progressive aphasia, often before age 65; frontal /
+      temporal atrophy on imaging.
+    evidence_based_diagnosis:
+      - test_name: MRI brain
+        note: Frontal / temporal lobar atrophy supports diagnosis.
+        citation: Stern Ch.11
+      - test_name: Neuropsychological testing
+        citation: Stern Ch.11
+    treatment_classes:
+      - SSRI (behavioral symptoms)
+      - non-pharmacologic supports
+    notes: Cholinesterase inhibitors generally not effective; may worsen behavior.
+  - name: Reversible dementia mimics (B12 deficiency, hypothyroidism, NPH, depression / pseudodementia, neurosyphilis)
+    role: active_most_common
+    icd10:
+      - E53.8
+      - E03.9
+      - G91.2
+      - F32.9
+      - A52.17
+    pivotal_features_supporting:
+      - low B12, hypothyroidism, gait abnormality + urinary incontinence + cognitive change (NPH triad)
+      - depression with cognitive complaints
+      - syphilis exposure history
+    fingerprint_findings:
+      - "NPH triad — gait apraxia + urinary incontinence + cognitive impairment with ventricular enlargement"
+    textbook_presentation: >-
+      Cognitive impairment with a reversible cause — vitamin B12
+      deficiency, hypothyroidism, normal-pressure hydrocephalus, depression
+      pseudodementia, or neurosyphilis; appropriate testing identifies and
+      treatment may reverse cognitive deficits.
+    evidence_based_diagnosis:
+      - test_name: Reversible-cause panel (B12, methylmalonic acid, TSH, RPR / VDRL or treponemal test, MRI brain looking for NPH features)
+        citation: Stern Ch.11
+      - test_name: Geriatric Depression Scale
+        note: Identifies depression as cognitive driver.
+        citation: Stern Ch.11
+    treatment_classes:
+      - vitamin B12 replacement
+      - levothyroxine (hypothyroidism)
+      - antidepressant (depression)
+      - antibiotic (neurosyphilis)
+    notes: NPH may benefit from large-volume LP trial and neurosurgical referral for shunt.
+  - name: Acute confusional state from systemic illness (sepsis, urinary tract infection, pneumonia, hyponatremia, hypoxia)
+    role: active_most_common
+    icd10:
+      - F05
+    pivotal_features_supporting:
+      - older adult or patient with cognitive baseline impairment
+      - identifiable infectious or metabolic trigger
+      - mental-status change resolves with treatment of the underlying illness
+    fingerprint_findings:
+      - acute confusion in older adult that resolves after UTI or pneumonia is treated
+    textbook_presentation: >-
+      Older adult, often with baseline mild cognitive impairment, presents
+      with acute confusion driven by infection (UTI, pneumonia), metabolic
+      derangement, hypoxia, or polypharmacy.
+    evidence_based_diagnosis:
+      - test_name: Urinalysis + culture, chest radiograph, CBC, BMP, oxygen saturation, ECG, medication review
+        citation: Stern Ch.11
+    treatment_classes:
+      - treat the underlying illness
+      - non-pharmacologic delirium bundle
+    notes: Cross-reference Stern Ch.10 (cough/respiratory) and Ch.16 (dysuria) for source workups.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Establish whether the mental-status change is acute or chronic.
+    rationale: Stern Fig 11-1 first split.
+    branches:
+      - condition: Acute (hours to days, change from baseline)
+        action: next_step
+        target_step: 2
+      - condition: Chronic (months to years progressive)
+        action: next_step
+        target_step: 5
+    derived_from_figure: Stern Fig 11-1
+  - step_num: 2
+    description: Step 2 — For acute change, characterize as fluctuating vs. non-fluctuating.
+    rationale: Fluctuating attention is the cardinal feature of delirium; non-fluctuating raises stroke / hemorrhage / mass / infection.
+    branches:
+      - condition: Fluctuating
+        action: next_step
+        target_step: 3
+      - condition: Non-fluctuating
+        action: next_step
+        target_step: 4
+    derived_from_figure: Stern Fig 11-1
+  - step_num: 3
+    description: Step 3 — For acute fluctuating change (likely delirium), search exhaustively for the trigger.
+    rationale: Delirium is a syndrome — the work is finding the cause.
+    branches:
+      - condition: Fingerstick low (hypoglycemia)
+        action: confirm
+        target_diagnosis: Hypoglycemia (or severe hyperglycemia / DKA / HHS)
+      - condition: Alcohol or sedative-hypnotic withdrawal
+        action: confirm
+        target_diagnosis: Drug intoxication or withdrawal (alcohol, opioid, benzodiazepine, anticholinergic, polypharmacy)
+      - condition: Suspected thiamine deficiency
+        action: confirm
+        target_diagnosis: Wernicke encephalopathy (thiamine deficiency)
+      - condition: General delirium workup
+        action: order_test
+        test_to_order: CBC + BMP + glucose + urinalysis + culture + chest film + ECG + oxygen saturation + medication review + drug levels; consider TSH, ammonia, blood gas
+    derived_from_figure: Stern Fig 11-1
+  - step_num: 4
+    description: Step 4 — For acute non-fluctuating change, evaluate for stroke / hemorrhage / CNS infection / hypoglycemia / TBI.
+    rationale: Acute focal-deficit pattern requires emergent imaging.
+    branches:
+      - condition: New focal neurologic deficit, severe headache, or trauma history
+        action: order_test
+        test_to_order: Non-contrast CT head; consider CT angiography / MRI; LP only after imaging when needed
+      - condition: Fever + meningismus
+        action: order_test
+        test_to_order: Empiric antibiotics + lumbar puncture; CT head before LP if focal deficit / papilledema / immunocompromise
+      - condition: Bedside glucose abnormal
+        action: confirm
+        target_diagnosis: Hypoglycemia (or severe hyperglycemia / DKA / HHS)
+    derived_from_figure: Stern Fig 11-1
+  - step_num: 5
+    description: Step 5 — For chronic mental-status change, perform cognitive screen + reversible-cause workup + brain imaging.
+    rationale: Stern Fig 11-1 chronic pathway — distinguish reversible mimics before assigning a degenerative dementia.
+    branches:
+      - condition: Reversible cause identified
+        action: confirm
+        target_diagnosis: Reversible dementia mimics (B12 deficiency, hypothyroidism, NPH, depression / pseudodementia, neurosyphilis)
+      - condition: Vascular risk factors with stepwise decline + imaging evidence
+        action: confirm
+        target_diagnosis: Vascular dementia
+      - condition: Parkinsonism + visual hallucinations + fluctuation
+        action: confirm
+        target_diagnosis: Dementia with Lewy bodies / Parkinson disease dementia
+      - condition: Early personality / behavior change with relative memory sparing
+        action: confirm
+        target_diagnosis: Frontotemporal dementia
+      - condition: Insidious progressive memory loss without features above
+        action: confirm
+        target_diagnosis: Alzheimer disease (most common dementia)
+    derived_from_figure: Stern Fig 11-1
+red_flags:
+  - name: Fever + meningismus + altered mental status
+    description: Bacterial meningitis until proven otherwise — empiric antibiotics within 1 hour.
+    severity: high
+  - name: New focal deficit with acute mental-status change
+    description: Stroke or hemorrhage — emergent imaging.
+    severity: high
+  - name: Acute confusion with alcohol use disorder or malnutrition
+    description: Treat empirically with thiamine before glucose — Wernicke is reversible only if treated promptly.
+    severity: high
+  - name: Older adult on anticoagulants with subacute confusion after fall
+    description: Subdural hematoma — non-contrast CT head.
+    severity: high
+source_pages:
+  - 214
+  - 227
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.11 (pp. 214-227). Frame is temporal — split mental-status change
+  into acute fluctuating (delirium), acute non-fluctuating (stroke / CNS
+  infection / hypoglycemia / TBI), and chronic (dementia and mimics).
+  Algorithm follows Fig 11-1. Must-not-miss bucket: stroke / hemorrhage,
+  CNS infection, hypoglycemia, Wernicke encephalopathy, drug withdrawal,
+  subdural hematoma. Reversible dementia mimics are highlighted because they
+  are treatable.

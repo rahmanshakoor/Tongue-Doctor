@@ -1,0 +1,406 @@
+complaint: hypertension
+chapter_number: 23
+chapter_title: Hypertension
+framework_type: primary_vs_secondary
+framework_categories:
+  - Primary (essential) hypertension
+  - Secondary — renal (CKD, renovascular)
+  - Secondary — endocrine (primary aldosteronism, pheochromocytoma, Cushing, hyperthyroidism, primary hyperparathyroidism)
+  - Secondary — vascular (coarctation, fibromuscular dysplasia)
+  - Secondary — drug / lifestyle (NSAIDs, OCPs, decongestants, alcohol, sleep apnea)
+  - Hypertensive emergency / urgency (with acute target-organ damage)
+pivotal_points:
+  - severity (BP > 180/120 → urgency or emergency)
+  - presence of target-organ damage (encephalopathy, AKI, MI, dissection, eclampsia)
+  - age of onset (< 30 or > 65 → secondary)
+  - severity / treatment resistance (3 agents including diuretic at max dose)
+  - associated features (paroxysmal symptoms — pheochromocytoma; hypokalemia — primary aldosteronism; OSA; pregnancy)
+  - medication review (NSAIDs, OCPs, decongestants, glucocorticoids, calcineurin inhibitors)
+decision_rules:
+  - name: ACC/AHA 2017 BP categories
+    purpose: Classify ambulatory blood pressure
+    thresholds:
+      - "normal: < 120 / < 80"
+      - "elevated: 120-129 / < 80"
+      - "stage 1 HTN: 130-139 or 80-89"
+      - "stage 2 HTN: >= 140 or >= 90"
+      - "hypertensive crisis: > 180 or > 120 — assess for target-organ damage"
+    citation: Stern Ch.23
+  - name: Resistant hypertension definition
+    purpose: Identify need for secondary HTN workup
+    inputs:
+      - 3 antihypertensives at maximally tolerated doses (one diuretic) with persistent uncontrolled BP
+      - OR controlled on >= 4 agents
+    citation: Stern Ch.23
+differential:
+  - name: Primary (essential) hypertension
+    role: leading
+    icd10:
+      - I10
+    pivotal_features_supporting:
+      - gradual onset middle age
+      - family history
+      - obesity, metabolic syndrome
+      - no clear secondary feature
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Adult with gradually rising BP without identifiable secondary cause;
+      family history and lifestyle factors common.
+    evidence_based_diagnosis:
+      - test_name: Office BP measurements + ambulatory or home BP monitoring
+        citation: Stern Ch.23
+    treatment_classes:
+      - lifestyle modification (DASH diet, sodium restriction, weight loss, exercise, alcohol moderation)
+      - thiazide diuretic
+      - ACE inhibitor or ARB
+      - calcium channel blocker
+      - beta-blocker (selected indications)
+      - mineralocorticoid receptor antagonist (resistant HTN)
+    notes: Single-pill combination preferred for adherence in stage 2.
+  - name: Hypertensive emergency (with acute target-organ damage)
+    role: active_must_not_miss
+    icd10:
+      - I16.1
+    pivotal_features_supporting:
+      - SBP > 180 or DBP > 120
+      - acute target-organ damage (encephalopathy, MI, ACS, aortic dissection, AKI, pulmonary edema, eclampsia, intracranial hemorrhage)
+      - retinopathy with hemorrhage / exudates / papilledema
+    fingerprint_findings:
+      - severely elevated BP + acute target-organ damage
+    textbook_presentation: >-
+      Severe BP elevation with acute end-organ damage requiring
+      ICU-level care and immediate (but controlled) BP reduction.
+    evidence_based_diagnosis:
+      - test_name: Targeted workup for end-organ damage (ECG, troponin, BUN / creatinine, urinalysis, CT head when neurologic, fundus exam, CXR)
+        citation: Stern Ch.23
+    treatment_classes:
+      - intravenous antihypertensive (selection per organ — labetalol, nicardipine, nitroprusside, esmolol, hydralazine in pregnancy)
+    notes: Reduce BP by no more than 20-25% in first hour to avoid hypoperfusion (except dissection, eclampsia, sympathetic crisis).
+  - name: Hypertensive urgency
+    role: active_most_common
+    icd10:
+      - I16.0
+    pivotal_features_supporting:
+      - SBP > 180 or DBP > 120
+      - no acute target-organ damage
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Severely elevated BP without acute end-organ damage; gradual
+      reduction over 24-48 hours with oral therapy is appropriate.
+    evidence_based_diagnosis:
+      - test_name: Office assessment for target-organ damage
+        citation: Stern Ch.23
+    treatment_classes:
+      - oral antihypertensive (resume or up-titrate prior regimen)
+      - lifestyle reinforcement
+    notes: Avoid abrupt parenteral reduction unless emergency criteria met.
+  - name: Renal parenchymal disease (CKD, glomerulonephritis, polycystic kidney disease)
+    role: active_must_not_miss
+    icd10:
+      - I12.9
+    pivotal_features_supporting:
+      - elevated creatinine
+      - reduced eGFR
+      - proteinuria, hematuria
+      - imaging abnormalities
+    fingerprint_findings:
+      - HTN with elevated creatinine and proteinuria
+    textbook_presentation: >-
+      Patient with HTN, elevated creatinine, and proteinuria; underlying
+      kidney disease drives BP elevation.
+    evidence_based_diagnosis:
+      - test_name: Serum creatinine + eGFR
+        citation: Stern Ch.23 / Ch.28
+      - test_name: Urinalysis + spot UPCR
+        citation: Stern Ch.23
+      - test_name: Renal ultrasound
+        citation: Stern Ch.23
+    treatment_classes:
+      - ACE inhibitor or ARB (renoprotection)
+      - SGLT2 inhibitor (CKD progression reduction)
+      - dietary sodium / protein restriction
+    notes: ""
+  - name: Renovascular hypertension (atherosclerotic or fibromuscular dysplasia)
+    role: active_must_not_miss
+    icd10:
+      - I15.0
+    pivotal_features_supporting:
+      - resistant hypertension
+      - young woman (FMD)
+      - older atherosclerotic disease (atherosclerotic RAS)
+      - abdominal bruit
+      - rise in creatinine after ACE inhibitor / ARB
+      - asymmetric kidney size
+    fingerprint_findings:
+      - ">= 30% rise in creatinine after ACE inhibitor in resistant HTN"
+    textbook_presentation: >-
+      Patient with resistant HTN, abdominal bruit, asymmetric kidneys,
+      or a sharp creatinine rise after ACE inhibitor; renal artery
+      duplex / CTA confirms.
+    evidence_based_diagnosis:
+      - test_name: Renal artery duplex ultrasound or CT / MR angiography
+        citation: Stern Ch.23
+    treatment_classes:
+      - ACE inhibitor or ARB (cautious — monitor creatinine and potassium)
+      - statin
+      - antiplatelet
+      - revascularization (selected — angioplasty for FMD; selective stenting for atherosclerotic disease)
+    notes: ""
+  - name: Primary aldosteronism
+    role: active_most_common
+    icd10:
+      - E26.09
+    pivotal_features_supporting:
+      - resistant hypertension
+      - hypokalemia (spontaneous or diuretic-induced)
+      - elevated plasma aldosterone-to-renin ratio
+      - adrenal adenoma or hyperplasia
+    fingerprint_findings:
+      - resistant HTN with hypokalemia and elevated aldosterone-to-renin ratio
+    textbook_presentation: >-
+      Patient with resistant hypertension and hypokalemia (or even
+      normokalemic) with elevated aldosterone-to-renin ratio; adrenal
+      imaging and confirmatory testing localize.
+    evidence_based_diagnosis:
+      - test_name: Plasma aldosterone-to-renin ratio (ARR)
+        sensitivity: 0.85
+        specificity: 0.85
+        note: Stop spironolactone, eplerenone, ACE / ARB, beta-blocker before testing when feasible.
+        citation: Stern Ch.23
+      - test_name: Confirmatory testing (saline infusion or oral salt loading)
+        citation: Stern Ch.23
+      - test_name: Adrenal CT / MRI + adrenal vein sampling (selected)
+        citation: Stern Ch.23
+    treatment_classes:
+      - mineralocorticoid receptor antagonist (spironolactone or eplerenone)
+      - adrenalectomy (procedural — unilateral aldosterone-producing adenoma)
+    notes: Consider screening every patient with resistant HTN, especially with hypokalemia.
+  - name: Pheochromocytoma / paraganglioma
+    role: active_must_not_miss
+    icd10:
+      - D35.00
+    pivotal_features_supporting:
+      - paroxysmal headaches, palpitations, sweating
+      - episodic hypertension or resistant HTN
+      - elevated plasma or 24-hour urinary fractionated metanephrines
+      - adrenal mass on imaging
+    fingerprint_findings:
+      - paroxysmal HTN + headache + palpitations + diaphoresis
+    textbook_presentation: >-
+      Patient with episodic or resistant HTN, paroxysmal headache,
+      palpitations, and diaphoresis; plasma or 24-hour urinary
+      metanephrines confirm.
+    evidence_based_diagnosis:
+      - test_name: Plasma free metanephrines or 24-hour urinary fractionated metanephrines
+        sensitivity: 0.99
+        specificity: 0.85
+        citation: Stern Ch.23
+      - test_name: Adrenal / abdominal MRI or CT (after biochemical confirmation)
+        citation: Stern Ch.23
+      - test_name: Genetic testing (selected — VHL, NF1, MEN2, SDH variants)
+        citation: Stern Ch.23
+    treatment_classes:
+      - alpha-blocker (preoperative — phenoxybenzamine or doxazosin)
+      - beta-blocker (added AFTER alpha-blockade)
+      - adrenalectomy / surgical resection (procedural)
+    notes: NEVER start beta-blocker before alpha-blockade — risk of unopposed alpha leading to hypertensive crisis.
+  - name: Cushing syndrome
+    role: other
+    icd10:
+      - E24.9
+    pivotal_features_supporting:
+      - central obesity, moon facies, dorsal fat pad, abdominal striae
+      - proximal muscle weakness
+      - hypokalemic alkalosis
+      - hyperglycemia
+      - elevated cortisol with abnormal suppression
+    fingerprint_findings:
+      - HTN + central obesity + striae + hyperglycemia
+    textbook_presentation: >-
+      Patient with HTN and Cushingoid features (central obesity,
+      striae, easy bruising, proximal weakness, hyperglycemia);
+      cortisol axis testing confirms.
+    evidence_based_diagnosis:
+      - test_name: 24-hour urinary free cortisol or late-night salivary cortisol
+        citation: Stern Ch.23
+      - test_name: Low-dose dexamethasone suppression test
+        citation: Stern Ch.23
+    treatment_classes:
+      - taper exogenous glucocorticoid (when iatrogenic)
+      - surgical resection (pituitary, adrenal, ectopic — procedural)
+      - medical therapy (ketoconazole, metyrapone, mifepristone)
+    notes: ""
+  - name: Obstructive sleep apnea-related hypertension
+    role: active_most_common
+    icd10:
+      - I10
+      - G47.33
+    pivotal_features_supporting:
+      - snoring, witnessed apnea, daytime somnolence
+      - resistant HTN, especially nocturnal
+      - obesity, large neck circumference
+      - elevated STOP-BANG score
+    fingerprint_findings:
+      - resistant HTN with sleep apnea features
+    textbook_presentation: >-
+      Patient with resistant HTN and sleep-disordered breathing
+      symptoms; CPAP therapy improves BP control.
+    evidence_based_diagnosis:
+      - test_name: Polysomnography or home sleep apnea testing
+        citation: Stern Ch.23 / Ch.18
+    treatment_classes:
+      - continuous positive airway pressure
+      - weight reduction
+    notes: ""
+  - name: Drug-induced / lifestyle hypertension
+    role: active_most_common
+    icd10:
+      - I15.8
+    pivotal_features_supporting:
+      - NSAIDs, OCPs, decongestants, glucocorticoids, cocaine, calcineurin inhibitors, MAOIs + tyramine
+      - excess alcohol
+      - excess sodium
+      - resolution after withdrawal / lifestyle modification
+    fingerprint_findings:
+      - HTN refractory until offending agent stopped
+    textbook_presentation: >-
+      Patient with HTN attributable to medications, drugs, alcohol, or
+      lifestyle factors; resolution after withdrawal or modification.
+    evidence_based_diagnosis:
+      - test_name: Medication review and lifestyle assessment
+        citation: Stern Ch.23
+    treatment_classes:
+      - withdraw or substitute offending agent
+      - DASH diet, sodium restriction, alcohol moderation, weight loss
+    notes: ""
+  - name: Coarctation of the aorta
+    role: other
+    icd10:
+      - Q25.1
+    pivotal_features_supporting:
+      - young adult or child with HTN
+      - upper-extremity HTN with reduced lower-extremity BP
+      - radiofemoral pulse delay
+      - rib notching on chest film
+    fingerprint_findings:
+      - HTN with upper-lower extremity BP gradient
+    textbook_presentation: >-
+      Young patient with HTN, upper-extremity hypertension exceeding
+      lower-extremity BP, radiofemoral delay, and rib notching;
+      echo / MRA confirm.
+    evidence_based_diagnosis:
+      - test_name: Four-extremity blood-pressure measurements
+        citation: Stern Ch.23
+      - test_name: Echocardiogram + MR or CT angiography of aorta
+        citation: Stern Ch.23
+    treatment_classes:
+      - surgical / endovascular repair (procedural)
+    notes: ""
+  - name: Hypertension in pregnancy / preeclampsia / eclampsia
+    role: active_must_not_miss
+    icd10:
+      - O14.90
+      - O15.9
+    pivotal_features_supporting:
+      - new HTN at >= 20 weeks gestation
+      - proteinuria
+      - edema, headache, visual changes
+      - elevated transaminases, low platelets, hemolysis (HELLP)
+      - seizure (eclampsia)
+    fingerprint_findings:
+      - HTN + proteinuria + new-onset edema in third trimester
+    textbook_presentation: >-
+      Pregnant or postpartum woman with HTN, proteinuria, and
+      end-organ features; eclampsia is preeclampsia plus seizure.
+    evidence_based_diagnosis:
+      - test_name: BP measurements + urinalysis + CBC + LFT + creatinine
+        citation: Stern Ch.23
+    treatment_classes:
+      - magnesium sulfate (seizure prophylaxis / treatment)
+      - labetalol or hydralazine or nifedipine
+      - delivery (definitive)
+    notes: Cross-reference obstetric care guidelines.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Confirm hypertension with multiple measurements (office, ambulatory, home).
+    rationale: Avoid white-coat misclassification.
+    branches:
+      - condition: SBP > 180 or DBP > 120 with target-organ damage
+        action: escalate
+        escalation_reason: Hypertensive emergency — IV therapy and admission.
+      - condition: SBP > 180 or DBP > 120 without target-organ damage
+        action: confirm
+        target_diagnosis: Hypertensive urgency
+      - condition: Sustained elevation by ABPM or home monitoring
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Ch.23 prose
+  - step_num: 2
+    description: Step 2 — Routine workup for newly diagnosed HTN — basic labs, urinalysis, ECG, lipid panel, fasting glucose.
+    rationale: Identifies CKD, target-organ damage, and CV risk.
+    branches:
+      - condition: Abnormal creatinine, urinalysis, or imaging suggests renal cause
+        action: order_test
+        test_to_order: Renal-focused workup; consider renal artery duplex if features suggest renovascular
+      - condition: Routine workup unremarkable
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Ch.23 prose
+  - step_num: 3
+    description: Step 3 — Identify features warranting secondary HTN workup (resistant HTN, young / very old onset, paroxysmal symptoms, hypokalemia, sleep apnea features, Cushingoid, coarctation features, pregnancy).
+    rationale: Targeted workup yields highest-impact diagnoses.
+    branches:
+      - condition: Resistant HTN + hypokalemia
+        action: order_test
+        test_to_order: Aldosterone-to-renin ratio
+      - condition: Paroxysmal HTN + spells
+        action: order_test
+        test_to_order: Plasma metanephrines
+      - condition: Cushingoid features
+        action: order_test
+        test_to_order: 24-hour urinary cortisol or DST
+      - condition: Sleep apnea features
+        action: order_test
+        test_to_order: Polysomnography
+      - condition: Pregnancy with HTN
+        action: order_test
+        test_to_order: Preeclampsia evaluation
+      - condition: No secondary features
+        action: confirm
+        target_diagnosis: Primary (essential) hypertension
+    derived_from_figure: Stern Ch.23 prose
+  - step_num: 4
+    description: Step 4 — Initiate treatment per ACC/AHA staging — lifestyle for all; pharmacotherapy per stage and comorbidities.
+    rationale: Combination therapy is appropriate for stage 2 HTN.
+    branches:
+      - condition: Stage 1 (130-139 / 80-89) without high CV risk
+        action: treat_empiric
+        notes: Lifestyle first; pharmacologic if persistent or high risk.
+      - condition: Stage 2 (>= 140 / >= 90)
+        action: treat_empiric
+        notes: Combination pharmacotherapy + lifestyle.
+    derived_from_figure: Stern Ch.23 prose
+red_flags:
+  - name: BP > 180/120 with new neurologic deficit, chest pain, or AKI
+    description: Hypertensive emergency — IV therapy and admission.
+    severity: high
+  - name: Paroxysmal HTN with headache, palpitations, sweating
+    description: Pheochromocytoma — alpha-block before any beta-blocker.
+    severity: high
+  - name: HTN + proteinuria + visual changes / RUQ pain in pregnancy
+    description: Preeclampsia / HELLP — magnesium and obstetric care.
+    severity: high
+  - name: Resistant HTN + hypokalemia
+    description: Primary aldosteronism — ARR screen.
+    severity: high
+source_pages:
+  - 404
+  - 417
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.23 (pp. 404-417). Frame is primary-vs-secondary with explicit
+  emergency / urgency triage. Algorithm steps follow Stern's stepwise
+  approach. Must-not-miss bucket: hypertensive emergency, pheochromocytoma,
+  preeclampsia, renovascular and renal parenchymal causes.

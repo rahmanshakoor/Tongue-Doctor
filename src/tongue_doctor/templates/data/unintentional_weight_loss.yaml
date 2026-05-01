@@ -1,0 +1,430 @@
+complaint: unintentional_weight_loss
+chapter_number: 32
+chapter_title: Unintentional Weight Loss
+framework_type: categorical
+framework_categories:
+  - Malignancy (most common organic cause in older adults)
+  - GI (malabsorption, peptic ulcer, IBD, celiac, pancreatic insufficiency, dysphagia)
+  - Endocrine (hyperthyroidism, diabetes, adrenal insufficiency, pheochromocytoma)
+  - Infectious (HIV, TB, chronic infection, parasites)
+  - Psychiatric (depression, anxiety, eating disorder)
+  - Neurologic (dementia, Parkinson, ALS, dysphagia)
+  - Cardiopulmonary (advanced HF, COPD)
+  - Drug / substance (stimulants, polypharmacy, alcohol)
+  - Social / functional (food insecurity, swallowing difficulty, dental problems)
+pivotal_points:
+  - "documented weight loss (>= 5% body weight in 6-12 months is clinically significant)"
+  - duration and rate of loss
+  - associated symptoms (fever, night sweats, anorexia, dysphagia, abdominal pain, change in bowel habits, pulmonary)
+  - mood and psychiatric history
+  - dietary intake and access to food
+  - medication and substance review
+  - age and comorbidities
+  - red flags for malignancy (age > 60, smoking, family history, organ-specific symptoms)
+decision_rules:
+  - name: Significant weight loss
+    purpose: Trigger diagnostic evaluation
+    thresholds:
+      - ">= 5% body weight loss over 6-12 months"
+      - ">= 10% body weight is severe"
+    citation: Stern Ch.32
+differential:
+  - name: Occult malignancy
+    role: active_must_not_miss
+    icd10:
+      - C80.1
+    pivotal_features_supporting:
+      - age > 60
+      - smoking, alcohol, family history
+      - constitutional symptoms (fever, night sweats)
+      - organ-specific symptoms (cough, dysphagia, hematochezia, hematuria, lymphadenopathy)
+      - lab abnormalities (anemia, elevated alkaline phosphatase or calcium, abnormal CBC)
+      - palpable mass
+    fingerprint_findings:
+      - unexplained weight loss + age > 60 + anemia or elevated inflammatory markers
+    textbook_presentation: >-
+      Older patient with documented weight loss, often with subtle
+      organ-specific symptoms or lab abnormalities; targeted workup
+      and age-appropriate cancer screening.
+    evidence_based_diagnosis:
+      - test_name: Targeted history + exam
+        citation: Stern Ch.32
+      - test_name: CBC + comprehensive metabolic panel + LDH + LFTs + urinalysis + age-appropriate cancer screening
+        citation: Stern Ch.32
+      - test_name: Imaging (CT chest / abdomen / pelvis when localized symptoms or unexplained constitutional symptoms)
+        citation: Stern Ch.32
+      - test_name: Endoscopy / colonoscopy when GI features
+        citation: Stern Ch.32
+    treatment_classes:
+      - oncology referral
+    notes: Up to 25-30% of organic weight loss is from malignancy in older adults.
+  - name: Hyperthyroidism
+    role: active_must_not_miss
+    icd10:
+      - E05.90
+    pivotal_features_supporting:
+      - heat intolerance
+      - tremor, palpitations
+      - increased appetite with weight loss
+      - tachycardia, atrial fibrillation
+      - suppressed TSH with elevated free T4 / T3
+    fingerprint_findings:
+      - weight loss + tachycardia + suppressed TSH
+    textbook_presentation: >-
+      Patient with weight loss, increased appetite, tremor,
+      tachycardia, heat intolerance, and suppressed TSH; Graves
+      disease, toxic nodule, or thyroiditis.
+    evidence_based_diagnosis:
+      - test_name: Serum TSH + free T4 / T3
+        citation: Stern Ch.32 / Ch.18
+      - test_name: TSH receptor antibody / radioactive iodine uptake (etiology)
+        citation: Stern Ch.32
+    treatment_classes:
+      - antithyroid drug (methimazole, propylthiouracil)
+      - radioactive iodine (selected)
+      - thyroidectomy (selected)
+      - beta-blocker (symptomatic)
+    notes: ""
+  - name: Diabetes (poorly controlled or new-onset Type 1)
+    role: active_must_not_miss
+    icd10:
+      - E11.9
+      - E10.9
+    pivotal_features_supporting:
+      - polyuria, polydipsia
+      - weight loss despite increased appetite
+      - hyperglycemia
+    fingerprint_findings:
+      - weight loss + polyuria + hyperglycemia
+    textbook_presentation: >-
+      Patient with hyperglycemia presenting with weight loss; classic
+      Type 1 presentation in young patients with rapid loss; cross-reference
+      Stern Ch.12.
+    evidence_based_diagnosis:
+      - test_name: Plasma glucose + HbA1c
+        citation: Stern Ch.12
+    treatment_classes:
+      - lifestyle modification
+      - oral hypoglycemic agent
+      - insulin therapy
+    notes: Cross-reference Stern Ch.12.
+  - name: Depression / psychiatric (major depression, anxiety)
+    role: leading
+    icd10:
+      - F32.9
+    pivotal_features_supporting:
+      - anhedonia, low mood
+      - sleep / appetite change
+      - guilt, hopelessness
+      - elevated PHQ-9
+      - associated psychiatric history
+    fingerprint_findings:
+      - weight loss with anhedonia and depressed mood
+    textbook_presentation: >-
+      Patient with weight loss attributable to depression with
+      anhedonia, sleep disturbance, and decreased interest; PHQ-9
+      quantifies severity.
+    evidence_based_diagnosis:
+      - test_name: PHQ-9
+        citation: Stern Ch.32 / Ch.18
+    treatment_classes:
+      - SSRI / SNRI
+      - cognitive behavioral therapy
+      - psychotherapy
+    notes: Always assess suicidality.
+  - name: Eating disorder (anorexia nervosa, bulimia nervosa, ARFID)
+    role: active_must_not_miss
+    icd10:
+      - F50.00
+      - F50.2
+    pivotal_features_supporting:
+      - distorted body image
+      - restrictive eating or binge / purge
+      - amenorrhea
+      - electrolyte derangements (hypokalemia, alkalosis)
+      - bradycardia, hypothermia, low BP
+    fingerprint_findings:
+      - low BMI + amenorrhea + body image distortion
+    textbook_presentation: >-
+      Adolescent or young adult (often female) with severe weight
+      loss, restrictive eating, distorted body image, and medical
+      sequelae (bradycardia, hypothermia, electrolyte derangement).
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment + CBC + electrolytes + ECG
+        citation: Stern Ch.32
+    treatment_classes:
+      - multidisciplinary care (psychiatric, nutritional, medical)
+      - SSRI (selected — bulimia)
+      - hospitalization (severe medical instability — refeeding monitoring)
+    notes: Refeeding syndrome — monitor and replete phosphate, magnesium, thiamine.
+  - name: HIV / chronic infection (TB, fungal, parasitic)
+    role: active_must_not_miss
+    icd10:
+      - B20
+      - A15.9
+    pivotal_features_supporting:
+      - HIV risk factors
+      - exposure history
+      - chronic fevers, night sweats
+      - lymphadenopathy
+      - chronic cough
+      - abnormal CBC, elevated inflammatory markers
+    fingerprint_findings:
+      - weight loss + chronic fever + night sweats + risk exposure
+    textbook_presentation: >-
+      Patient with constitutional symptoms suggestive of chronic
+      infection; HIV testing, TB screening, and targeted infectious
+      workup; cross-reference Stern Ch.5 / Ch.10.
+    evidence_based_diagnosis:
+      - test_name: HIV antigen/antibody + CD4 count + viral load
+        citation: Stern Ch.5
+      - test_name: Tuberculin / IGRA + chest imaging + sputum studies
+        citation: Stern Ch.10
+    treatment_classes:
+      - pathogen-specific therapy
+    notes: ""
+  - name: Malabsorption / GI causes (celiac, IBD, pancreatic insufficiency, peptic ulcer)
+    role: active_most_common
+    icd10:
+      - K90.9
+      - K50.90
+      - K86.81
+    pivotal_features_supporting:
+      - chronic diarrhea
+      - steatorrhea (pancreatic insufficiency)
+      - bloating, abdominal pain
+      - iron-deficiency anemia
+      - elevated inflammatory markers
+      - positive celiac serology
+    fingerprint_findings:
+      - chronic diarrhea + steatorrhea + iron-deficiency anemia
+    textbook_presentation: >-
+      Patient with chronic diarrhea, malabsorption, and weight loss;
+      celiac, IBD, pancreatic insufficiency, or chronic peptic ulcer.
+    evidence_based_diagnosis:
+      - test_name: Tissue transglutaminase IgA + total IgA (celiac)
+        citation: Stern Ch.32
+      - test_name: Stool elastase (pancreatic insufficiency)
+        citation: Stern Ch.32
+      - test_name: Colonoscopy / endoscopy with biopsy
+        citation: Stern Ch.32
+    treatment_classes:
+      - gluten-free diet (celiac)
+      - pancreatic enzyme replacement
+      - aminosalicylate / immunosuppressant / biologic (IBD)
+    notes: ""
+  - name: Adrenal insufficiency
+    role: active_must_not_miss
+    icd10:
+      - E27.40
+    pivotal_features_supporting:
+      - fatigue, weakness, weight loss
+      - hyponatremia, hyperkalemia
+      - hypotension / orthostasis
+      - hyperpigmentation (primary)
+    fingerprint_findings:
+      - weight loss + hyperpigmentation + hyponatremia + hyperkalemia
+    textbook_presentation: >-
+      Patient with adrenal insufficiency presenting with weight loss,
+      fatigue, hyponatremia, hyperkalemia, hyperpigmentation; ACTH
+      stim confirms; cross-reference Stern Ch.18.
+    evidence_based_diagnosis:
+      - test_name: 8 AM cortisol + ACTH + ACTH stim test
+        citation: Stern Ch.18
+    treatment_classes:
+      - glucocorticoid replacement
+      - mineralocorticoid replacement (primary)
+    notes: Cross-reference Stern Ch.18.
+  - name: Cognitive / neurologic causes (dementia, Parkinson, ALS, stroke)
+    role: active_most_common
+    icd10:
+      - G30.9
+      - G20
+      - G12.21
+    pivotal_features_supporting:
+      - dementia or neurodegenerative disease
+      - dysphagia
+      - dependency for feeding
+      - reduced food intake
+      - older adult
+    fingerprint_findings:
+      - weight loss in patient with advanced dementia and dysphagia
+    textbook_presentation: >-
+      Patient with neurodegenerative disease, dysphagia, or feeding
+      dependency presenting with progressive weight loss.
+    evidence_based_diagnosis:
+      - test_name: Cognitive assessment + swallow evaluation
+        citation: Stern Ch.32
+    treatment_classes:
+      - speech therapy / swallow rehab
+      - dietary modification / supplementation
+      - feeding tube (advanced cases — controversial in dementia)
+    notes: Goals-of-care discussions are central in advanced dementia.
+  - name: Cardiopulmonary cachexia (advanced HF, COPD)
+    role: active_most_common
+    icd10:
+      - I50.9
+      - J44.9
+    pivotal_features_supporting:
+      - end-stage heart failure or COPD
+      - exertional limitation
+      - muscle wasting
+      - elevated inflammatory cytokines
+    fingerprint_findings:
+      - cachexia in patient with end-stage HF or COPD
+    textbook_presentation: >-
+      Patient with end-stage heart failure or COPD presenting with
+      progressive cachexia driven by inflammatory cytokines and
+      reduced intake.
+    evidence_based_diagnosis:
+      - test_name: Disease-specific assessment (echocardiogram, PFTs, BNP)
+        citation: Stern Ch.32
+    treatment_classes:
+      - guideline-directed disease-specific therapy
+      - nutritional support
+      - palliative care discussions
+    notes: ""
+  - name: Substance use / drug-induced (stimulants, alcohol, polypharmacy)
+    role: active_most_common
+    icd10:
+      - F19.10
+    pivotal_features_supporting:
+      - stimulant (cocaine, methamphetamine, amphetamine prescribed for ADHD) use
+      - alcohol use disorder
+      - polypharmacy with anorectic effects
+      - resolution after withdrawal
+    fingerprint_findings:
+      - weight loss in patient with substance use or ADHD medication
+    textbook_presentation: >-
+      Patient with weight loss attributable to substance use or
+      anorectic medication; review and modify.
+    evidence_based_diagnosis:
+      - test_name: Substance / medication review
+        citation: Stern Ch.32
+    treatment_classes:
+      - withdraw or substitute
+      - substance-use disorder treatment
+    notes: ""
+  - name: Social / functional weight loss (food insecurity, dental problems, swallowing difficulty)
+    role: active_most_common
+    icd10:
+      - R63.4
+    pivotal_features_supporting:
+      - older adult living alone
+      - functional decline
+      - dental issues (poor dentition, ill-fitting dentures)
+      - dysphagia
+      - food insecurity / poverty
+    fingerprint_findings:
+      - weight loss in older adult with poor dentition and food insecurity
+    textbook_presentation: >-
+      Older adult with functional or social barriers to adequate
+      intake; targeted social work, dental care, and swallow
+      evaluation.
+    evidence_based_diagnosis:
+      - test_name: Social work assessment + dental evaluation + swallow study
+        citation: Stern Ch.32
+    treatment_classes:
+      - nutritional supplementation
+      - social services referral
+      - dental treatment
+      - speech / swallow therapy
+    notes: ""
+  - name: Adrenal cortical carcinoma / pheochromocytoma / other rare endocrine causes
+    role: other
+    icd10:
+      - C74.00
+      - D35.00
+    pivotal_features_supporting:
+      - paroxysmal HTN (pheochromocytoma)
+      - virilization or feminization (adrenocortical carcinoma)
+      - imaging finding of adrenal mass
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Rare endocrine causes detected on biochemical and imaging
+      workup; cross-reference Stern Ch.23 and endocrinology.
+    evidence_based_diagnosis:
+      - test_name: Plasma metanephrines + adrenal imaging
+        citation: Stern Ch.23
+    treatment_classes:
+      - oncology / endocrinology referral
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Confirm weight loss is genuine and significant (>= 5% in 6-12 months); document on serial measurements.
+    rationale: Self-report unreliable.
+    branches:
+      - condition: Confirmed clinically significant weight loss
+        action: next_step
+        target_step: 2
+      - condition: Not significant or factitious
+        action: order_test
+        test_to_order: Reassure with serial monitoring; rule out reporting issue
+    derived_from_figure: Stern Ch.32 prose
+  - step_num: 2
+    description: Step 2 — Targeted history (organ-specific symptoms, mood, dietary intake, social context, medications, substance use).
+    rationale: Yield from focused history is high.
+    branches:
+      - condition: Organ-specific symptoms
+        action: order_test
+        test_to_order: Targeted workup per system
+      - condition: Mood / psychiatric features
+        action: order_test
+        test_to_order: PHQ-9 + screening for eating disorder
+      - condition: Substance / medication-related
+        action: confirm
+        target_diagnosis: Substance use / drug-induced (stimulants, alcohol, polypharmacy)
+      - condition: Social / functional
+        action: confirm
+        target_diagnosis: Social / functional weight loss (food insecurity, dental problems, swallowing difficulty)
+      - condition: No clear leading hypothesis
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Ch.32 prose
+  - step_num: 3
+    description: Step 3 — Initial labs and imaging (CBC, CMP, LFTs, glucose, TSH, urinalysis, ESR / CRP, fecal occult blood, age-appropriate cancer screening, CXR).
+    rationale: Yields broad detection of systemic disease.
+    branches:
+      - condition: Abnormal initial workup
+        action: order_test
+        test_to_order: Targeted follow-up imaging / endoscopy / specialist referral
+      - condition: Initial workup unremarkable
+        action: next_step
+        target_step: 4
+    derived_from_figure: Stern Ch.32 prose
+  - step_num: 4
+    description: Step 4 — Reassess in 3-6 months with continued surveillance; expand workup as new features emerge.
+    rationale: Many cases never identify a single cause; serial reassessment is the standard.
+    branches:
+      - condition: New features or progressive loss
+        action: order_test
+        test_to_order: Expanded workup (CT chest / abdomen / pelvis, additional endocrine testing)
+      - condition: Stable with no new features
+        action: reassess
+        target_step: 1
+    derived_from_figure: Stern Ch.32 prose
+red_flags:
+  - name: Weight loss + new lymphadenopathy / mass / GI bleeding / hematuria / smoking history
+    description: Possible malignancy — targeted imaging and endoscopy.
+    severity: high
+  - name: Weight loss + fever + night sweats
+    description: Lymphoma, TB, HIV, endocarditis — infectious / oncologic workup.
+    severity: high
+  - name: Severe weight loss with bradycardia / hypothermia / electrolyte derangement
+    description: Anorexia nervosa with medical instability — admit for refeeding monitoring.
+    severity: high
+  - name: Weight loss + hyperpigmentation + hypotension + hyponatremia + hyperkalemia
+    description: Adrenal insufficiency — empiric hydrocortisone.
+    severity: high
+source_pages:
+  - 574
+  - 599
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.32 (pp. 574-599). Frame is categorical (organic vs.
+  psychiatric vs. social). Algorithm prioritizes detailed history and
+  basic workup before broad imaging. Must-not-miss: malignancy,
+  hyperthyroidism, diabetes, adrenal insufficiency, eating disorder
+  with medical instability, chronic infection.

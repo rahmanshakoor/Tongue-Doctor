@@ -1,0 +1,377 @@
+complaint: sore_throat
+chapter_number: 30
+chapter_title: Sore Throat
+framework_type: categorical
+framework_categories:
+  - Viral pharyngitis (most common)
+  - Bacterial pharyngitis (group A strep, gonococcal, diphtheria, mycoplasma)
+  - Mononucleosis (EBV, CMV)
+  - Acute HIV (acute retroviral syndrome)
+  - Suppurative complications / deep neck-space infection (peritonsillar abscess, retropharyngeal abscess, Lemierre)
+  - Epiglottitis / supraglottitis
+  - Non-infectious (GERD, post-nasal drip, environmental, malignancy, thyroiditis)
+pivotal_points:
+  - airway compromise (drooling, stridor, tripod position, voice change → epiglottitis)
+  - severity / asymmetry (peritonsillar abscess — uvular deviation, trismus, "hot potato" voice)
+  - duration (acute < 14 d; persistent > 14 d expand differential)
+  - exposures (sick contacts, oral / receptive oral sex, recent dental work, IV drug use)
+  - immune status
+  - associated symptoms (fever, lymphadenopathy, hepatosplenomegaly, rash, conjunctivitis, joint pain)
+decision_rules:
+  - name: Centor criteria (modified McIsaac)
+    purpose: Identify likelihood of group A strep pharyngitis to guide testing / treatment
+    inputs:
+      - tonsillar exudate
+      - tender anterior cervical lymphadenopathy
+      - fever > 38 C
+      - absence of cough
+      - age (3-14 +1, 15-44 0, >= 45 -1)
+    thresholds:
+      - "0-1 = unlikely; no testing or treatment"
+      - "2-3 = test (rapid antigen / NAAT); treat if positive"
+      - "4-5 = high probability; consider empiric treatment per local practice"
+    citation: Stern Ch.30
+differential:
+  - name: Viral pharyngitis
+    role: leading
+    icd10:
+      - J02.9
+    pivotal_features_supporting:
+      - sore throat with cough, rhinorrhea, conjunctivitis, hoarseness
+      - low-grade fever
+      - no exudate or only mild
+      - self-limited
+    fingerprint_findings:
+      - cough + rhinorrhea + conjunctivitis with sore throat
+    textbook_presentation: >-
+      Mild self-limited sore throat with URI symptoms (cough,
+      rhinorrhea, conjunctivitis, hoarseness); antibiotic not
+      indicated.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment (no testing required for typical cases)
+        citation: Stern Ch.30
+    treatment_classes:
+      - supportive care (analgesic, hydration, throat lozenge)
+    notes: ""
+  - name: Group A streptococcal (GAS) pharyngitis
+    role: active_must_not_miss
+    icd10:
+      - J02.0
+    pivotal_features_supporting:
+      - sudden sore throat
+      - tonsillar exudate
+      - tender anterior cervical lymphadenopathy
+      - fever > 38 C
+      - absence of cough
+      - palatal petechiae, scarlatiniform rash
+      - elevated Centor score
+    fingerprint_findings:
+      - exudate + tender cervical adenopathy + no cough + fever (Centor 4)
+    textbook_presentation: >-
+      Acute sore throat with high fever, exudates, tender cervical
+      adenopathy, and absence of cough; rapid antigen / NAAT confirms.
+    evidence_based_diagnosis:
+      - test_name: Rapid antigen detection test
+        sensitivity: 0.85
+        specificity: 0.95
+        citation: Stern Ch.30
+      - test_name: Throat culture or NAAT
+        sensitivity: 0.95
+        specificity: 0.95
+        note: Confirmatory when rapid test negative.
+        citation: Stern Ch.30
+    treatment_classes:
+      - antibiotic (penicillin / amoxicillin first-line; macrolide / clindamycin in allergy)
+      - analgesic
+    notes: Treatment prevents rheumatic fever (low risk in adults but standard of care).
+  - name: Mononucleosis (EBV)
+    role: active_most_common
+    icd10:
+      - B27.90
+    pivotal_features_supporting:
+      - severe sore throat
+      - tonsillar exudates
+      - fever
+      - posterior cervical / generalized lymphadenopathy
+      - hepatosplenomegaly
+      - atypical lymphocytosis
+      - heterophile or EBV antibodies
+      - adolescent or young adult
+    fingerprint_findings:
+      - exudative pharyngitis + posterior cervical adenopathy + atypical lymphocytes
+    textbook_presentation: >-
+      Adolescent or young adult with severe pharyngitis, fever,
+      lymphadenopathy, splenomegaly, and atypical lymphocytosis;
+      heterophile (Monospot) or EBV serology confirms.
+    evidence_based_diagnosis:
+      - test_name: Heterophile antibody (Monospot)
+        sensitivity: 0.85
+        specificity: 0.95
+        note: Lower sensitivity in young children; repeat in 1 week if negative early.
+        citation: Stern Ch.30
+      - test_name: EBV viral capsid antigen IgM
+        citation: Stern Ch.30
+      - test_name: CBC with differential (atypical lymphocytes)
+        citation: Stern Ch.30
+    treatment_classes:
+      - supportive care
+      - corticosteroid (selected severe airway compromise)
+    notes: Avoid contact sports for 4-6 weeks (splenic rupture risk). Avoid amoxicillin (rash).
+  - name: Acute HIV (acute retroviral syndrome)
+    role: active_must_not_miss
+    icd10:
+      - B20
+    pivotal_features_supporting:
+      - mononucleosis-like illness
+      - high-risk exposure 2-4 weeks prior
+      - fever, pharyngitis, lymphadenopathy, rash, oral ulcers
+      - high HIV viral load with negative or indeterminate antibody
+    fingerprint_findings:
+      - mononucleosis-like illness with high-risk HIV exposure
+    textbook_presentation: >-
+      Adult with mononucleosis-like illness 2-4 weeks after high-risk
+      exposure; cross-reference Stern Ch.5.
+    evidence_based_diagnosis:
+      - test_name: 4th-generation HIV antigen/antibody combination
+        citation: Stern Ch.5
+      - test_name: HIV-1 NAT (RNA viral load) — for window-period detection
+        citation: Stern Ch.5
+    treatment_classes:
+      - antiretroviral therapy
+    notes: Cross-reference Stern Ch.5.
+  - name: Peritonsillar abscess
+    role: active_must_not_miss
+    icd10:
+      - J36
+    pivotal_features_supporting:
+      - severe unilateral throat pain
+      - 'hot potato or muffled voice'
+      - trismus
+      - uvular deviation
+      - bulging of soft palate
+      - fever
+    fingerprint_findings:
+      - uvular deviation + trismus + muffled voice
+    textbook_presentation: >-
+      Severe unilateral throat pain with trismus, muffled voice, uvular
+      deviation, and a bulging tonsillar pillar; imaging confirms
+      abscess.
+    evidence_based_diagnosis:
+      - test_name: Clinical exam + neck CT or ultrasound
+        citation: Stern Ch.30
+    treatment_classes:
+      - antibiotic
+      - drainage (needle aspiration or incision — procedural)
+      - corticosteroid (selected adjunct)
+    notes: ""
+  - name: Retropharyngeal / parapharyngeal abscess
+    role: active_must_not_miss
+    icd10:
+      - J39.0
+    pivotal_features_supporting:
+      - neck stiffness / extension limitation
+      - difficulty swallowing
+      - drooling
+      - high fever
+      - widened prevertebral space on lateral neck radiograph
+      - confirmed by CT neck
+    fingerprint_findings:
+      - dysphagia + neck stiffness + widened prevertebral space
+    textbook_presentation: >-
+      Patient with severe sore throat, neck stiffness, dysphagia,
+      drooling, and toxic appearance; CT neck identifies abscess.
+    evidence_based_diagnosis:
+      - test_name: CT neck with contrast
+        citation: Stern Ch.30
+    treatment_classes:
+      - intravenous antibiotic
+      - surgical drainage (procedural)
+    notes: ""
+  - name: Epiglottitis / supraglottitis
+    role: active_must_not_miss
+    icd10:
+      - J05.10
+    pivotal_features_supporting:
+      - rapid-onset severe sore throat
+      - drooling, dysphagia, tripod position
+      - stridor
+      - 'thumb sign on lateral neck radiograph'
+      - fever, toxic appearance
+    fingerprint_findings:
+      - drooling + tripod position + stridor with severe sore throat
+    textbook_presentation: >-
+      Rapid-onset severe sore throat with drooling, tripod position,
+      and impending airway compromise; secure airway first; do not
+      examine throat aggressively.
+    evidence_based_diagnosis:
+      - test_name: Lateral soft-tissue neck radiograph (thumb sign)
+        citation: Stern Ch.30
+      - test_name: Direct laryngoscopy in controlled setting (gold standard)
+        citation: Stern Ch.30
+    treatment_classes:
+      - intravenous antibiotic
+      - corticosteroid (selected adjunct)
+    notes: Airway management is procedural and immediate.
+  - name: Lemierre syndrome (jugular vein septic thrombophlebitis from oropharyngeal infection)
+    role: active_must_not_miss
+    icd10:
+      - I80.0
+    pivotal_features_supporting:
+      - recent oropharyngeal infection
+      - persistent fever
+      - lateral neck pain / swelling
+      - septic pulmonary emboli
+      - Fusobacterium necrophorum bacteremia
+    fingerprint_findings:
+      - persistent fever + neck pain + septic emboli after pharyngitis
+    textbook_presentation: >-
+      Young adult with persistent fever and neck pain after sore
+      throat, septic pulmonary emboli, and positive blood cultures
+      for Fusobacterium.
+    evidence_based_diagnosis:
+      - test_name: Neck ultrasound / CT venogram
+        citation: Stern Ch.30
+      - test_name: Blood cultures
+        citation: Stern Ch.30
+    treatment_classes:
+      - antibiotic (anaerobic coverage — beta-lactam-beta-lactamase or carbapenem; metronidazole)
+      - anticoagulant (selected — controversial)
+    notes: ""
+  - name: Gonococcal pharyngitis
+    role: active_most_common
+    icd10:
+      - A54.5
+    pivotal_features_supporting:
+      - receptive oral sex
+      - sore throat
+      - tonsillar exudates (variable)
+      - positive NAAT for Neisseria gonorrhoeae
+    fingerprint_findings:
+      - sore throat in patient with high-risk oral sexual exposure
+    textbook_presentation: >-
+      Patient with risk factors for STIs and pharyngeal infection;
+      NAAT swab confirms; partner notification.
+    evidence_based_diagnosis:
+      - test_name: Pharyngeal NAAT for gonorrhea + chlamydia
+        citation: Stern Ch.30
+    treatment_classes:
+      - antibiotic (per CDC dual-therapy guidance)
+    notes: ""
+  - name: Diphtheria
+    role: active_must_not_miss
+    icd10:
+      - A36.0
+    pivotal_features_supporting:
+      - inadequate immunization
+      - travel to endemic region
+      - pseudomembrane on tonsils / pharynx
+      - bull-neck appearance
+      - cardiac / neurologic complications
+    fingerprint_findings:
+      - thick adherent grey pseudomembrane in unvaccinated patient
+    textbook_presentation: >-
+      Severe pharyngitis with characteristic adherent grey
+      pseudomembrane and systemic toxicity in inadequately immunized
+      patient.
+    evidence_based_diagnosis:
+      - test_name: Throat culture (special media)
+        citation: Stern Ch.30
+    treatment_classes:
+      - antitoxin
+      - antibiotic (erythromycin / penicillin)
+    notes: Public-health reportable.
+  - name: Non-infectious sore throat (GERD, post-nasal drip, environmental, malignancy, thyroiditis, smoking)
+    role: other
+    icd10:
+      - J02.9
+    pivotal_features_supporting:
+      - persistent sore throat without infectious features
+      - GERD symptoms
+      - voice changes (laryngeal disease)
+      - smoking, alcohol, age (head/neck malignancy risk)
+      - thyroid pain (thyroiditis)
+    fingerprint_findings:
+      - chronic sore throat in older smoker / drinker
+    textbook_presentation: >-
+      Persistent sore throat without infectious features; consider
+      reflux, malignancy, thyroid pathology, or environmental
+      irritants.
+    evidence_based_diagnosis:
+      - test_name: Targeted workup per leading suspicion (laryngoscopy, thyroid function, imaging)
+        citation: Stern Ch.30
+    treatment_classes:
+      - PPI (GERD)
+      - smoking cessation
+      - ENT referral (suspected malignancy)
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Screen for airway compromise / deep-space infection / Lemierre features.
+    rationale: Time-critical recognition.
+    branches:
+      - condition: Drooling / stridor / tripod position / muffled voice
+        action: escalate
+        escalation_reason: Epiglottitis or peritonsillar / retropharyngeal abscess — airway management + IV antibiotics + imaging.
+      - condition: Persistent fever + neck pain after pharyngitis
+        action: order_test
+        test_to_order: Neck imaging + blood cultures (Lemierre)
+      - condition: No emergent features
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Ch.30 prose
+  - step_num: 2
+    description: Step 2 — Apply Centor criteria to estimate GAS pharyngitis probability.
+    rationale: Stern Ch.30 — directs testing and antibiotic decision.
+    branches:
+      - condition: Centor 0-1
+        action: confirm
+        target_diagnosis: Viral pharyngitis
+      - condition: Centor 2-3
+        action: order_test
+        test_to_order: Rapid antigen detection or NAAT for group A strep
+      - condition: Centor 4+
+        action: treat_empiric
+        notes: Empiric antibiotic per local practice; rapid test or culture for confirmation.
+    derived_from_figure: Stern Ch.30 prose
+  - step_num: 3
+    description: Step 3 — Atypical / persistent features → expand differential.
+    rationale: Mono, acute HIV, gonococcal, diphtheria, malignancy.
+    branches:
+      - condition: Mono features (posterior adenopathy, splenomegaly, atypical lymphocytes)
+        action: order_test
+        test_to_order: Heterophile + EBV serology
+      - condition: High-risk HIV exposure
+        action: order_test
+        test_to_order: 4th-generation HIV antigen/antibody + HIV-1 NAT
+      - condition: Receptive oral sex risk
+        action: order_test
+        test_to_order: Pharyngeal NAAT for gonorrhea + chlamydia
+      - condition: Persistent / chronic sore throat in older smoker
+        action: order_test
+        test_to_order: ENT referral + laryngoscopy
+    derived_from_figure: Stern Ch.30 prose
+red_flags:
+  - name: Drooling + stridor + tripod position
+    description: Epiglottitis — secure airway; IV antibiotics; do NOT examine throat aggressively.
+    severity: high
+  - name: Trismus + uvular deviation + muffled voice
+    description: Peritonsillar abscess — drainage + antibiotic.
+    severity: high
+  - name: Persistent fever + neck pain after pharyngitis
+    description: Lemierre syndrome — anaerobic-directed antibiotics; imaging for jugular thrombophlebitis.
+    severity: high
+  - name: Mononucleosis-like illness with high-risk HIV exposure
+    description: Acute retroviral syndrome — 4th-gen HIV plus NAT.
+    severity: high
+source_pages:
+  - 534
+  - 543
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.30 (pp. 534-543). Frame is categorical (viral / bacterial /
+  EBV / acute HIV / deep-space infection / non-infectious). Algorithm
+  steps screen airway emergencies first, then apply Centor for GAS
+  triage, then expand for atypical features. Must-not-miss bucket:
+  epiglottitis, deep-space abscess, Lemierre, acute HIV, diphtheria.

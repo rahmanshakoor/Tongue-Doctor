@@ -1,0 +1,363 @@
+complaint: dysuria
+chapter_number: 16
+chapter_title: Dysuria
+framework_type: anatomical
+framework_categories:
+  - Lower urinary tract (uncomplicated cystitis, complicated cystitis, urethritis)
+  - Upper urinary tract (pyelonephritis)
+  - Prostatic (acute or chronic prostatitis)
+  - Vaginal / vulvar (vaginitis, atrophic vaginitis, dermatologic)
+  - Sexually transmitted infections
+  - Non-infectious (interstitial cystitis, bladder cancer, foreign body, drug-induced)
+pivotal_points:
+  - sex (vagina-proximate symptoms in women shift toward vaginitis / STI)
+  - sexual activity and partners
+  - presence of upper-tract features (flank pain, fever, CVA tenderness, nausea, vomiting)
+  - presence of complicating factors (pregnancy, diabetes, immunosuppression, indwelling catheter, recent instrumentation, structural urologic abnormality, stones, men with dysuria, recurrent UTI)
+  - duration of symptoms
+  - medication review (cyclophosphamide, ketamine, NSAID-related cystitis)
+decision_rules:
+  - name: Probability of UTI from history alone
+    purpose: Identify women with high pretest probability who can be empirically treated without cultures
+    inputs:
+      - dysuria
+      - urinary frequency
+      - absence of vaginal discharge or irritation
+      - hematuria
+    thresholds:
+      - "if all 4 present, probability of UTI > 90% — empiric treatment reasonable without urinalysis or culture"
+    citation: Stern Ch.16
+  - name: Complicated UTI criteria
+    purpose: Identify when culture, longer therapy, and possibly imaging are required
+    inputs:
+      - male sex
+      - pregnancy
+      - diabetes
+      - immunosuppression
+      - indwelling catheter
+      - recent urologic instrumentation
+      - stones
+      - structural / functional urologic abnormalities
+      - recurrent UTI
+      - hospital-acquired UTI
+    citation: Stern Ch.16
+differential:
+  - name: Acute uncomplicated cystitis
+    role: leading
+    icd10:
+      - N30.00
+    pivotal_features_supporting:
+      - dysuria, urinary frequency, urgency
+      - suprapubic discomfort
+      - absence of fever or flank pain
+      - pyuria on urinalysis
+      - positive leukocyte esterase / nitrites
+    fingerprint_findings:
+      - dysuria + frequency + suprapubic pain in non-pregnant adult woman
+    textbook_presentation: >-
+      Healthy non-pregnant woman with dysuria, urinary frequency, and
+      suprapubic discomfort without fever or flank pain; urinalysis
+      shows pyuria; routine culture not required for first uncomplicated
+      episode.
+    evidence_based_diagnosis:
+      - test_name: Urinalysis (leukocyte esterase + nitrites)
+        sensitivity: 0.75
+        specificity: 0.82
+        citation: Stern Ch.16
+      - test_name: Urine culture
+        note: Reserved for treatment failure, recurrent UTI, complicated cases.
+        citation: Stern Ch.16
+    treatment_classes:
+      - antibiotic (per local resistance patterns)
+      - urinary analgesic (selected severe symptoms)
+    notes: ""
+  - name: Pyelonephritis (acute upper-tract infection)
+    role: active_must_not_miss
+    icd10:
+      - N10
+    pivotal_features_supporting:
+      - fever, chills
+      - flank pain
+      - costovertebral-angle tenderness
+      - nausea / vomiting
+      - elevated WBC
+      - bacteriuria + pyuria
+    fingerprint_findings:
+      - fever + CVA tenderness + pyuria
+    textbook_presentation: >-
+      Patient with dysuria, fever, flank pain, CVA tenderness, and
+      systemic symptoms; urine culture identifies the organism;
+      pregnancy or sepsis warrants admission.
+    evidence_based_diagnosis:
+      - test_name: Urinalysis + urine culture (pre-antibiotic)
+        citation: Stern Ch.16
+      - test_name: CT abdomen / pelvis (when complicated or refractory)
+        note: Identifies obstructing stone, abscess, or emphysematous pyelonephritis.
+        citation: Stern Ch.16
+      - test_name: Blood cultures (when sepsis features present)
+        citation: Stern Ch.16
+    treatment_classes:
+      - antibiotic (oral or IV per severity and local resistance)
+      - intravenous fluid replacement
+      - source control (relieve obstruction in obstructive pyelonephritis)
+    notes: Obstructive pyelonephritis requires emergent decompression (procedural).
+  - name: Sepsis from urinary source (urosepsis)
+    role: active_must_not_miss
+    icd10:
+      - A41.9
+    pivotal_features_supporting:
+      - fever, hypotension, tachycardia
+      - mental status change
+      - elevated lactate
+      - urinary source on history / urinalysis
+      - obstruction or recent instrumentation
+    fingerprint_findings:
+      - septic shock with positive urine culture and obstructive uropathy
+    textbook_presentation: >-
+      Severe systemic inflammatory response with hypotension and
+      lactic acidosis from urinary source; obstruction (stone, tumor,
+      stricture) requires immediate decompression.
+    evidence_based_diagnosis:
+      - test_name: Sepsis bundle (lactate, blood cultures, urine culture, CBC, BMP)
+        citation: Stern Ch.16
+      - test_name: CT abdomen / pelvis
+        note: Identifies obstruction or perinephric abscess.
+        citation: Stern Ch.16
+    treatment_classes:
+      - intravenous fluid replacement
+      - vasopressor (when shock)
+      - empiric broad-spectrum antibiotic
+    notes: Source control is critical when obstruction present.
+  - name: Acute bacterial prostatitis
+    role: active_must_not_miss
+    icd10:
+      - N41.0
+    pivotal_features_supporting:
+      - male sex
+      - dysuria + perineal / lower-back pain
+      - fever, chills
+      - tender boggy prostate on rectal exam (do NOT massage)
+      - bacteriuria
+    fingerprint_findings:
+      - tender prostate + fever + dysuria in male
+    textbook_presentation: >-
+      Male with acute dysuria, perineal pain, fever, and a markedly
+      tender prostate on rectal exam; urinalysis shows pyuria; admit
+      for IV antibiotics if systemic features.
+    evidence_based_diagnosis:
+      - test_name: Urinalysis + urine culture
+        citation: Stern Ch.16
+      - test_name: Blood cultures (when systemic features present)
+        citation: Stern Ch.16
+    treatment_classes:
+      - antibiotic (extended course, prostate-penetrating agents)
+    notes: Avoid prostate massage in acute prostatitis (bacteremia risk).
+  - name: Urethritis (gonococcal or non-gonococcal — chlamydia, mycoplasma, trichomonas)
+    role: active_most_common
+    icd10:
+      - N34.1
+    pivotal_features_supporting:
+      - sexually active patient
+      - urethral discharge
+      - dysuria without typical UTI frequency
+      - new partner / multiple partners
+      - exposure history
+    fingerprint_findings:
+      - urethral discharge with new sexual exposure
+    textbook_presentation: >-
+      Sexually active patient with dysuria and urethral discharge;
+      gonococcal infection typically purulent, chlamydial often watery
+      or scant.
+    evidence_based_diagnosis:
+      - test_name: NAAT for Neisseria gonorrhoeae and Chlamydia trachomatis (urine or urethral / vaginal swab)
+        sensitivity: 0.95
+        specificity: 0.99
+        citation: Stern Ch.16
+      - test_name: Trichomonas vaginalis NAAT (when discharge or risk factors)
+        citation: Stern Ch.16
+    treatment_classes:
+      - antibiotic (dual coverage for gonorrhea + chlamydia per CDC guidelines)
+    notes: Treat partner; report to public health per local requirements.
+  - name: Vaginitis (bacterial vaginosis, candidiasis, trichomoniasis, atrophic)
+    role: active_most_common
+    icd10:
+      - N76.0
+      - N76.1
+      - B37.3
+      - A59.01
+    pivotal_features_supporting:
+      - vaginal discharge / odor / pruritus
+      - external (vulvar) burning during urination
+      - postmenopausal status (atrophic)
+      - characteristic discharge (white curd → candidiasis; thin grey with fishy odor → BV; frothy yellow → trich)
+    fingerprint_findings:
+      - external burning during urination + vaginal discharge
+    textbook_presentation: >-
+      Woman with dysuria related to external burning of urine on
+      inflamed vulva, with vaginal symptoms (discharge, odor, pruritus)
+      identifying the underlying vaginitis or atrophic process.
+    evidence_based_diagnosis:
+      - test_name: Pelvic exam with vaginal pH and microscopy
+        note: BV pH > 4.5 with clue cells; candidiasis with hyphae; trich with motile flagellates.
+        citation: Stern Ch.16
+      - test_name: NAAT for trichomonas, BV, candida (when available)
+        citation: Stern Ch.16
+    treatment_classes:
+      - antifungal (candidiasis)
+      - metronidazole (BV, trichomoniasis)
+      - vaginal estrogen (atrophic vaginitis)
+    notes: ""
+  - name: Interstitial cystitis / bladder pain syndrome
+    role: other
+    icd10:
+      - N30.10
+    pivotal_features_supporting:
+      - chronic pelvic pain
+      - urinary frequency
+      - urgency
+      - absence of infection on repeated cultures
+      - bladder pain that worsens with filling and improves after voiding
+    fingerprint_findings:
+      - chronic pelvic pain with urinary frequency and negative cultures
+    textbook_presentation: >-
+      Chronic pelvic / suprapubic pain with urinary frequency and
+      urgency without identifiable infection; cystoscopy may reveal
+      Hunner ulcers in some patients.
+    evidence_based_diagnosis:
+      - test_name: Multiple negative urine cultures despite ongoing symptoms
+        citation: Stern Ch.16
+      - test_name: Cystoscopy (selected refractory cases)
+        citation: Stern Ch.16
+    treatment_classes:
+      - dietary modification (avoid bladder irritants)
+      - pentosan polysulfate
+      - tricyclic antidepressant (low-dose)
+      - intravesical therapy (selected cases)
+    notes: ""
+  - name: Bladder cancer or urothelial malignancy
+    role: active_must_not_miss
+    icd10:
+      - C67.9
+    pivotal_features_supporting:
+      - painless gross hematuria (or hematuria with dysuria)
+      - older age
+      - smoking history
+      - exposure to aromatic amines (industrial dyes, rubber, painting)
+      - recurrent or persistent dysuria with hematuria
+    fingerprint_findings:
+      - painless gross hematuria in older smoker
+    textbook_presentation: >-
+      Older smoker with gross or microscopic hematuria, possibly with
+      dysuria; cystoscopy and urine cytology identify; cross-reference
+      Stern Ch.21 (Hematuria).
+    evidence_based_diagnosis:
+      - test_name: Urinalysis with microscopic hematuria
+        citation: Stern Ch.16 / Ch.21
+      - test_name: Cystoscopy + urine cytology
+        citation: Stern Ch.21
+      - test_name: CT urography
+        citation: Stern Ch.21
+    treatment_classes:
+      - intravesical chemotherapy (selected non-muscle-invasive disease)
+      - radical cystectomy (muscle-invasive — procedural)
+    notes: Cross-reference Stern Ch.21 for hematuria workup.
+  - name: Drug-induced cystitis (cyclophosphamide, ketamine, ifosfamide)
+    role: other
+    icd10:
+      - N30.40
+    pivotal_features_supporting:
+      - history of cyclophosphamide / ifosfamide chemotherapy
+      - ketamine recreational use
+      - hemorrhagic cystitis pattern
+    fingerprint_findings:
+      - hemorrhagic cystitis after cyclophosphamide
+    textbook_presentation: >-
+      Patient on inciting medication with dysuria, hematuria, and
+      possible bladder hemorrhage; mesna co-administration prevents
+      cyclophosphamide-induced cystitis.
+    evidence_based_diagnosis:
+      - test_name: Medication review and urinalysis
+        citation: Stern Ch.16
+    treatment_classes:
+      - withdrawal of offending agent
+      - mesna prophylaxis (cyclophosphamide / ifosfamide)
+      - supportive care
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Determine sex, sexual activity, and screen for upper-tract or systemic features (fever, flank pain, CVA tenderness, hypotension).
+    rationale: First triage between uncomplicated lower-tract cystitis vs. pyelonephritis vs. urethritis vs. vaginitis vs. urosepsis.
+    branches:
+      - condition: Hypotension + tachycardia + fever + urinary source
+        action: escalate
+        escalation_reason: Urosepsis — sepsis bundle + imaging for obstruction + IV antibiotics
+      - condition: Fever + flank pain + CVA tenderness
+        action: confirm
+        target_diagnosis: Pyelonephritis (acute upper-tract infection)
+      - condition: Male with perineal pain + fever + tender prostate
+        action: confirm
+        target_diagnosis: Acute bacterial prostatitis
+      - condition: Lower-tract symptoms only
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Ch.16 prose
+  - step_num: 2
+    description: Step 2 — In patients with lower-tract symptoms, screen for STI / vaginitis features.
+    rationale: Vagina-proximate or new sexual exposures shift differential.
+    branches:
+      - condition: Vaginal discharge / pruritus / odor
+        action: confirm
+        target_diagnosis: Vaginitis (bacterial vaginosis, candidiasis, trichomoniasis, atrophic)
+      - condition: Urethral discharge with new sexual exposure
+        action: order_test
+        test_to_order: NAAT for gonorrhea + chlamydia + trichomonas
+      - condition: Classic dysuria + frequency + suprapubic pain in non-pregnant woman
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Ch.16 prose
+  - step_num: 3
+    description: Step 3 — In patients with classic uncomplicated UTI presentation, perform urinalysis (or empiric treatment if probability > 90%).
+    rationale: Stern Ch.16 — high pretest probability allows empiric therapy without testing.
+    branches:
+      - condition: Uncomplicated host (non-pregnant, no comorbidities, no prior UTI)
+        action: confirm
+        target_diagnosis: Acute uncomplicated cystitis
+      - condition: Complicated host (pregnant, male, diabetes, immunosuppression, catheter, instrumentation, stones)
+        action: order_test
+        test_to_order: Urinalysis + urine culture; consider imaging when concern for obstruction
+    derived_from_figure: Stern Ch.16 prose
+  - step_num: 4
+    description: Step 4 — Persistent or recurrent dysuria after appropriate therapy → consider non-infectious causes.
+    rationale: Negative cultures with persistent symptoms shift to interstitial cystitis, malignancy, or drug-induced cystitis.
+    branches:
+      - condition: Hematuria with dysuria, especially in older smoker
+        action: order_test
+        test_to_order: Cystoscopy + urine cytology + CT urography (cross-reference Stern Ch.21)
+      - condition: Chronic pelvic pain with negative cultures
+        action: confirm
+        target_diagnosis: Interstitial cystitis / bladder pain syndrome
+      - condition: Chemotherapy or ketamine exposure
+        action: confirm
+        target_diagnosis: Drug-induced cystitis (cyclophosphamide, ketamine, ifosfamide)
+    derived_from_figure: Stern Ch.16 prose
+red_flags:
+  - name: Dysuria + hypotension + fever
+    description: Urosepsis — sepsis bundle and imaging for obstruction.
+    severity: high
+  - name: Pregnant woman with pyelonephritis
+    description: Admit for IV antibiotics — pregnancy is a complicating factor with risk of preterm labor.
+    severity: high
+  - name: Male with dysuria + tender prostate + fever
+    description: Acute bacterial prostatitis — admit for IV antibiotics if systemic features.
+    severity: high
+source_pages:
+  - 312
+  - 321
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.16 (pp. 312-321). Frame is anatomic (lower-tract vs. upper-tract
+  vs. prostatic vs. vaginal/urethral). Algorithm steps 1-4 enumerate the
+  triage path. Must-not-miss bucket: pyelonephritis, urosepsis, acute
+  prostatitis, bladder cancer presenting with hematuria + dysuria.

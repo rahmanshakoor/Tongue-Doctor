@@ -1,0 +1,383 @@
+complaint: gi_bleeding
+chapter_number: 19
+chapter_title: GI Bleeding
+framework_type: anatomical
+framework_categories:
+  - Upper GI bleed (proximal to ligament of Treitz — esophagus, stomach, duodenum)
+  - Lower GI bleed (colon, rectum, anus)
+  - Small-bowel bleed (mid-GI, between Treitz and ileocecal valve)
+  - Obscure / occult GI bleed
+pivotal_points:
+  - hemodynamic stability (hypotension, tachycardia, shock index, pre-syncope, mental status)
+  - hematemesis or coffee-ground emesis (UGIB)
+  - melena (typically UGIB; can be from proximal small bowel)
+  - hematochezia (typically LGIB; brisk UGIB also possible)
+  - prior GI bleeding history, varices, peptic ulcer, NSAIDs, alcohol use
+  - antiplatelet / anticoagulant therapy
+  - chronic liver disease (variceal bleed risk)
+  - associated weight loss / change in bowel habits (malignancy)
+decision_rules:
+  - name: Glasgow-Blatchford score
+    purpose: Pre-endoscopy risk stratification of upper GI bleeding
+    inputs:
+      - BUN, hemoglobin, systolic BP, heart rate, melena, syncope, hepatic / cardiac disease
+    thresholds:
+      - "0 = low risk; very low rebleed / mortality, may be considered for outpatient management"
+      - ">= 1 = admit for urgent endoscopy"
+    citation: Stern Ch.19
+  - name: Rockall score (post-endoscopy)
+    purpose: Predict rebleed and mortality after upper GI endoscopy
+    citation: Stern Ch.19
+  - name: AIMS65 score
+    purpose: Mortality risk in upper GI bleeding
+    inputs:
+      - Albumin < 3, INR > 1.5, Mental status altered, SBP <= 90, age > 65
+    thresholds:
+      - "score >= 2 = high mortality risk"
+    citation: Stern Ch.19
+differential:
+  - name: Peptic ulcer disease (gastric or duodenal ulcer with bleeding)
+    role: leading
+    icd10:
+      - K27.4
+    pivotal_features_supporting:
+      - melena, hematemesis, coffee-ground emesis
+      - epigastric pain
+      - NSAID or aspirin use
+      - H. pylori infection
+      - prior PUD
+    fingerprint_findings:
+      - melena + epigastric pain + NSAID use
+    textbook_presentation: >-
+      Patient with hematemesis, coffee-ground emesis, or melena and
+      epigastric pain; NSAID use, H. pylori, or smoking are risk
+      factors; endoscopy diagnostic and therapeutic.
+    evidence_based_diagnosis:
+      - test_name: Upper endoscopy (EGD)
+        sensitivity: 0.95
+        specificity: 0.99
+        note: Diagnostic and therapeutic — Forrest classification predicts rebleed.
+        citation: Stern Ch.19
+      - test_name: H. pylori testing (stool antigen, urea breath, biopsy)
+        citation: Stern Ch.19
+    treatment_classes:
+      - proton pump inhibitor (high-dose IV initially, then oral)
+      - H. pylori eradication antibiotics (when infection confirmed)
+      - withdrawal of NSAID and antiplatelet (when feasible)
+      - endoscopic hemostasis (procedural)
+    notes: Hold antiplatelet / anticoagulant after weighing thrombotic risk.
+  - name: Esophageal / gastric variceal bleed
+    role: active_must_not_miss
+    icd10:
+      - I85.01
+    pivotal_features_supporting:
+      - chronic liver disease / cirrhosis with portal hypertension
+      - hematemesis (often massive bright red)
+      - hemodynamic instability
+      - thrombocytopenia, splenomegaly, stigmata
+    fingerprint_findings:
+      - massive hematemesis in patient with cirrhosis
+    textbook_presentation: >-
+      Patient with cirrhosis presenting with massive hematemesis,
+      hypotension, and shock; emergent resuscitation, vasoactive
+      therapy, and endoscopic banding / sclerotherapy.
+    evidence_based_diagnosis:
+      - test_name: Upper endoscopy (EGD)
+        citation: Stern Ch.19
+    treatment_classes:
+      - intravenous fluid resuscitation with restrictive transfusion (hemoglobin target ~7 g/dL)
+      - vasoactive therapy (octreotide, terlipressin)
+      - prophylactic antibiotic (ceftriaxone — reduces SBP risk)
+      - endoscopic band ligation or sclerotherapy
+      - balloon tamponade (selected refractory cases — bridge to TIPS)
+      - TIPS or surgical shunt (refractory disease — procedural)
+    notes: Cross-reference Stern Ch.26.
+  - name: Mallory-Weiss tear
+    role: active_most_common
+    icd10:
+      - K22.6
+    pivotal_features_supporting:
+      - hematemesis after retching or vomiting
+      - alcohol binge
+      - bulimia
+      - usually self-limited
+    fingerprint_findings:
+      - hematemesis after retching episode
+    textbook_presentation: >-
+      Patient with hematemesis after vomiting or retching, often after
+      alcohol binge or hyperemesis; typically self-limited but may
+      require endoscopic therapy if persistent.
+    evidence_based_diagnosis:
+      - test_name: Upper endoscopy
+        citation: Stern Ch.19
+    treatment_classes:
+      - proton pump inhibitor
+      - antiemetic
+      - endoscopic hemostasis (refractory)
+    notes: ""
+  - name: Diverticular bleeding
+    role: active_most_common
+    icd10:
+      - K57.31
+    pivotal_features_supporting:
+      - painless hematochezia
+      - older age
+      - known diverticulosis
+      - typically self-limited
+    fingerprint_findings:
+      - painless hematochezia in older adult with known diverticulosis
+    textbook_presentation: >-
+      Older adult with sudden painless large-volume hematochezia,
+      often self-limited; colonoscopy localizes bleeding source after
+      stabilization.
+    evidence_based_diagnosis:
+      - test_name: Colonoscopy
+        sensitivity: 0.80
+        citation: Stern Ch.19
+      - test_name: CT angiography or tagged RBC scan (massive bleeding)
+        citation: Stern Ch.19
+    treatment_classes:
+      - intravenous fluid replacement
+      - blood transfusion (severe)
+      - endoscopic hemostasis (active bleeding source)
+      - angiographic embolization (massive uncontrolled)
+    notes: ""
+  - name: Angiodysplasia (small-bowel or colonic)
+    role: active_most_common
+    icd10:
+      - K55.21
+    pivotal_features_supporting:
+      - older adult
+      - aortic stenosis (Heyde syndrome)
+      - chronic kidney disease
+      - intermittent painless bleeding
+      - obscure-overt or occult bleeding
+    fingerprint_findings:
+      - obscure GI bleeding in older adult with aortic stenosis (Heyde)
+    textbook_presentation: >-
+      Older adult with intermittent painless GI bleeding, often
+      iron-deficiency anemia from occult loss; angiodysplasias
+      identified on capsule endoscopy or angiography.
+    evidence_based_diagnosis:
+      - test_name: Colonoscopy or upper endoscopy
+        citation: Stern Ch.19
+      - test_name: Capsule endoscopy (small-bowel angiodysplasia)
+        citation: Stern Ch.19
+      - test_name: CT angiography or tagged RBC scan (active bleeding)
+        citation: Stern Ch.19
+    treatment_classes:
+      - endoscopic ablation (argon plasma coagulation)
+      - iron replacement
+    notes: ""
+  - name: Colon cancer / polyp bleed
+    role: active_must_not_miss
+    icd10:
+      - C18.9
+    pivotal_features_supporting:
+      - chronic occult bleeding with iron-deficiency anemia
+      - change in bowel habits, weight loss
+      - older adult or family history
+      - hematochezia (left-sided lesion) or occult (right-sided)
+    fingerprint_findings:
+      - new iron-deficiency anemia in adult > 50 with change in bowel habits
+    textbook_presentation: >-
+      Patient with chronic occult bleeding, iron-deficiency anemia,
+      change in bowel habits, or weight loss; colonoscopy with biopsy
+      diagnostic.
+    evidence_based_diagnosis:
+      - test_name: Colonoscopy with biopsy
+        citation: Stern Ch.19
+      - test_name: CT abdomen / pelvis (staging)
+        citation: Stern Ch.19
+    treatment_classes:
+      - oncology referral
+      - surgical resection (procedural — primary or staging)
+    notes: ""
+  - name: Inflammatory bowel disease bleed
+    role: active_most_common
+    icd10:
+      - K51.911
+      - K50.911
+    pivotal_features_supporting:
+      - bloody diarrhea
+      - young adult onset
+      - cramping abdominal pain
+      - extraintestinal manifestations
+    fingerprint_findings:
+      - bloody diarrhea persisting > 4 weeks in young adult
+    textbook_presentation: >-
+      Young adult with chronic bloody diarrhea, abdominal pain, and
+      possibly extraintestinal manifestations; cross-reference Stern
+      Ch.3 / Ch.13.
+    evidence_based_diagnosis:
+      - test_name: Colonoscopy with biopsy
+        citation: Stern Ch.19
+      - test_name: Fecal calprotectin
+        citation: Stern Ch.13
+    treatment_classes:
+      - aminosalicylate
+      - corticosteroid (acute flare)
+      - immunomodulator
+      - biologic agent
+    notes: Cross-reference Stern Ch.3 and Ch.13.
+  - name: Hemorrhoids / anal fissure
+    role: active_most_common
+    icd10:
+      - K64.9
+      - K60.2
+    pivotal_features_supporting:
+      - bright red blood per rectum on toilet paper or coating stool
+      - constipation
+      - perianal pain (fissure)
+    fingerprint_findings:
+      - small-volume bright red blood with painful defecation (fissure) or after passage (hemorrhoids)
+    textbook_presentation: >-
+      Small-volume bright red blood per rectum; hemorrhoids painless,
+      fissure painful with sentinel skin tag; rule out more proximal
+      bleeding when bleeding is volume- or pattern-discordant.
+    evidence_based_diagnosis:
+      - test_name: Anoscopy / digital rectal exam
+        citation: Stern Ch.19
+      - test_name: Colonoscopy when alarm features or age >= 50
+        citation: Stern Ch.19
+    treatment_classes:
+      - dietary fiber and stool softener
+      - sitz baths
+      - topical analgesic / vasoconstrictor
+      - rubber-band ligation (procedural)
+    notes: Always rule out colon cancer in age-appropriate or symptomatic patients.
+  - name: Aortoenteric fistula
+    role: active_must_not_miss
+    icd10:
+      - K38.8
+    pivotal_features_supporting:
+      - prior aortic graft surgery
+      - 'herald bleed followed by massive hemorrhage'
+      - back / abdominal pain
+    fingerprint_findings:
+      - history of aortic graft + episode of GI bleeding
+    textbook_presentation: >-
+      Patient with prior aortic surgery and an unexplained GI bleed;
+      may begin with sentinel bleed and progress to exsanguinating
+      hemorrhage.
+    evidence_based_diagnosis:
+      - test_name: CT angiography of abdomen and pelvis
+        citation: Stern Ch.19
+      - test_name: Endoscopy
+        citation: Stern Ch.19
+    treatment_classes: []
+    notes: Surgical / endovascular repair is procedural and emergent.
+  - name: Meckel diverticulum (in adolescents / young adults)
+    role: other
+    icd10:
+      - Q43.0
+    pivotal_features_supporting:
+      - young patient with painless GI bleed
+      - melena or hematochezia
+      - 2% prevalence; 2 inches long; 2 feet from ileocecal valve; 2% symptomatic
+    fingerprint_findings:
+      - painless lower GI bleed in adolescent or young adult
+    textbook_presentation: >-
+      Young patient with painless GI bleed without identifiable upper
+      or colonic source; Meckel scan (technetium pertechnetate)
+      identifies ectopic gastric mucosa.
+    evidence_based_diagnosis:
+      - test_name: Technetium-99m pertechnetate scan (Meckel scan)
+        citation: Stern Ch.19
+    treatment_classes:
+      - surgical resection (procedural)
+    notes: ""
+  - name: Massive GI bleeding with hemorrhagic shock
+    role: active_must_not_miss
+    icd10:
+      - K92.2
+    pivotal_features_supporting:
+      - hypotension
+      - tachycardia
+      - mental status change
+      - elevated lactate
+      - AKI
+      - any source of GI bleed in this state
+    fingerprint_findings:
+      - hypotension + GI bleed + lactate > 4 mmol/L
+    textbook_presentation: >-
+      Patient with active GI bleeding presenting with hemorrhagic
+      shock; resuscitation, transfusion, and emergent endoscopic /
+      angiographic / surgical intervention required.
+    evidence_based_diagnosis:
+      - test_name: Type and crossmatch + serial CBC + coagulation panel + lactate
+        citation: Stern Ch.19
+    treatment_classes:
+      - intravenous fluid replacement
+      - blood product transfusion (PRBC, FFP, platelets per indication)
+      - tranexamic acid (selected mass-bleed protocols)
+      - reversal of anticoagulation (when present)
+      - emergent endoscopy / angiographic embolization / surgery
+    notes: Massive transfusion protocol when ongoing instability.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Assess hemodynamics and resuscitate.
+    rationale: Stabilization precedes localization.
+    branches:
+      - condition: Hemodynamic instability (hypotension, tachycardia, shock features)
+        action: escalate
+        escalation_reason: Massive GI bleed with shock — IV access x2, type and cross, transfusion, ICU monitoring, urgent endoscopy / IR / surgery.
+      - condition: Stable
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Ch.19 prose
+  - step_num: 2
+    description: Step 2 — Localize source by symptom pattern (hematemesis / melena = upper; hematochezia = lower; brisk UGIB can present as hematochezia in unstable patient).
+    rationale: Initial source localization triages diagnostic pathway.
+    branches:
+      - condition: Hematemesis / coffee-ground emesis / melena
+        action: order_test
+        test_to_order: Upper endoscopy (EGD); pre-endoscopy IV PPI; vasoactive + antibiotic when cirrhosis
+      - condition: Hematochezia in stable patient
+        action: order_test
+        test_to_order: Colonoscopy after bowel preparation
+      - condition: Hematochezia in unstable patient
+        action: order_test
+        test_to_order: Upper endoscopy first to exclude brisk UGIB; consider CT angiography
+    derived_from_figure: Stern Ch.19 prose
+  - step_num: 3
+    description: Step 3 — If endoscopy non-diagnostic, evaluate for small-bowel / mid-GI source.
+    rationale: Capsule endoscopy and enterography pursue obscure bleeding.
+    branches:
+      - condition: Persistent bleeding after negative EGD / colonoscopy
+        action: order_test
+        test_to_order: Capsule endoscopy or CT enterography; deep enteroscopy when source identified; CT angiography when active bleeding
+    derived_from_figure: Stern Ch.19 prose
+  - step_num: 4
+    description: Step 4 — Address risk factors and disposition (Glasgow-Blatchford for low-risk outpatient candidates; AIMS65 for mortality stratification).
+    rationale: Stratify post-resuscitation care.
+    branches:
+      - condition: Glasgow-Blatchford = 0
+        action: treat_empiric
+        notes: Consider outpatient management with rapid follow-up and PPI.
+      - condition: GBS >= 1
+        action: order_test
+        test_to_order: Admission for urgent endoscopy and risk-stratified care
+    derived_from_figure: Stern Ch.19 prose
+red_flags:
+  - name: GI bleeding with hemodynamic instability
+    description: Massive GI bleed — resuscitation + ICU + emergent endoscopy / IR / surgery.
+    severity: high
+  - name: Hematemesis in known cirrhotic patient
+    description: Variceal bleeding — vasoactive + antibiotic + emergent endoscopic banding.
+    severity: high
+  - name: GI bleeding with prior aortic graft surgery
+    description: Aortoenteric fistula until proven otherwise — emergent CTA and vascular surgery.
+    severity: high
+source_pages:
+  - 352
+  - 363
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.19 (pp. 352-363). Frame is anatomic (UGIB vs. LGIB vs. mid-GI vs.
+  obscure). Algorithm prioritizes stabilization, then source localization,
+  then disposition. Must-not-miss bucket: massive bleeding with shock,
+  variceal bleed, aortoenteric fistula, occult colon cancer presenting
+  with iron-deficiency anemia.

@@ -1,0 +1,448 @@
+complaint: dizziness
+chapter_number: 14
+chapter_title: Dizziness
+framework_type: categorical
+framework_categories:
+  - Vertigo (sense of spinning or motion)
+  - Near syncope (impending faint)
+  - Dysequilibrium (gait imbalance without spinning)
+  - Ill-defined light-headedness
+pivotal_points:
+  - patient's own description of "dizziness" (vertigo vs. near syncope vs. dysequilibrium vs. ill-defined)
+  - trigger (head movement, rolling over → BPPV; standing → orthostasis; walking → dysequilibrium)
+  - duration of each episode (seconds for BPPV; minutes for vestibular migraine; hours for Meniere; days for vestibular neuritis or central)
+  - presence of CNS symptoms (severe headache, dysarthria, diplopia, facial weakness, ataxia, dysmetria) → suggests central cause
+  - features of nystagmus (bidirectional, vertical, non-fatiguing, not suppressed by fixation → central)
+  - HINTS exam (Head Impulse, Nystagmus, Test of Skew) — sensitive bedside differentiator of central vs. peripheral
+  - associated cardiovascular, autonomic, or psychiatric symptoms
+  - medication review (antihypertensives, vestibulotoxic agents, sedatives, anticonvulsants)
+decision_rules:
+  - name: HINTS exam (Head Impulse, Nystagmus, Test of Skew)
+    purpose: Distinguish central from peripheral cause of acute vestibular syndrome
+    inputs:
+      - head impulse test (normal = central; corrective saccade = peripheral)
+      - nystagmus character (direction-changing or vertical = central; unidirectional horizontal = peripheral)
+      - test of skew (vertical misalignment = central)
+    thresholds:
+      - "any one finding suggesting central → presume central cause until proven otherwise; obtain MRI"
+    citation: Stern Ch.14
+  - name: Dix-Hallpike maneuver
+    purpose: Confirm benign paroxysmal positional vertigo (BPPV)
+    inputs:
+      - latency of nystagmus (typically 5-20 seconds)
+      - nystagmus character (rotatory / upbeating)
+      - duration < 1 minute
+      - fatigability with repeat testing
+    citation: Stern Ch.14
+differential:
+  - name: Benign paroxysmal positional vertigo (BPPV)
+    role: leading
+    icd10:
+      - H81.10
+    pivotal_features_supporting:
+      - brief vertigo (< 1 minute) triggered by head movement (rolling, looking up)
+      - no auditory symptoms
+      - positive Dix-Hallpike with rotatory upbeating nystagmus
+      - resolves with Epley maneuver
+    fingerprint_findings:
+      - brief positional vertigo with positive Dix-Hallpike
+    textbook_presentation: >-
+      Patient with brief, intense vertigo triggered by head position
+      changes (rolling over, looking up); no hearing loss or tinnitus;
+      positive Dix-Hallpike with rotatory upbeating nystagmus that fatigues.
+    evidence_based_diagnosis:
+      - test_name: Dix-Hallpike maneuver
+        sensitivity: 0.79
+        specificity: 0.75
+        citation: Stern Ch.14
+    treatment_classes:
+      - Epley canalith repositioning maneuver
+      - vestibular rehabilitation exercises
+      - antiemetic (selected severe vomiting)
+    notes: ""
+  - name: Vestibular neuritis / labyrinthitis
+    role: active_most_common
+    icd10:
+      - H81.20
+      - H83.0
+    pivotal_features_supporting:
+      - acute continuous vertigo lasting days
+      - nausea / vomiting
+      - normal hearing (vestibular neuritis) or hearing loss / tinnitus (labyrinthitis)
+      - peripheral nystagmus (unidirectional, suppressed by fixation)
+      - normal HINTS exam (peripheral pattern)
+    fingerprint_findings:
+      - continuous vertigo for days with peripheral HINTS pattern
+    textbook_presentation: >-
+      Acute continuous vertigo for days with nausea, peripheral
+      nystagmus, normal head-impulse test corrective saccade, and no
+      central neurologic findings; often follows viral illness.
+    evidence_based_diagnosis:
+      - test_name: HINTS exam (peripheral pattern)
+        sensitivity: 1.00
+        specificity: 0.95
+        note: "Combined HINTS sensitivity ~100% for stroke when central pattern present (better than early MRI)."
+        citation: Stern Ch.14
+    treatment_classes:
+      - vestibular suppressant (short-term — antihistamine, benzodiazepine, antiemetic)
+      - corticosteroid (selected cases for vestibular neuritis)
+      - vestibular rehabilitation
+    notes: ""
+  - name: Meniere disease
+    role: active_most_common
+    icd10:
+      - H81.0
+    pivotal_features_supporting:
+      - episodic vertigo lasting 20 minutes to several hours
+      - sensorineural hearing loss
+      - tinnitus
+      - aural fullness
+    fingerprint_findings:
+      - vertigo + fluctuating sensorineural hearing loss + tinnitus + aural fullness
+    textbook_presentation: >-
+      Recurrent episodic vertigo lasting hours, with fluctuating
+      sensorineural hearing loss, tinnitus, and aural fullness; episodes
+      may cluster.
+    evidence_based_diagnosis:
+      - test_name: Audiometry (low-frequency sensorineural hearing loss)
+        citation: Stern Ch.14
+      - test_name: Clinical diagnosis per Barany Society / AAO-HNS criteria
+        citation: Stern Ch.14
+    treatment_classes:
+      - dietary sodium restriction
+      - diuretic (selected cases)
+      - intratympanic corticosteroid or gentamicin (refractory)
+      - vestibular rehabilitation
+    notes: ""
+  - name: Vestibular migraine
+    role: active_most_common
+    icd10:
+      - G43.A0
+    pivotal_features_supporting:
+      - recurrent episodes lasting minutes to hours
+      - history of migraine
+      - photophobia, phonophobia, visual aura during attacks
+    fingerprint_findings:
+      - recurrent episodic vertigo with migraine features
+    textbook_presentation: >-
+      Recurrent vertigo lasting minutes to hours, often with migrainous
+      features (headache, photophobia, phonophobia, aura); may occur
+      without headache during specific episodes.
+    evidence_based_diagnosis:
+      - test_name: Barany Society / IHS clinical criteria
+        citation: Stern Ch.14
+    treatment_classes:
+      - migraine prophylactic agent (per Stern Ch.20)
+      - acute migraine therapy
+      - vestibular rehabilitation
+    notes: Cross-reference Stern Ch.20 (Headache).
+  - name: Cerebellar / brainstem stroke (must-not-miss central vertigo)
+    role: active_must_not_miss
+    icd10:
+      - I63.5
+      - I61.5
+    pivotal_features_supporting:
+      - sudden onset
+      - vascular risk factors
+      - associated CNS symptoms (dysarthria, diplopia, ataxia, weakness)
+      - central nystagmus pattern (bidirectional / vertical / non-suppressing)
+      - abnormal HINTS exam (central pattern)
+      - severe new headache
+    fingerprint_findings:
+      - acute vertigo + CNS deficit + central HINTS pattern
+    textbook_presentation: >-
+      Sudden continuous vertigo with cerebellar / brainstem signs (gait
+      ataxia, dysarthria, diplopia, weakness, dysmetria, abnormal
+      Romberg), often in patients with vascular risk factors.
+    evidence_based_diagnosis:
+      - test_name: MRI brain with diffusion-weighted imaging
+        sensitivity: 0.85
+        specificity: 0.99
+        note: Sensitivity is reduced in first 24-48 hours for small posterior-circulation infarcts; HINTS exam may be more sensitive at presentation.
+        citation: Stern Ch.14
+      - test_name: HINTS exam (central pattern)
+        note: Three-finding battery — sensitivity ~100% for stroke when fully completed.
+        citation: Stern Ch.14
+      - test_name: CT angiography head / neck
+        note: Identifies large-vessel occlusion eligible for thrombectomy.
+        citation: Stern Ch.14
+    treatment_classes:
+      - antiplatelet (when indicated)
+      - thrombolytic therapy (eligible window)
+      - blood-pressure management (etiology-dependent)
+    notes: Mechanical thrombectomy procedural and time-sensitive.
+  - name: Cerebellar hemorrhage
+    role: active_must_not_miss
+    icd10:
+      - I61.4
+    pivotal_features_supporting:
+      - sudden severe headache and vertigo
+      - rapid neurologic decline
+      - hypertension, anticoagulant use
+      - non-contrast CT shows posterior fossa hemorrhage
+    fingerprint_findings:
+      - sudden severe headache with vertigo and rapid altered consciousness
+    textbook_presentation: >-
+      Sudden severe headache with vertigo, vomiting, ataxia, and rapid
+      decline in consciousness; CT shows cerebellar / brainstem
+      hemorrhage.
+    evidence_based_diagnosis:
+      - test_name: Non-contrast CT head
+        sensitivity: 0.99
+        citation: Stern Ch.14
+    treatment_classes:
+      - reversal of anticoagulation (when present)
+      - blood-pressure control
+    notes: Surgical evacuation may be life-saving for posterior-fossa hemorrhage with brainstem compression.
+  - name: Multiple sclerosis (with vertigo as presenting symptom)
+    role: active_must_not_miss
+    icd10:
+      - G35
+    pivotal_features_supporting:
+      - young or middle-aged adult
+      - prior episodes of focal neurologic deficits
+      - new vertigo with central nystagmus or other CNS signs
+      - characteristic MRI lesions (periventricular, juxtacortical, infratentorial, spinal cord)
+    fingerprint_findings:
+      - young adult with episodic central neurologic symptoms separated in time and space
+    textbook_presentation: >-
+      Young or middle-aged adult with vertigo plus other neurologic
+      symptoms (optic neuritis, sensory deficits, weakness) over time;
+      MRI shows characteristic demyelinating lesions.
+    evidence_based_diagnosis:
+      - test_name: MRI brain and spinal cord with contrast
+        citation: Stern Ch.14
+      - test_name: CSF analysis (oligoclonal bands)
+        citation: Stern Ch.14
+    treatment_classes:
+      - corticosteroid (acute exacerbation)
+      - disease-modifying therapy (ongoing — choice per neurologist)
+    notes: ""
+  - name: Orthostatic hypotension (cause of near syncope)
+    role: active_most_common
+    icd10:
+      - I95.1
+    pivotal_features_supporting:
+      - dizziness on standing
+      - drop in systolic BP >= 20 mm Hg or diastolic BP >= 10 mm Hg within 3 minutes of standing
+      - older age, dehydration, antihypertensives, autonomic neuropathy, adrenal insufficiency, diabetes
+    fingerprint_findings:
+      - reproducible orthostatic BP drop with symptoms
+    textbook_presentation: >-
+      Patient reports near-syncope or light-headedness on standing;
+      orthostatic vital signs document significant blood-pressure drop
+      with symptom reproduction.
+    evidence_based_diagnosis:
+      - test_name: Orthostatic blood-pressure measurement (supine, 1 min standing, 3 min standing)
+        citation: Stern Ch.14
+    treatment_classes:
+      - increased fluid and salt intake
+      - compression stockings
+      - midodrine (selected refractory cases)
+      - fludrocortisone (selected refractory cases)
+      - medication review and dose reduction of offending agents
+    notes: Cross-reference Stern Ch.31 (Syncope).
+  - name: Cardiac causes of near syncope (arrhythmia, structural disease, ACS)
+    role: active_must_not_miss
+    icd10:
+      - R55
+    pivotal_features_supporting:
+      - palpitations
+      - exertional symptoms
+      - structural heart disease history
+      - cardiac risk factors
+      - abnormal ECG
+    fingerprint_findings:
+      - exertional pre-syncope with structural heart disease
+    textbook_presentation: >-
+      Patient with near-syncope or syncope with exertional triggers,
+      palpitations, structural heart disease, or cardiac risk factors
+      must be evaluated for arrhythmia or ischemia.
+    evidence_based_diagnosis:
+      - test_name: 12-lead ECG
+        citation: Stern Ch.14
+      - test_name: Echocardiogram (structural disease assessment)
+        citation: Stern Ch.14
+      - test_name: Ambulatory ECG monitoring (Holter, event recorder, loop)
+        citation: Stern Ch.14
+    treatment_classes:
+      - antiarrhythmic (per arrhythmia)
+      - antiplatelet
+      - statin
+    notes: Cross-reference Stern Ch.31 (Syncope) and Ch.9 (Chest Pain).
+  - name: Dysequilibrium from peripheral neuropathy or musculoskeletal disease
+    role: active_most_common
+    icd10:
+      - R26.81
+    pivotal_features_supporting:
+      - imbalance during walking
+      - older age
+      - peripheral neuropathy (diabetes, B12, alcohol)
+      - hip / knee arthritis or weakness
+      - vestibular hypofunction
+    fingerprint_findings:
+      - chronic gait imbalance with reduced proprioception in older adult
+    textbook_presentation: >-
+      Older adult with chronic gait imbalance and dysequilibrium
+      attributable to peripheral neuropathy, musculoskeletal weakness,
+      or vestibular hypofunction; not associated with spinning sensation.
+    evidence_based_diagnosis:
+      - test_name: Gait and balance assessment
+        citation: Stern Ch.14
+      - test_name: Peripheral neuropathy workup (B12, A1c, TSH, syphilis testing as indicated)
+        citation: Stern Ch.14
+    treatment_classes:
+      - physical therapy / vestibular rehabilitation
+      - assistive devices
+      - vitamin or hormone replacement (per identified deficiency)
+    notes: ""
+  - name: Anxiety / panic / persistent postural-perceptual dizziness (PPPD)
+    role: other
+    icd10:
+      - F41.0
+      - H81.8
+    pivotal_features_supporting:
+      - chronic ill-defined dizziness for months
+      - exacerbated by upright posture and environmental stimuli
+      - history of anxiety / panic
+      - normal exam, imaging, and audiometry
+    fingerprint_findings:
+      - chronic non-spinning dizziness exacerbated by visual / postural stimuli
+    textbook_presentation: >-
+      Chronic non-vertiginous dizziness or unsteadiness most days for >= 3
+      months, exacerbated by upright posture, motion, or complex visual
+      stimuli; often follows acute peripheral vestibular event.
+    evidence_based_diagnosis:
+      - test_name: Barany Society PPPD criteria
+        citation: Stern Ch.14
+      - test_name: Exclusion of central / peripheral / cardiac causes
+        citation: Stern Ch.14
+    treatment_classes:
+      - vestibular rehabilitation
+      - SSRI / SNRI
+      - cognitive behavioral therapy
+    notes: ""
+  - name: Medication-induced dizziness / vestibulotoxicity
+    role: active_most_common
+    icd10:
+      - T36.8X5A
+    pivotal_features_supporting:
+      - aminoglycoside, loop diuretic, salicylate, antiepileptic, sedative, anticholinergic, antihypertensive
+      - bilateral vestibular hypofunction
+      - oscillopsia with head movement
+    fingerprint_findings:
+      - bilateral vestibular hypofunction after aminoglycoside therapy
+    textbook_presentation: >-
+      Patient with imbalance, oscillopsia, or chronic dizziness after
+      exposure to vestibulotoxic medications; review of medications
+      identifies the cause.
+    evidence_based_diagnosis:
+      - test_name: Medication review
+        citation: Stern Ch.14
+      - test_name: Bedside head-thrust test (bilateral pathological in vestibulotoxicity)
+        citation: Stern Ch.14
+    treatment_classes:
+      - withdrawal of offending agent (when possible)
+      - vestibular rehabilitation
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Ask "what does it feel like when you are dizzy?" to classify as vertigo / near syncope / dysequilibrium / ill-defined.
+    rationale: Stern Fig 14-1 — the symptom classification that drives all subsequent workup.
+    branches:
+      - condition: Vertigo (spinning)
+        action: next_step
+        target_step: 2
+      - condition: Near syncope
+        action: next_step
+        target_step: 5
+      - condition: Dysequilibrium (gait imbalance)
+        action: next_step
+        target_step: 6
+      - condition: Ill-defined light-headedness
+        action: order_test
+        test_to_order: Broad evaluation — review medications, orthostatic vitals, CBC / BMP / TSH / glucose, consider psychiatric evaluation
+    derived_from_figure: Stern Fig 14-1
+  - step_num: 2
+    description: Step 2 — For vertigo, look for CNS symptoms or signs (severe headache, brainstem/cerebellar deficits, central nystagmus features, abnormal HINTS).
+    rationale: Stern Fig 14-2 — central red-flag screen.
+    branches:
+      - condition: Any central feature
+        action: escalate
+        escalation_reason: Suspect central vertigo (stroke, hemorrhage, MS, mass) — emergent MRI brain (with DWI) and neurology consultation.
+      - condition: No central features
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Fig 14-2
+  - step_num: 3
+    description: Step 3 — Characterize episode duration and trigger to classify peripheral vertigo (Fig 14-3).
+    rationale: Duration + trigger separates BPPV (brief, positional) from vestibular neuritis / labyrinthitis (continuous days) from Meniere / vestibular migraine (episodic minutes-hours).
+    branches:
+      - condition: Brief (< 1 min) and triggered by head motion
+        action: order_test
+        test_to_order: Dix-Hallpike maneuver
+      - condition: Continuous for days
+        action: next_step
+        target_step: 4
+      - condition: Episodic (minutes to hours) with auditory symptoms
+        action: confirm
+        target_diagnosis: Meniere disease
+      - condition: Episodic with migraine features
+        action: confirm
+        target_diagnosis: Vestibular migraine
+    derived_from_figure: Stern Fig 14-3
+  - step_num: 4
+    description: Step 4 — Continuous vertigo for days — perform HINTS exam to distinguish peripheral (vestibular neuritis / labyrinthitis) from central.
+    rationale: HINTS at the bedside is more sensitive for central cause than early MRI.
+    branches:
+      - condition: HINTS shows peripheral pattern
+        action: confirm
+        target_diagnosis: Vestibular neuritis / labyrinthitis
+      - condition: HINTS shows central pattern
+        action: escalate
+        escalation_reason: Acute vestibular syndrome with central HINTS — MRI brain with DWI and neurology consultation.
+    derived_from_figure: Stern Fig 14-2
+  - step_num: 5
+    description: Step 5 — For near syncope, evaluate orthostatic vitals, ECG, and cardiovascular risk.
+    rationale: Cardiac and orthostatic causes are the priority pathways.
+    branches:
+      - condition: Orthostatic BP drop with symptom reproduction
+        action: confirm
+        target_diagnosis: Orthostatic hypotension (cause of near syncope)
+      - condition: Cardiac risk factors, palpitations, exertional triggers, or abnormal ECG
+        action: order_test
+        test_to_order: ECG + echocardiogram + ambulatory monitoring; cross-reference Stern Ch.31 (Syncope)
+    derived_from_figure: Stern Fig 14-1 + Ch.31 cross-reference
+  - step_num: 6
+    description: Step 6 — For dysequilibrium, evaluate gait, peripheral neuropathy, vestibular function, and musculoskeletal causes.
+    rationale: Multifactorial in older adults — search for treatable contributors.
+    branches:
+      - condition: Peripheral neuropathy or vestibular hypofunction features
+        action: order_test
+        test_to_order: B12, A1c, TSH, gait assessment; vestibular rehab referral
+      - condition: Predominant musculoskeletal contribution
+        action: order_test
+        test_to_order: Physical therapy assessment + assistive devices
+    derived_from_figure: Stern Fig 14-1
+red_flags:
+  - name: Vertigo with new severe headache, dysarthria, diplopia, ataxia, or central HINTS pattern
+    description: Cerebellar or brainstem stroke / hemorrhage — emergent MRI and neurology consultation.
+    severity: high
+  - name: Sudden severe headache + vertigo + rapid neurologic decline
+    description: Cerebellar hemorrhage — non-contrast CT and neurosurgical evaluation.
+    severity: high
+  - name: Near syncope with structural heart disease, palpitations, or abnormal ECG
+    description: Cardiac arrhythmia or ischemia — cardiac monitoring and echo.
+    severity: high
+source_pages:
+  - 260
+  - 285
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.14 (pp. 260-285). Frame is categorical (vertigo / near syncope /
+  dysequilibrium / ill-defined). Algorithm steps follow Stern Figs 14-1
+  through 14-3. Must-not-miss bucket: central causes (stroke, hemorrhage,
+  MS, tumor) plus cardiac causes of near syncope. HINTS exam is the
+  bedside differentiator for acute vestibular syndrome.

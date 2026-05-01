@@ -1,0 +1,388 @@
+complaint: aids_hiv_infection
+chapter_number: 5
+chapter_title: AIDS/HIV Infection
+framework_type: categorical
+framework_categories:
+  - HIV screening / diagnosis
+  - Acute HIV infection (window period)
+  - Chronic HIV without AIDS-defining illness
+  - AIDS (CD4 < 200 or AIDS-defining illness)
+  - Specific AIDS-defining opportunistic infections (OIs)
+  - AIDS-defining malignancies
+pivotal_points:
+  - HIV risk factors (unprotected sex, IDU, sex work, MSM, blood-product exposure, mother-to-child transmission)
+  - acute retroviral syndrome (mononucleosis-like illness with fever, lymphadenopathy, rash, pharyngitis)
+  - CD4+ T-lymphocyte count (governs OI risk; AIDS at CD4 < 200)
+  - HIV viral load (transmission risk + treatment-response monitoring)
+  - antibody status (3rd vs. 4th-generation immunoassay; window period considerations)
+  - presence of AIDS-defining illnesses (PJP, esophageal candidiasis, CNS toxoplasmosis, cryptococcal meningitis, TB, MAC, Kaposi sarcoma, NHL, PCNSL, PML, CMV retinitis)
+  - prior or current opportunistic infection
+  - antiretroviral therapy adherence and resistance history
+decision_rules:
+  - name: CDC HIV diagnostic algorithm
+    purpose: Confirm or exclude HIV infection per current CDC laboratory testing guidance
+    inputs:
+      - HIV-1/2 antigen/antibody (4th-generation) immunoassay
+      - HIV-1/HIV-2 antibody differentiation immunoassay
+      - HIV-1 nucleic-acid test (NAT / RNA)
+    thresholds:
+      - "Initial 4th-generation immunoassay positive AND HIV-1 antibody positive on differentiation = HIV-1 infection confirmed"
+      - "4th-generation positive AND differentiation HIV-1 negative AND HIV-2 antibody positive = HIV-2 infection"
+      - "4th-generation positive AND differentiation indeterminate or negative = order HIV-1 NAT to confirm acute infection or rule out false positive"
+      - "4th-generation negative = HIV-1 and HIV-2 ruled out (in patients past the window period; repeat in 3-6 weeks if early)"
+    citation: Stern Fig 5-2 (p.89)
+  - name: AIDS-defining illness criteria
+    purpose: Establish AIDS staging
+    inputs:
+      - CD4 count < 200 cells/mcL OR
+      - Clinical category C (AIDS-defining illness)
+    citation: Stern Ch.5
+differential:
+  - name: Acute HIV infection (acute retroviral syndrome)
+    role: active_must_not_miss
+    icd10:
+      - B20
+      - Z21
+    pivotal_features_supporting:
+      - recent high-risk exposure (within ~2-4 weeks)
+      - fever, pharyngitis, lymphadenopathy, maculopapular rash, mucocutaneous ulcers
+      - leukopenia / thrombocytopenia / elevated transaminases
+      - 4th-generation immunoassay or HIV-1 NAT positive within the window
+    fingerprint_findings:
+      - very high HIV viral load (millions of copies) with negative or indeterminate antibody
+    textbook_presentation: >-
+      Mononucleosis-like illness with fever, sore throat, lymphadenopathy, rash,
+      and sometimes oral ulcers occurring 2-4 weeks after a high-risk exposure;
+      antibody testing may still be negative while NAT is strongly positive.
+    evidence_based_diagnosis:
+      - test_name: HIV-1 NAT (RNA viral load)
+        sensitivity: 1.00
+        note: Becomes detectable ~10 days post-infection — earliest reliable marker.
+        citation: Stern Fig 5-1 (p.89)
+      - test_name: 4th-generation HIV antigen/antibody immunoassay
+        note: Detects p24 antigen ~14 days post-infection; antibodies later.
+        citation: Stern Fig 5-1 (p.89)
+    treatment_classes:
+      - antiretroviral therapy (ART)
+    notes: Identifying acute HIV is time-critical — the patient is highly infectious and ART started early reduces reservoir size.
+  - name: Pneumocystis jirovecii pneumonia (PJP)
+    role: active_must_not_miss
+    icd10:
+      - B59
+    pivotal_features_supporting:
+      - HIV with CD4 < 200 cells/mcL
+      - subacute progressive dyspnea
+      - non-productive cough
+      - hypoxemia worsening with exertion
+      - elevated LDH
+      - bilateral interstitial / ground-glass infiltrates on CXR or CT
+    fingerprint_findings:
+      - profound desaturation with exertion in HIV patient with bilateral interstitial infiltrate
+    textbook_presentation: >-
+      HIV patient with CD4 < 200 presenting with subacute dry cough, exertional
+      dyspnea, hypoxemia, elevated LDH, and bilateral interstitial infiltrates.
+    evidence_based_diagnosis:
+      - test_name: Induced sputum for Pneumocystis (immunofluorescent / PCR)
+        sensitivity: 0.55
+        note: Bronchoscopy with BAL has higher sensitivity (up to 95%).
+        citation: Stern Ch.5
+      - test_name: Serum LDH
+        note: Elevated LDH supports diagnosis but is non-specific.
+        citation: Stern Ch.5
+      - test_name: HRCT chest
+        note: Ground-glass opacities support diagnosis when CXR is equivocal.
+        citation: Stern Ch.5
+    treatment_classes:
+      - antimicrobial (PJP-directed)
+      - corticosteroid (when hypoxemic)
+    notes: Empiric therapy + adjunctive corticosteroids for hypoxemia; specific drug regimens are not user-facing education content.
+  - name: Cryptococcal meningitis
+    role: active_must_not_miss
+    icd10:
+      - B45.1
+    pivotal_features_supporting:
+      - HIV with CD4 < 100
+      - subacute headache, fever, meningismus
+      - photophobia
+      - elevated opening pressure on lumbar puncture
+    fingerprint_findings:
+      - markedly elevated CSF opening pressure with positive cryptococcal antigen
+    textbook_presentation: >-
+      HIV patient with CD4 < 100 and subacute headache, fever, and confusion;
+      LP shows elevated opening pressure and positive cryptococcal antigen.
+    evidence_based_diagnosis:
+      - test_name: Serum cryptococcal antigen (CrAg)
+        sensitivity: 0.95
+        specificity: 0.97
+        citation: Stern Ch.5
+      - test_name: CSF cryptococcal antigen + India ink + culture
+        note: Definitive; opening pressure measurement guides therapy.
+        citation: Stern Ch.5
+    treatment_classes:
+      - antifungal (cryptococcal regimen)
+      - antiretroviral therapy (delayed start to avoid IRIS in CNS disease)
+    notes: Repeated lumbar drainage may be required for elevated intracranial pressure.
+  - name: CNS toxoplasmosis
+    role: active_must_not_miss
+    icd10:
+      - B58.2
+    pivotal_features_supporting:
+      - HIV with CD4 < 100
+      - focal neurologic deficit
+      - headache, seizure, altered mental status
+      - multiple ring-enhancing lesions on MRI
+      - positive Toxoplasma serology
+    fingerprint_findings:
+      - multiple ring-enhancing brain lesions with positive Toxoplasma IgG
+    textbook_presentation: >-
+      HIV patient with CD4 < 100 presenting with focal deficits, headache, or
+      seizure and multiple ring-enhancing lesions on MRI; positive Toxoplasma
+      IgG supports the diagnosis.
+    evidence_based_diagnosis:
+      - test_name: MRI brain with contrast
+        note: Multiple ring-enhancing lesions with predilection for basal ganglia.
+        citation: Stern Ch.5
+      - test_name: Toxoplasma serology (IgG)
+        note: Negative serology makes toxoplasmosis very unlikely.
+        citation: Stern Ch.5
+      - test_name: Empiric trial of toxoplasmosis therapy with imaging follow-up
+        note: Lack of response in 2 weeks suggests primary CNS lymphoma.
+        citation: Stern Ch.5
+    treatment_classes:
+      - antiprotozoal therapy (toxoplasmosis regimen)
+      - antiretroviral therapy
+    notes: Differentiation from primary CNS lymphoma may require empiric trial response or biopsy.
+  - name: Tuberculosis (active)
+    role: active_must_not_miss
+    icd10:
+      - A15.9
+    pivotal_features_supporting:
+      - chronic cough > 2-3 weeks, weight loss, night sweats
+      - HIV (any CD4 — risk persists)
+      - exposure history (endemic country, close contact)
+      - cavitary or upper-lobe infiltrates (typical)
+      - atypical / miliary patterns (advanced HIV)
+    fingerprint_findings:
+      - cavitary upper-lobe infiltrate or miliary pattern in HIV patient
+    textbook_presentation: >-
+      Chronic cough, weight loss, fever, and night sweats with characteristic
+      pulmonary findings; HIV patients may show atypical patterns including
+      lower-lobe involvement and miliary disease.
+    evidence_based_diagnosis:
+      - test_name: Sputum AFB smear and culture
+        sensitivity: 0.65
+        note: Sensitivity reduced in HIV with low CD4; molecular tests (Xpert MTB/RIF) are highly sensitive.
+        citation: Stern Ch.5
+      - test_name: Xpert MTB/RIF (sputum nucleic acid amplification)
+        sensitivity: 0.88
+        specificity: 0.99
+        citation: Stern Ch.5
+      - test_name: Interferon-gamma release assay (IGRA) or tuberculin skin test
+        note: Detects latent TB; less sensitive in advanced HIV.
+        citation: Stern Ch.5
+    treatment_classes:
+      - antitubercular therapy (RIPE regimen)
+      - antiretroviral therapy (timing balanced against IRIS risk)
+    notes: ""
+  - name: Disseminated Mycobacterium avium complex (MAC)
+    role: active_must_not_miss
+    icd10:
+      - A31.0
+    pivotal_features_supporting:
+      - HIV with CD4 < 50
+      - fever, night sweats, weight loss
+      - cytopenias
+      - elevated alkaline phosphatase
+      - hepatosplenomegaly, lymphadenopathy
+    fingerprint_findings:
+      - persistent fevers with elevated alkaline phosphatase and CD4 < 50
+    textbook_presentation: >-
+      HIV patient with CD4 < 50 and chronic fevers, night sweats, weight loss,
+      pancytopenia, and elevated alkaline phosphatase; mycobacterial blood
+      culture confirms.
+    evidence_based_diagnosis:
+      - test_name: Mycobacterial blood culture (AFB blood culture)
+        sensitivity: 0.85
+        citation: Stern Ch.5
+    treatment_classes:
+      - antimycobacterial therapy (macrolide-based regimen)
+      - antiretroviral therapy
+    notes: ""
+  - name: AIDS-defining malignancies (Kaposi sarcoma, non-Hodgkin lymphoma, primary CNS lymphoma, cervical cancer)
+    role: active_must_not_miss
+    icd10:
+      - C46.9
+      - C85.99
+      - C71.9
+      - C53.9
+    pivotal_features_supporting:
+      - HIV with low CD4
+      - HHV-8 (Kaposi)
+      - EBV (NHL, PCNSL)
+      - HPV (cervical)
+      - cutaneous violaceous plaques (Kaposi)
+      - solitary periventricular ring-enhancing lesion (PCNSL)
+      - rapidly enlarging lymphadenopathy or systemic B symptoms
+    fingerprint_findings:
+      - violaceous nodules on the skin or palate (Kaposi sarcoma)
+      - solitary periventricular ring-enhancing lesion in HIV (PCNSL)
+    textbook_presentation: >-
+      HIV-associated malignancies — Kaposi sarcoma (cutaneous violaceous
+      lesions), NHL (rapidly progressing nodal disease), primary CNS lymphoma
+      (solitary periventricular lesion), and cervical cancer — all benefit
+      from ART plus oncologic therapy.
+    evidence_based_diagnosis:
+      - test_name: Tissue biopsy (definitive)
+        note: Required for confirmation and grading.
+        citation: Stern Ch.5
+      - test_name: PET / CT or MRI staging
+        citation: Stern Ch.5
+    treatment_classes:
+      - antiretroviral therapy
+      - chemotherapy (oncologic referral)
+      - radiation therapy (when indicated)
+    notes: ""
+  - name: Esophageal candidiasis
+    role: active_most_common
+    icd10:
+      - B37.81
+    pivotal_features_supporting:
+      - HIV with CD4 < 200
+      - dysphagia or odynophagia
+      - oropharyngeal thrush
+    fingerprint_findings:
+      - odynophagia + thrush in HIV patient with low CD4
+    textbook_presentation: >-
+      HIV patient with low CD4 presenting with painful swallowing and
+      oropharyngeal candidiasis; empiric antifungal trial confirms when classic.
+    evidence_based_diagnosis:
+      - test_name: Empiric antifungal trial with response
+        note: Persistent symptoms warrant upper endoscopy to rule out CMV / HSV / NHL involvement.
+        citation: Stern Ch.5
+    treatment_classes:
+      - antifungal (azole class)
+    notes: ""
+  - name: HIV (chronic, asymptomatic or non-AIDS-defining)
+    role: leading
+    icd10:
+      - B20
+      - Z21
+    pivotal_features_supporting:
+      - confirmed HIV antibody positive
+      - any CD4 count
+      - viral load ranging from undetectable (on ART) to high
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Patient living with HIV without an AIDS-defining illness; management
+      centers on ART adherence, OI prophylaxis based on CD4, and monitoring
+      for comorbidities.
+    evidence_based_diagnosis:
+      - test_name: HIV-1/2 antigen/antibody combination immunoassay
+        sensitivity: 1.00
+        specificity: 1.00
+        note: Highly sensitive and specific outside the window period.
+        citation: Stern Fig 5-1 (p.89)
+      - test_name: HIV-1 viral load (RNA)
+        note: Quantifies disease activity and ART response.
+        citation: Stern Ch.5
+      - test_name: CD4+ T-lymphocyte count
+        note: Stages immune competence; OI prophylaxis triggered at CD4 < 200 (PJP), < 100 (toxo), < 50 (MAC).
+        citation: Stern Ch.5
+    treatment_classes:
+      - antiretroviral therapy (combination ART per current guidelines)
+      - opportunistic-infection prophylaxis (per CD4 thresholds)
+      - vaccinations per immunocompromised guidelines
+    notes: U=U (undetectable = untransmittable) drives counseling and partner notification practice.
+  - name: Other opportunistic infections (CMV retinitis, PML, cryptosporidiosis, microsporidiosis)
+    role: other
+    icd10:
+      - B25.9
+      - A81.2
+      - A07.2
+    pivotal_features_supporting:
+      - HIV with very low CD4 (< 50 typically)
+      - end-organ symptoms (visual changes, focal neurologic deficits, chronic diarrhea)
+    fingerprint_findings: []
+    textbook_presentation: >-
+      End-stage HIV with CD4 < 50 presenting with end-organ disease — visual
+      change (CMV retinitis), progressive multifocal leukoencephalopathy (PML),
+      or chronic diarrhea (cryptosporidiosis, microsporidiosis).
+    evidence_based_diagnosis:
+      - test_name: Targeted testing per syndrome (dilated fundus exam for CMV, MRI brain + JC virus PCR for PML, stool ova / parasites and special stains for chronic diarrhea)
+        citation: Stern Ch.5
+    treatment_classes:
+      - pathogen-specific antimicrobial therapy
+      - antiretroviral therapy (immune reconstitution)
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Order 4th-generation HIV-1/2 antigen/antibody combination immunoassay as the initial screen.
+    rationale: CDC-recommended initial test (Stern Fig 5-2).
+    branches:
+      - condition: Negative
+        action: confirm
+        target_diagnosis: Not currently HIV-infected (repeat in 3-6 weeks if recent exposure suspected)
+      - condition: Positive
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Fig 5-2
+  - step_num: 2
+    description: Step 2 — Reflex to HIV-1/HIV-2 antibody differentiation immunoassay.
+    rationale: Distinguishes HIV-1 from HIV-2 and identifies indeterminate results requiring NAT.
+    branches:
+      - condition: HIV-1 antibody positive (HIV-2 negative)
+        action: confirm
+        target_diagnosis: HIV (chronic, asymptomatic or non-AIDS-defining)
+      - condition: HIV-2 antibody positive (HIV-1 negative or non-reactive)
+        action: confirm
+        target_diagnosis: HIV-2 infection
+        notes: Coordinate with infectious-disease specialist for HIV-2-specific therapy.
+      - condition: HIV-1 indeterminate or both negative
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Fig 5-2
+  - step_num: 3
+    description: Step 3 — Order HIV-1 nucleic-acid test (NAT / RNA viral load) to resolve discrepancy.
+    rationale: NAT distinguishes acute HIV (positive NAT, antibody negative) from false-positive screens.
+    branches:
+      - condition: HIV-1 NAT positive
+        action: confirm
+        target_diagnosis: Acute HIV infection (acute retroviral syndrome)
+      - condition: HIV-1 NAT negative
+        action: confirm
+        target_diagnosis: False-positive screen (HIV negative)
+    derived_from_figure: Stern Fig 5-2
+  - step_num: 4
+    description: After diagnosis, stage with CD4 count and HIV viral load; screen for OIs based on CD4 thresholds.
+    rationale: CD4 governs OI risk and prophylaxis.
+    branches:
+      - condition: CD4 < 200 (or AIDS-defining illness present)
+        action: order_test
+        test_to_order: PJP prophylaxis screening; opportunistic-infection screening (TB, MAC at very low CD4); evaluation for AIDS-defining illnesses
+      - condition: CD4 >= 200
+        action: order_test
+        test_to_order: Standard chronic HIV care monitoring (CD4 + viral load + comorbidity screening)
+    derived_from_figure: Stern Ch.5 prose
+red_flags:
+  - name: Acute febrile illness in patient with recent high-risk exposure
+    description: Suspect acute HIV — order both 4th-gen immunoassay AND HIV NAT.
+    severity: high
+  - name: Subacute hypoxemic pneumonia in HIV patient with CD4 < 200
+    description: PJP until proven otherwise — start empiric therapy while diagnostics pending.
+    severity: high
+  - name: Headache + altered mental status in HIV patient with CD4 < 100
+    description: Cryptococcal meningitis or CNS toxoplasmosis — emergent LP and brain imaging.
+    severity: high
+source_pages:
+  - 86
+  - 117
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.5 (pp. 86-117). Frame is categorical (HIV diagnosis + staging +
+  per-OI workup) rather than a single chief-complaint differential. Algorithm
+  follows the CDC HIV testing protocol (Fig 5-2). Must-not-miss bucket includes
+  acute HIV (transmission risk, ART benefit), PJP, cryptococcal meningitis,
+  CNS toxoplasmosis, TB, MAC, and AIDS-defining malignancies. Detailed
+  per-pathogen management is not user-facing education content.

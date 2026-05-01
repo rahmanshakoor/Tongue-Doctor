@@ -1,0 +1,438 @@
+complaint: joint_pain
+chapter_number: 27
+chapter_title: Joint Pain
+framework_type: categorical
+framework_categories:
+  - Inflammatory vs. non-inflammatory (morning stiffness, warmth, swelling, ESR / CRP)
+  - Monoarticular (septic arthritis, crystal disease, hemarthrosis, trauma, OA)
+  - Oligoarticular (spondyloarthropathy, reactive, Lyme)
+  - Polyarticular (rheumatoid arthritis, SLE, viral, psoriatic, OA, fibromyalgia)
+  - Articular vs. periarticular vs. referred
+pivotal_points:
+  - acute (< 6 weeks) vs. chronic
+  - inflammatory features (morning stiffness > 60 min, swelling, warmth, redness, elevated ESR / CRP)
+  - distribution (mono / oligo / poly; symmetric vs. asymmetric; small vs. large joints)
+  - extra-articular features (rash, fever, oral ulcers, eye involvement, GI / GU symptoms)
+  - mechanical features (loading-related pain → OA; locking → meniscus / loose body)
+  - associated systemic / autoimmune disease
+decision_rules:
+  - name: Septic-arthritis triage
+    purpose: Identify monoarticular pain warranting emergent arthrocentesis
+    inputs:
+      - acute monoarticular swelling, warmth, severe pain
+      - fever
+      - inability to bear weight
+      - elevated WBC / ESR / CRP
+      - bacteremia source
+    citation: Stern Ch.27
+  - name: 2010 ACR/EULAR rheumatoid arthritis criteria
+    purpose: Diagnose RA early
+    inputs:
+      - joint involvement pattern (small / large; symmetric / asymmetric; count)
+      - serology (RF, anti-CCP)
+      - acute-phase reactants
+      - duration of symptoms
+    thresholds:
+      - "score >= 6 / 10 = definite RA"
+    citation: Stern Ch.27
+differential:
+  - name: Septic arthritis (bacterial)
+    role: active_must_not_miss
+    icd10:
+      - M00.9
+    pivotal_features_supporting:
+      - acute monoarticular pain + swelling + warmth
+      - fever
+      - inability to bear weight
+      - elevated WBC + ESR + CRP
+      - synovial fluid WBC > 50000 with > 90% PMNs
+      - positive Gram stain / culture
+    fingerprint_findings:
+      - hot, swollen, exquisitely tender single joint with synovial WBC > 50000 PMN-predominant
+    textbook_presentation: >-
+      Acute monoarticular swelling with warmth, severe pain, fever,
+      and elevated inflammatory markers; arthrocentesis is diagnostic
+      and therapeutic (drainage).
+    evidence_based_diagnosis:
+      - test_name: Arthrocentesis with cell count, Gram stain, culture, crystals
+        citation: Stern Ch.27
+      - test_name: Blood cultures
+        citation: Stern Ch.27
+      - test_name: Imaging (X-ray, ultrasound, MRI as needed)
+        citation: Stern Ch.27
+    treatment_classes:
+      - empiric antibiotic (gram-positive coverage including MRSA; gram-negative coverage in selected hosts)
+      - joint drainage (procedural — arthroscopic or arthrocentesis)
+    notes: Time-critical; delays cause cartilage destruction.
+  - name: Crystal arthropathy — gout
+    role: leading
+    icd10:
+      - M10.9
+    pivotal_features_supporting:
+      - acute monoarticular swelling (often podagra — first MTP joint)
+      - hyperuricemia history (or elevated)
+      - alcohol, diuretics, organ meats triggers
+      - tophi (chronic)
+      - negatively birefringent needle-shaped urate crystals on synovial fluid microscopy
+    fingerprint_findings:
+      - acute podagra + negatively birefringent needle crystals
+    textbook_presentation: >-
+      Acute monoarticular pain with redness, swelling, and warmth,
+      often nocturnal onset; classic location is first MTP (podagra).
+    evidence_based_diagnosis:
+      - test_name: Synovial fluid microscopy (negatively birefringent needle-shaped crystals)
+        sensitivity: 0.85
+        specificity: 0.99
+        citation: Stern Ch.27
+      - test_name: Serum uric acid (often normal during acute attack)
+        citation: Stern Ch.27
+    treatment_classes:
+      - NSAID
+      - colchicine
+      - corticosteroid (oral or intra-articular)
+      - urate-lowering therapy (allopurinol or febuxostat — chronic prevention)
+    notes: Avoid initiating allopurinol during an acute attack.
+  - name: Crystal arthropathy — pseudogout (CPPD)
+    role: active_most_common
+    icd10:
+      - M11.20
+    pivotal_features_supporting:
+      - acute monoarticular swelling (often knee, wrist)
+      - older age
+      - chondrocalcinosis on radiograph
+      - rhomboid weakly positively birefringent crystals on synovial fluid microscopy
+    fingerprint_findings:
+      - chondrocalcinosis + positively birefringent rhomboid crystals
+    textbook_presentation: >-
+      Acute monoarticular swelling typically in older adults, with
+      chondrocalcinosis on radiograph and characteristic crystals.
+    evidence_based_diagnosis:
+      - test_name: Synovial fluid microscopy + radiograph (chondrocalcinosis)
+        citation: Stern Ch.27
+    treatment_classes:
+      - NSAID
+      - colchicine
+      - corticosteroid (oral or intra-articular)
+    notes: Underlying conditions — hyperparathyroidism, hemochromatosis, hypothyroidism, hypomagnesemia.
+  - name: Rheumatoid arthritis
+    role: active_most_common
+    icd10:
+      - M06.9
+    pivotal_features_supporting:
+      - symmetric polyarticular involvement (especially small joints — MCP, PIP, wrists, MTPs)
+      - morning stiffness > 1 hour
+      - duration > 6 weeks
+      - elevated rheumatoid factor and anti-CCP
+      - elevated ESR / CRP
+      - extra-articular features (nodules, ILD, vasculitis, Felty syndrome)
+    fingerprint_findings:
+      - symmetric small-joint synovitis + morning stiffness > 1h + positive anti-CCP
+    textbook_presentation: >-
+      Insidious symmetric polyarticular synovitis with prolonged
+      morning stiffness, often in MCP / PIP / wrist; positive RF / CCP
+      and elevated inflammatory markers.
+    evidence_based_diagnosis:
+      - test_name: Rheumatoid factor + anti-CCP
+        sensitivity: 0.70
+        specificity: 0.95
+        note: Anti-CCP more specific than RF.
+        citation: Stern Ch.27
+      - test_name: ESR + CRP
+        citation: Stern Ch.27
+      - test_name: Hand and foot radiographs (joint erosions in established disease)
+        citation: Stern Ch.27
+    treatment_classes:
+      - NSAID
+      - corticosteroid (bridge / acute flare)
+      - methotrexate (DMARD anchor)
+      - hydroxychloroquine, sulfasalazine, leflunomide (DMARDs)
+      - biologic agent (anti-TNF, IL-6, JAK inhibitor — when conventional DMARDs insufficient)
+    notes: ""
+  - name: Osteoarthritis
+    role: leading
+    icd10:
+      - M19.90
+    pivotal_features_supporting:
+      - chronic non-inflammatory pain
+      - worse with activity, better with rest
+      - brief morning stiffness (< 30 min)
+      - bony enlargement (Heberden / Bouchard nodes)
+      - knee crepitus
+      - normal inflammatory markers
+      - imaging shows joint-space narrowing and osteophytes
+    fingerprint_findings:
+      - DIP-predominant Heberden nodes with mechanical pain pattern
+    textbook_presentation: >-
+      Chronic mechanical joint pain with bony enlargement and minimal
+      inflammatory features; commonly knees, hips, hands; imaging
+      shows joint-space narrowing and osteophytes.
+    evidence_based_diagnosis:
+      - test_name: Plain radiographs (joint-space narrowing, osteophytes, subchondral cysts / sclerosis)
+        citation: Stern Ch.27
+      - test_name: Clinical assessment (no labs typically required)
+        citation: Stern Ch.27
+    treatment_classes:
+      - acetaminophen
+      - topical NSAID
+      - oral NSAID
+      - intra-articular corticosteroid
+      - physical therapy / weight loss
+      - duloxetine (selected chronic pain)
+      - joint replacement (procedural — refractory disease)
+    notes: ""
+  - name: Spondyloarthritis (axial — ankylosing spondylitis; peripheral — psoriatic, reactive, IBD-associated)
+    role: active_most_common
+    icd10:
+      - M45.9
+    pivotal_features_supporting:
+      - inflammatory back pain (improves with activity, worse at rest)
+      - asymmetric oligoarthritis
+      - enthesitis, dactylitis
+      - associated psoriasis, IBD, uveitis, recent infection
+      - HLA-B27 positive
+    fingerprint_findings:
+      - inflammatory back pain in young adult + sacroiliitis + HLA-B27
+    textbook_presentation: >-
+      Young patient with inflammatory back pain and asymmetric
+      peripheral arthritis, often with extraarticular features
+      (psoriasis, IBD, uveitis); imaging shows sacroiliitis.
+    evidence_based_diagnosis:
+      - test_name: Plain pelvic / sacroiliac radiographs and MRI sacroiliac joints
+        citation: Stern Ch.27 / Ch.7
+      - test_name: HLA-B27 typing
+        citation: Stern Ch.27
+    treatment_classes:
+      - NSAID
+      - TNF-alpha inhibitor
+      - IL-17 inhibitor (selected)
+      - physical therapy
+    notes: Cross-reference Stern Ch.7 (Back Pain).
+  - name: Systemic lupus erythematosus and other connective-tissue diseases
+    role: active_most_common
+    icd10:
+      - M32.9
+    pivotal_features_supporting:
+      - polyarticular (often symmetric, hands)
+      - fatigue
+      - rash (malar, photosensitivity)
+      - oral ulcers
+      - serositis (pleurisy, pericarditis)
+      - nephritis
+      - cytopenias
+      - positive ANA + anti-dsDNA / anti-Smith
+    fingerprint_findings:
+      - polyarthritis + malar rash + positive ANA + anti-dsDNA
+    textbook_presentation: >-
+      Young woman with polyarticular pain, malar rash, fatigue,
+      cytopenias, and positive ANA; specific antibodies and
+      complement levels guide diagnosis.
+    evidence_based_diagnosis:
+      - test_name: ANA + anti-dsDNA + anti-Smith + complement (C3, C4) + CBC + urinalysis + Coombs
+        citation: Stern Ch.27
+    treatment_classes:
+      - hydroxychloroquine (cornerstone)
+      - corticosteroid
+      - immunosuppressant (mycophenolate, azathioprine, cyclophosphamide for lupus nephritis)
+      - biologic agent (belimumab, anifrolumab — selected)
+    notes: ""
+  - name: Reactive arthritis (post-infectious, including Lyme)
+    role: active_most_common
+    icd10:
+      - M02.9
+    pivotal_features_supporting:
+      - recent GI or GU infection (Salmonella, Shigella, Campylobacter, Yersinia, Chlamydia)
+      - asymmetric oligoarthritis (lower extremities)
+      - enthesitis, dactylitis
+      - extra-articular features (urethritis, conjunctivitis, oral ulcers)
+      - HLA-B27 association
+      - Lyme exposure history
+    fingerprint_findings:
+      - reactive arthritis triad — urethritis + conjunctivitis + arthritis (Reiter)
+    textbook_presentation: >-
+      Asymmetric oligoarthritis (especially knees, ankles) 1-4 weeks
+      after a triggering GI / GU infection; extra-articular features
+      include conjunctivitis, urethritis, mucocutaneous lesions; Lyme
+      arthritis presents as monoarticular knee swelling weeks after
+      tick bite.
+    evidence_based_diagnosis:
+      - test_name: Targeted infection workup (NAAT for chlamydia, stool studies, Lyme serologies)
+        citation: Stern Ch.27
+    treatment_classes:
+      - NSAID
+      - corticosteroid (intra-articular or systemic)
+      - antibiotic (treat triggering infection)
+      - DMARD (refractory chronic)
+    notes: ""
+  - name: Viral arthritis (parvovirus B19, hepatitis B, rubella, chikungunya, dengue)
+    role: other
+    icd10:
+      - B97.7
+    pivotal_features_supporting:
+      - acute symmetric polyarthritis
+      - recent viral illness or exposure
+      - associated rash
+      - typically self-limited
+    fingerprint_findings:
+      - acute symmetric polyarthritis after viral illness
+    textbook_presentation: >-
+      Acute self-limited polyarthritis after viral exposure; parvovirus
+      B19 classic in adults exposed to children with fifth disease.
+    evidence_based_diagnosis:
+      - test_name: Viral serologies (parvovirus IgM, hepatitis B / C, rubella)
+        citation: Stern Ch.27
+    treatment_classes:
+      - NSAID
+      - supportive care
+    notes: ""
+  - name: Polymyalgia rheumatica
+    role: other
+    icd10:
+      - M35.3
+    pivotal_features_supporting:
+      - older adult (> 50)
+      - bilateral shoulder and hip-girdle pain / stiffness
+      - elevated ESR / CRP
+      - dramatic response to low-dose corticosteroid
+      - association with giant cell arteritis
+    fingerprint_findings:
+      - older adult with shoulder / hip-girdle stiffness + elevated ESR + dramatic steroid response
+    textbook_presentation: >-
+      Older adult with bilateral shoulder and hip stiffness, fatigue,
+      and elevated inflammatory markers; rapid response to low-dose
+      prednisone; screen for giant cell arteritis.
+    evidence_based_diagnosis:
+      - test_name: ESR / CRP
+        citation: Stern Ch.27
+    treatment_classes:
+      - corticosteroid (low-dose, tapered)
+    notes: Screen for GCA — refer Stern Ch.20.
+  - name: Fibromyalgia
+    role: other
+    icd10:
+      - M79.7
+    pivotal_features_supporting:
+      - chronic widespread pain
+      - non-restorative sleep
+      - fatigue, cognitive symptoms ("fibro fog")
+      - multiple tender points
+      - normal labs and imaging
+      - associated mood disorder
+    fingerprint_findings:
+      - chronic widespread pain + non-restorative sleep + normal inflammatory labs
+    textbook_presentation: >-
+      Chronic widespread musculoskeletal pain with fatigue, sleep
+      disturbance, and cognitive symptoms; normal inflammatory labs
+      and imaging.
+    evidence_based_diagnosis:
+      - test_name: 2016 ACR fibromyalgia diagnostic criteria
+        citation: Stern Ch.27
+    treatment_classes:
+      - exercise / physical therapy
+      - cognitive behavioral therapy
+      - tricyclic antidepressant
+      - SNRI (duloxetine, milnacipran)
+      - gabapentinoid (pregabalin)
+    notes: ""
+  - name: Hemarthrosis (trauma, anticoagulation, hemophilia, intra-articular tumor)
+    role: active_must_not_miss
+    icd10:
+      - M25.00
+    pivotal_features_supporting:
+      - acute monoarticular swelling after trauma or anticoagulant
+      - bloody synovial fluid
+      - hemophilia history
+    fingerprint_findings:
+      - bloody arthrocentesis fluid in patient on anticoagulation
+    textbook_presentation: >-
+      Acute monoarticular swelling and pain after trauma, in a
+      patient on anticoagulation, or in a known hemophiliac;
+      arthrocentesis yields bloody fluid.
+    evidence_based_diagnosis:
+      - test_name: Arthrocentesis (bloody fluid)
+        citation: Stern Ch.27
+      - test_name: Coagulation panel (when no clear traumatic cause)
+        citation: Stern Ch.27
+    treatment_classes:
+      - reversal of anticoagulation when bleeding
+      - factor replacement (hemophilia)
+      - joint aspiration
+      - rest and supportive care
+    notes: ""
+algorithm:
+  - step_num: 1
+    description: Step 1 — Determine inflammatory vs. non-inflammatory pattern (morning stiffness, swelling, warmth, ESR / CRP).
+    rationale: First major split.
+    branches:
+      - condition: Inflammatory pattern
+        action: next_step
+        target_step: 2
+      - condition: Non-inflammatory pattern
+        action: confirm
+        target_diagnosis: Osteoarthritis
+        notes: Or fibromyalgia / mechanical disorder if widespread non-articular pain.
+    derived_from_figure: Stern Ch.27 prose
+  - step_num: 2
+    description: Step 2 — Classify by joint count (mono / oligo / poly) and symmetry.
+    rationale: Drives differential.
+    branches:
+      - condition: Monoarticular acute hot joint
+        action: escalate
+        escalation_reason: Septic arthritis until proven otherwise — emergent arthrocentesis.
+      - condition: Asymmetric oligoarticular with extra-articular features
+        action: confirm
+        target_diagnosis: Spondyloarthritis (axial — ankylosing spondylitis; peripheral — psoriatic, reactive, IBD-associated)
+      - condition: Symmetric polyarticular small joints with morning stiffness
+        action: order_test
+        test_to_order: RF + anti-CCP + ESR + CRP; consider RA
+      - condition: Polyarticular with systemic features (rash, cytopenias)
+        action: order_test
+        test_to_order: ANA + autoimmune panel
+    derived_from_figure: Stern Ch.27 prose
+  - step_num: 3
+    description: Step 3 — Synovial fluid analysis for monoarticular acute or unclear cases.
+    rationale: Distinguishes infection, crystal disease, hemarthrosis, and inflammatory.
+    branches:
+      - condition: WBC > 50000 PMN-predominant or positive Gram stain
+        action: confirm
+        target_diagnosis: Septic arthritis (bacterial)
+      - condition: Negatively birefringent needle crystals
+        action: confirm
+        target_diagnosis: Crystal arthropathy — gout
+      - condition: Positively birefringent rhomboid crystals
+        action: confirm
+        target_diagnosis: Crystal arthropathy — pseudogout (CPPD)
+      - condition: Bloody fluid
+        action: confirm
+        target_diagnosis: Hemarthrosis (trauma, anticoagulation, hemophilia, intra-articular tumor)
+    derived_from_figure: Stern Ch.27 prose
+  - step_num: 4
+    description: Step 4 — For chronic / refractory cases or systemic features, expand workup (autoimmune serologies, infection screen, imaging) and refer.
+    branches:
+      - condition: Chronic / refractory or extra-articular features
+        action: order_test
+        test_to_order: Targeted serologies + imaging + rheumatology referral
+    derived_from_figure: Stern Ch.27 prose
+red_flags:
+  - name: Acute monoarticular hot swollen joint with fever
+    description: Septic arthritis — emergent arthrocentesis and antibiotics.
+    severity: high
+  - name: Polyarthritis + new rash + cytopenias
+    description: SLE or other CTD — autoimmune workup.
+    severity: high
+  - name: Joint swelling on anticoagulant or in hemophilia
+    description: Hemarthrosis — reverse anticoagulation; factor replacement; aspiration.
+    severity: high
+  - name: Older adult with shoulder / hip stiffness + headache or vision change
+    description: PMR with possible GCA — empiric corticosteroid; cross-reference Ch.20.
+    severity: high
+source_pages:
+  - 476
+  - 497
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.27 (pp. 476-497). Frame is categorical with inflammatory vs.
+  non-inflammatory + joint count split. Algorithm steps follow Stern's
+  approach. Must-not-miss bucket: septic arthritis, hemarthrosis on
+  anticoagulation, GCA / PMR overlap.

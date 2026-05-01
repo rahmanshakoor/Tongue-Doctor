@@ -1,0 +1,407 @@
+complaint: diarrhea_acute
+chapter_number: 13
+chapter_title: Diarrhea, Acute
+framework_type: categorical
+framework_categories:
+  - Noninfectious (medication, osmotic, malabsorption)
+  - Infectious — gastroenteritis (small-bowel pattern — watery, vomiting)
+  - Infectious — colitis (inflammatory pattern — blood, mucus, tenesmus)
+  - Toxin-mediated (preformed)
+  - Severe / dysenteric (must-not-miss including STEC, C. difficile)
+pivotal_points:
+  - duration (acute < 14 days, persistent 14-29 days, chronic >= 30 days)
+  - large-volume watery vs. small-volume bloody / mucoid stool (small-bowel vs. large-bowel pattern)
+  - blood or mucus in stool (suggests colitis, STEC, IBD)
+  - fever and systemic symptoms
+  - exposures (recent travel, antibiotic use, food / water sources, sick contacts, daycare, healthcare exposure)
+  - immune status (HIV, transplant, chemotherapy, biologic agents)
+  - severe-disease features (>= 6 unformed stools / day, fever >= 38.5, oral or IV rehydration needed, frank blood, severe abdominal pain, sepsis, mental status change)
+  - medication review (antibiotics in past 8 weeks raises C. difficile risk; metformin, colchicine, magnesium-containing agents, SSRIs cause non-infectious diarrhea)
+decision_rules:
+  - name: Severe / inflammatory diarrhea criteria
+    purpose: Identify acute diarrhea warranting stool testing and consideration of antibiotic therapy
+    inputs:
+      - bloody diarrhea
+      - ">= 6 unformed stools / day"
+      - "fever >= 38.5 C"
+      - severe abdominal pain
+      - need for hospitalization
+      - immunocompromised host
+      - tenesmus
+      - signs of dehydration / sepsis
+    citation: Stern Fig 13-1 (p.247)
+  - name: C. difficile risk assessment
+    purpose: Identify when to test for and empirically cover C. difficile
+    inputs:
+      - recent (within 8 weeks) antibiotic exposure
+      - recent hospitalization
+      - older age
+      - immunosuppression
+      - prior C. difficile infection
+      - severe abdominal pain or distention
+    thresholds:
+      - "test stool for C. difficile NAAT or GDH + toxin EIA when criteria present and stool is unformed"
+    citation: Stern Ch.13
+differential:
+  - name: Viral gastroenteritis (norovirus, rotavirus)
+    role: leading
+    icd10:
+      - A08.4
+      - A08.0
+    pivotal_features_supporting:
+      - large-volume watery diarrhea
+      - vomiting prominent
+      - low-grade fever
+      - sick contacts (especially in cruise / closed-setting outbreaks)
+      - self-limited course (24-72 hours)
+    fingerprint_findings:
+      - acute vomiting + watery diarrhea + outbreak setting (norovirus)
+    textbook_presentation: >-
+      Acute self-limited illness with watery diarrhea, prominent vomiting,
+      low-grade fever, and abdominal cramping; outbreaks in closed
+      settings (cruise ships, daycare, dorms) are characteristic.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment + supportive care
+        note: Routine stool testing not indicated unless severe or persistent.
+        citation: Stern Fig 13-1
+      - test_name: Multiplex stool PCR (when severe, persistent, or in immunocompromised host)
+        sensitivity: 0.95
+        specificity: 0.95
+        citation: Stern Ch.13
+    treatment_classes:
+      - oral rehydration therapy
+      - antiemetic (selected severe vomiting)
+    notes: Antimotility agents avoided when fever / dysentery. Most cases self-limited within 72 hours.
+  - name: Bacterial gastroenteritis (Salmonella, Shigella, Campylobacter, Yersinia, ETEC, EIEC, Vibrio)
+    role: active_most_common
+    icd10:
+      - A02.0
+      - A03.9
+      - A04.5
+    pivotal_features_supporting:
+      - moderate-to-severe diarrhea
+      - fever
+      - bloody or mucoid stool (Salmonella, Shigella, Campylobacter, EIEC)
+      - watery diarrhea (Vibrio cholerae, ETEC)
+      - food / water exposure history
+      - travel history (developing-country exposure for ETEC, ETEC strains)
+      - sick contacts
+    fingerprint_findings:
+      - bloody diarrhea + fever + travel or food exposure
+    textbook_presentation: >-
+      Acute febrile illness with diarrhea (often bloody for invasive
+      pathogens; large-volume watery for cholera / ETEC), typically with
+      identifiable food, water, animal, or travel exposure.
+    evidence_based_diagnosis:
+      - test_name: Multiplex stool PCR or molecular pathogen panel
+        sensitivity: 0.95
+        specificity: 0.95
+        note: Identifies multiple pathogens simultaneously; preferred over routine culture in many centers.
+        citation: Stern Ch.13
+      - test_name: Stool culture
+        note: When PCR positive or for specific epidemiologic / public health requirements.
+        citation: Stern Ch.13
+      - test_name: Fecal leukocytes / lactoferrin
+        note: Markers of inflammatory diarrhea; not specific to a single pathogen.
+        citation: Stern Ch.13
+    treatment_classes:
+      - oral rehydration therapy (mainstay)
+      - antibiotic (selected pathogens — empiric for severe traveler's diarrhea, dysentery; targeted after culture for specific pathogens)
+      - intravenous fluid replacement (hospitalized severe disease)
+    notes: Avoid empiric antibiotics in suspected STEC / E. coli O157:H7 (HUS risk). Antimotility agents typically avoided in inflammatory diarrhea.
+  - name: Shiga-toxin-producing E. coli (STEC, including O157:H7) and HUS
+    role: active_must_not_miss
+    icd10:
+      - A04.3
+      - D59.3
+    pivotal_features_supporting:
+      - bloody diarrhea
+      - severe abdominal cramping with low-grade or absent fever
+      - exposure to undercooked beef, unpasteurized dairy, contaminated produce, petting zoo
+      - children at highest HUS risk
+      - thrombocytopenia, anemia, AKI (HUS triad)
+    fingerprint_findings:
+      - bloody diarrhea + low fever + child or older adult progressing to thrombocytopenia + AKI
+    textbook_presentation: >-
+      Bloody diarrhea with severe cramping and minimal fever following
+      undercooked-beef or contaminated-produce exposure; complicated by
+      hemolytic uremic syndrome (microangiopathic hemolytic anemia,
+      thrombocytopenia, AKI) days later.
+    evidence_based_diagnosis:
+      - test_name: Stool Shiga toxin (EIA or PCR)
+        sensitivity: 0.90
+        specificity: 0.95
+        note: Detects toxin from STEC including non-O157 strains.
+        citation: Stern Ch.13
+      - test_name: Stool culture on sorbitol-MacConkey agar (for O157:H7)
+        citation: Stern Ch.13
+      - test_name: CBC + creatinine + LDH + haptoglobin + smear for HUS surveillance
+        citation: Stern Ch.13
+    treatment_classes:
+      - intravenous fluid replacement
+      - supportive care (HUS treated with dialysis as needed)
+    notes: Avoid antibiotics and antimotility agents — both increase HUS risk. Eculizumab (atypical HUS).
+  - name: Clostridioides difficile colitis
+    role: active_must_not_miss
+    icd10:
+      - A04.7
+    pivotal_features_supporting:
+      - recent antibiotic exposure (within 8 weeks)
+      - recent hospitalization or healthcare exposure
+      - older age, immunosuppression
+      - watery diarrhea, abdominal pain, fever
+      - leukocytosis (sometimes very high)
+      - severe disease — toxic megacolon, hypotension, AKI
+    fingerprint_findings:
+      - watery diarrhea + leukocytosis after recent antibiotic exposure
+    textbook_presentation: >-
+      Patient with recent antibiotic exposure presenting with watery
+      diarrhea, abdominal pain, fever, and leukocytosis; severe disease
+      manifests as toxic megacolon, hypotension, and AKI.
+    evidence_based_diagnosis:
+      - test_name: Stool C. difficile NAAT (PCR for tcdB gene)
+        sensitivity: 0.95
+        specificity: 0.95
+        note: Highly sensitive; positive may represent colonization without disease — interpret with clinical picture.
+        citation: Stern Ch.13
+      - test_name: Stool C. difficile glutamate dehydrogenase (GDH) + toxin EIA two-step
+        note: Combination has good sensitivity and specificity for active disease.
+        citation: Stern Ch.13
+      - test_name: CT abdomen (severe disease — assess for megacolon / perforation)
+        citation: Stern Ch.13
+    treatment_classes:
+      - oral fidaxomicin (first-line per recent guidelines)
+      - oral vancomycin
+      - intravenous metronidazole (severe / fulminant disease, in addition to oral therapy)
+      - bezlotoxumab (recurrence prevention selected cases)
+      - fecal microbiota transplant (multiply recurrent disease)
+    notes: Stop the inciting antibiotic when possible; isolation precautions to prevent transmission.
+  - name: Toxin-mediated food poisoning (S. aureus, B. cereus, C. perfringens)
+    role: active_most_common
+    icd10:
+      - A05.0
+      - A05.1
+      - A05.2
+    pivotal_features_supporting:
+      - acute onset (hours after ingestion)
+      - prominent vomiting
+      - abdominal cramping
+      - resolution within 24 hours
+      - exposure to typical foods (S. aureus — mayonnaise, custards; B. cereus — fried rice; C. perfringens — meat, poultry)
+    fingerprint_findings:
+      - acute vomiting within 1-6 hours of suspect food
+    textbook_presentation: >-
+      Acute, brief illness with vomiting and crampy diarrhea hours after
+      eating; multiple people at the same meal often affected.
+    evidence_based_diagnosis:
+      - test_name: Clinical assessment + history of ingestion
+        citation: Stern Ch.13
+    treatment_classes:
+      - oral rehydration therapy
+      - supportive care
+    notes: Self-limited; no antibiotics indicated.
+  - name: Traveler's diarrhea (ETEC, Shigella, Campylobacter, Norovirus in travelers)
+    role: active_most_common
+    icd10:
+      - A09
+    pivotal_features_supporting:
+      - recent travel to high-incidence region
+      - watery diarrhea +/- nausea, cramps, low-grade fever
+      - bloody if Shigella or Campylobacter
+    fingerprint_findings:
+      - acute diarrhea within 7-10 days of return from endemic region
+    textbook_presentation: >-
+      Traveler returning from a high-prevalence area with acute watery or
+      dysenteric diarrhea; ETEC most common cause; Shigella, Campylobacter,
+      Salmonella also frequent.
+    evidence_based_diagnosis:
+      - test_name: Multiplex stool PCR or pathogen panel (severe / persistent)
+        citation: Stern Ch.13
+    treatment_classes:
+      - oral rehydration therapy
+      - empiric antibiotic (azithromycin or fluoroquinolone, region-specific resistance considerations)
+      - loperamide (selected non-bloody non-febrile cases)
+    notes: Tailor empiric coverage to destination; avoid routine antibiotic prophylaxis.
+  - name: Parasitic diarrhea (Giardia, Cryptosporidium, Entamoeba)
+    role: other
+    icd10:
+      - A07.1
+      - A07.2
+      - A06.0
+    pivotal_features_supporting:
+      - prolonged or persistent diarrhea (>14 days)
+      - water exposure (lakes, streams, recreational water)
+      - immunocompromised state
+      - weight loss
+      - eosinophilia
+    fingerprint_findings:
+      - persistent diarrhea after camping or recreational water exposure (Giardia)
+    textbook_presentation: >-
+      Persistent diarrhea with bloating, malodorous stools, and weight
+      loss; Giardia often follows backcountry water exposure;
+      Cryptosporidium common in HIV with low CD4.
+    evidence_based_diagnosis:
+      - test_name: Stool ova and parasites (multiple samples)
+        citation: Stern Ch.13
+      - test_name: Stool antigen testing for Giardia, Cryptosporidium, E. histolytica
+        sensitivity: 0.95
+        specificity: 0.95
+        citation: Stern Ch.13
+    treatment_classes:
+      - antiparasitic (pathogen-specific)
+    notes: ""
+  - name: Inflammatory bowel disease — initial presentation (UC or Crohn flare)
+    role: other
+    icd10:
+      - K51.90
+      - K50.90
+    pivotal_features_supporting:
+      - chronic / persistent bloody diarrhea
+      - young adult onset
+      - extraintestinal manifestations (uveitis, arthritis, erythema nodosum, primary sclerosing cholangitis)
+      - weight loss, fatigue
+    fingerprint_findings:
+      - bloody diarrhea persisting > 4 weeks in young adult with extraintestinal manifestations
+    textbook_presentation: >-
+      Young adult with persistent bloody diarrhea, abdominal pain, weight
+      loss, and possibly extraintestinal manifestations; cross-references
+      Stern Ch.3 for chronic-pain workup.
+    evidence_based_diagnosis:
+      - test_name: Colonoscopy with biopsy
+        note: Diagnostic gold standard.
+        citation: Stern Ch.3 / Ch.13
+      - test_name: Fecal calprotectin
+        note: Distinguishes IBD from IBS; elevated in active inflammation.
+        citation: Stern Ch.13
+    treatment_classes:
+      - aminosalicylate
+      - corticosteroid (acute flare)
+      - immunomodulator
+      - biologic agent (anti-TNF, integrin / IL inhibitors)
+    notes: Cross-reference Stern Ch.3 (Abdominal Pain) and Ch.19 (GI Bleeding).
+  - name: Medication- or supplement-induced diarrhea
+    role: active_most_common
+    icd10:
+      - K52.1
+    pivotal_features_supporting:
+      - medication or supplement temporal correlation
+      - osmotic agents (sorbitol, mannitol, fructose, magnesium-containing)
+      - pharmacologic mechanism (metformin, antibiotics, colchicine, digoxin, SSRIs)
+      - resolution after withdrawal
+    fingerprint_findings:
+      - diarrhea resolving on stopping the suspect agent
+    textbook_presentation: >-
+      Patient with new or chronic diarrhea temporally related to a
+      medication, supplement, or osmotic ingestion (sorbitol gum,
+      magnesium-containing antacids); resolves after withdrawal.
+    evidence_based_diagnosis:
+      - test_name: Medication and dietary review with rechallenge / withdrawal
+        citation: Stern Ch.13
+    treatment_classes:
+      - withdraw or substitute the offending agent
+      - symptomatic management (loperamide where appropriate)
+    notes: ""
+  - name: Sepsis from severe diarrheal illness or perforation
+    role: active_must_not_miss
+    icd10:
+      - A41.9
+    pivotal_features_supporting:
+      - hypotension, tachycardia, fever
+      - mental status change
+      - lactate elevation
+      - severe abdominal pain or distention
+      - peritoneal signs
+    fingerprint_findings:
+      - septic shock with diarrhea + AKI + lactate > 4 mmol/L
+    textbook_presentation: >-
+      Critically ill patient with severe diarrhea complicated by septic
+      shock, AKI, and lactic acidosis; may indicate fulminant C. difficile,
+      severe STEC / HUS, or perforation.
+    evidence_based_diagnosis:
+      - test_name: Sepsis bundle workup (lactate, blood cultures, CBC, BMP, CT abdomen)
+        citation: Stern Ch.13
+    treatment_classes:
+      - intravenous fluid replacement
+      - vasopressor (when shock present)
+      - empiric broad-spectrum antibiotic
+      - source control as indicated (surgery for perforation or fulminant C. difficile)
+    notes: Cross-reference Stern Ch.10 / Ch.25 for sepsis management.
+algorithm:
+  - step_num: 1
+    description: Step 1 — History and exam — identify exposures, immune status, severity features, and bloody-vs-watery pattern.
+    rationale: Stern Fig 13-1 first triage box.
+    branches:
+      - condition: Identifiable noninfectious driver (medication, supplement, dietary)
+        action: confirm
+        target_diagnosis: Medication- or supplement-induced diarrhea
+      - condition: Otherwise
+        action: next_step
+        target_step: 2
+    derived_from_figure: Stern Fig 13-1
+  - step_num: 2
+    description: Step 2 — Recent antibiotics or healthcare exposure → consider C. difficile.
+    rationale: Stern Fig 13-1 — high-risk pathway.
+    branches:
+      - condition: Recent antibiotic / hospitalization / immunocompromise
+        action: order_test
+        test_to_order: Stool C. difficile NAAT or GDH + toxin EIA
+      - condition: No C. difficile risk
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Fig 13-1
+  - step_num: 3
+    description: Step 3 — Bloody diarrhea or severe inflammatory features → test for invasive pathogens and STEC.
+    rationale: Bloody / dysenteric pathway.
+    branches:
+      - condition: Bloody stool
+        action: order_test
+        test_to_order: Multiplex stool PCR + Shiga toxin + culture; CBC, BMP, peripheral smear (HUS surveillance)
+      - condition: Watery / non-bloody
+        action: next_step
+        target_step: 4
+    derived_from_figure: Stern Fig 13-1
+  - step_num: 4
+    description: Step 4 — Severe symptoms or significant comorbidities (immunocompromised, advanced age, hospitalization, prolonged > 7 days) → test broadly.
+    rationale: Stern Fig 13-1 severity branch.
+    branches:
+      - condition: Severe / prolonged / immunocompromised
+        action: order_test
+        test_to_order: Multiplex stool PCR + ova / parasite screen + C. difficile if any antibiotic exposure
+      - condition: Mild self-limited
+        action: confirm
+        target_diagnosis: Viral gastroenteritis (norovirus, rotavirus)
+    derived_from_figure: Stern Fig 13-1
+  - step_num: 5
+    description: Step 5 — Persistent diarrhea > 7 days despite supportive care or empiric therapy → expand differential to parasites, IBD, malabsorption, drug-induced.
+    rationale: Stern Fig 13-1 persistent-symptom box.
+    branches:
+      - condition: Persistent diarrhea
+        action: order_test
+        test_to_order: Stool ova / parasites + Giardia / Cryptosporidium antigens; fecal calprotectin; consider colonoscopy
+      - condition: Resolved
+        action: confirm
+        target_diagnosis: Self-limited diarrhea — no further workup
+    derived_from_figure: Stern Fig 13-1
+red_flags:
+  - name: Bloody diarrhea with low fever in setting of undercooked-beef or recreational-water exposure
+    description: STEC / HUS — avoid antibiotics and antimotility agents; monitor CBC, smear, creatinine.
+    severity: high
+  - name: Severe watery diarrhea + leukocytosis + recent antibiotics
+    description: C. difficile — test and consider empiric therapy in severe disease.
+    severity: high
+  - name: Diarrhea + hypotension + lactate > 4
+    description: Septic shock from severe diarrhea — broad-spectrum coverage and resuscitation.
+    severity: high
+source_pages:
+  - 246
+  - 259
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.13 (pp. 246-259). Frame is categorical (noninfectious vs.
+  gastroenteritis vs. colitis vs. toxin-mediated). Algorithm follows
+  Fig 13-1. Must-not-miss bucket: STEC / HUS, fulminant C. difficile,
+  septic shock from diarrhea, severe dehydration in vulnerable hosts.
+  Avoid antimotility agents in dysentery; avoid antibiotics in suspected
+  STEC.

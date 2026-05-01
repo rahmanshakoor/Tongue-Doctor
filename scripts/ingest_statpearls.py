@@ -1,15 +1,12 @@
-"""Ingest the StatPearls bulk download.
+"""CLI: ingest StatPearls articles via NCBI Bookshelf.
 
-Phase 0 placeholder. Blocked on open kickoff item 21 (GCP project) for the dense-index
-target. Once unblocked, this script:
+Examples::
 
-1. Downloads the StatPearls XML bulk dump from NCBI Bookshelf.
-2. Extracts article-level → section-level chunks (300-600 tokens), preserving citations.
-3. Embeds chunks via ``text-embedding-005`` (Vertex).
-4. Writes a BM25 index (in-process pickle) under ``knowledge/_local/statpearls/``.
-5. Upserts dense embeddings into a Vertex Vector Search index.
+    # Smoke (50 articles, ~3 min):
+    uv run python scripts/ingest_statpearls.py --max-articles 50
 
-See ``docs/RESOURCE_ACQUISITION.md``.
+    # Full corpus (~9.6K articles — many hours):
+    uv run python scripts/ingest_statpearls.py
 """
 
 from __future__ import annotations
@@ -18,18 +15,32 @@ import sys
 
 import typer
 
-app = typer.Typer(add_completion=False, help=__doc__.strip())
+from tongue_doctor.knowledge.ingest.base import default_root
+from tongue_doctor.knowledge.ingest.sources.statpearls import StatPearlsIngester
+from tongue_doctor.knowledge.ingest.storage import LocalCorpusStore
+
+app = typer.Typer(add_completion=False, help="Ingest StatPearls (NCBI Bookshelf).")
 
 
 @app.command()
-def run() -> None:
-    """Run the StatPearls ingestion pipeline (not yet implemented)."""
-    typer.echo(
-        "ingest_statpearls.py is a placeholder. Blocked on open kickoff item 21 (GCP "
-        "project) for dense-index target; the BM25-only path can run earlier.",
-        err=True,
+def run(
+    max_articles: int | None = typer.Option(
+        None, help="Cap article count (None = full corpus)."
+    ),
+    polite_interval_s: float = typer.Option(0.4, help="Min seconds between requests."),
+    batch_size: int = typer.Option(200, help="PubMed efetch batch size."),
+) -> None:
+    store = LocalCorpusStore(default_root())
+    ingester = StatPearlsIngester(
+        store,
+        max_articles=max_articles,
+        polite_interval_s=polite_interval_s,
+        batch_size=batch_size,
     )
-    raise typer.Exit(code=2)
+    manifest = ingester.run()
+    typer.echo(
+        f"statpearls: ingested {manifest.chunk_count} chunks across {manifest.doc_count} articles."
+    )
 
 
 def main() -> int:

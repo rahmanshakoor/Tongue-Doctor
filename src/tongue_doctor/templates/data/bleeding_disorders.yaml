@@ -1,0 +1,466 @@
+complaint: bleeding_disorders
+chapter_number: 8
+chapter_title: Bleeding Disorders
+framework_type: mechanistic
+framework_categories:
+  - Structural causes (tissue injury or local mucosal abnormality)
+  - Platelet-related causes (thrombocytopenia or impaired platelet function)
+  - Coagulation-factor abnormalities (deficiency or inhibitor)
+pivotal_points:
+  - location of bleeding (skin, mucous membranes, brain → suggests platelet defect; deep — intramuscular, joint, GI, retroperitoneum, brain → suggests coagulation factor defect)
+  - timing of bleeding (immediate after injury → platelet defect; delayed → coagulation defect)
+  - platelet count (normal vs. thrombocytopenic; severity bands)
+  - PT / INR and aPTT (prolonged or normal; mixing study to distinguish factor deficiency from inhibitor)
+  - PFA-100 or platelet function assay (when count is normal but bleeding suggests platelet dysfunction)
+  - medication exposure (anticoagulants, antiplatelets, drug-induced thrombocytopenia, NSAID / aspirin, heparin)
+  - family history (von Willebrand, hemophilia)
+  - systemic illness (liver disease, kidney disease, autoimmune, malignancy, sepsis)
+decision_rules:
+  - name: Bleeding-pattern triage
+    purpose: Distinguish platelet defect from coagulation-factor defect by location and timing
+    inputs:
+      - bleeding location (mucocutaneous vs. deep)
+      - timing relative to injury (immediate vs. delayed)
+    citation: Stern Fig 8-1 (p.153)
+  - name: PT / aPTT pattern interpretation
+    purpose: Localize coagulation defect to extrinsic, intrinsic, or common pathway with mixing study to distinguish deficiency from inhibitor
+    thresholds:
+      - "isolated PT / INR prolonged → factor VII deficiency, early liver disease, warfarin effect, vitamin K deficiency"
+      - "isolated aPTT prolonged → factor VIII / IX / XI / XII deficiency or inhibitor (lupus anticoagulant, acquired hemophilia, heparin)"
+      - "both PT and aPTT prolonged → liver disease, warfarin, vitamin K deficiency, DIC, multiple factor deficiencies"
+      - "mixing study corrects → factor deficiency; does not correct → inhibitor present"
+    citation: Stern Fig 8-1 (p.154)
+differential:
+  - name: Idiopathic thrombocytopenic purpura (ITP)
+    role: leading
+    icd10:
+      - D69.3
+    pivotal_features_supporting:
+      - isolated thrombocytopenia
+      - mucocutaneous bleeding (petechiae, gum bleeding, epistaxis)
+      - normal smear (other than thrombocytopenia)
+      - no medications causing thrombocytopenia
+      - no systemic illness
+    fingerprint_findings:
+      - isolated thrombocytopenia with normal smear and no other cytopenias
+    textbook_presentation: >-
+      Otherwise healthy adult with petechiae, easy bruising, gum bleeding,
+      and isolated thrombocytopenia; smear shows normal RBC and WBC
+      morphology with reduced but otherwise normal platelets.
+    evidence_based_diagnosis:
+      - test_name: Complete blood count + peripheral smear
+        note: Isolated thrombocytopenia with normal smear is the typical pattern.
+        citation: Stern Fig 8-1
+      - test_name: HIV, hepatitis C, ANA testing
+        note: Rule out secondary causes (HIV, HCV, SLE).
+        citation: Stern Ch.8
+    treatment_classes:
+      - corticosteroid
+      - intravenous immunoglobulin
+      - thrombopoietin receptor agonist (refractory)
+      - rituximab (refractory)
+    notes: Splenectomy for refractory disease is procedural.
+  - name: Heparin-induced thrombocytopenia (HIT)
+    role: active_must_not_miss
+    icd10:
+      - D75.82
+    pivotal_features_supporting:
+      - 50%+ drop in platelet count 5-14 days after starting heparin (or earlier on re-exposure)
+      - thrombosis (paradoxical — venous or arterial)
+      - skin necrosis at heparin injection sites
+      - positive 4T's clinical score
+      - positive anti-PF4 / heparin antibody and confirmatory functional assay
+    fingerprint_findings:
+      - thrombosis with falling platelet count on heparin therapy
+    textbook_presentation: >-
+      Patient on heparin (UFH or LMWH) with platelet count drop of >= 50%
+      around days 5-14 of exposure, often with new thrombosis; bleeding is
+      uncommon despite low platelet count.
+    evidence_based_diagnosis:
+      - test_name: 4T's clinical score
+        note: "0-3 = low (HIT very unlikely); 4-5 = intermediate; 6-8 = high."
+        citation: Stern Ch.8
+      - test_name: Anti-PF4 / heparin ELISA
+        sensitivity: 0.99
+        specificity: 0.85
+        note: Sensitive screen; specificity improved by optical density and high-titer cutoffs.
+        citation: Stern Ch.8
+      - test_name: Serotonin release assay (functional)
+        sensitivity: 0.95
+        specificity: 1.00
+        note: Confirmatory test.
+        citation: Stern Ch.8
+    treatment_classes:
+      - non-heparin anticoagulant (argatroban, fondaparinux, bivalirudin per scenario)
+    notes: Stop all heparin (including flushes) immediately when HIT suspected; substitute non-heparin anticoagulant.
+  - name: Thrombotic thrombocytopenic purpura (TTP) / hemolytic uremic syndrome (HUS)
+    role: active_must_not_miss
+    icd10:
+      - M31.1
+      - D59.3
+    pivotal_features_supporting:
+      - microangiopathic hemolytic anemia (schistocytes)
+      - thrombocytopenia
+      - end-organ injury (CNS — TTP; renal — HUS)
+      - elevated LDH
+      - reduced ADAMTS13 activity (TTP)
+      - Shiga-toxin-producing E. coli (typical HUS)
+    fingerprint_findings:
+      - schistocytes + thrombocytopenia + neurologic dysfunction (TTP) or renal injury (HUS)
+    textbook_presentation: >-
+      Acute thrombocytopenia with microangiopathic hemolytic anemia,
+      neurologic abnormalities (TTP) or renal failure (HUS); fever and
+      petechiae may be present.
+    evidence_based_diagnosis:
+      - test_name: Peripheral smear (schistocytes)
+        citation: Stern Ch.8
+      - test_name: ADAMTS13 activity (severe deficiency < 10% confirms TTP)
+        citation: Stern Ch.8
+      - test_name: Stool Shiga toxin / E. coli O157:H7 (HUS)
+        citation: Stern Ch.8
+    treatment_classes:
+      - therapeutic plasma exchange (TTP — emergent)
+      - corticosteroid (TTP)
+      - caplacizumab (severe TTP)
+      - supportive care (HUS)
+    notes: Initiate plasma exchange in TTP while awaiting ADAMTS13 results.
+  - name: Disseminated intravascular coagulation (DIC)
+    role: active_must_not_miss
+    icd10:
+      - D65
+    pivotal_features_supporting:
+      - severe sepsis, malignancy, obstetric emergency, severe trauma, transfusion reaction
+      - simultaneous bleeding and thrombosis
+      - thrombocytopenia
+      - prolonged PT and aPTT
+      - low fibrinogen
+      - elevated D-dimer
+      - schistocytes on smear
+    fingerprint_findings:
+      - low fibrinogen with prolonged PT / aPTT, thrombocytopenia, and elevated D-dimer in a critically ill patient
+    textbook_presentation: >-
+      Critically ill patient (sepsis, trauma, obstetric crisis) with bleeding
+      from multiple sites, thrombocytopenia, prolonged PT / aPTT, low
+      fibrinogen, and elevated D-dimer.
+    evidence_based_diagnosis:
+      - test_name: Fibrinogen
+        note: Low fibrinogen is the most specific lab finding.
+        citation: Stern Ch.8
+      - test_name: D-dimer
+        note: Markedly elevated.
+        citation: Stern Ch.8
+      - test_name: ISTH DIC score
+        note: Combines platelets, PT, fibrinogen, D-dimer.
+        citation: Stern Ch.8
+    treatment_classes:
+      - treat the underlying cause (sepsis, malignancy, trauma)
+      - blood product replacement (FFP, cryoprecipitate, platelets per indication)
+    notes: Treat the cause; replacement therapy is supportive only.
+  - name: Hemophilia A or B (factor VIII or IX deficiency)
+    role: active_must_not_miss
+    icd10:
+      - D66
+      - D67
+    pivotal_features_supporting:
+      - male sex (X-linked)
+      - family history of bleeding
+      - hemarthrosis (joint bleeding)
+      - intramuscular bleeding
+      - delayed bleeding after injury
+      - prolonged aPTT, normal PT
+    fingerprint_findings:
+      - hemarthrosis in a male with positive family history
+    textbook_presentation: >-
+      Male patient with recurrent joint or muscle bleeding after minor
+      trauma, prolonged aPTT, normal PT, low factor VIII (hemophilia A) or
+      IX (hemophilia B) activity.
+    evidence_based_diagnosis:
+      - test_name: Factor VIII or IX activity
+        note: Confirms diagnosis and severity (mild >5%, moderate 1-5%, severe <1%).
+        citation: Stern Ch.8
+      - test_name: aPTT (prolonged) with normal PT
+        note: Mixing study corrects unless inhibitor (acquired hemophilia) present.
+        citation: Stern Ch.8 + Fig 8-1
+    treatment_classes:
+      - factor VIII or IX replacement (recombinant or plasma-derived)
+      - desmopressin (mild hemophilia A)
+      - emicizumab (factor VIII bypass for inhibitor patients)
+    notes: Treat early bleeding aggressively to prevent joint deformity.
+  - name: von Willebrand disease (vWD)
+    role: active_most_common
+    icd10:
+      - D68.0
+    pivotal_features_supporting:
+      - mucocutaneous bleeding (epistaxis, menorrhagia, gum bleeding)
+      - family history
+      - bleeding after dental work or surgery
+      - prolonged PFA-100
+      - reduced von Willebrand factor antigen and ristocetin cofactor activity
+      - variable factor VIII reduction
+    fingerprint_findings:
+      - menorrhagia with family history of bleeding
+    textbook_presentation: >-
+      Patient with mucocutaneous bleeding (epistaxis, menorrhagia, gum
+      bleeding), often with family history; PFA-100 prolonged, vWF antigen
+      and activity reduced.
+    evidence_based_diagnosis:
+      - test_name: von Willebrand factor antigen and ristocetin cofactor activity
+        sensitivity: 0.85
+        specificity: 0.95
+        citation: Stern Ch.8
+      - test_name: Factor VIII activity
+        note: Reduced in type 1 and type 3.
+        citation: Stern Ch.8
+      - test_name: vWF multimer analysis
+        note: Required to distinguish type 2 subtypes.
+        citation: Stern Ch.8
+    treatment_classes:
+      - desmopressin (type 1 and selected type 2)
+      - von Willebrand factor concentrate (severe disease, type 3, surgery)
+      - tranexamic acid (mucosal bleeding)
+    notes: Desmopressin is contraindicated in type 2B and type 3 vWD.
+  - name: Drug-induced thrombocytopenia (non-HIT)
+    role: active_most_common
+    icd10:
+      - D69.59
+    pivotal_features_supporting:
+      - new medication started 1-2 weeks before bleeding (quinine, sulfonamides, vancomycin, valproate, phenytoin, abciximab, tirofiban)
+      - resolution after drug withdrawal
+      - drug-dependent platelet antibody (when testing available)
+    fingerprint_findings:
+      - thrombocytopenia that resolves after stopping the suspect drug and recurs on re-exposure
+    textbook_presentation: >-
+      New medication started 1-2 weeks before onset of thrombocytopenia and
+      mucocutaneous bleeding; counts normalize after withdrawal.
+    evidence_based_diagnosis:
+      - test_name: Medication review with timing correlation
+        citation: Stern Ch.8
+      - test_name: Drug-dependent platelet antibody (specialized labs)
+        note: Available for some drugs but not routinely required.
+        citation: Stern Ch.8
+    treatment_classes:
+      - drug withdrawal
+      - corticosteroid (selected severe cases)
+      - intravenous immunoglobulin (rapid count recovery if needed)
+    notes: ""
+  - name: Liver-disease coagulopathy
+    role: active_most_common
+    icd10:
+      - K72.90
+    pivotal_features_supporting:
+      - cirrhosis or acute liver failure
+      - prolonged PT / aPTT
+      - thrombocytopenia (splenomegaly + reduced thrombopoietin)
+      - decreased synthesis of all factors except factor VIII
+      - elevated INR
+    fingerprint_findings:
+      - elevated INR with thrombocytopenia and stigmata of chronic liver disease
+    textbook_presentation: >-
+      Patient with chronic liver disease or acute liver failure with
+      prolonged PT / aPTT, thrombocytopenia, and bleeding from varices,
+      mucosal sites, or surgical wounds.
+    evidence_based_diagnosis:
+      - test_name: PT / INR, aPTT, fibrinogen, factor levels
+        note: All factors except factor VIII reduced; factor VIII often elevated (acute-phase).
+        citation: Stern Fig 8-1
+      - test_name: Liver-disease workup (LFTs, imaging, etiology testing)
+        citation: Stern Ch.8
+    treatment_classes:
+      - vitamin K replacement (selected cases — typically modest correction)
+      - fresh frozen plasma (active bleeding)
+      - cryoprecipitate (low fibrinogen)
+      - platelet transfusion (low platelets with active bleeding)
+    notes: INR in cirrhotic patients does not reliably predict bleeding risk because procoagulant and anticoagulant factors are both reduced.
+  - name: Vitamin K deficiency (including warfarin effect)
+    role: active_most_common
+    icd10:
+      - E56.1
+      - T45.515A
+    pivotal_features_supporting:
+      - warfarin therapy
+      - malnutrition, malabsorption (cystic fibrosis, biliary obstruction, broad-spectrum antibiotics)
+      - newborn (insufficient gut flora)
+      - prolonged PT / INR with normal or mildly prolonged aPTT
+      - response to vitamin K administration
+    fingerprint_findings:
+      - elevated INR that corrects with vitamin K
+    textbook_presentation: >-
+      Bleeding patient with elevated INR and isolated PT prolongation, often
+      with warfarin therapy, malnutrition, or malabsorption; corrects with
+      vitamin K.
+    evidence_based_diagnosis:
+      - test_name: PT / INR + aPTT
+        note: PT prolonged out of proportion to aPTT.
+        citation: Stern Ch.8
+      - test_name: Trial of oral or parenteral vitamin K with response
+        citation: Stern Ch.8
+    treatment_classes:
+      - vitamin K replacement (oral, IV, or subcutaneous per urgency)
+      - 4-factor prothrombin complex concentrate (urgent reversal of warfarin in life-threatening bleeding)
+      - fresh frozen plasma (alternative when 4F-PCC unavailable)
+    notes: Reverse warfarin per current guidelines based on bleeding severity and INR level.
+  - name: Acquired clotting factor inhibitor (e.g., acquired hemophilia, lupus anticoagulant)
+    role: active_must_not_miss
+    icd10:
+      - D68.4
+    pivotal_features_supporting:
+      - new severe bleeding without prior history
+      - older adult or postpartum / autoimmune disease
+      - prolonged aPTT that does NOT correct with mixing study
+      - reduced specific factor activity (often factor VIII for acquired hemophilia)
+    fingerprint_findings:
+      - severe spontaneous bleeding in older adult with prolonged aPTT not correcting on mixing study
+    textbook_presentation: >-
+      Older patient or postpartum woman with severe spontaneous bleeding
+      (bruising, hematoma, GI bleed) and prolonged aPTT that does not
+      correct on mixing — autoantibody to factor VIII.
+    evidence_based_diagnosis:
+      - test_name: Mixing study
+        note: Failure to correct identifies inhibitor.
+        citation: Stern Fig 8-1
+      - test_name: Factor VIII activity and Bethesda inhibitor titer
+        note: Confirms acquired hemophilia A.
+        citation: Stern Ch.8
+    treatment_classes:
+      - bypassing agent (factor VIII bypass — activated prothrombin complex concentrate, recombinant factor VIIa)
+      - corticosteroid + cyclophosphamide or rituximab (immunosuppression)
+    notes: Refer to specialized hemostasis center promptly.
+  - name: Bleeding from anticoagulant or antiplatelet medication
+    role: active_most_common
+    icd10:
+      - T45.515A
+    pivotal_features_supporting:
+      - therapeutic dose of warfarin, DOAC, heparin, antiplatelet therapy
+      - active bleeding while on therapy
+      - lab pattern matching the agent (elevated INR for warfarin; anti-Xa for DOAC / LMWH; aPTT for unfractionated heparin)
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Patient on therapeutic anticoagulation or antiplatelet therapy with
+      bleeding (GI, intracranial, soft-tissue); reversal strategy depends on
+      the agent.
+    evidence_based_diagnosis:
+      - test_name: Coagulation panel (INR for warfarin, anti-Xa for LMWH / DOAC, aPTT for UFH)
+        citation: Stern Ch.8
+      - test_name: Specific drug-level testing (when available — DOAC quantitation in life-threatening bleeding)
+        citation: Stern Ch.8
+    treatment_classes:
+      - 4-factor prothrombin complex concentrate (warfarin reversal)
+      - vitamin K replacement (warfarin reversal)
+      - idarucizumab (dabigatran reversal)
+      - andexanet alfa (rivaroxaban / apixaban reversal)
+      - protamine sulfate (heparin reversal)
+      - platelet transfusion (severe antiplatelet-related bleeding)
+    notes: Use of reversal agents depends on bleeding severity and the offending drug.
+  - name: Local / structural bleeding (mucosal lesion, varices, ulcer, trauma)
+    role: other
+    icd10:
+      - K92.2
+    pivotal_features_supporting:
+      - localized bleeding source
+      - intact platelet count and coagulation
+      - identifiable lesion on endoscopy or imaging
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Localized bleeding from a structural source (varices, ulcer,
+      angiodysplasia, mucosal injury) without systemic platelet or factor
+      defect.
+    evidence_based_diagnosis:
+      - test_name: Endoscopy or targeted imaging
+        note: Identifies bleeding source.
+        citation: Stern Ch.8
+    treatment_classes:
+      - local hemostasis (endoscopic clipping, banding, sclerotherapy)
+      - tranexamic acid (mucosal bleeding)
+    notes: Cross-references Stern Ch.19 (GI Bleeding) for definitive workup.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Identify the bleeding pattern by location and timing.
+    rationale: Stern Fig 8-1 first split — mucocutaneous + immediate suggests platelet defect; deep + delayed suggests coagulation factor defect.
+    branches:
+      - condition: Skin / mucous-membrane / immediate-onset bleeding
+        action: next_step
+        target_step: 2
+      - condition: Deep — joint / intramuscular / GI / brain / retroperitoneal — delayed bleeding
+        action: next_step
+        target_step: 4
+      - condition: Local source identified, otherwise normal hemostasis
+        action: confirm
+        target_diagnosis: Local / structural bleeding (mucosal lesion, varices, ulcer, trauma)
+    derived_from_figure: Stern Fig 8-1
+  - step_num: 2
+    description: Step 2 — Check platelet count.
+    rationale: Distinguishes thrombocytopenia (impaired number) from impaired platelet function.
+    branches:
+      - condition: Platelet count low (thrombocytopenia)
+        action: next_step
+        target_step: 3
+      - condition: Platelet count normal
+        action: order_test
+        test_to_order: PFA-100 or platelet function assay; review medications (aspirin, NSAID, antiplatelet); check renal function (uremia); evaluate for vWD if mucocutaneous bleeding
+    derived_from_figure: Stern Fig 8-1
+  - step_num: 3
+    description: Step 3 — Subdivide thrombocytopenia by mechanism — increased loss / consumption / sequestration vs. impaired production.
+    rationale: Stern Fig 8-1 thrombocytopenia branches.
+    branches:
+      - condition: Sequestration (splenomegaly, normal smear and WBC)
+        action: confirm
+        target_diagnosis: Splenic sequestration
+        notes: Cross-reference Stern Ch.6 / hepatology workup.
+      - condition: Increased loss / consumption (immune — ITP / HIT / SLE / HCV / HIV / lymphoproliferative; consumption — DIC / TTP)
+        action: order_test
+        test_to_order: Targeted workup — heparin exposure history, 4T's score, peripheral smear, ADAMTS13, fibrinogen, D-dimer, HIV / HCV / ANA
+      - condition: Impaired production (medication, marrow infiltration, B12 deficiency, alcohol)
+        action: order_test
+        test_to_order: Medication review, B12 / folate, smear, bone marrow biopsy if needed
+    derived_from_figure: Stern Fig 8-1
+  - step_num: 4
+    description: Step 4 — Order PT / INR and aPTT for suspected coagulation factor defect.
+    rationale: Localizes defect to extrinsic, intrinsic, or common pathway.
+    branches:
+      - condition: Both PT and aPTT prolonged
+        action: order_test
+        test_to_order: Fibrinogen, D-dimer, factor levels; consider liver disease, warfarin, vitamin K deficiency, DIC, multiple factor deficiencies
+      - condition: PT / INR prolonged, aPTT normal
+        action: order_test
+        test_to_order: Vitamin K trial; check liver function; review warfarin use; factor VII activity
+      - condition: aPTT prolonged, PT normal
+        action: next_step
+        target_step: 5
+    derived_from_figure: Stern Fig 8-1
+  - step_num: 5
+    description: Step 5 — For isolated aPTT prolongation, do mixing study to distinguish factor deficiency from inhibitor.
+    rationale: Mixing-study correction = factor deficiency; failure to correct = inhibitor.
+    branches:
+      - condition: Mixing study corrects (factor deficiency)
+        action: order_test
+        test_to_order: Factor VIII / IX / XI / XII activity; vWF antigen and activity (if mucocutaneous bleeding)
+      - condition: Mixing study does NOT correct (inhibitor)
+        action: order_test
+        test_to_order: Heparin level (if recent exposure), lupus anticoagulant panel, factor VIII activity + Bethesda titer (acquired hemophilia)
+    derived_from_figure: Stern Fig 8-1
+red_flags:
+  - name: Falling platelet count on heparin therapy with new thrombosis
+    description: Heparin-induced thrombocytopenia (HIT) — stop ALL heparin and start non-heparin anticoagulant.
+    severity: high
+  - name: Schistocytes + thrombocytopenia + neurologic / renal dysfunction
+    description: TTP / HUS — emergent plasma exchange evaluation.
+    severity: high
+  - name: Severe spontaneous bleeding with isolated aPTT prolongation not correcting on mixing
+    description: Acquired hemophilia or other inhibitor — refer to hemostasis center urgently.
+    severity: high
+  - name: Active life-threatening bleeding on anticoagulant
+    description: Use targeted reversal agent per drug class (4F-PCC, idarucizumab, andexanet, protamine).
+    severity: high
+source_pages:
+  - 152
+  - 163
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.8 (pp. 152-163). Frame is mechanistic — distinguish structural,
+  platelet-related, and coagulation-factor causes by location, timing, and
+  laboratory pattern. Algorithm follows Fig 8-1. Must-not-miss bucket
+  includes HIT, TTP / HUS, DIC, hemophilia presenting with intracranial or
+  retroperitoneal bleed, acquired factor inhibitors, and active bleeding on
+  anticoagulants.

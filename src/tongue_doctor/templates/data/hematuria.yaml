@@ -1,0 +1,364 @@
+complaint: hematuria
+chapter_number: 21
+chapter_title: Hematuria
+framework_type: anatomical
+framework_categories:
+  - Glomerular (proteinuria, dysmorphic RBCs, RBC casts)
+  - Non-glomerular upper tract (kidney stone, pyelonephritis, renal cell carcinoma, AVM, polycystic kidney disease)
+  - Non-glomerular lower tract (cystitis, bladder cancer, prostatitis, BPH, urethral stricture)
+  - Pseudohematuria (myoglobinuria, hemoglobinuria, beets, rifampin, food dyes)
+pivotal_points:
+  - gross vs. microscopic hematuria
+  - presence of proteinuria, dysmorphic RBCs, RBC casts (glomerular pattern)
+  - timing in urinary stream (initial → urethra; terminal → bladder neck / prostate; total → upper tract or bladder)
+  - associated pain (flank → stone or pyelonephritis; suprapubic → cystitis; painless → cancer)
+  - presence of clots (suggests non-glomerular bleeding)
+  - smoking history, age, exposure to aromatic amines (bladder cancer)
+  - family history (Alport, polycystic kidney, sickle cell)
+  - recent strenuous exercise (exercise-induced hematuria)
+  - menstruation as confounder
+decision_rules:
+  - name: AUA microhematuria risk stratification
+    purpose: Stratify risk of urologic malignancy in microscopic hematuria
+    inputs:
+      - age
+      - sex
+      - smoking history
+      - degree of microhematuria (RBC/HPF)
+      - prior gross hematuria
+    thresholds:
+      - "low risk → repeat urinalysis in 6 months"
+      - "intermediate risk → cystoscopy + renal ultrasound"
+      - "high risk → cystoscopy + CT urography"
+    citation: Stern Ch.21
+differential:
+  - name: Urinary tract infection / cystitis
+    role: leading
+    icd10:
+      - N30.91
+    pivotal_features_supporting:
+      - dysuria, frequency, suprapubic pain
+      - pyuria, positive nitrites
+      - resolution after appropriate antibiotic
+    fingerprint_findings:
+      - dysuria + frequency + microhematuria with positive UA
+    textbook_presentation: >-
+      Acute hematuria with dysuria, frequency, and pyuria; resolves with
+      appropriate antibiotic therapy.
+    evidence_based_diagnosis:
+      - test_name: Urinalysis with microscopy
+        citation: Stern Ch.16 / Ch.21
+      - test_name: Urine culture (when complicated or recurrent)
+        citation: Stern Ch.21
+    treatment_classes:
+      - antibiotic (per local resistance)
+    notes: Persistent hematuria after treatment should be re-evaluated.
+  - name: Nephrolithiasis (kidney stones)
+    role: active_most_common
+    icd10:
+      - N20.0
+    pivotal_features_supporting:
+      - acute severe flank pain radiating to groin
+      - hematuria (often gross)
+      - nausea, vomiting
+      - history of stones, dehydration, hyperuricemia, gout
+      - stone visualized on imaging
+    fingerprint_findings:
+      - acute severe flank pain + gross hematuria
+    textbook_presentation: >-
+      Acute renal colic with severe flank pain radiating to groin,
+      gross or microscopic hematuria, and nausea; CT identifies stone.
+    evidence_based_diagnosis:
+      - test_name: Non-contrast CT abdomen / pelvis (low-dose protocol)
+        sensitivity: 0.97
+        specificity: 0.95
+        citation: Stern Ch.21
+      - test_name: Renal ultrasound
+        sensitivity: 0.45
+        specificity: 0.94
+        note: Less sensitive than CT but no radiation; preferred in pregnancy.
+        citation: Stern Ch.21
+    treatment_classes:
+      - analgesic (NSAID first-line, opioid for refractory pain)
+      - antiemetic
+      - alpha-blocker (medical expulsive therapy)
+      - intravenous fluid replacement
+    notes: Procedural intervention (lithotripsy, ureteroscopy) for large or obstructing stones.
+  - name: Bladder cancer (urothelial carcinoma)
+    role: active_must_not_miss
+    icd10:
+      - C67.9
+    pivotal_features_supporting:
+      - older age (> 35-50)
+      - smoking history
+      - exposure to aromatic amines (industrial)
+      - painless gross hematuria
+      - male predominance
+    fingerprint_findings:
+      - painless gross hematuria in older smoker
+    textbook_presentation: >-
+      Older adult, often with smoking history, presenting with painless
+      gross hematuria; cystoscopy and urine cytology identify;
+      CT urography evaluates upper tracts.
+    evidence_based_diagnosis:
+      - test_name: Cystoscopy
+        sensitivity: 0.95
+        specificity: 0.98
+        note: Gold standard for bladder lesion detection.
+        citation: Stern Ch.21
+      - test_name: Urine cytology
+        sensitivity: 0.55
+        specificity: 0.95
+        note: Low sensitivity for low-grade tumors.
+        citation: Stern Ch.21
+      - test_name: CT urography
+        note: Evaluates upper tract for urothelial carcinoma.
+        citation: Stern Ch.21
+    treatment_classes:
+      - intravesical chemotherapy (non-muscle-invasive disease)
+      - intravesical BCG (high-grade non-muscle-invasive)
+      - radical cystectomy (muscle-invasive — procedural)
+      - systemic chemotherapy and immunotherapy (advanced disease)
+    notes: Cancer suspicion is the dominant must-not-miss in older smokers.
+  - name: Renal cell carcinoma
+    role: active_must_not_miss
+    icd10:
+      - C64.9
+    pivotal_features_supporting:
+      - hematuria (gross or microscopic)
+      - flank pain
+      - palpable abdominal mass (classic triad — late finding)
+      - constitutional symptoms (weight loss, fever)
+      - paraneoplastic features (polycythemia, hypercalcemia)
+    fingerprint_findings:
+      - hematuria + flank pain + palpable mass (classic triad — uncommon)
+    textbook_presentation: >-
+      Hematuria with flank pain or palpable mass; classic triad is
+      uncommon and a late finding; modern presentation is often
+      incidental imaging finding.
+    evidence_based_diagnosis:
+      - test_name: CT abdomen / pelvis with contrast (or MRI when contraindicated)
+        citation: Stern Ch.21
+    treatment_classes:
+      - surgical resection (procedural — partial or radical nephrectomy)
+      - systemic targeted therapy / immunotherapy (advanced)
+    notes: ""
+  - name: Glomerulonephritis (post-infectious, IgA, lupus, ANCA-associated, anti-GBM, MPGN, Alport)
+    role: active_must_not_miss
+    icd10:
+      - N05.9
+    pivotal_features_supporting:
+      - dysmorphic RBCs
+      - RBC casts
+      - proteinuria (often subnephrotic)
+      - hypertension, edema
+      - reduced eGFR
+      - serologic / etiologic markers (ANA, ANCA, anti-GBM, complements, hepatitis serologies)
+    fingerprint_findings:
+      - hematuria + RBC casts + proteinuria + hypertension + AKI
+    textbook_presentation: >-
+      Patient with hematuria, RBC casts, proteinuria, hypertension, and
+      AKI; specific etiology determined by serology, complement levels,
+      and biopsy.
+    evidence_based_diagnosis:
+      - test_name: Urinalysis with microscopy (dysmorphic RBCs and RBC casts)
+        citation: Stern Ch.21
+      - test_name: Spot urine protein-to-creatinine ratio
+        citation: Stern Ch.21
+      - test_name: Glomerular workup (ANA, ANCA, anti-GBM, complements C3 / C4, ASO, hepatitis B / C, HIV, cryoglobulins)
+        citation: Stern Ch.21
+      - test_name: Kidney biopsy (definitive in adults)
+        citation: Stern Ch.21
+    treatment_classes:
+      - immunosuppressant (etiology-specific)
+      - corticosteroid
+      - ACE inhibitor or ARB (renoprotection)
+    notes: Rapidly progressive GN requires immediate nephrology referral and biopsy.
+  - name: Polycystic kidney disease
+    role: other
+    icd10:
+      - Q61.3
+    pivotal_features_supporting:
+      - family history (autosomal dominant typical)
+      - bilateral renal cysts on imaging
+      - flank pain
+      - hypertension
+      - progression to ESRD
+      - extra-renal cysts (liver, pancreas) and intracranial aneurysm
+    fingerprint_findings:
+      - bilateral large kidneys with multiple cysts and family history
+    textbook_presentation: >-
+      Adult with positive family history, hypertension, and bilateral
+      renal cysts on ultrasound; gross hematuria from cyst rupture is
+      common.
+    evidence_based_diagnosis:
+      - test_name: Renal ultrasound (or CT / MRI)
+        citation: Stern Ch.21
+      - test_name: Genetic testing (selected cases)
+        citation: Stern Ch.21
+    treatment_classes:
+      - blood-pressure control (ACE inhibitor / ARB)
+      - tolvaptan (selected progressive disease)
+      - dialysis / transplant (ESRD)
+    notes: Screen for intracranial aneurysm in patients with family history of SAH.
+  - name: BPH / prostatitis
+    role: active_most_common
+    icd10:
+      - N40.1
+      - N41.0
+    pivotal_features_supporting:
+      - older male
+      - obstructive urinary symptoms (BPH) or perineal pain (prostatitis)
+      - hematuria
+      - elevated PSA
+    fingerprint_findings: []
+    textbook_presentation: >-
+      Older male with hematuria related to enlarged or inflamed
+      prostate; obstructive symptoms (BPH) or perineal pain and fever
+      (prostatitis).
+    evidence_based_diagnosis:
+      - test_name: Digital rectal exam
+        citation: Stern Ch.21
+      - test_name: PSA (BPH evaluation; cancer screening)
+        citation: Stern Ch.21
+    treatment_classes:
+      - alpha-blocker (BPH)
+      - 5-alpha reductase inhibitor (BPH)
+      - antibiotic (prostatitis)
+    notes: ""
+  - name: Exercise- or trauma-induced hematuria
+    role: other
+    icd10:
+      - R31.9
+    pivotal_features_supporting:
+      - recent strenuous exercise (running, contact sports)
+      - blunt trauma
+      - resolution within 48-72 hours
+      - no other risk factors or features
+    fingerprint_findings:
+      - hematuria after marathon or contact sport
+    textbook_presentation: >-
+      Self-limited hematuria after strenuous exercise or blunt trauma
+      that resolves within 72 hours; persistent hematuria warrants
+      workup.
+    evidence_based_diagnosis:
+      - test_name: Repeat urinalysis after rest
+        citation: Stern Ch.21
+    treatment_classes:
+      - reassurance + activity modification
+    notes: ""
+  - name: Sickle cell trait or disease (papillary necrosis)
+    role: other
+    icd10:
+      - D57.3
+      - D57.00
+    pivotal_features_supporting:
+      - sickle cell trait or disease
+      - painless hematuria
+      - papillary necrosis on imaging
+    fingerprint_findings:
+      - painless gross hematuria in patient with sickle cell trait
+    textbook_presentation: >-
+      Patient with sickle cell trait or disease presenting with
+      painless hematuria from medullary or papillary infarction.
+    evidence_based_diagnosis:
+      - test_name: Hemoglobin electrophoresis
+        citation: Stern Ch.21
+      - test_name: CT urography (papillary necrosis)
+        citation: Stern Ch.21
+    treatment_classes:
+      - hydration
+      - hydroxyurea (sickle cell disease)
+    notes: ""
+  - name: Anticoagulant-related hematuria
+    role: active_most_common
+    icd10:
+      - T45.515A
+    pivotal_features_supporting:
+      - therapeutic warfarin / DOAC / antiplatelet therapy
+      - elevated INR (warfarin)
+      - urinalysis hematuria without identifiable cause
+    fingerprint_findings:
+      - hematuria with supratherapeutic INR
+    textbook_presentation: >-
+      Patient on anticoagulant or antiplatelet therapy with hematuria;
+      anticoagulation may unmask underlying urologic disease, so
+      complete workup still indicated.
+    evidence_based_diagnosis:
+      - test_name: INR / DOAC level
+        citation: Stern Ch.21
+      - test_name: Standard hematuria workup (cystoscopy + CT urography per AUA risk)
+        citation: Stern Ch.21
+    treatment_classes:
+      - dose-adjustment of anticoagulant
+      - reversal (when severe bleeding)
+    notes: Unmasking effect — do not attribute to anticoagulation alone.
+algorithm:
+  - step_num: 1
+    description: Step 1 — Confirm true hematuria (urinalysis + microscopy) and exclude pseudohematuria (myoglobin, hemoglobin, food / drug coloring).
+    rationale: Pseudohematuria is common.
+    branches:
+      - condition: True RBCs on microscopy
+        action: next_step
+        target_step: 2
+      - condition: Heme positive without RBCs
+        action: order_test
+        test_to_order: Serum CK (rhabdomyolysis), free hemoglobin / haptoglobin (intravascular hemolysis), medication / dietary history
+    derived_from_figure: Stern Ch.21 prose
+  - step_num: 2
+    description: Step 2 — Categorize as glomerular vs. non-glomerular (presence of proteinuria, dysmorphic RBCs, RBC casts).
+    rationale: Glomerular pattern triages to nephrology workup; non-glomerular triages to urology workup.
+    branches:
+      - condition: Glomerular pattern
+        action: order_test
+        test_to_order: Spot UPCR + glomerular serologies + nephrology consultation; biopsy when AKI or rapidly progressive
+      - condition: Non-glomerular pattern
+        action: next_step
+        target_step: 3
+    derived_from_figure: Stern Ch.21 prose
+  - step_num: 3
+    description: Step 3 — Risk-stratify non-glomerular hematuria for urologic malignancy (AUA microhematuria risk).
+    rationale: Determines extent of urologic workup.
+    branches:
+      - condition: Low risk (young, non-smoker, low RBC count, no prior gross hematuria)
+        action: order_test
+        test_to_order: Repeat urinalysis in 6 months
+      - condition: Intermediate risk
+        action: order_test
+        test_to_order: Cystoscopy + renal ultrasound
+      - condition: High risk (older, smoker, gross hematuria, or persistent microhematuria > 25 RBC/HPF)
+        action: order_test
+        test_to_order: Cystoscopy + CT urography
+    derived_from_figure: Stern Ch.21 prose
+  - step_num: 4
+    description: Step 4 — Address acute / urgent etiologies separately (sepsis, obstructing stone, severe gross hematuria with clot retention, renal trauma).
+    rationale: Some causes need same-day intervention.
+    branches:
+      - condition: Obstructing stone with hydronephrosis or sepsis
+        action: escalate
+        escalation_reason: Urology consultation for ureteric stent or nephrostomy + IV antibiotics
+      - condition: Severe gross hematuria with clot retention
+        action: order_test
+        test_to_order: Continuous bladder irrigation + urology consultation
+    derived_from_figure: Stern Ch.21 prose
+red_flags:
+  - name: Painless gross hematuria in older smoker
+    description: Bladder or urothelial cancer until proven otherwise — cystoscopy + CT urography.
+    severity: high
+  - name: Hematuria + RBC casts + AKI
+    description: Glomerulonephritis (possibly RPGN) — emergent nephrology and biopsy.
+    severity: high
+  - name: Obstructing stone with fever / sepsis
+    description: Obstructive pyelonephritis — emergent urology for decompression.
+    severity: high
+source_pages:
+  - 384
+  - 393
+version: 1
+reviewed_by: pending
+reviewed_at: null
+notes: >-
+  Stern Ch.21 (pp. 384-393). Frame is anatomic with explicit glomerular vs.
+  non-glomerular split. Algorithm follows AUA microhematuria risk
+  stratification. Must-not-miss: bladder / renal cancer, glomerulonephritis,
+  obstructing stone with sepsis.
