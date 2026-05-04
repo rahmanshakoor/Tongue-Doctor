@@ -53,6 +53,9 @@ src/tongue_doctor/knowledge/_local/
 knowledge/_local/
 .cache/
 
+# Local diagnostic-loop case state (per-process JSON dumps; never commit patient data)
+.cases/
+
 # Prompt loader scratch
 prompts/_local/
 

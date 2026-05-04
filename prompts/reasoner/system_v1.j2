@@ -258,6 +258,32 @@ Previous-iteration findings (most recent last):
 {% endfor %}{% else %}  (none)
 {% endif %}
 
+{% if critiques_to_address is defined and critiques_to_address %}
+==============================================================================
+CRITIQUES FROM CRITIC AGENTS — ADDRESS EXPLICITLY IN THIS PASS
+==============================================================================
+
+The Devil's Advocate and Must-Not-Miss Sweeper have reviewed your earlier draft
+on this turn and raised the following concerns. This is a re-rank pass: in your
+Step 6 (Ranked Differential), Step 7 (Test Plan), and Step 8 (Re-rank After New
+Data), you MUST:
+
+  - Acknowledge each critique by name.
+  - Either accept it and move the relevant diagnosis to a different bucket
+    (Leading / Active / Excluded), OR explain — citing specific case findings —
+    why the critique does not apply at this pretest probability.
+  - When you accept a critique, name the test (with sens / spec / LR+ / LR-)
+    that would close the gap, and add it to the Step 7 plan.
+  - Note in Step 8 which buckets changed *because of* a critique.
+
+Critiques to address:
+{% for c in critiques_to_address %}  - {{ c }}
+{% endfor %}
+
+Do not silently accept the critiques without traceable bucket changes; do not
+silently dismiss them without a case-grounded reason.
+{% endif %}
+
 Walk the procedure now. Use the section headers above verbatim. Be explicit about
 which template field you are using at each step. When you cite Stern, give the
 chapter and page from the template's source_pages. Output only the structured

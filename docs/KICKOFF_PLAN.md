@@ -327,7 +327,7 @@ Three layers, deepest-wins:
 ```yaml
 reasoner:
   provider: vertex_gemini
-  model: gemini-3.1-pro            # editable; abstracted in code
+  model: gemini-3.1-pro-preview            # editable; abstracted in code
   thinking: medium                 # default
   thinking_complex_differential: high
   max_output_tokens: 4096
@@ -346,16 +346,16 @@ router:
   model: gemini-3.1-flash-lite
 multimodal_processor:
   provider: vertex_gemini
-  model: gemini-3.1-pro
+  model: gemini-3.1-pro-preview
   thinking_ecg: high
   thinking_documents: medium
 research_prescriber:
   provider: vertex_gemini
-  model: gemini-3.1-pro
+  model: gemini-3.1-pro-preview
   thinking: high
 extraction_offline:
   primary: { provider: vertex_anthropic, model: claude-opus-4-7, thinking: high }
-  cross_check: { provider: vertex_gemini, model: gemini-3.1-pro, thinking: high }
+  cross_check: { provider: vertex_gemini, model: gemini-3.1-pro-preview, thinking: high }
 ```
 
 The `LLMClient` protocol takes a `model_assignment_key` (e.g. `"reasoner"`) and resolves the provider/model/thinking from this config — agents never hard-code model IDs.

@@ -1,5 +1,11 @@
-"""HTTP API: routes, IAP auth, attachment uploads, streaming responses.
+"""HTTP API for the agent loop.
 
-Phase 0 ships only the FastAPI app shell in ``app.py`` (health + version endpoints).
-Real routes land in Phase 4 alongside the Next.js frontend.
+Trial-grade ``FastAPI`` surface so a separate frontend (Next.js / mobile / etc.)
+can POST a case description and render the structured agent trace. Mounted by
+``tongue_doctor.app.create_app()``; standalone via ``scripts/serve.py``.
 """
+
+from tongue_doctor.api.app import create_app
+from tongue_doctor.api.routes import router
+
+__all__ = ["create_app", "router"]

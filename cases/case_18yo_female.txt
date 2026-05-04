@@ -1,0 +1,208 @@
+18 years old female with the following symptoms.
+
+Head:
+- Usual headaches all the time
+- Usual sound in my ears (طنين)
+- Pain on the sides of my head
+- Hot eyes
+
+Chest:
+- Regular chest pains
+- Shortness of breath
+- Fast heart beat
+
+Stomach:
+- Discomfort (more than pain)
+- Extreme bloating (especially after eating)
+- Bad reactions to food in general
+- Feeling disgusted from food all the time (especially the smell of it)
+- Not craving food at all
+- A smell in my cord area
+
+General:
+- Dizzy
+- A metallic taste in my tongue
+- An egg feel in throat
+- Very dark urine
+- Constant overheating
+- Sweating a lot
+- Always tired
+- Joint pain
+- Needs extra energy for any little task
+- Sleep extremely crappy
+- Low blood pressure always
+
+### Document 1: Hormone & Immunity Tests
+**[LAB NAME REDACTED]**
+**Patient Name** : [REDACTED]
+**Age** : 18 Year(s)
+**Gender** : Female
+**Consultant** : [REDACTED]
+**Sample No.** : [REDACTED]
+**Patient No** : [REDACTED]
+**Sample Date** : 01-May-2026
+**Sample Time** : 07:18 AM
+**Number Of Tests** : 10
+| Laboratory Test Resu | Conventional Units | SI Units |
+|---|---|---|
+| **T4** | 84.4 nmol/l |  |
+| Normal Range : | 60.0 - 120.0 |  |
+| Roche Cobas e411 (US FDA approved) |  |  |
+| **TSH** | 1.2 µIU/ml |  |
+| Normal Range : | 0.25 - 5.00 |  |
+| Roche Cobas e411 (US FDA approved) |  |  |
+| **Anti-Tissue-Transglutaminase IgA antibody By Chorus** | 1.2 Au/ml |  |
+| Normal Range : | 0 - 10 |  |
+| **Anti-Tissue-Transglutaminase IgG antibody By Chorus** | 2.00 AU/ml |  |
+| Normal Range : | 0.00 - 10.00 |  |
+| **Anti-Gliadin IgA antibodies** | 0.5 IU/ml |  |
+| Normal Range : | 0.00 - 10.00 |  |
+| **Anti-Gliadin IgG antibodies** | 0.6 IU/ml |  |
+| Normal Range : | 0.00 - 10.00 |  |
+### Document 2: Urinalysis
+**[LAB NAME REDACTED]**
+**Patient Name** : [REDACTED]
+**Age** : 18 Year(s)
+**Gender** : Female
+**Consultant** : [REDACTED]
+**Sample No.** : [REDACTED]
+**Patient No** : [REDACTED]
+**Sample Date** : 01-May-2026
+**Sample Time** : 07:18 AM
+**Number Of Test** : 10
+**Urinalysis**
+**Physical Examinition**
+ * **Collection** : Random
+ * **Color** : Yellow
+ * **Aspect** : Clear
+ * **Odour** : Urino Ferous
+**Chemical Examinition**
+ * **Sp. gravity** : 1.030
+ * **Reaction** : Acidic
+ * **Albumin** : Absent
+ * **Sugar** : Absent
+ * **Ketones** : Absent
+ * **Bilirubin** : Absent
+ * **Urobilinogen** : Normal
+ * **Nitrite** : Absent
+**Microscopic Examinition**
+ * **Pus cells** : 20-25 /HPF
+ * **RBCs** : 1-2 /HPF
+ * **Mucus** : Absent
+ * **Epithelial cells** : +++
+ * **Amorphous Phosphate**: Absent
+ * **Crystals** : Absent
+ * **Bacteria** : ++
+ * **Yeast** : Absent
+ * **Parasite** : Absent
+ * **Amorphous Urate** : Seen
+ * **Cast** : Absent
+### Document 3: Cortisol & H. Pylori Tests
+**[LAB NAME REDACTED]**
+**Patient Name** : [REDACTED]
+**Age** : 18 Year(s)
+**Gender** : Female
+**Consultant** : [REDACTED]
+**Sample No.** : [REDACTED]
+**Patient No** : [REDACTED]
+**Sample Date** : 01-May-2026
+**Sample Time** : 07:18 AM
+**Number Of Tests** : 10
+| Laboratory Test Resu | Conventional Units | SI Units |
+|---|---|---|
+| **Cortisol (AM)** | 77.2 ug/dl |  |
+| Normal Range : | 54.90 - 287.50 |  |
+| Roche Cobas e411 (US FDA approved) |  |  |
+| **Urea Breath Test** | 40 DPM |  |
+| Normal Range : Negative | 0 - 99 DPM |  |
+| uncertain | 100 - 149 |  |
+| Positive+ | 150 - 499 DPM |  |
+| Positive++ | 500 - 1499 DPM |  |
+| Positive+++ | 1500 - 2499 DPM |  |
+| Positive++++ | 2500 - above DPM |  |
+| **H.pylori Ab(Serum)** | Negative |  |
+| Normal Range : | Negative |  |
+### Document 4: Clinical Biochemistry Laboratory
+**[LAB NAME REDACTED]**
+**Released**
+**Name:** [REDACTED]
+**Patient ID:** [REDACTED]
+**Gender:** Unknown
+**Birthdate:**
+**Sample ID:** [REDACTED]
+**Location:**
+**Draw date / time:**
+**Doctor:** [REDACTED]
+| Assay | Result | Units | Flags | Range | Date Completed Time completed |
+|---|---|---|---|---|---|
+| GluC | 93 | mg/dL |  | 75 - 110 | 29.04.2026 11:01 |
+| Urea2 | 26 | mg/dL |  | 15 - 45 | 29.04.2026 11:05 |
+| Crea2 | 0.75 | mg/dL |  | 0.20 - 1.30 | 29.04.2026 11:05 |
+| Na-C | 141 | mmol/L |  | 136 - 145 | 29.04.2026 10:59 |
+| K-C | 4.6 | mmol/L |  | 3.5 - 5.1 | 29.04.2026 10:59 |
+| Chol2 | 143 | mg/dL |  | 0 - 200 | 29.04.2026 11:08 |
+| Trig2 | 68 | mg/dL |  | 0 - 150 | 29.04.2026 11:08 |
+| TPRO2 | 7.8 | g/dL |  | 6.2 - 8.2 | 29.04.2026 11:03 |
+| AlbBCG2 | 4.4 | g/dL |  | 3.6 - 5.2 | 29.04.2026 11:00 |
+| BiliT | 0.9 | mg/dL |  | 0.2 - 1.2 | 29.04.2026 11:03 |
+| BiliD | 0.3 | mg/dL |  | 0.0 - 0.5 | 29.04.2026 11:07 |
+| AlkP2F | 55 | U/L |  | 46 - 122 | 29.04.2026 11:05 |
+| ALT2F | 23 | U/L |  | 0 - 34 | 29.04.2026 11:08 |
+| AST2F | 20 | U/L |  | 0 - 45 | 29.04.2026 11:08 |
+| Cl-C | 106 | mmol/L |  | 98 - 107 | 29.04.2026 10:59 |
+**End of sample record**
+**[LAB NAME REDACTED]**
+
+**Patient Information & Test Details**
+**Chartable Page:**
+**Spec ID:** [REDACTED]
+**Pat Name:** [REDACTED] *(Handwritten name also redacted)*
+**Pat ID:** [REDACTED]
+**Doctor:** [REDACTED]
+**Comment:**
+**Spec Type:** Patient
+**DOB:**
+**Draw Date/Time:**
+**ESR:**
+**Blood Group:**
+**Sex:** Unknown
+**SEQ#:** 9973 OPID Guest
+**Run:** 29/4/2026 10:27
+**Test:** CBC
+**Mode:** Open Param 1
+**Limits:** Default (1)
+**Results**
+| Parameter | Result (Abs) | Result (%) | Units |
+|---|---|---|---|
+| **WBC** | 6.54 |  | 10e9/L |
+| **NEU** | 3.13 | 47.9 | % |
+| **LYM** | 2.37 | 36.3 | % |
+| **MONO** | .828 | 12.7 | % |
+| **EOS** | .147 | 2.25 | % |
+| **BASO** | .061 | .935 | % |
+| Parameter | Result | Units | Remarks |
+|---|---|---|---|
+| **RBC** | 4.85 | 10e12/L |  |
+| **HGB** | 11.8 | g/dL |  |
+| **HCT** | 37.4 | % |  |
+| **MCV** | 77.1 | fL | RBC MORPH |
+| **MCH** | 24.4 | pg |  |
+| **MCHC** | 31.6 | g/dL |  |
+| **RDW** | 15.0 | % |  |
+| Parameter | Result | Units |
+|---|---|---|
+| **PLT** | 302. | 10e9/L |
+| **MPV** | 10.7 | fL |
+*(Handwritten Note)*: ESR 22
+**LIMIT SET**
+| Parameter | Absolute Range | Percentage Range | Parameter | Absolute Range |
+|---|---|---|---|---|
+| **WBC** | 4.00-10.0 |  | **RBC** | 4.06-4.69 |
+| **NEU** | 2.00-7.00 | 40.0-80.0 % | **HGB** | 12.0-17.0 |
+| **LYM** | 1.00-3.00 | 18.0-48.3 % | **HCT** | 36.0-50.0 |
+| **MONO** | .200-.790 | 4.40-12.7 % | **MCV** | 80.0-100. |
+| **EOS** | .030-.440 | .600-7.30 % | **MCH** | 27.0-31.2 |
+| **BASO** | 0.00-.080 | 0.00-1.70 % | **MCHC** | 31.8-35.4 |
+|  |  |  | **RDW** | 11.5-14.5 |
+|  |  |  | **PLT** | 150.-410. |
+|  |  |  | **MPV** | 6.90-10.6 |

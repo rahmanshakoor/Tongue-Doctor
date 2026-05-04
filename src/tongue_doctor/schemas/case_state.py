@@ -103,3 +103,7 @@ class CaseState(BaseModel):
     research_prescription: ResearchPrescription | None = None
     confidence_band: ConfidenceBand = ConfidenceBand.LOW
     disclaimer_required: bool = True
+    # Compact summaries of prior turns' synthesizer outputs. Threaded to the
+    # Reasoner via ``previous_findings`` so re-rank step (Stern Step 8) actually
+    # has access to what was already committed / excluded on earlier turns.
+    prior_findings: list[str] = Field(default_factory=list)

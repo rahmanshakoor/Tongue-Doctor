@@ -1,59 +1,144 @@
 # Per-agent model assignments. The LLMClient resolves provider + model + thinking from this file
 # via a model_assignment_key (e.g. "reasoner"). Agents never hard-code model IDs.
 #
-# Identifiers are taken from KICKOFF_PLAN.md §4. Model IDs are stable; thinking levels are tunable.
-# Provider strings are matched in src/tongue_doctor/models/__init__.py:get_client().
+# Phase 1 trial — all 6 loop agents run on the public Gemini API (gemini_direct provider).
+# The Vertex variants stay configured in extraction_offline below for the offline template-
+# extraction path; switch them on once cloud auth lands (open kickoff item 21).
+#
+# max_output_tokens + thinking levels: right-sized per agent.
+#
+# Critical context: ``max_output_tokens`` is the budget shared between
+# *thinking* tokens (Gemini 3.x reasons internally — and on long prompts will
+# automatically use a large budget if you don't cap it) and *response* tokens.
+# When ``thinking`` is unset, Gemini 3.x can spend 8-12 K tokens thinking
+# before emitting a single response token, which silently truncates the JSON
+# / prose output mid-stream.
+#
+# So every agent below carries an explicit ``thinking`` level matched to its
+# job:
+#   - low (1024)    — mechanical / list-walking / format-conversion tasks
+#   - medium (4096) — clinical reasoning + critique tasks
+#   - high (16000)  — the Judge's final-verdict deliberation only
+# Combined with ``max_length`` caps in agents/schemas.py (which stop runaway
+# repetition at the *character* level), the budgets below give legitimate
+# verbose responses comfortable headroom while staying well within free-tier
+# quota.
+
+# Global rate limit + retry policy applied to every gemini_direct client. Google enforces
+# quota at the API-key level (not per-agent), so the throttle is shared across all eight
+# loop agents in the orchestrator. Per-agent overrides under each agent block win over
+# these defaults.
+#
+#   min_interval_seconds — minimum wall time between any two outgoing requests. The free-
+#     tier limit on gemini-3.x-pro-preview is ~5 RPM (~12 s spacing); paid keys are 60+
+#     RPM (~1 s spacing). Tune to your quota. Set to 0 to disable proactive throttling.
+#   retry_delay_seconds — sleep before retrying after a transient error (HTTP 408/429/5xx).
+#     Long enough to let Google's rolling 60 s quota window reset.
+#   max_retries — total retry attempts after the first failure (so up to 1 + max_retries
+#     calls per request).
+rate_limit:
+  min_interval_seconds: 4.0
+  retry_delay_seconds: 30.0
+  max_retries: 5
 
 reasoner:
-  provider: vertex_gemini
-  model: gemini-3.1-pro
-  thinking: medium                          # Default. complex_differential bumps to high.
-  thinking_complex_differential: high
-  max_output_tokens: 4096
-
-devils_advocate:
-  provider: vertex_anthropic
-  model: claude-opus-4-7
-  thinking:
-    type: enabled
-    budget_tokens: 16000
-  max_output_tokens: 8192
+  provider: gemini_direct
+  model: gemini-3.1-pro-preview
+  thinking: medium
+  # Reasoner emits the 9-step markdown trace — longest legitimate output of any agent.
+  max_output_tokens: 24576
 
 safety_reviewer:
-  provider: vertex_anthropic
-  model: claude-sonnet-4-6
-  thinking:
-    type: enabled
-    budget_tokens: 4000
-  max_output_tokens: 2048
+  provider: gemini_direct
+  model: gemini-3.1-pro-preview
+  # Safety review is a checklist audit, not deep reasoning — keep thinking low
+  # so the JSON verdict is never starved of output budget.
+  thinking: low
+  max_output_tokens: 8192
 
 synthesizer:
-  provider: vertex_gemini
-  model: gemini-3.1-flash-lite
+  provider: gemini_direct
+  model: gemini-3.1-pro-preview
+  # Pure renderer of the Judge's verdict — no clinical decisions, just markdown
+  # composition. Low thinking is fine; the body can run long on multi-system
+  # cases so the budget is generous.
   thinking: low
-  max_output_tokens: 2048
+  max_output_tokens: 24576
 
 router:
-  provider: vertex_gemini
-  model: gemini-3.1-flash-lite
+  provider: gemini_direct
+  model: gemini-3.1-pro-preview
+  # JSON output is small (~500 chars). Low thinking + 8 K budget = the JSON
+  # always has room to finish, even on multi-system cases with long ancillary
+  # rationales.
   thinking: low
-  max_output_tokens: 512
+  max_output_tokens: 8192
+
+must_not_miss_sweeper:
+  provider: gemini_direct
+  model: gemini-3.1-pro-preview
+  # MNM Sweeper walks the must-not-miss list and produces structured findings —
+  # a list-audit task, not deep reasoning. On rich multi-system cases (chest +
+  # GI + general + lab data) the sweep can hit 15-20 entries with detailed
+  # per-entry rationale, so the JSON budget needs real headroom. Low thinking
+  # keeps the budget for the actual sweep output.
+  thinking: low
+  max_output_tokens: 24576
+
+# --- Convergence-loop agents (Defender + Critic + ConvergenceChecker, added 2026-05-02) ---
+# These replace the retired courtroom-style Prosecutor / DA. Defender + Critic
+# emit structured markdown prose (no JSON response_schema), so they cannot
+# field-stuff into degeneration. Convergence checker is a small JSON yes/no.
+
+defender:
+  provider: gemini_direct
+  model: gemini-3.1-pro-preview
+  # Genuine clinical reasoning — needs medium thinking. Free-form prose
+  # response + thinking overhead = generous budget on multi-system cases.
+  thinking: medium
+  max_output_tokens: 24576
+
+critic:
+  provider: gemini_direct
+  model: gemini-3.1-pro-preview
+  thinking: medium
+  max_output_tokens: 24576
+
+convergence_checker:
+  provider: gemini_direct
+  model: gemini-3.1-pro-preview
+  # Tiny JSON yes/no — explicit low thinking so the small budget isn't eaten
+  # by automatic thinking on long Defender / Critic transcripts.
+  thinking: low
+  max_output_tokens: 4096
+
+judge:
+  provider: gemini_direct
+  model: gemini-3.1-pro-preview
+  # Judge is the SOLE decider — keeps the deepest thinking budget. Reads
+  # structured-prose Defender / Critic transcripts plus MNM, then commits a
+  # verdict with closing_statement that the Synthesizer renders verbatim.
+  # Bigger budget than dialectic agents because verdict_rationale +
+  # closing_statement combined are the longest legitimate JSON output.
+  thinking: high
+  max_output_tokens: 32768
 
 multimodal_processor:
-  provider: vertex_gemini
-  model: gemini-3.1-pro
+  provider: gemini_direct
+  model: gemini-3.1-pro-preview
   thinking_ecg: high
   thinking_documents: medium
   thinking_default: medium
-  max_output_tokens: 4096
+  max_output_tokens: 65536
 
 research_prescriber:
-  provider: vertex_gemini
-  model: gemini-3.1-pro
+  provider: gemini_direct
+  model: gemini-3.1-pro-preview
   thinking: high
-  max_output_tokens: 4096
+  max_output_tokens: 65536
 
 # Offline extraction (Stern, Robbins, Harrison's, ...). Two-model cross-check per kickoff §4.
+# Stays on Vertex/Anthropic for now — the trial agent loop does not exercise this path.
 extraction_offline:
   primary:
     provider: vertex_anthropic
@@ -64,6 +149,6 @@ extraction_offline:
     max_output_tokens: 16384
   cross_check:
     provider: vertex_gemini
-    model: gemini-3.1-pro
+    model: gemini-3.1-pro-preview
     thinking: high
     max_output_tokens: 16384

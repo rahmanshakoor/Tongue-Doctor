@@ -68,6 +68,20 @@ class LLMResponse(BaseModel):
     finish_reason: FinishReason
 
 
+class StreamChunk(BaseModel):
+    """One streamed chunk from :meth:`LLMClient.generate_stream`.
+
+    During streaming the SDK emits ``delta``-bearing chunks (token-level text). The
+    *final* chunk carries the aggregated :class:`LLMResponse` in ``response`` so the
+    caller can record usage / finish_reason without re-walking the stream.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    delta: str = ""
+    response: LLMResponse | None = None
+
+
 @runtime_checkable
 class LLMClient(Protocol):
     """The interface every concrete client implements.
@@ -79,6 +93,11 @@ class LLMClient(Protocol):
     Phase 0 ships skeletons whose ``generate`` raises :class:`NotImplementedError`.
     The factory in :mod:`tongue_doctor.models` resolves an implementation from
     ``config/models.yaml`` via a ``model_assignment_key`` (e.g. ``"reasoner"``).
+
+    Streaming (``generate_stream``) is an optional structural extension —
+    clients that implement it expose token-level deltas to the chat-mode CLI;
+    clients that don't fall back to a single :meth:`generate` call. See
+    :func:`tongue_doctor.agents._runtime.call_text_stream`.
     """
 
     name: str

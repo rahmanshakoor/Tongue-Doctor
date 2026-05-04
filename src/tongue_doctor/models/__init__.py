@@ -19,6 +19,7 @@ from tongue_doctor.models.base import (
     ToolCall,
     ToolDef,
 )
+from tongue_doctor.models.gemini_direct import GeminiDirectClient
 from tongue_doctor.models.vertex_anthropic import VertexAnthropicClient
 from tongue_doctor.models.vertex_gemini import VertexGeminiClient
 from tongue_doctor.settings import get_settings
@@ -33,6 +34,23 @@ def _gemini_thinking_kwargs(spec: dict[str, Any]) -> dict[str, Any]:
         "thinking_default",
     )
     return {k: spec[k] for k in keys if k in spec}
+
+
+def _rate_limit_kwargs(spec: dict[str, Any], rate_limit_defaults: dict[str, Any]) -> dict[str, Any]:
+    """Resolve the per-client rate-limit / retry knobs.
+
+    Precedence: per-agent override in the spec dict wins over the global
+    ``rate_limit`` block in ``config/models.yaml``. Both are optional; missing
+    keys get the constructor's defaults.
+    """
+
+    out: dict[str, Any] = {}
+    for key in ("min_interval_seconds", "retry_delay_seconds", "max_retries"):
+        if key in spec:
+            out[key] = spec[key]
+        elif key in rate_limit_defaults:
+            out[key] = rate_limit_defaults[key]
+    return out
 
 
 def get_client(model_assignment_key: str) -> LLMClient:
@@ -83,15 +101,30 @@ def get_client(model_assignment_key: str) -> LLMClient:
             thinking=spec.get("thinking"),
             max_output_tokens=max_output_tokens,
         )
+    if provider == "gemini_direct":
+        # ``rate_limit`` is an optional top-level block in ``config/models.yaml``
+        # — when present, it sets defaults for every gemini_direct agent. Per-
+        # agent overrides win when the spec dict has its own keys.
+        rate_limit_defaults_obj = settings.models.get("rate_limit") or {}
+        rate_limit_defaults = (
+            rate_limit_defaults_obj if isinstance(rate_limit_defaults_obj, dict) else {}
+        )
+        return GeminiDirectClient(
+            model_id=model_id,
+            thinking=spec.get("thinking"),
+            max_output_tokens=max_output_tokens,
+            **_rate_limit_kwargs(spec, rate_limit_defaults),
+        )
     raise ValueError(
         f"Unknown provider {provider!r} for {model_assignment_key!r}. "
-        "Known providers: anthropic_direct, vertex_anthropic, vertex_gemini."
+        "Known providers: anthropic_direct, gemini_direct, vertex_anthropic, vertex_gemini."
     )
 
 
 __all__ = [
     "AnthropicDirectClient",
     "FinishReason",
+    "GeminiDirectClient",
     "LLMClient",
     "LLMResponse",
     "Message",

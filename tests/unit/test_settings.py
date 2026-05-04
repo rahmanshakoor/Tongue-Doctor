@@ -23,11 +23,20 @@ def test_default_settings_load() -> None:
 
 
 def test_settings_models_yaml_loaded() -> None:
-    """All agents named in KICKOFF_PLAN.md §4 must have an entry in config/models.yaml."""
+    """All agents in the active loop must have an entry in config/models.yaml.
+
+    The courtroom-style ``prosecutor`` / ``devils_advocate`` keys were retired
+    in 2026-05-02's convergence-loop refactor; they're replaced by
+    ``defender`` / ``critic`` / ``convergence_checker``.
+    """
     settings = get_settings()
     expected_keys = {
         "reasoner",
-        "devils_advocate",
+        "defender",
+        "critic",
+        "convergence_checker",
+        "must_not_miss_sweeper",
+        "judge",
         "safety_reviewer",
         "synthesizer",
         "router",
